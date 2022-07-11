@@ -11,6 +11,10 @@ export default defineNuxtConfig({
 
         // Lodash
         "nuxt-lodash",
+
+        // harlem
+        "@nuxtjs/harlem",
+
     ],
 
     colorMode: {

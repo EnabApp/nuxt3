@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxtjs/color-mode": "^3.1.4",
     "@unocss/nuxt": "^0.44.0",
-    "nuxt-lodash": "^2.2.0"
+    "nuxt-lodash": "^2.2.0",
+    "vue-toastification": "^2.0.0-rc.5"
   }
 }
