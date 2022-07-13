@@ -15,11 +15,8 @@
     charset: "utf-8",
     meta: [{ name: "description", content: "My amazing site." }],
     bodyAttrs: {
-      class: 'm-0 p-0 overflow-hidden',
+      class: 'm-0 p-0 overflow-hidden font-sans',
       dir: 'rtl'
     },
-    htmlAttrs: {
-      // class: 'font-sans'
-    }
   });
 </script>

@@ -22,8 +22,8 @@ export default defineNuxtConfig({
 
     unocss: {
         // presets
-        autoImport: true,
-        preflight: true,
+        // autoImport: true,
+        // preflight: true,
         // uno: true, // enabled `@unocss/preset-uno`
         // https://icon-sets.iconify.design/
         icons: true, // enabled `@unocss/preset-icons`
