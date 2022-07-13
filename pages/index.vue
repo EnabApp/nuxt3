@@ -1,6 +1,7 @@
 <template>
   <div class="p-5">
     <UiInput />
+    <UiButton />
   </div>
 </template>
 
