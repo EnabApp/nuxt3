@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     ],
 
     colorMode: {
+        // preference: 'light',
         classSuffix: ''
     },
 
@@ -27,7 +28,7 @@ export default defineNuxtConfig({
         // uno: true, // enabled `@unocss/preset-uno`
         // https://icon-sets.iconify.design/
         icons: true, // enabled `@unocss/preset-icons`
-        // attributify: true, // enabled `@unocss/preset-attributify`,
+        attributify: ['label'], // enabled `@unocss/preset-attributify`,
         typography: true, // enabled `@unocss/preset-typography`
         webFonts: {
             provider: 'google', // default provider
@@ -45,7 +46,7 @@ export default defineNuxtConfig({
                 'warning': { DEFAULT: '#F59E0B', '50': '#FCE4BB', '100': '#FBDCA8', '200': '#FACD81', '300': '#F8BD59', '400': '#F7AE32', '500': '#F59E0B', '600': '#C07C08', '700': '#8A5906', '800': '#543603', '900': '#1E1401' },
                 'success': { DEFAULT: '#10B981', '50': '#8CF5D2', '100': '#79F3CB', '200': '#53F0BC', '300': '#2EEDAE', '400': '#13DF9B', '500': '#10B981', '600': '#0C855D', '700': '#075239', '800': '#031E15', '900': '#000000' },
             },
-        }
+        },
     },
 
 })

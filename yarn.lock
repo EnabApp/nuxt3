@@ -767,6 +767,13 @@
   dependencies:
     "@unocss/core" "0.44.0"
 
+"@unocss/preset-attributify@^0.44.1":
+  version "0.44.1"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-attributify/-/preset-attributify-0.44.1.tgz#6f3f2087e3c3780e8f48f82c5584e9c41b1db174"
+  integrity sha512-rR2rxqUv23r2ww4WKQO6ckq6+yT5p/j0ty43qwi+PCKOSMdzwKlTTuhQS/iuzEubrh20GJA6WfsJfQB/TPTznw==
+  dependencies:
+    "@unocss/core" "0.44.1"
+
 "@unocss/preset-icons@0.44.0":
   version "0.44.0"
   resolved "https://registry.yarnpkg.com/@unocss/preset-icons/-/preset-icons-0.44.0.tgz#0b99353e8b16e4e936bff2dd092d48927c24cfd5"

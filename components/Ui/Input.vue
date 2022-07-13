@@ -1,17 +1,72 @@
 <template>
-  <div class="flex flex-col gap-1">
-    <label v-if="label" class="font-medium text-gray-700" for="input">{{label}}</label>
-    <div class="flex items-center justify-between w-full gap-2 px-2 leading-tight text-gray-500 transition-all duration-200 ease-in-out delay-100 bg-white border-2 border-gray-300 rounded-lg focus-within:outline-none focus-within:bg-white focus-within:border-primary-600 focus-within:shadow-xl focus-within:shadow-primary-200">
+  <div flex="~ col gap-1">
+    <!-- Label -->
+    <label
+      v-if="label"
+      class="font-medium text-gray-700 dark:text-gray-400"
+      for="input"
+      >{{ label }}</label
+    >
 
-      <div v-if="icon" class="text-lg text-gray-500" :class="icon"></div>
-      
-      <input id="input" class="py-2 font-sans text-gray-700 border-0 appearance-none grow focus:outline-none placeholder:text-gray-400" :placeholder="placeholder" :type="type == 'password' ? statePassword : type" />
-      <div class="flex gap-1">
+    <!-- Main Input Components -->
+    <!-- 
+      focus-within:outline-none outline-none focus-within:bg-white group 
+    -->
+    <div
+      class="group"
+      :class="{
+        'focus-within:border-primary-500': !error,
+        'focus-within:border-error-500': error,
+      }"
+      flex="~ gap-2"
+      font="leading-tight"
+      place="items-center"
+      p="x-2"
+      text="gray-500 dark:gray-200"
+      bg="white dark:secondary-700 focus-within:white"
+      border="~ 2 gray-300 dark:gray-600 rounded-lg"
+      outline="none focus-within:none"
+    >
+      <!-- Icon -->
+      <div v-if="icon" :class="icon" text="gray-500 dark:gray-200"></div>
+
+      <!-- Input -->
+      <input
+        v-model="modelValue"
+        @input="(event) => $emit('update:modelValue', event.target.value)"
+        id="input"
+        :placeholder="placeholder"
+        :type="type == 'password' ? statePassword : type"
+        p="y-2"
+        font="sans"
+        text="gray-700 dark:gray-400 placeholder:gray-400 dark:placeholder:gray-500"
+        bg="white dark:secondary-700"
+        border="~ 0"
+        appearance="none"
+        flex="grow"
+        outline="none focus:none"
+      />
+
+      <!-- Buttons -->
+      <div class="flex items-center gap-1">
         <!-- Type password -->
-        <div class="flex gap-1" v-if="type=='password'">
-          <button v-if="statePassword=='password'" @click="showPassword()" class="text-gray-500 i-gridicons-not-visible"></button>
-          <button v-else @click="showPassword()" class="text-gray-700 i-gridicons-visible"></button>
+        <div class="flex gap-1" v-if="type == 'password'">
+          <button
+            v-if="statePassword == 'password'"
+            @click="showPassword()"
+            text="gray-500 dark:gray-200"
+            class="i-gridicons-not-visible"
+          ></button>
+          <button
+            v-else
+            @click="showPassword()"
+            text="gray-700 dark:text-gray-50"
+            class="i-gridicons-visible"
+          ></button>
         </div>
+
+        <!-- Alternative Buttons -->
+        <slot />
       </div>
     </div>
   </div>
@@ -21,32 +76,31 @@
 const props = defineProps({
   label: {
     type: String,
-    default: "",
-    required: false,
   },
   placeholder: {
     type: String,
-    default: "",
-    required: false,
   },
   type: {
     type: String,
     default: "text",
-    required: false,
   },
   icon: {
     type: String,
-    default: "",
-    required: false,
-  }
-})
+  },
+  modelValue: {
+    type: String,
+  },
+  error: {
+    type: Boolean,
+    default: false,
+  },
+});
 
+
+
+// Toggling Password View
 const [statePassword, showPassword] = useToggle(props.type, {
-    truthyValue: 'password',
-    falsyValue: 'text',
-})
-
-// const typeProperty = ref(props.type)
-// const togglePassword = (() => typeProperty.value == 'password' ? typeProperty.value = 'text' : typeProperty.value = 'password')
-
+  truthyValue: "password",
+  falsyValue: "text",
+});
 </script>
