@@ -1,10 +1,10 @@
 <template>
-  <div class="h-screen bg-secondary-100">
-    <!-- <select v-model="$colorMode.preference">
+  <div class="h-screen bg-gray-50 dark:bg-secondary-800">
+    <select v-model="$colorMode.preference">
       <option value="system">System</option>
       <option value="light">Light</option>
       <option value="dark">Dark</option>
-    </select> -->
+    </select>
     <slot />
   </div>
 </template>
@@ -22,11 +22,3 @@
     ],
   });
 </script>
-
-<style>
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-  }
-</style>

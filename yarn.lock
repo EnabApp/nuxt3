@@ -818,6 +818,14 @@
     "@unocss/core" "0.44.0"
     ohmyfetch "^0.4.18"
 
+"@unocss/preset-web-fonts@^0.44.1":
+  version "0.44.1"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-web-fonts/-/preset-web-fonts-0.44.1.tgz#1fb6e48d5793c5800de371cdad9ae9acdc18dd2c"
+  integrity sha512-JkYmF3Ib5pwVs+VWFxIRsJtSFonT401OhdHZiQctdp7b/tKPzQXChqoUAteRtrKkPGBAyF9lUYK74gQSpi+rag==
+  dependencies:
+    "@unocss/core" "0.44.1"
+    ohmyfetch "^0.4.18"
+
 "@unocss/preset-wind@0.44.0":
   version "0.44.0"
   resolved "https://registry.yarnpkg.com/@unocss/preset-wind/-/preset-wind-0.44.0.tgz#2b7138899e5a437d430c5133513faee9b084541f"
