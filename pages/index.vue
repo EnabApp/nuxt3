@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <span class="text-2xl text-blue-700 dark:text-green-800">Test</span>
+  <div class="p-5">
+    <UiInput />
   </div>
 </template>
 
