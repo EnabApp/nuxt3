@@ -14,7 +14,10 @@
     "@nuxtjs/color-mode": "^3.1.4",
     "@unocss/nuxt": "^0.44.0",
     "@unocss/preset-icons": "^0.44.1",
+    "@unocss/preset-typography": "^0.44.1",
     "@unocss/preset-web-fonts": "^0.44.1",
+    "@vueuse/core": "^8.9.2",
+    "@vueuse/nuxt": "^8.9.2",
     "nuxt-lodash": "^2.2.0",
     "vue-toastification": "^2.0.0-rc.5"
   }
