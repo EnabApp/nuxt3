@@ -1,13 +1,17 @@
 <template>
   <div w="1/2" m="5">
-    <UiInput w="96" icon="i-clarity-email-solid" label="البريد الالكتروني" placeholder="Enter your email" type="email">
-        <button >Button</button>
+    <UiInput v-model="showName" w="96" icon="i-clarity-email-solid" label="Show name" placeholder="Show Name" type="text">
+        <button @click="search()">Search</button>
     </UiInput>
+
+    <UiDropdown v-model="dropdown" :list="list" w="96" />
+    {{ dropdown }}
 
     <Teleport to="body">
       <UiModal v-model:state="stateModal" @confirm="modalConfirmed" @cancel="modalCanceled">
-        <template v-slot:title>Hello, vue-final-modal</template>
-        <p>Vue Final Modal is a renderless, stackable, detachable and lightweight modal component.</p>
+        <template v-slot:title>Modal Title</template>
+        Name : {{modalData.name}}
+        <img :src="modalData.image.original" />
       </UiModal>
     </Teleport>
 
@@ -19,6 +23,29 @@
 definePageMeta({
   title: "Home",
 });
+
+const dropdown = ref(null);
+const showName = ref(null);
+
+
+const { data, pending, error, refresh: search } = await useAsyncData(
+  'getShows',
+  () => $fetch(`https://api.tvmaze.com/search/shows?q=${showName.value}`)
+)
+
+const list = computed(() => {
+  return data?.value?.map(item => {
+    return {
+      id: item.show.id,
+      value: item.show.name
+    }
+  })
+})
+
+const modalData = computed(() => {
+  const showId = dropdown.value
+  return data?.value?.find(item => item.show.id == showId).show
+})
 
 const [stateModal, toggleModal] = useToggle(false);
 

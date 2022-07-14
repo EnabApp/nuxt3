@@ -12,6 +12,7 @@
   "dependencies": {
     "@iconify/json": "^2.1.77",
     "@nuxtjs/color-mode": "^3.1.4",
+    "@unocss/inspector": "^0.44.2",
     "@unocss/nuxt": "^0.44.0",
     "@unocss/preset-attributify": "^0.44.1",
     "@unocss/preset-icons": "^0.44.1",

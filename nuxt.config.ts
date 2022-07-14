@@ -2,9 +2,6 @@ import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     modules: [
-        // UnoCSS
-        '@unocss/nuxt',
-
         // Color Mode
         "@nuxtjs/color-mode",
 
@@ -14,6 +11,9 @@ export default defineNuxtConfig({
         // https://vueuse.org/guide/
         '@vueuse/nuxt',
 
+        // UnoCSS
+        '@unocss/nuxt',
+
     ],
 
     colorMode: {
@@ -22,20 +22,21 @@ export default defineNuxtConfig({
     },
 
     unocss: {
-        // presets
         // autoImport: true,
         // preflight: true,
-        // uno: true, // enabled `@unocss/preset-uno`
+        uno: true, // enabled `@unocss/preset-uno`
         // https://icon-sets.iconify.design/
         icons: true, // enabled `@unocss/preset-icons`
-        attributify: ['label'], // enabled `@unocss/preset-attributify`,
+        attributify: {
+            ignoreAttributes: ['label'],
+            // prefix: 'un-',
+        }, // enabled `@unocss/preset-attributify`,
         typography: true, // enabled `@unocss/preset-typography`
         webFonts: {
             provider: 'google', // default provider
             fonts: {
                 // these will extend the default theme
                 sans: ['Tajawal:200,300,400,500,700,800,900'],
-                // mono: ['Fira Code', 'Fira Mono:400,700'],
             },
         },
         theme: {

@@ -10,10 +10,10 @@
       justify="center"
       w="screen"
       h="screen"
-      bg="opacity-40 dark:bg-opacity-50 secondary-300 dark:secondary-800"
+      bg="secondary-300 dark:secondary-800 opacity-60 dark:opacity-50"
       backdrop="~ blur-sm"
     >
-      <div flex="~ col gap-2" h="full" max-w="2xl" max-h="xl">
+      <div flex="~ col gap-2" h="full" max-w="2xl" min-w="2xl" max-h="xl">
         <!-- Header -->
         <div
           flex="~ gap-4"

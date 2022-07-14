@@ -4,7 +4,6 @@
     <label
       v-if="label"
       class="font-medium text-gray-700 dark:text-gray-400"
-      for="input"
       >{{ label }}</label
     >
 
@@ -20,35 +19,35 @@
       }"
       flex="~ gap-2"
       font="leading-tight"
-      place="items-center"
+      justify="between"
       p="x-2"
       text="gray-500 dark:gray-200"
-      bg="white dark:secondary-700 focus-within:white"
+      bg="white dark:secondary-700"
       border="~ 2 gray-300 dark:gray-600 rounded-lg"
       outline="none focus-within:none"
     >
-      <!-- Icon -->
-      <div v-if="icon" :class="icon" text="gray-500 dark:gray-200"></div>
-
-      <!-- Input -->
-      <input
-        v-model="modelValue"
-        @input="(event) => $emit('update:modelValue', event.target.value)"
-        id="input"
-        :placeholder="placeholder"
-        :type="type == 'password' ? statePassword : type"
-        p="y-2"
-        font="sans"
-        text="gray-700 dark:gray-400 placeholder:gray-400 dark:placeholder:gray-500"
-        bg="white dark:secondary-700"
-        border="~ 0"
-        appearance="none"
-        flex="grow"
-        outline="none focus:none"
-      />
+      <div flex="~ gap-2 grow" items="center">
+        <!-- Icon -->
+        <div v-if="icon" :class="icon" text="gray-500 dark:gray-200"></div>
+  
+        <!-- Input -->
+        <input
+          v-model="modelValue"
+          @input="(event) => $emit('update:modelValue', event.target.value)"
+          :placeholder="placeholder"
+          :type="type == 'password' ? statePassword : type"
+          class="text-gray-700 border-0 dark:text-gray-400"
+          p="y-2"
+          font="sans"
+          bg="white dark:secondary-700"
+          appearance="none"
+          flex="grow"
+          outline="none focus:none"
+        />
+      </div>
 
       <!-- Buttons -->
-      <div class="flex items-center gap-1">
+      <div id="buttons" flex="~ gap-1" p="b-0.5" m="1" overflow="y-hidden">
         <!-- Type password -->
         <div class="flex gap-1" v-if="type == 'password'">
           <button
@@ -96,11 +95,26 @@ const props = defineProps({
   },
 });
 
-
-
 // Toggling Password View
 const [statePassword, showPassword] = useToggle(props.type, {
   truthyValue: "password",
   falsyValue: "text",
 });
 </script>
+
+
+<style scoped>
+#buttons::-webkit-scrollbar {
+  width: 3px;
+  height: 3px
+}
+ 
+/* #buttons::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+} */
+ 
+#buttons::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  /* outline: 1px solid slategrey; */
+}
+</style>
