@@ -8,9 +8,6 @@
     >
 
     <!-- Main Input Components -->
-    <!-- 
-      focus-within:outline-none outline-none focus-within:bg-white group 
-    -->
     <div
       class="group"
       :class="{
@@ -33,6 +30,7 @@
         <!-- Input -->
         <input
           v-model="modelValue"
+          ref="inputRef"
           @input="(event) => $emit('update:modelValue', event.target.value)"
           :placeholder="placeholder"
           :type="type == 'password' ? statePassword : type"
@@ -61,6 +59,22 @@
             @click="showPassword()"
             text="gray-700 dark:text-gray-50"
             class="i-gridicons-visible"
+          ></button>
+        </div>
+
+        <!-- Incrementals -->
+        <div flex="~ gap-1 col" v-if="type == 'number'">
+          <button
+            @click="increase()"
+            text="gray-500 dark:gray-400"
+            cursor="pointer"
+            class="i-ep-arrow-up-bold"
+          ></button>
+          <button
+            @click="decrease()"
+            text="gray-500 dark:gray-400"
+            cursor="pointer"
+            class="i-ep-arrow-down-bold"
           ></button>
         </div>
 
@@ -93,13 +107,37 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  increment: {
+    type: String,
+    default: "1",
+  }
 });
+
+const emit = defineEmits(["update:modelValue"]);
+
+const inputRef = ref(null);
+
 
 // Toggling Password View
 const [statePassword, showPassword] = useToggle(props.type, {
   truthyValue: "password",
   falsyValue: "text",
 });
+
+
+const increase = () => {
+  const inputValue = inputRef.value.value;
+  inputRef.value.value = parseFloat(inputValue) + parseFloat(props.increment);
+  emit("update:modelValue", inputRef.value.value);
+};
+const decrease = () => {
+  const inputValue = inputRef.value.value;
+  inputRef.value.value = parseFloat(inputValue) - parseFloat(props.increment);
+  emit("update:modelValue", inputRef.value.value);
+};
+
+
+
 </script>
 
 
@@ -116,5 +154,11 @@ const [statePassword, showPassword] = useToggle(props.type, {
 #buttons::-webkit-scrollbar-thumb {
   background-color: #bbb;
   /* outline: 1px solid slategrey; */
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
 }
 </style>

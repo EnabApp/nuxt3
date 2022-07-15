@@ -2,7 +2,7 @@
   <Transition>
     <div
       @keypress.esc="$emit('cancel')"
-      v-if="state"
+      v-if="modelValue"
       position="absolute top-0 left-0"
       z="50"
       flex="~"
@@ -37,7 +37,7 @@
 
         <!-- Content -->
         <div
-         flex="grow"
+          flex="grow"
           p="x-8 y-2"
           bg="gray-400 opacity-20 bg-opacity-10"
           border="~ rounded-lg"
@@ -48,7 +48,9 @@
 
         <!-- Footer -->
         <div flex="~ gap-2" justify="center" m="t-4">
-          <button @click="$emit('confirm')">Confirm</button>
+          <button v-if="confirm" @click="$emit('confirm')">
+            {{ confirm }}
+          </button>
           <button @click="$emit('cancel')">Cancel</button>
         </div>
       </div>
@@ -58,9 +60,13 @@
 
 <script setup>
 const props = defineProps({
-  state: {
+  modelValue: {
     type: Boolean,
     default: false,
+  },
+  confirm: {
+    type: String,
+    default: "",
   },
 });
 

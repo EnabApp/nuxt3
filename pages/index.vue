@@ -1,17 +1,18 @@
 <template>
   <div w="1/2" m="5">
-    <UiInput v-model="showName" w="96" icon="i-clarity-email-solid" label="Show name" placeholder="Show Name" type="text">
-        <button @click="search()">Search</button>
-    </UiInput>
+    <UiInput increment="1.5" v-model="test" w="96" icon="i-clarity-email-solid" label="Show name" type="number" />
 
-    <UiDropdown v-model="dropdown" :list="list" w="96" />
-    {{ dropdown }}
+    <UiDropdown label="Select One" placeholder="Type to search" multiple v-model="dropdown" :list="[
+      {id: 1, value: 'John'},
+      {id: 2, value: 'Jane'},
+    ]" w="96">
+      <button>Save</button>
+    </UiDropdown>
 
     <Teleport to="body">
-      <UiModal v-model:state="stateModal" @confirm="modalConfirmed" @cancel="modalCanceled">
+      <UiModal v-model="stateModal" confirm="Save" @confirm="modalConfirmed" @cancel="modalCanceled">
         <template v-slot:title>Modal Title</template>
-        Name : {{modalData.name}}
-        <img :src="modalData.image.original" />
+        Content
       </UiModal>
     </Teleport>
 
@@ -24,28 +25,18 @@ definePageMeta({
   title: "Home",
 });
 
+const test = ref("0");
+watch (test, (value) => {
+  console.log(value);
+});
+
+
 const dropdown = ref(null);
-const showName = ref(null);
 
+watch (() => dropdown.value, (value) => {
+  console.log(JSON.parse(value));
+});
 
-const { data, pending, error, refresh: search } = await useAsyncData(
-  'getShows',
-  () => $fetch(`https://api.tvmaze.com/search/shows?q=${showName.value}`)
-)
-
-const list = computed(() => {
-  return data?.value?.map(item => {
-    return {
-      id: item.show.id,
-      value: item.show.name
-    }
-  })
-})
-
-const modalData = computed(() => {
-  const showId = dropdown.value
-  return data?.value?.find(item => item.show.id == showId).show
-})
 
 const [stateModal, toggleModal] = useToggle(false);
 

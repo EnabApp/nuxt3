@@ -9,16 +9,19 @@
         p="x-1"
         text="xs gray-600"
         bg="gray-200"
-        border="~ rounded-lg gray-100"
+        border="~ rounded-lg gray-100 dark:gray-600"
         >{{ item.value }}</span
       >
     </div>
 
     <!-- Main Search -->
     <UiInput
+      :label="label"
+      :placeholder="placeholder"
       v-model="search"
-      :icon="dropdown ? 'i-bxs-up-arrow' : 'i-bxs-down-arrow'"
+      :icon="icon ? icon : dropdown ? 'i-bxs-up-arrow' : 'i-bxs-down-arrow'"
     >
+      <slot />
     </UiInput>
 
     <div
@@ -26,11 +29,11 @@
       ref="dropdownRef"
       w="full"
       bg="white dark:secondary-500"
-      border="~ gray-50 rounded-lg"
+      border="~ gray-50 dark:gray-600 rounded-lg"
       position="absolute"
       text="secondary-500 dark:secondary-100"
       m="t-1"
-      shadow="~ gray-200"
+      shadow="~ gray-200 dark:gray-900"
     >
       <div flex="~ col gap-2" p="2">
         <div
@@ -40,13 +43,13 @@
           :class="{
             'font-medium': item.id == selectedIdRef,
           }"
-          bg="hover:gray-100"
+          bg="hover:gray-100 dark:hover:secondary-600"
           p="x-2 y-1"
           flex="~"
           justify="between"
           items="center"
           text="sm"
-          border="~ rounded-lg white"
+          border="rounded-lg"
         >
           <span>{{ item.value }}</span>
           <span v-if="selectedIdRef == item.id">
@@ -55,8 +58,6 @@
         </div>
       </div>
     </div>
-
-    
   </div>
 </template>
 
@@ -76,6 +77,15 @@ const props = defineProps({
   multiple: {
     type: Boolean,
     default: false,
+  },
+  label: {
+    type: String,
+  },
+  placeholder: {
+    type: String,
+  },
+  icon: {
+    type: String,
   },
 });
 
