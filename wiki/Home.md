@@ -1,1 +1,1 @@
-Welcome to Nuxt Wikiiiiiiiiiiiiiiiiiiiiiii
+Welcome to Nuxt Wikiiiiiiiiiiiiiiiiiiiiiii2
