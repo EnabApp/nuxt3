@@ -68,10 +68,6 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  mini: {
-    type: Boolean,
-    default: false,
-  }
 });
 
 // Define Emits
@@ -81,7 +77,7 @@ const emit = defineEmits(["confirm", "cancel"]);
 onKeyStroke(["Escape"], (e) => emit("cancel"));
 </script>
 
-<style>
+<style scoped>
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.25s ease-in-out;
