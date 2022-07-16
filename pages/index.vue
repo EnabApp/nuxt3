@@ -1,5 +1,12 @@
 <template>
   <div w="1/2" m="5">
+    <UiSwitch v-model="switcher" :list="[
+      {id: '1', value: 'Dog', icon: 'i-clarity-email-solid'},
+      {id: '2', value: 'Cat', icon: 'i-clarity-email-solid'},
+      {id: '3', value: 'Lizard', icon: 'i-clarity-email-solid'},
+      {id: '4', value: 'Shark', icon: 'i-clarity-email-solid'},
+    ]" />
+
     <UiInput increment="1.5" v-model="test" w="96" icon="i-clarity-email-solid" label="Show name" type="number" />
 
     <UiDropdown label="Select One" placeholder="Type to search" multiple v-model="dropdown" :list="[
@@ -30,10 +37,11 @@ watch (test, (value) => {
   console.log(value);
 });
 
+const switcher = ref();
 
 const dropdown = ref(null);
 
-watch (() => dropdown.value, (value) => {
+watch (() => switcher.value, (value) => {
   console.log(JSON.parse(value));
 });
 

@@ -40,7 +40,7 @@
           flex="grow"
           p="x-8 y-2"
           bg="gray-400 opacity-20 bg-opacity-10"
-          border="~ rounded-lg"
+          border="rounded-lg"
           text="secondary-500 dark:secondary-100"
         >
           <slot></slot>
@@ -68,6 +68,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  mini: {
+    type: Boolean,
+    default: false,
+  }
 });
 
 // Define Emits
