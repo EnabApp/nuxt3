@@ -45,7 +45,11 @@
       </UiModal>
     </Teleport>
     <button @click="toggleModal()">Open modal</button>
-
+    <div bg="primary-500">
+      <span text="t-60">
+      dfsdfsdfsdfsdf
+      </span>
+    </div>
 
     <!-- Sidebar -->
     <ClientOnly>
