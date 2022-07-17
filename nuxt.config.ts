@@ -1,6 +1,8 @@
 import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    isProduction: false,
+
     modules: [
         // Color Mode
         "@nuxtjs/color-mode",
@@ -15,6 +17,10 @@ export default defineNuxtConfig({
         '@unocss/nuxt',
 
     ],
+
+    experimental: {
+        viteNode: true
+    },
 
     colorMode: {
         // preference: 'light',
@@ -39,6 +45,20 @@ export default defineNuxtConfig({
                 sans: ['Tajawal:200,300,400,500,700,800,900'],
             },
         },
+        preflights: [
+            {
+                // getCSS: ({ theme }) => console.log(theme),
+                getCSS: ({ theme }) => `
+                * {
+                  color: ${theme.colors.gray?.[700]};
+                  padding: 0;
+                  margin: 0;
+                  font-family: ${theme.fontFamily.sans};
+                  overflow: hidden;
+                }
+              `
+            }
+        ],
         theme: {
             colors: {
                 'w': {
@@ -85,7 +105,8 @@ export default defineNuxtConfig({
                     '10': "rgba(0, 0, 0, 0.1)",
                     '5': "rgba(0, 0, 0, 0.05)",
                 },
-                'primary': {  DEFAULT: '#5A7AEF',  '50': '#FFFFFF',  '100': '#EFF2FD',  '200': '#CAD4FA',  '300': '#A4B6F6',  '400': '#7F98F3',  '500': '#5A7AEF',  '600': '#2751EA',  '700': '#1339C6',  '800': '#0E2B92',  '900': '#091C5F'},
+                'secondary': { DEFAULT: '#FAFAFA', },
+                'primary': { DEFAULT: '#5A7AEF', '50': '#FFFFFF', '100': '#EFF2FD', '200': '#CAD4FA', '300': '#A4B6F6', '400': '#7F98F3', '500': '#5A7AEF', '600': '#2751EA', '700': '#1339C6', '800': '#0E2B92', '900': '#091C5F' },
                 'error': { DEFAULT: '#EF4444', '50': '#FDEDED', '100': '#FCDADA', '200': '#F9B5B5', '300': '#F58F8F', '400': '#F26A6A', '500': '#EF4444', '600': '#E71414', '700': '#B30F0F', '800': '#800B0B', '900': '#4C0707' },
                 'warning': { DEFAULT: '#F59E0B', '50': '#FCE4BB', '100': '#FBDCA8', '200': '#FACD81', '300': '#F8BD59', '400': '#F7AE32', '500': '#F59E0B', '600': '#C07C08', '700': '#8A5906', '800': '#543603', '900': '#1E1401' },
                 'success': { DEFAULT: '#10B981', '50': '#8CF5D2', '100': '#79F3CB', '200': '#53F0BC', '300': '#2EEDAE', '400': '#13DF9B', '500': '#10B981', '600': '#0C855D', '700': '#075239', '800': '#031E15', '900': '#000000' },
