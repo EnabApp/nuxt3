@@ -18,9 +18,9 @@ export default defineNuxtConfig({
 
     ],
 
-    experimental: {
-        viteNode: true
-    },
+    // experimental: {
+    //     viteNode: true
+    // },
 
     colorMode: {
         // preference: 'light',
@@ -47,13 +47,12 @@ export default defineNuxtConfig({
         },
         preflights: [
             {
-                // getCSS: ({ theme }) => console.log(theme),
                 getCSS: ({ theme }) => `
                 * {
                   color: ${theme.colors.gray?.[700]};
                   padding: 0;
                   margin: 0;
-                  font-family: ${theme.fontFamily.sans};
+                  font-family: ${theme.fontFamily?.sans};
                   overflow: hidden;
                 }
               `

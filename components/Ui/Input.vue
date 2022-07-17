@@ -44,7 +44,7 @@
       </div>
 
       <!-- Buttons -->
-      <div id="buttons" flex="~ gap-1" p="b-0.5" m="1" overflow="y-hidden">
+      <div id="buttons" flex="~ gap-1" items="center" p="b-0.5" m="1" overflow="y-hidden">
         <!-- Type password -->
         <div class="flex gap-1" v-if="type == 'password'">
           <button

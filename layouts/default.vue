@@ -2,11 +2,11 @@
   <div>
     <!-- Header -->
     <UiHeader />
-    <!-- <div @click="next()" w="fit">
+    <div @click="next()" w="fit">
       <div v-if="currentColor == 'light'" text="4xl warning-300" class="i-line-md-sun-rising-filled-loop"></div>
       <div v-else-if="currentColor == 'dark'" text="4xl primary-500" class="i-line-md-moon-filled"></div>
       <div v-else text="4xl secondary-100" class="i-line-md-computer"></div>
-    </div> -->
+    </div>
 
     <div flex="~">
         <div id="sidebar"></div>
