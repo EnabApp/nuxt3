@@ -36,7 +36,6 @@
           :type="type == 'password' ? statePassword : type"
           class="text-gray-700 border-0 dark:text-gray-400"
           p="y-2"
-          font="sans"
           bg="white dark:secondary-700"
           appearance="none"
           flex="grow"
