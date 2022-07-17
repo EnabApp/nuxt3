@@ -7,7 +7,7 @@
       { id: '4', value: 'Shark', icon: 'i-clarity-email-solid' },
     ]" />
 
-    <UiInput increment="1.5" v-model="test" w="96" label="Show name" type="password" />
+    <UiInput increment="1.5" v-model="test" w="96" label="Show name" />
 
     <UiDropdown label="Select One" placeholder="Type to search" multiple v-model="dropdown" :list="[
       { id: 1, value: 'John' },
