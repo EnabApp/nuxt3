@@ -1,5 +1,5 @@
 <template>
-  <div bg="white" dark:bg-gradient="to-rb from-black to-b-90">
+  <div bg="primary" dark:bg-gradient="to-rb from-black to-b-90">
     <!-- Header -->
     <UiHeader />
     <div @click="next()" w="fit">
