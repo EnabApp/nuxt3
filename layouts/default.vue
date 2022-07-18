@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- Header -->
-    <UiHeader />
     <div @click="next()" w="fit">
       <div v-if="currentColor == 'light'" text="4xl warning-300" class="i-line-md-sun-rising-filled-loop"></div>
       <div v-else-if="currentColor == 'dark'" text="4xl primary-500" class="i-line-md-moon-filled"></div>
