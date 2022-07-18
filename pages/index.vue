@@ -39,6 +39,9 @@
     </ClientOnly>
 
     <button @click="toggleSidebar()">Open sidebar</button>
+
+    <!-- Butotn -->
+    <UiButton title="name"  to="/button" />
   </div>
 </template>
 
