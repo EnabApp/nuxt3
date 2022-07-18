@@ -17,7 +17,7 @@
       flex="~ gap-2"
       font="leading-tight"
       justify="between"
-      p="x-2 y-0"
+      p="x-2 y-1"
       text="gray-500 dark:gray-200"
       bg="white dark:w-10"
       border="~ 2 gray-300 dark:gray-600 rounded-lg"

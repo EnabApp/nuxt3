@@ -1,18 +1,21 @@
 <template>
-  <div bg="white" dark:bg-gradient="to-rb from-black to-b-90">
-    <!-- Header -->
-    <UiHeader />
-    <div @click="next()" w="fit">
-      <div v-if="currentColor == 'light'" text="4xl warning-300" class="i-line-md-sun-rising-filled-loop"></div>
-      <div v-else-if="currentColor == 'dark'" text="4xl primary-500" class="i-line-md-moon-filled"></div>
-      <div v-else text="4xl secondary-100" class="i-line-md-computer"></div>
-    </div>
+  <div
+    h="screen"
+    flex="~"
+    bg="b-5 opacity-1"
+    dark:bg-gradient="to-rb from-black to-b-90"
+  >
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
 
-    <div flex="~">
-        <div id="sidebar"></div>
-        <div h="main-content" flex="grow"  border="rounded-lg">
-          <slot />
-        </div>
+    <div flex="grow" border="rounded-lg">
+      <!-- Header -->
+      <UiHeader :tabs="tabs" />
+
+      <!-- Content -->
+      <div container="~" m="x-auto" flex="~" items="center" h="full" justify="center">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -41,4 +44,10 @@ useHead({
     },
   ],
 });
+
+// Header Tabs
+const tabs = [
+  {title: 'Home', route: '/', icon: 'i-line-md-moon-filled'},
+  {title: 'Login', route: '/login', icon: 'i-line-md-moon-filled'},
+];
 </script>
