@@ -40,16 +40,14 @@ const props = defineProps({
 });
 
 const classes = computed(() =>  {
-  console.log(props.color)
   let array = [
-    "py-2 px-4",
+    "py-2 px-4 m-3",
     "focus:outline-none",
     "focus:ring-4",
     "text-sm",
     "text-center",
     "rounded-lg",
-    "bg-" + props.color + "-200",
-  ]
+  ];
   if (props.outline) {
     array.push("border border-" + props.color + "-300");
   }
