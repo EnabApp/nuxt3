@@ -60,6 +60,7 @@ export default defineNuxtConfig({
         ],
         theme: {
             colors: {
+                't' : 'rgba(255, 255, 255, 0)',
                 'w': {
                     '100': "rgba(255, 255, 255, 1)",
                     '95': "rgba(255, 255, 255, 0.95)",
