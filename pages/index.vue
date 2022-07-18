@@ -41,7 +41,7 @@
     <button @click="toggleSidebar()">Open sidebar</button>
 
     <!-- Butotn -->
-    <UiButton title="name"  to="/button" />
+      <UiButton title="Done" color="gray" outline=true solid=true to="/button" w="96" />
   </div>
 </template>
 
