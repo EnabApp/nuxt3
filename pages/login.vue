@@ -29,7 +29,7 @@
                                     <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500   focus:ring-2 ">
                                 </div>
                             </div>
-                            <button bg="primary" dark:bg-gradient="to-l from-primary to-b-60" class="py-2 text-lg text-white border-none rounded-lg ">تسجيل
+                            <button bg="primary" dark:bg-gradient="to-l from-primary to-b-60" class=" cursor-pointer py-2 text-lg text-white border-none rounded-lg ">تسجيل
                                 دخول</button>
                         </div>
                     </div>
