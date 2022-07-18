@@ -19,7 +19,7 @@
       justify="between"
       p="x-2"
       text="gray-500 dark:gray-200"
-      bg="white dark:secondary-700"
+      bg="white dark:secondary-11"
       border="~ 2 gray-300 dark:gray-600 rounded-lg"
       outline="none focus-within:none"
     >
@@ -36,7 +36,7 @@
           :type="type == 'password' ? statePassword : type"
           class="text-gray-700 border-0 dark:text-gray-400"
           p="y-2"
-          bg="white dark:secondary-700"
+          bg="white dark:secondary-11"
           appearance="none"
           flex="grow"
           outline="none focus:none"

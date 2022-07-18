@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div bg="white" dark:bg-gradient="to-rb from-black to-b-90">
     <!-- Header -->
     <UiHeader />
     <div @click="next()" w="fit">
@@ -10,7 +10,7 @@
 
     <div flex="~">
         <div id="sidebar"></div>
-        <div h="main-content" flex="grow" bg="white dark:secondary-700" border="rounded-lg">
+        <div h="main-content" flex="grow"  border="rounded-lg">
           <slot />
         </div>
     </div>
