@@ -38,8 +38,8 @@
         <!-- Content -->
         <div
           flex="grow"
-          p="x-8 y-2"
-          bg="gray-400 opacity-20 bg-opacity-10"
+          p="x-6 y-6"
+          bg=" b-15 dark:w-5"
           border="rounded-lg"
         >
           <slot></slot>

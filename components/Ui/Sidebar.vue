@@ -20,7 +20,8 @@
         >
           <div flex="grow">
           </div>
-
+          
+          
             <div @click="$emit('cancel')"  cursor="pointer" text="w-80 3xl" class="text-left i-carbon-close hover:i-carbon-close-filled"></div>
         </div>
         
