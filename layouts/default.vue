@@ -1,17 +1,16 @@
 <template>
-  <div bg="primary">
+  <div>
     <!-- Header -->
-    <!-- <UiHeader /> -->
-    <!-- <div @click="next()" w="fit">
+    <UiHeader />
+    <div @click="next()" w="fit">
       <div v-if="currentColor == 'light'" text="4xl warning-300" class="i-line-md-sun-rising-filled-loop"></div>
       <div v-else-if="currentColor == 'dark'" text="4xl primary-500" class="i-line-md-moon-filled"></div>
       <div v-else text="4xl secondary-100" class="i-line-md-computer"></div>
-    </div> -->
-    
+    </div>
+
     <div flex="~">
         <div id="sidebar"></div>
-        <div h="main-content" m="10" flex="grow" bg="primary" border="rounded-lg">
-          
+        <div h="main-content" flex="grow" bg="white dark:secondary-700" border="rounded-lg">
           <slot />
         </div>
     </div>

@@ -1,53 +1,31 @@
 <template>
   <div m="5">
-    <UiSwitch
-      v-model="switcher"
-      :list="[
-        { id: '1', value: 'Dog', icon: 'i-clarity-email-solid' },
-        { id: '2', value: 'Cat', icon: 'i-clarity-email-solid' },
-        { id: '3', value: 'Lizard', icon: 'i-clarity-email-solid' },
-        { id: '4', value: 'Shark', icon: 'i-clarity-email-solid' },
-      ]"
-    />
+    <UiSwitch v-model="switcher" :list="[
+      { id: '1', value: 'Dog', icon: 'i-clarity-email-solid' },
+      { id: '2', value: 'Cat', icon: 'i-clarity-email-solid' },
+      { id: '3', value: 'Lizard', icon: 'i-clarity-email-solid' },
+      { id: '4', value: 'Shark', icon: 'i-clarity-email-solid' },
+    ]" />
 
-    <UiInput
-      increment="1.5"
-      v-model="test"
-      w="96"
-      icon="i-clarity-email-solid"
-      label="Show name"
-      type="number"
-    />
+    <UiInput increment="1.5" v-model="test" w="96" label="Show name" />
 
-    <UiDropdown
-      label="Select One"
-      placeholder="Type to search"
-      multiple
-      v-model="dropdown"
-      :list="[
-        { id: 1, value: 'John' },
-        { id: 2, value: 'Jane' },
-      ]"
-      w="96"
-    >
+    <UiDropdown label="Select One" placeholder="Type to search" multiple v-model="dropdown" :list="[
+      { id: 1, value: 'John' },
+      { id: 2, value: 'Jane' },
+    ]" w="96">
       <button>Save</button>
     </UiDropdown>
 
     <Teleport to="body">
-      <UiModal
-        v-model="stateModal"
-        confirm="Save"
-        @confirm="modalConfirmed"
-        @cancel="modalCanceled"
-      >
+      <UiModal v-model="stateModal" confirm="Save" @confirm="modalConfirmed" @cancel="modalCanceled">
         <template v-slot:title>Modal Title</template>
         Content
       </UiModal>
     </Teleport>
     <button @click="toggleModal()">Open modal</button>
-    <div bg="primary-500">
+    <div bg="primary-600">
       <span text="t-60">
-      dfsdfsdfsdfsdf
+        dfsdfsdfsdfsdf2
       </span>
     </div>
 
