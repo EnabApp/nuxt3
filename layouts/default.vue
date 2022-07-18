@@ -1,20 +1,17 @@
 <template>
-  <div
-    h="screen"
-    flex="~"
-    bg="b-5 opacity-1"
-    dark:bg-gradient="to-rb from-black to-b-90"
-  >
-    <!-- Sidebar -->
-    <div id="sidebar"></div>
+  <div h="screen" bg="b-5 opacity-1" dark:bg-gradient="to-rb from-black to-b-90">
+    <div h="full" container="~" m="x-auto" flex="~">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
 
-    <div flex="grow" border="rounded-lg">
-      <!-- Header -->
-      <UiHeader :tabs="tabs" />
+      <div flex="grow" border="rounded-lg">
+        <!-- Header -->
+        <UiHeader p="1" m="t-2" :tabs="tabs" />
 
-      <!-- Content -->
-      <div container="~" m="x-auto" flex="~" items="center" h="full" justify="center">
-        <slot />
+        <!-- Content -->
+        <div container="~" m="x-auto" flex="~" items="center" h="full" justify="center">
+          <slot />
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +44,7 @@ useHead({
 
 // Header Tabs
 const tabs = [
-  {title: 'Home', route: '/', icon: 'i-line-md-moon-filled'},
-  {title: 'Login', route: '/login', icon: 'i-line-md-moon-filled'},
+  { title: "Home", route: "/", icon: "i-line-md-moon-filled" },
+  { title: "Login", route: "/login", icon: "i-line-md-moon-filled" },
 ];
 </script>

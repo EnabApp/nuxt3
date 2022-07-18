@@ -1,6 +1,6 @@
 <template>
-  <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:w-5" border="rounded-lg">
-    <span text="b-10  dark:w-10 6xl" font="semibold">Welcome</span>
+  <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
+    <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
   </div>
 </template>
 
