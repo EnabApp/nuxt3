@@ -47,52 +47,52 @@ const classes = computed(() =>  {
     "text-center",
     "rounded-lg",
   ];
+  console.log(props.disabled)
+  if(props.disabled){
+    array.push("cursor-pointer");
+  }
   if (props.solid) {
     switch (props.color) {
       case "success":
-        array.push("text-white bg-success-200 hover:bg-success-500 border border-success-500");
+        array.push("text-white bg-success-500 hover:bg-success-600 dark:bg-success-600 dark:hover:bg-success-700 border border-success-200 dark:border-success-600");
         break;
         
       case "warning":
-        array.push("text-white bg-warning-200 hover:bg-warning-500 border border-warning-500");
+        array.push("text-white bg-warning-500 hover:bg-warning-600 dark:bg-warning-300 dark:hover:bg-warning-500 border border-warning-200 dark:border-warning-600");
       break;
 
       case "error":
-        array.push("text-white bg-error-200 hover:bg-error-500 border border-error-500");
+        array.push("text-white bg-error-400 hover:bg-error-500 dark:bg-error-400 dark:hover:bg-error-500 border border-error-500 dark:border-error-700");
       break;
 
       case "slate":
-        array.push("text-white bg-s-40 hover:bg-s-50 border border-s-70");
+        array.push("text-white bg-s-60 hover:bg-s-80 dark:bg-s-40 dark:hover:bg-s-60 border border-s-80 dark:border-s-80");
       break;
 
-      case "secondary":
-        array.push("text-white bg-secondary-200 hover:bg-secondary-500 border border-secondary-500");
-      break;
-        
       default:
-        array.push("text-white bg-primary-200 hover:bg-primary-500 dark:hover:bg-w-50 border border-primary-500 dark:border-w-40");
+        array.push("text-white bg-primary-500 hover:bg-primary-700 dark:hover:bg-primary-600 border border-primary-200 dark:border-primary-400");
       break;
     }
   }else if(props.outline){
     switch (props.color) {
       case "success":
-          array.push("text-success-400 hover:text-white bg-inherit hover:bg-success-500 dark:hover:bg-success-300 border border-success-500");
+          array.push("text-success-400 hover:text-white bg-inherit hover:bg-success-500 dark:hover:bg-success-600 border border-success-500");
         break;
         
       case "warning":
-        array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 dark:hover:bg-warning-600 border border-warning-500");
+        array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 dark:hover:bg-warning-600 border border-warning-500 dark:border-warning-700");
       break;
 
       case "error":
-        array.push("text-error-400 hover:text-white bg-inherit hover:bg-error-500 dark:hover:bg-error-600 border border-error-500");
+        array.push("text-error-400 hover:text-white bg-inherit hover:bg-error-500 dark:hover:bg-error-600 border border-error-500 dark:border-error-700");
       break;
 
       case "slate":
-        array.push("text-s-50 hover:text-white bg-inherit hover:bg-s-50 dark:hover:bg-s-60 border border-s-50");
+        array.push("text-s-90 hover:text-white bg-inherit hover:bg-s-70 dark:hover:bg-s-60 border border-s-50");
       break;
 
       default:
-        array.push("text-primary-400 dark:text-white hover:text-white bg-inherit hover:bg-primary-500 dark:hover:bg-primary-500 border border-primary-500 dark:border-primary-400");
+        array.push("text-primary-600 dark:text-primary-300 hover:text-white bg-inherit hover:bg-primary-500 dark:hover:bg-primary-500 border border-primary-500 dark:border-primary-400");
       break;
     }
   }
