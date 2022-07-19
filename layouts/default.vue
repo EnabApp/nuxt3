@@ -1,10 +1,8 @@
 <template>
-  <div h="screen" class="bg-white dark:bg-animation">
-    <div h="full" container="~" m="x-auto" flex="~">
-      <!-- Sidebar -->
-      <div id="sidebar"></div>
-
-      <div flex="grow" border="rounded-lg">
+  <div h="screen" flex="~" class="bg-white dark:bg-animation">
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+    <div h="full" container="~" m="x-auto" flex="grow" border="rounded-lg">
         <!-- Header -->
         <UiHeader p="1" m="t-2" :tabs="tabs" />
 
@@ -19,7 +17,6 @@
         >
           <slot />
         </div>
-      </div>
     </div>
   </div>
 </template>
