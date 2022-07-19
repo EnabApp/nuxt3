@@ -45,13 +45,14 @@
     <!-- <h1 ref="elModal" :style="style" style="position:fixed" >dccxcxc</h1> -->
     <button  @click="toggleSidebar()">Open sidebar</button>
 
-  <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
-    <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
+    <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
+      <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
 
-    <button @click="toggleSidebar()">Open sidebar</button>
+      <button @click="toggleSidebar()">Open sidebar</button>
 
-    <!-- Butotn -->
-    <UiButton title="submittt" solid=true w="96" />
+      <!-- Butotn -->
+      <UiButton title="submittt" solid=true w="96" />
+    </div>
   </div>
 </template>
 
