@@ -1,5 +1,5 @@
 <template>
-    <div  cursor="pointer"  text="w-80 3xl" :class="classes"></div>
+    <div cursor="pointer"  text="w-80 3xl" :class="classes"></div>
 </template>
 
 <script setup>
