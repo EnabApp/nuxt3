@@ -27,11 +27,6 @@
       </UiModal>
     </Teleport>
     <button @click="toggleModal()">Open modal</button>
-    <div bg="primary-600">
-      <span  text="t-60">
-        dfsdfsdfsdfsdf2
-      </span>
-    </div>
 
     <!-- Sidebar -->
     <ClientOnly>
@@ -50,9 +45,9 @@
 
       <button @click="toggleSidebar()">Open sidebar</button>
 
-      <!-- Butotn -->
-      <UiButton title="submittt" solid=true w="96" />
     </div>
+    <!-- Butotn -->
+    <UiButton disabled=true color="slate" title="submittt" solid=true w="96" @click="clicked()" />
   </div>
 </template>
 
@@ -100,6 +95,9 @@ const modalConfirmed = () => {
 const modalCanceled = () => {
   console.log("Canceled");
   stateModal.value = false;
+};
+const clicked = () => {
+  console.log("clicked");
 };
 const sidebarCanceled = () => {
   console.log("Canceled");

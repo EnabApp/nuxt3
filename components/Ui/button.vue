@@ -2,11 +2,11 @@
 <div flex="~ col gap-1">
     <!-- Nuxt Link Button -->
     <nuxt-link v-if="to" :to="to" :class="classes">
-      <span  n v-if="title" class="text-gray-600 dark:text-w-80">{{title}}</span>
+      <span v-if="title" class="text-gray-600 dark:text-w-80">{{title}}</span>
     </nuxt-link>
 
     <!-- Default Button -->
-    <button v-else :class="classes">
+    <button v-else :class="classes" :disabled="disabled ? true : false">
       <span v-if="title">{{title}}</span>
     </button>
 </div>
@@ -34,6 +34,10 @@ const props = defineProps({
     type: Boolean, 
     default: false 
   },
+  disabled:{
+    type: Boolean, 
+    default: false
+  }
 });
 
 const classes = computed(() =>  {
@@ -58,30 +62,38 @@ const classes = computed(() =>  {
         array.push("text-white bg-error-200 hover:bg-error-500 border border-error-500");
       break;
 
+      case "slate":
+        array.push("text-white bg-s-40 hover:bg-s-50 border border-s-70");
+      break;
+
       case "secondary":
         array.push("text-white bg-secondary-200 hover:bg-secondary-500 border border-secondary-500");
       break;
         
       default:
-        array.push("text-white bg-primary-200 hover:bg-primary-500 border border-primary-500");
+        array.push("text-white bg-primary-200 hover:bg-primary-500 dark:hover:bg-w-50 border border-primary-500 dark:border-w-40");
       break;
     }
   }else if(props.outline){
     switch (props.color) {
       case "success":
-          array.push("text-success-400 hover:text-white bg-inherit hover:bg-success-500 border border-success-500");
+          array.push("text-success-400 hover:text-white bg-inherit hover:bg-success-500 dark:hover:bg-success-300 border border-success-500");
         break;
         
       case "warning":
-        array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 border border-warning-500");
+        array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 dark:hover:bg-warning-300 border border-warning-500");
       break;
 
       case "error":
-        array.push("text-error-400 hover:text-white bg-inherit hover:bg-error-500 border border-error-500");
+        array.push("text-error-400 hover:text-white bg-inherit hover:bg-error-500 dark:hover:bg-error-300 border border-error-500");
+      break;
+
+      case "slate":
+        array.push("text-s-50 hover:text-white bg-inherit hover:bg-s-50 dark:hover:bg-s-30 border border-s-50");
       break;
 
       case "secondary":
-        array.push("text-secondary-11 hover:text-white bg-inherit hover:bg-secondary-11 border border-secondary-11");
+        array.push("text-secondary-11 hover:text-white bg-inherit hover:bg-secondary-11 dark:hover:bg-secondary-11 border border-secondary-11");
       break;
         
       default:
