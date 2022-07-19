@@ -2,14 +2,29 @@
     <Transition>
         <div
         v-if="modelValue"
-        bg="gray-500"
+        bg="b-10 dark:w-5"
         h="sidebar"
         position="sticky"
         border="rounded-lg"
+        text="w-80"
         p="3"
         w="50"
         m="x-2"
         >
+        <div
+          flex="~ gap-4"
+          place="items-center"
+          p="x-2 y-2"
+          text="2xl"
+          font="medium"
+        >
+          <div flex="grow">
+          </div>
+          
+          
+            <div @click="$emit('cancel')"  cursor="pointer" text="w-80 3xl" class="text-left i-carbon-close hover:i-carbon-close-filled"></div>
+        </div>
+        
             <slot />
         </div>
     </Transition>
@@ -24,7 +39,7 @@ const props = defineProps({
 });
 
 // Define Emits
-const emit = defineEmits(["confirm", "cancel"]);
+const emit = defineEmits(["cancel"]);
 
 // Close on click ESC
 // onKeyStroke(["Escape"], (e) => emit("cancel"));

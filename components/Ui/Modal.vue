@@ -10,8 +10,8 @@
       justify="center"
       w="screen"
       h="screen"
-      bg="secondary-300 dark:secondary-800 opacity-60 dark:opacity-50"
-      backdrop="~ blur-sm"
+      bg="b-25 dark:b-20"
+      backdrop="~ blur-lg"
     >
       <div flex="~ col gap-2" h="full" max-w="2xl" min-w="2xl" max-h="xl">
         <!-- Header -->
@@ -23,25 +23,24 @@
           text="2xl"
           font="medium"
         >
-          <div flex="grow" text="secondary-700 dark:secondary-400">
+          <div flex="grow" text="w-80 dark:w-40">
             <slot name="title"></slot>
           </div>
           <div
             @click="$emit('cancel')"
-            text="3xl secondary-600 hover:error-600"
+            text="3xl w-80 hover:error-600"
             cursor="pointer"
           >
-            <div class="i-carbon-close hover:i-carbon-close-filled"></div>
+            <div text="w-80 dark:w-40" class="i-carbon-close hover:i-carbon-close-filled"></div>
           </div>
         </div>
 
         <!-- Content -->
         <div
           flex="grow"
-          p="x-8 y-2"
-          bg="gray-400 opacity-20 bg-opacity-10"
+          p="x-6 y-6"
+          bg=" b-15 dark:w-5"
           border="rounded-lg"
-          text="secondary-500 dark:secondary-100"
         >
           <slot></slot>
         </div>
