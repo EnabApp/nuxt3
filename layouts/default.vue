@@ -49,7 +49,9 @@ useHead({
 // Header Tabs
 const tabs = [
   { title: "Home", route: "/", icon: "i-line-md-moon-filled" },
-  { title: "Login", route: "/login", icon: "i-line-md-moon-filled" },
+  { title: "Login", route: "/auth/login", icon: "i-line-md-moon-filled" },
+  { title: "register", route: "/auth/register", icon: "i-line-md-moon-filled" },
+
 ];
 </script>
 
