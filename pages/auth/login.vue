@@ -17,9 +17,21 @@
                     </div>
                     <a text="gray-700 dark:gray-500" href="#"> نسيت كلمة السر ؟ </a>
                 </div>
+                <div flex="~ col" >
                 <button bg="primary" dark:bg-gradient="to-l from-primary to-b-60" class="py-2 text-lg text-white border-none rounded-lg cursor-pointer">
                     تسجيل دخول
                 </button>
+                <div class="mt-1">
+                    <span text="gray-700 dark:gray-500" class="text-sm ">
+                        ليس لديك حساب ؟
+                    </span>
+                    <nuxt-link to="/auth/register">
+                        <span text="gray-700 dark:gray-500" class="text-sm">
+                            سجل الان
+                        </span>
+                    </nuxt-link>
+                </div>                    
+                </div>
             </div>
         </div>
     </div>
