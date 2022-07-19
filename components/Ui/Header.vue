@@ -1,5 +1,5 @@
 <template>
-  <div bg="s-10 dark:s-10" border="rounded-lg" >
+  <div bg="s-10 dark:gray-900" border="rounded-lg" >
     <div p="x-4 y-1" flex="~ gap-2" justify="between" items="center">
       <!-- Right : grow -->
       <div flex="~ gap-2 grow" items="center">
@@ -15,11 +15,16 @@
       </div>
 
       <!-- Left -->
-      <div @click="next()">
-        <div v-if="currentColor == 'light'" text="2xl warning-300" class="i-line-md-sun-rising-filled-loop"></div>
-        <div v-else-if="currentColor == 'dark'" text="2xl primary-500" class="i-line-md-moon-filled"></div>
-        <div v-else text="2xl s-60 dark:w-60" class="i-line-md-computer"></div>
+      <div flex="~ gap-2">
+        <div text="xl s-60 dark:w-60" class="i-akar-icons:instagram-fill"></div>
+        
+        <div @click="next()">
+          <div v-if="currentColor == 'light'" text="xl warning-300" class="i-line-md-sun-rising-filled-loop"></div>
+          <div v-else-if="currentColor == 'dark'" text="xl primary-500" class="i-line-md-moon-filled"></div>
+          <div v-else text="xl s-60 dark:w-60" class="i-line-md-computer"></div>
+        </div>
       </div>
+      
     </div>
   </div>
 </template>
