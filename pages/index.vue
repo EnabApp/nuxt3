@@ -47,7 +47,7 @@
 
     </div>
     <!-- Butotn -->
-    <UiButton disabled=true color="slate" title="submittt" solid=true w="96" @click="clicked()" />
+    <UiButton disabled=true  title="submittt" outline=true w="96" @click="clicked()" />
   </div>
 </template>
 

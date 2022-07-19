@@ -44,7 +44,6 @@ const classes = computed(() =>  {
   let array = [
     "py-2 px-4 m-3",
     "text-sm",
-    "text-white",
     "text-center",
     "rounded-lg",
   ];
@@ -81,23 +80,19 @@ const classes = computed(() =>  {
         break;
         
       case "warning":
-        array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 dark:hover:bg-warning-300 border border-warning-500");
+        array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 dark:hover:bg-warning-600 border border-warning-500");
       break;
 
       case "error":
-        array.push("text-error-400 hover:text-white bg-inherit hover:bg-error-500 dark:hover:bg-error-300 border border-error-500");
+        array.push("text-error-400 hover:text-white bg-inherit hover:bg-error-500 dark:hover:bg-error-600 border border-error-500");
       break;
 
       case "slate":
-        array.push("text-s-50 hover:text-white bg-inherit hover:bg-s-50 dark:hover:bg-s-30 border border-s-50");
+        array.push("text-s-50 hover:text-white bg-inherit hover:bg-s-50 dark:hover:bg-s-60 border border-s-50");
       break;
 
-      case "secondary":
-        array.push("text-secondary-11 hover:text-white bg-inherit hover:bg-secondary-11 dark:hover:bg-secondary-11 border border-secondary-11");
-      break;
-        
       default:
-        array.push("text-primary-400 dark:text-white hover:text-white bg-inherit hover:bg-primary-500 dark:hover:bg-w-50 border border-primary-500 dark:border-w-40");
+        array.push("text-primary-400 dark:text-white hover:text-white bg-inherit hover:bg-primary-500 dark:hover:bg-primary-500 border border-primary-500 dark:border-primary-400");
       break;
     }
   }
