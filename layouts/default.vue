@@ -1,5 +1,5 @@
 <template>
-  <div h="screen" bg="b-5 opacity-1" dark:bg-gradient="to-rb from-black to-b-90">
+  <div h="screen" class="bg-white dark:bg-animation">
     <div h="full" container="~" m="x-auto" flex="~">
       <!-- Sidebar -->
       <div id="sidebar"></div>
@@ -9,7 +9,14 @@
         <UiHeader p="1" m="t-2" :tabs="tabs" />
 
         <!-- Content -->
-        <div container="~" m="x-auto" flex="~" items="center" h="full" justify="center">
+        <div
+          container="~"
+          m="x-auto"
+          flex="~"
+          items="center"
+          h="full"
+          justify="center"
+        >
           <slot />
         </div>
       </div>
@@ -48,3 +55,24 @@ const tabs = [
   { title: "Login", route: "/login", icon: "i-line-md-moon-filled" },
 ];
 </script>
+
+<style scoped>
+.dark .bg-white {
+  background-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to right, rgba(17,24,39, 1), black);
+  background-size: 100% 100%, 4000% 100%;
+  animation: move 5s infinite ease-in;
+}
+
+@keyframes move {
+  0% {
+    background-position: center center, left center;
+  }
+  25% {
+    background-position: center center, right center;
+  }
+  100% {
+    background-position: center center, left center;
+  }
+}
+</style>
