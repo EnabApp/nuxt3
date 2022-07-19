@@ -49,6 +49,7 @@
     <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
 
   </div>
+</div>
 </template>
 
 <script setup>
