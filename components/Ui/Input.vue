@@ -17,9 +17,9 @@
       flex="~ gap-2"
       font="leading-tight"
       justify="between"
-      p="x-2"
+      p="x-2 y-1"
       text="gray-500 dark:gray-200"
-      bg="white dark:secondary-700"
+      bg="white dark:w-5"
       border="~ 2 gray-300 dark:gray-600 rounded-lg"
       outline="none focus-within:none"
     >
@@ -34,18 +34,12 @@
           @input="(event) => $emit('update:modelValue', event.target.value)"
           :placeholder="placeholder"
           :type="type == 'password' ? statePassword : type"
-          class="text-gray-700 border-0 dark:text-gray-400"
-          p="y-2"
-          font="sans"
-          bg="white dark:secondary-700"
-          appearance="none"
-          flex="grow"
-          outline="none focus:none"
+          class="py-2 text-gray-700 bg-white border-0 outline-none appearance-none dark:text-gray-400 dark:bg-transparent grow focus:outline-none"
         />
       </div>
 
       <!-- Buttons -->
-      <div id="buttons" flex="~ gap-1" p="b-0.5" m="1" overflow="y-hidden">
+      <div id="buttons" flex="~ gap-1" items="center" p="b-0.5" m="1" overflow="y-hidden">
         <!-- Type password -->
         <div class="flex gap-1" v-if="type == 'password'">
           <button
