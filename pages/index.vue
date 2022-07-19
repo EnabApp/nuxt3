@@ -1,5 +1,9 @@
 <template>
   <div m="5">
+    <!-- Butotn -->
+    <UiButton color="light" :outline=true w="96" />
+    
+    <!-- Switch -->
     <UiSwitch v-model="switcher" :list="[
       { id: '1', value: 'Dog', icon: 'i-clarity-email-solid' },
       { id: '2', value: 'Cat', icon: 'i-clarity-email-solid' },
@@ -46,8 +50,6 @@
       <button @click="toggleSidebar()">Open sidebar</button>
 
     </div>
-    <!-- Butotn -->
-    <UiButton :disabled=true title="submittt" :outline=true w="96" />
   </div>
 </template>
 
