@@ -1,11 +1,11 @@
 <template>
 <div flex="~ col gap-1">
+    <!-- Nuxt Link Button -->
     <nuxt-link v-if="to" :to="to" :class="classes">
-      <!-- <ClientOnly>
-        <i v-if="icon" :class="[icon]"></i>
-      </ClientOnly> -->
-      <span v-if="title" class="text-gray-600 dark:text-w-80">{{title}}</span>
+      <span  n v-if="title" class="text-gray-600 dark:text-w-80">{{title}}</span>
     </nuxt-link>
+
+    <!-- Default Button -->
     <button v-else :class="classes">
       <span v-if="title">{{title}}</span>
     </button>
@@ -26,9 +26,6 @@ const props = defineProps({
   title: {
     type: String,
   },
-  icon: {
-    type: String,
-  },
   outline:{
     type: Boolean,
     default: false,
@@ -42,34 +39,55 @@ const props = defineProps({
 const classes = computed(() =>  {
   let array = [
     "py-2 px-4 m-3",
-    "focus:outline-none",
-    "focus:ring-4",
     "text-sm",
+    "text-white",
     "text-center",
     "rounded-lg",
   ];
-  if (props.outline) {
-    array.push("border border-" + props.color + "-300");
-  }
   if (props.solid) {
-    array.push(
-      ...[
-        "text-" + props.color + "-50",
-        "hover:text-white",
-        "bg-" + props.color + "-200",
-        "hover:bg-" + props.color + "-600",
-        "focus:ring-" + props.color + "-200",
-      ]
-    );
-  } else {
-    array.push(
-      ...[
-        "bg-" + props.color + "-100",
-        "text-" + props.color + "-500",
-        "hover:bg-" + props.color + "-100",
-        "focus:ring-" + props.color + "-200",
-      ]
-    );
+    switch (props.color) {
+      case "success":
+        array.push("text-white bg-success-200 hover:bg-success-500 border border-success-500");
+        break;
+        
+      case "warning":
+        array.push("text-white bg-warning-200 hover:bg-warning-500 border border-warning-500");
+      break;
+
+      case "error":
+        array.push("text-white bg-error-200 hover:bg-error-500 border border-error-500");
+      break;
+
+      case "secondary":
+        array.push("text-white bg-secondary-200 hover:bg-secondary-500 border border-secondary-500");
+      break;
+        
+      default:
+        array.push("text-white bg-primary-200 hover:bg-primary-500 border border-primary-500");
+      break;
+    }
+  }else if(props.outline){
+    switch (props.color) {
+      case "success":
+          array.push("text-success-400 hover:text-white bg-inherit hover:bg-success-500 border border-success-500");
+        break;
+        
+      case "warning":
+        array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 border border-warning-500");
+      break;
+
+      case "error":
+        array.push("text-error-400 hover:text-white bg-inherit hover:bg-error-500 border border-error-500");
+      break;
+
+      case "secondary":
+        array.push("text-secondary-11 hover:text-white bg-inherit hover:bg-secondary-11 border border-secondary-11");
+      break;
+        
+      default:
+        array.push("text-primary-400 dark:text-white hover:text-white bg-inherit hover:bg-primary-500 dark:hover:bg-w-50 border border-primary-500 dark:border-w-40");
+      break;
+    }
   }
   return array;
 });
