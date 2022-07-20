@@ -44,7 +44,7 @@
     </ClientOnly>
     <!-- <h1 ref="elModal" :style="style" style="position:fixed" >dccxcxc</h1> -->
     <button  @click="toggleSidebar()">Open sidebar</button>
-
+  <UiCloseButton color="primary" />
   <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
     <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
 

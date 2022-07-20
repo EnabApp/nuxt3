@@ -9,7 +9,7 @@
         text="w-80"
         p="3"
         w="50"
-        m="x-2"
+        m="x-2 t-2"
         >
         <div
           flex="~ gap-4"
