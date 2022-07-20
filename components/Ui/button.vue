@@ -36,7 +36,7 @@ const props = defineProps({
     default: false,
   },
   disabled:{
-    type: Boolean, 
+    type: Boolean,
     default: false
   },
   activeClass:{
@@ -64,7 +64,7 @@ const classes = computed(() =>  {
       case "success":
         array.push("text-white bg-success-500 hover:bg-success-600 dark:bg-success-600 dark:hover:bg-success-700 border border-success-200 dark:border-success-600");
         break;
-        
+
       case "warning":
         array.push("text-white bg-warning-500 hover:bg-warning-600 dark:bg-warning-300 dark:hover:bg-warning-500 border border-warning-200 dark:border-warning-600");
       break;
@@ -94,7 +94,7 @@ const classes = computed(() =>  {
       case "success":
           array.push("text-success-400 hover:text-white bg-inherit hover:bg-success-500 dark:hover:bg-success-600 border border-success-500");
         break;
-        
+
       case "warning":
         array.push("text-warning-400 hover:text-white bg-inherit hover:bg-warning-500 dark:hover:bg-warning-600 border border-warning-500 dark:border-warning-700");
       break;
