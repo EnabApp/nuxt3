@@ -6,12 +6,30 @@
     </nuxt-link>
 
     <!-- Default Button -->
-    <button v-else :class="classes" :disabled="disabled ? true : false">
-      <span v-if="!loading">{{title}}</span>
-      <svg v-else class="w-5 h-5 mr-3 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>
+    <button @click="loading()" v-else :class="classes" :disabled="disabled ? true : false">
+      <!-- Title icon button -->
+      <div v-if="title" class="grid justify-around w-auto grid-flow-col auto-cols-max">
+        <!-- Without loading -->
+        <div>
+          <span v-if="!loading">{{title}}</span>
+          <svg v-else class="w-5 h-5 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </div>
+        <!-- With loading -->
+        <div v-if="!loading" class="mt-0.5" :class="icon"></div>
+      </div>
+      <!-- Icon Button -->
+      <div v-else>
+        <!-- if not loading -->
+        <div v-if="!loading" class="mt-0.5 justify-self-auto w-auto" :class="icon"></div>
+        <!-- if loading  -->
+        <svg v-else class="w-5 h-5 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </div>
     </button>
 </div>
 
@@ -29,7 +47,6 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default:"Button",
   },
   outline:{
     type: Boolean,
@@ -45,20 +62,22 @@ const props = defineProps({
   loading:{
     type:Boolean,
     default:false,
+  },
+  icon:{
+    type:String,
   }
 });
 
 const classes = computed(() =>  {
   let array = [
-    "py-2 px-4 m-3",
+    "py-2 px-4",
     "text-sm",
     "text-center",
-    "rounded-lg",
   ];
-  console.log(props.disabled)
   if(!props.disabled){
     array.push("cursor-pointer");
   }
+  !props.title ? array.push("rounded-full") : array.push("rounded-lg")
   if (!props.outline) {
     switch (props.color) {
       case "success":

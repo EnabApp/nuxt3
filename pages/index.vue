@@ -1,7 +1,7 @@
 <template>
   <div m="5">
-    <!-- Butotn -->
-    <UiButton color="light" :outline=true w="96" />
+    <!-- Button -->
+    <UiButton color="success" icon="i-line-md-moon-filled" :outline=true w="24" />
 
     <!-- Switch -->
     <UiSwitch v-model="switcher" :list="[
@@ -94,9 +94,7 @@ const modalCanceled = () => {
   console.log("Canceled");
   stateModal.value = false;
 };
-const clicked = () => {
-  console.log("clicked");
-};
+
 const sidebarCanceled = () => {
   console.log("Canceled");
   stateSidebar.value = false;
