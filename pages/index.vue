@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <NuxtLayout>
+    <div>
     <!-- <UiTabGroup class="my-2" :col="false" :selected="1" :tabs="['Home', 'Home2', 'Home3 sssssss']">
       <template #tab-1>
         <h1>Home</h1>
@@ -99,6 +100,7 @@
       <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
     </div> -->
   </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
