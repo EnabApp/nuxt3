@@ -104,12 +104,6 @@
 </template>
 
 <script setup>
-import { usePointerSwipe } from "@vueuse/core";
-
-const el = ref(null);
-const { isSwiping, direction } = usePointerSwipe(el);
-// import { useDraggable } from '@vueuse/core';
-
 definePageMeta({
   title: "Home",
 });

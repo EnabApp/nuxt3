@@ -6,15 +6,10 @@
       <!-- Sidebar -->
       <div id="sidebar"></div>
 
-        <!-- Content -->
-        <div
-          container="~"
-          m="x-auto"
-          h="full"
-          w="full"
-        >
-          <slot />
-        </div>
+      <!-- Content -->
+      <div m="x-auto y-1" flex="~" h="full" w="full">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -65,9 +60,11 @@ const tabs = [
   0% {
     background-position: center center, left center;
   }
+
   30% {
     background-position: center center, right center;
   }
+
   90% {
     background-position: center center, left center;
   }
