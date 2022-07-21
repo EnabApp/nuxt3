@@ -2,7 +2,7 @@
   <div m="5">
     <!-- Button -->
     
-    <UiButton color="slate" title="jjj" icon="i-line-md-moon-filled" w="96" />
+    <UiButton color="slate" :outline=true icon="i-line-md-moon-filled" w="24" />
 
     <!-- Switch -->
     <UiSwitch v-model="switcher" :list="[
