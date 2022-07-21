@@ -46,10 +46,10 @@ export default defineNuxtConfig({
             },
         },
         preflights: [
+            // color: ${theme.colors.gray?.[700]};
             {
                 getCSS: ({ theme }) => `
                 * {
-                  color: ${theme.colors.gray?.[700]};
                   padding: 0;
                   margin: 0;
                   font-family: ${theme.fontFamily?.sans};
@@ -134,7 +134,7 @@ export default defineNuxtConfig({
             height: {
                 'sidebar': 'calc(100vh - 3.75rem)',
                 'main-content': 'calc(100vh - 2.25rem)',
-            }
+            },
         },
     },
 

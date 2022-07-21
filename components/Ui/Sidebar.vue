@@ -9,7 +9,7 @@
         text="w-80"
         p="3"
         w="50"
-        m="x-2"
+        m="x-2 t-2"
         >
         <div
           flex="~ gap-4"
@@ -20,11 +20,11 @@
         >
           <div flex="grow">
           </div>
-          
-          
+
+
             <div @click="$emit('cancel')"  cursor="pointer" text="w-80 3xl" class="text-left i-carbon-close hover:i-carbon-close-filled"></div>
         </div>
-        
+
             <slot />
         </div>
     </Transition>

@@ -1,5 +1,19 @@
 <template>
-  <div m="5">
+  <div>
+    <UiTabGroup class="my-2" :col="false" :selected="1" :tabs="['Home', 'Home2', 'Home3 sssssss']">
+      <template #tab-1>
+        <h1>Home</h1>
+      </template>
+      <template #tab-2>
+        <h1>Home2</h1>
+      </template>
+      <template #tab-3>
+        <h1>Home3</h1>
+      </template>
+    </UiTabGroup>
+
+
+
     <UiSwitch v-model="switcher" :list="[
       { id: '1', value: 'Dog', icon: 'i-clarity-email-solid' },
       { id: '2', value: 'Cat', icon: 'i-clarity-email-solid' },
@@ -7,7 +21,7 @@
       { id: '4', value: 'Shark', icon: 'i-clarity-email-solid' },
     ]" />
 
-    <UiInput  increment="1.5" v-model="test" w="96" label="Show name" />
+    <UiInput increment="1.5" v-model="test" w="96" label="Show name" />
 
     <UiDropdown label="Select One" placeholder="Type to search" multiple v-model="dropdown" :list="[
       { id: 1, value: 'John' },
@@ -17,46 +31,66 @@
     </UiDropdown>
 
     <Teleport to="body">
-      <UiModal  v-model="stateModal" confirm="Save" @confirm="modalConfirmed" @cancel="modalCanceled">
-        <template  v-slot:title>Modal Title</template>
+      <UiModal v-model="stateModal" confirm="Save" @confirm="modalConfirmed" @cancel="modalCanceled">
+        <template v-slot:title>Modal Title</template>
         <p class="text-white dark:text-w-80">
-          Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.
-
-
+          Paragraphs are the building blocks of papers. Many students define
+          paragraphs in terms of length: a paragraph is a group of at least five
+          sentences, a paragraph is half a page long, etc. In reality, though,
+          the unity and coherence of ideas among sentences is what constitutes a
+          paragraph. A paragraph is defined as “a group of sentences or a single
+          sentence that forms a unit” (Lunsford and Connors 116). Length and
+          appearance do not determine whether a section in a paper is a
+          paragraph. For instance, in some styles of writing, particularly
+          journalistic styles, a paragraph can be just one sentence long.
+          Ultimately, a paragraph is a sentence or group of sentences that
+          support one main idea. In this handout, we will refer to this as the
+          “controlling idea,” because it controls what happens in the rest of
+          the paragraph.
         </p>
       </UiModal>
     </Teleport>
     <button @click="toggleModal()">Open modal</button>
     <div bg="primary-600">
-      <span  text="t-60">
-        dfsdfsdfsdfsdf2
-      </span>
+      <span text="t-60"> dfsdfsdfsdfsdf2 </span>
     </div>
 
     <!-- Sidebar -->
     <ClientOnly>
-      <Teleport  to="#sidebar">
+      <Teleport to="#sidebar">
         <UiSidebar @cancel="sidebarCanceled" v-model="stateSidebar">
-          <p class="text-white">Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.</p>
-            
+          <p class="text-white">
+            Paragraphs are the building blocks of papers. Many students define
+            paragraphs in terms of length: a paragraph is a group of at least
+            five sentences, a paragraph is half a page long, etc. In reality,
+            though, the unity and coherence of ideas among sentences is what
+            constitutes a paragraph. A paragraph is defined as “a group of
+            sentences or a single sentence that forms a unit” (Lunsford and
+            Connors 116). Length and appearance do not determine whether a
+            section in a paper is a paragraph. For instance, in some styles of
+            writing, particularly journalistic styles, a paragraph can be just
+            one sentence long. Ultimately, a paragraph is a sentence or group of
+            sentences that support one main idea. In this handout, we will refer
+            to this as the “controlling idea,” because it controls what happens
+            in the rest of the paragraph.
+          </p>
         </UiSidebar>
       </Teleport>
     </ClientOnly>
     <!-- <h1 ref="elModal" :style="style" style="position:fixed" >dccxcxc</h1> -->
-    <button  @click="toggleSidebar()">Open sidebar</button>
-
-  <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
-    <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
-
+    <button @click="toggleSidebar()">Open sidebar</button>
+    <UiCloseButton color="primary" />
+    <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
+      <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
+    </div>
   </div>
-</div>
 </template>
 
 <script setup>
-import { usePointerSwipe } from '@vueuse/core'
+import { usePointerSwipe } from "@vueuse/core";
 
-const el = ref(null)
-const { isSwiping, direction } = usePointerSwipe(el)
+const el = ref(null);
+const { isSwiping, direction } = usePointerSwipe(el);
 // import { useDraggable } from '@vueuse/core';
 
 definePageMeta({
@@ -101,5 +135,4 @@ const sidebarCanceled = () => {
   console.log("Canceled");
   stateSidebar.value = false;
 };
-
 </script>
