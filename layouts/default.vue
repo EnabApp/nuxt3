@@ -1,5 +1,5 @@
 <template>
-  <div h="screen" flex="~" class="bg-white dark:bg-animation">
+  <div h="screen" flex="~ gap-2" class="bg-white dark:bg-animation">
     <!-- Sidebar -->
     <div id="sidebar"></div>
     <div h="full" container="~" m="x-auto" flex="grow" border="rounded-lg">
@@ -10,10 +10,7 @@
         <div
           container="~"
           m="x-auto"
-          flex="~"
-          items="center"
           h="full"
-          justify="center"
         >
           <slot />
         </div>

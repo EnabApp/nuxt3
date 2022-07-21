@@ -46,10 +46,10 @@ export default defineNuxtConfig({
             },
         },
         preflights: [
+            // color: ${theme.colors.gray?.[700]};
             {
                 getCSS: ({ theme }) => `
                 * {
-                  color: ${theme.colors.gray?.[700]};
                   padding: 0;
                   margin: 0;
                   font-family: ${theme.fontFamily?.sans};

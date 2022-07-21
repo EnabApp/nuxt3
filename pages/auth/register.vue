@@ -1,5 +1,5 @@
 <template>
-<div flex="~ col" items="center">
+<div flex="~ col" h="full" justify="center" items="center">
     <div bg="transparent" p="3" w="sm" border="~ rounded-3xl b-10 dark:w-20">
         <div flex="~ col" m="10" text="right">
             <div>

@@ -1,5 +1,5 @@
 <template>
-    <div flex="~ col" items="center">
+    <div flex="~ col" h="full" justify="center" items="center">
         <div bg="transparent" p="3" w="sm" border="~ rounded-3xl b-10 dark:w-20">
             <div flex="~ col" m="10" text="right">
                 <div>
@@ -19,7 +19,7 @@
                                 تذكرني
                             </label>
                         </div>
-                        <a text="gray-700 dark:gray-500" href="#"> نسيت كلمة السر ؟ </a>
+                        <NuxtLink to="/auth/login" class="gray-700 dark:gray-500"> نسيت كلمة السر ؟ </NuxtLink>
                     </div>
                     <div flex="~ col">
                         <button bg="primary" dark:bg-gradient="to-l from-primary to-b-60"
