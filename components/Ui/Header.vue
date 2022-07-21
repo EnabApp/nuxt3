@@ -18,14 +18,14 @@
       <!-- Left -->
       <div flex="~ gap-2">
         <div text="xl s-60 dark:w-60" class="i-akar-icons:instagram-fill"></div>
-        
+
         <div @click="next()">
           <div v-if="currentColor == 'light'" text="xl warning-300" class="i-line-md-sun-rising-filled-loop"></div>
           <div v-else-if="currentColor == 'dark'" text="xl primary-500" class="i-line-md-moon-filled"></div>
           <div v-else text="xl s-60 dark:w-60" class="i-line-md-computer"></div>
         </div>
       </div>
-      
+
     </div>
   </div>
 </template>
