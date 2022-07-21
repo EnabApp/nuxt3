@@ -1,6 +1,6 @@
 <template>
   <div bg="white dark:gray-900" shadow="sm" >
-    <div p="x-4 y-1" flex="~ gap-2" justify="between" items="center">
+    <div p="x-4" flex="~ gap-2" justify="between" items="center">
       <!-- Right : grow -->
       <div flex="~ gap-2 grow" items="center">
         <!-- Website Logo / Name -->
