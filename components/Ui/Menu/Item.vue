@@ -24,7 +24,7 @@
       <div v-if="title">
         <UiMenuItem @click="toggle()" :active="state" :icon="{'i-ep-arrow-down-bold' : state, 'i-ep-arrow-up-bold' : !state}"> {{ title }} </UiMenuItem>
         <Transition name="slide-fade">
-            <div v-if="state">
+            <div v-if="state" transition="~ duration-300 delay-75 ease-in-out" border="l-2 transparent hover:s-15">
                 <slot />
             </div>
         </Transition>
