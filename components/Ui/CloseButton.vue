@@ -12,11 +12,11 @@
     const classes = computed(() => {
         let array = [
             "i-carbon-close hover:i-carbon-close-filled",
-            
+
         ];
         if (props.color =="primary") {
             array.push("text-white");
-            
+
         }else{
             array.push("text-black");
         }
