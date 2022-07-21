@@ -23,7 +23,7 @@
       <UiMenuItem icon="i-clarity-email-solid"> Option 1.3.3 </UiMenuItem>
     </UiMenuItem>
   </UiMenuItem>
-  
+
   <UiMenuItem icon="i-clarity-email-solid"> Option 2 </UiMenuItem>
   <UiMenuItem icon="i-clarity-email-solid"> Option 3 </UiMenuItem>
 </UiMenu>
