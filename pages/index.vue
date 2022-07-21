@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UiTabGroup class="my-2" :col="false" :selected="1" :tabs="['Home', 'Home2', 'Home3 sssssss']">
+    <!-- <UiTabGroup class="my-2" :col="false" :selected="1" :tabs="['Home', 'Home2', 'Home3 sssssss']">
       <template #tab-1>
         <h1>Home</h1>
       </template>
@@ -10,11 +10,27 @@
       <template #tab-3>
         <h1>Home3</h1>
       </template>
-    </UiTabGroup>
+    </UiTabGroup> -->
+
+      <UiMenu>
+        <UiMenuItem multiple title="Check Inside">
+          <UiMenuItem icon="i-clarity-email-solid"> Option 1 </UiMenuItem>
+          <UiMenuItem icon="i-clarity-email-solid"> Option 2 </UiMenuItem>
+
+          <UiMenuItem multiple title="Check Inside2">
+            <UiMenuItem icon="i-clarity-email-solid"> Option 1 </UiMenuItem>
+            <UiMenuItem icon="i-clarity-email-solid"> Option 2 </UiMenuItem>
+            <UiMenuItem icon="i-clarity-email-solid"> Option 3 </UiMenuItem>
+          </UiMenuItem>
+        </UiMenuItem>
+        
+        <UiMenuItem icon="i-clarity-email-solid"> Option 2 </UiMenuItem>
+        <UiMenuItem icon="i-clarity-email-solid"> Option 3 </UiMenuItem>
+      </UiMenu>
 
 
 
-    <UiSwitch v-model="switcher" :list="[
+    <!-- <UiSwitch v-model="switcher" :list="[
       { id: '1', value: 'Dog', icon: 'i-clarity-email-solid' },
       { id: '2', value: 'Cat', icon: 'i-clarity-email-solid' },
       { id: '3', value: 'Lizard', icon: 'i-clarity-email-solid' },
@@ -53,10 +69,10 @@
     <button @click="toggleModal()">Open modal</button>
     <div bg="primary-600">
       <span text="t-60"> dfsdfsdfsdfsdf2 </span>
-    </div>
+    </div> -->
 
     <!-- Sidebar -->
-    <ClientOnly>
+    <!-- <ClientOnly>
       <Teleport to="#sidebar">
         <UiSidebar @cancel="sidebarCanceled" v-model="stateSidebar">
           <p class="text-white">
@@ -77,12 +93,11 @@
         </UiSidebar>
       </Teleport>
     </ClientOnly>
-    <!-- <h1 ref="elModal" :style="style" style="position:fixed" >dccxcxc</h1> -->
-    <button @click="toggleSidebar()">Open sidebar</button>
-    <UiCloseButton color="primary" />
-    <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
+    <button @click="toggleSidebar()">Open sidebar</button> -->
+    <!-- <UiCloseButton color="primary" /> -->
+    <!-- <div w="md" h="sm" flex="~" items="center" justify="center" bg="b-5 dark:s-10" border="rounded-lg">
       <span text="b-10  dark:s-20 6xl" font="semibold">Welcome</span>
-    </div>
+    </div> -->
   </div>
 </template>
 

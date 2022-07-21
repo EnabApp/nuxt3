@@ -53,7 +53,9 @@ export default defineNuxtConfig({
                   padding: 0;
                   margin: 0;
                   font-family: ${theme.fontFamily?.sans};
-                  overflow: hidden;
+                }
+                body {
+                    overflow: hidden;
                 }
               `
             }
