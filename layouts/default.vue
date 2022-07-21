@@ -1,10 +1,10 @@
 <template>
-  <div h="screen" flex="~" class="bg-white dark:bg-animation">
-    <!-- Sidebar -->
-    <div id="sidebar"></div>
+  <div h="screen" flex="~ col" class="bg-secondary dark:bg-animation">
+    <!-- Header -->
+    <UiHeader p="1" :tabs="tabs" />
     <div h="full" container="~" m="x-auto" flex="~ col grow" border="rounded-lg">
-        <!-- Header -->
-        <UiHeader p="1" m="y-2" :tabs="tabs" />
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
 
         <!-- Content -->
         <div
@@ -54,7 +54,7 @@ const tabs = [
 </script>
 
 <style scoped>
-.dark .bg-white {
+.dark .bg-secondary {
   background-image: linear-gradient(to top, transparent, black),
     linear-gradient(to right, rgb(22, 31, 51), black);
   background-size: 100% 100%, 4000% 100%;

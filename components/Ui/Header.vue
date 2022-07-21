@@ -1,5 +1,5 @@
 <template>
-  <div bg="s-10 dark:gray-900" border="rounded-lg" >
+  <div bg="white dark:gray-900" shadow="sm" >
     <div p="x-4 y-1" flex="~ gap-2" justify="between" items="center">
       <!-- Right : grow -->
       <div flex="~ gap-2 grow" items="center">

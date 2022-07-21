@@ -1,6 +1,6 @@
 <template>
 <div flex="~ col" h="full" justify="center" items="center">
-    <div bg="transparent" p="3" w="sm" border="~ rounded-3xl b-10 dark:w-20">
+    <div bg="w-30 dark:s-15" p="3" w="md" border="~ rounded-3xl b-10 dark:w-20">
         <div flex="~ col" m="10" text="right">
             <div>
                 <h1 text="black dark:white">تسجيل </h1>
