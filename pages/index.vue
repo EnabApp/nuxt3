@@ -1,7 +1,8 @@
 <template>
   <div m="5">
     <!-- Button -->
-    <UiButton color="success" icon="i-line-md-moon-filled" :outline=true w="24" />
+    
+    <UiButton color="slate" title="jjj" icon="i-line-md-moon-filled" w="96" />
 
     <!-- Switch -->
     <UiSwitch v-model="switcher" :list="[
