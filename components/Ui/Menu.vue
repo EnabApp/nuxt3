@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-56 text-right h-content">
     <div ref="target" class="inline-block text-right">
-      <UiMenuButton :active="state" @click="toggle()">
+      <UiMenuButton v-if="hasTitle" :active="state" @click="toggle()">
         {{ title }}
       </UiMenuButton>
       <Transition name="slide-fade">
@@ -16,14 +16,16 @@
 <script setup>
 const props = defineProps({
   title: {
-    default: "Open Menu",
+    default: "",
   },
 });
 
-const [state, toggle] = useToggle(true);
+const hasTitle = computed(() => props.title.length > 0)
+
+const [state, toggle] = useToggle(!hasTitle.value);
 
 const target = ref(null);
-onClickOutside(target, () => (state.value = false));
+onClickOutside(target, () => (hasTitle.value && (state.value = false)));
 </script>
 
 <style scoped>

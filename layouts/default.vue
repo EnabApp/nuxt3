@@ -1,13 +1,11 @@
 <template>
-  <div h="screen" flex="~ col" class="bg-secondary dark:bg-animation">
-    <!-- Header -->
-    <UiHeader p="1" :tabs="tabs" />
-    <div h="full" container="~" m="x-auto" flex="~ col grow" border="rounded-lg">
-      <!-- Sidebar -->
-      <div id="sidebar"></div>
 
-      <!-- Content -->
-      <div m="x-auto y-1" flex="~" h="full" w="full">
+  <div h="screen" flex="~ col" class="bg-primary-400 dark:bg-animation">
+    <UiHeader p="1" :tabs="tabs" />
+    <div h="full" bg="w-10 dark:gray-900" m="2" p="1" border="rounded-lg">
+      <!-- <div id="sidebar"></div> -->
+
+      <div m="x-auto" flex="~" h="full" w="full">
         <slot />
       </div>
     </div>
@@ -49,7 +47,7 @@ const tabs = [
 </script>
 
 <style scoped>
-.dark .bg-secondary {
+.dark .bg-primary-400 {
   background-image: linear-gradient(to top, transparent, black),
     linear-gradient(to right, rgb(22, 31, 51), black);
   background-size: 100% 100%, 4000% 100%;
