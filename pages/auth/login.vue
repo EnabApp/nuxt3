@@ -17,7 +17,7 @@
                   تذكرني
                 </label>
               </div>
-              <NuxtLink to="/auth/login" class="gray-700 dark:gray-500">
+              <NuxtLink to="/auth/login" class="gray-700 dark:gray-500 no-underline text-primary hover:text-ebony-50">
                 نسيت كلمة السر ؟
               </NuxtLink>
             </div>
