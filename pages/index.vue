@@ -1,7 +1,7 @@
 <template>
   <div m="5">
     <!-- Button -->
-    
+
     <UiButton color="slate" :outline=true icon="i-line-md-moon-filled" w="24" />
 
     <!-- Switch -->
