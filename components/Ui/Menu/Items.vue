@@ -6,7 +6,7 @@
     position="absolute right-0"
     z="50"
     w="56"
-    m="t-2"
+    h="full"
     transform="~  origin-top-right"
     divide="y b-5 dark:s-10"
     border="rounded-md"

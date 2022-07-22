@@ -2,8 +2,8 @@
   <!-- If not Multiple -->
   <div p="1" v-if="!multiple">
     <button
-      :class="{'bg-s-40 bg-opacity-10' : active, 'bg-transparent' : !active}"
-      bg="hover:s-40 hover:opacity-10"
+      :class="{'bg-w-40 hover:bg-w-40 font-medium' : active, 'bg-transparent' : !active}"
+      bg="hover:w-30"
       flex="~ gap-2"
       items="center"
       w="full"
@@ -13,16 +13,16 @@
       class="dark:text-w-40 dark:hover:text-white text-b-60 hover:text-b-90 group"
       cursor="pointer"
     >
-        <div :class="icon"></div>
-      <slot />
+      <div :class="icon"></div>
+      {{ title }}
     </button>
   </div>
   <!-- If Multiple -->
   <div v-else>
     <div flex="~ col">
       <!-- if Has title -->
-      <div v-if="title">
-        <UiMenuItem @click="toggle()" :active="state" :icon="{'i-ep-arrow-down-bold' : state, 'i-ep-arrow-up-bold' : !state}"> {{ title }} </UiMenuItem>
+      <div v-if="listTitle">
+        <UiMenuItem @click="toggle()" :title="listTitle ?? title" :active="state" :icon="{'i-ep-arrow-down-bold' : state, 'i-ep-arrow-up-bold' : !state}" />
         <Transition name="slide-fade">
             <div v-if="state" transition="~ duration-300 delay-75 ease-in-out" border="l-2 transparent hover:s-15">
                 <slot />
@@ -45,6 +45,10 @@ const props = defineProps({
     default: false,
   },
   title: {
+    type: String,
+    default: "",
+  },
+  listTitle: {
     type: String,
     default: "",
   },
