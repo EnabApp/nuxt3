@@ -14,7 +14,7 @@
             <UiInput icon="i-clarity-lock-solid dark:text-gray-400" label="كلمة السر " placeholder="ادخل كلمة السر" type="password" />
             <UiInput icon="i-clarity-lock-solid dark:text-gray-400" label="تأكيد كلمة السر" placeholder="ادخل كلمة السر مجدداً" type="password" />
             <div flex="~ col">
-              <button bg="primary" dark:bg-gradient="to-l from-primary to-b-60" class="py-2 text-lg text-white border-none rounded-lg cursor-pointer">
+              <button bg="primary" dark:bg-gradient="to-l from-ebony-100 to-ebony-300" class="py-2 text-lg text-white border-none rounded-lg cursor-pointer">
                 تسجيل
               </button>
             </div>

@@ -22,7 +22,7 @@
               </NuxtLink>
             </div>
             <div flex="~ col">
-              <button bg="primary" dark:bg-gradient="to-l from-primary to-b-60" class="py-2 text-lg text-white border-none rounded-lg cursor-pointer">
+              <button bg="primary" dark:bg-gradient="to-l from-ebony-100 to-ebony-300" class="py-2 text-lg text-white border-none rounded-lg cursor-pointer">
                 تسجيل دخول
               </button>
             </div>
