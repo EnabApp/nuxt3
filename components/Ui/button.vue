@@ -146,7 +146,7 @@ const classes = computed(() =>  {
         }else if(props.outline){
           array.push("text-b-60 hover:text-white bg-inherit hover:bg-b-70 dark:hover:bg-b-70 border border-b-50");
         }else{
-          array.push("text-b-60 hover:text-b-80 bg-inherit dark:hover:text-b-60");
+          array.push("text-b-60 dark:text-w-40 hover:text-b-80 bg-inherit dark:hover:text-w-80");
           props.activeClass ? array.push(" ") : array.push("border-none")
         }
       break;
