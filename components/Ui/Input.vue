@@ -5,7 +5,7 @@
 
     <!-- Main Input Components -->
     <div class="group" :class="{
-      'focus-within:border-primary-500': !error,
+      'focus-within:border-primary-500 dark:focus-within:border-ebony-50': !error,
       'focus-within:border-error-500': error,
     }" flex="~ gap-2" font="leading-tight" justify="between" p="x-2 y-1" text="gray-600 dark:gray-200" bg="w-20 dark:w-5" border="~ 2 w-40 dark:gray-600 rounded-lg" outline="none focus-within:none">
       <div flex="~ gap-2 grow" items="center">
