@@ -7,12 +7,7 @@
         <NuxtLink to="/" m="l-4" un-text="b-80 lg dark:w-60" no-underline="~">Enab</NuxtLink>
 
         <!-- Tabs Buttons -->
-        <!-- <UiButton color="error" v-for="tab in tabs" :title="tab.title" :icon="tab.icon" :key="tab.route" :to="tab.route" activeClass="bg-s-10 hover:bg-s-15 dark:bg-s-15 border border-s-10 dark:border-w-20"/> -->
-        <NuxtLink v-for="tab in tabs" :key="tab.route" :to="tab.route" class="no-underline group" activeClass="bg-s-10 hover:bg-s-15 dark:bg-s-15 border border-s-10 dark:border-w-20" flex="~ gap-2" text="sm" cursor="pointer" items="center" p="x-2 y-1" border="rounded-lg">
-          <span text="b-60 group-hover:b-80 dark:w-40 dark:group-hover:w-70">{{ tab.title }}</span>
-          <div text="md b-60 group-hover:b-80 dark:w-40 dark:group-hover:w-70" :class="tab.icon"></div>
-
-        </NuxtLink>
+        <UiButton color="dark" v-for="tab in tabs" :title="tab.title" :icon="tab.icon" :key="tab.route" :to="tab.route" activeClass="bg-s-10 hover:bg-s-15 dark:bg-s-15 border border-s-10 dark:border-w-20"/>
 
       </div>
 

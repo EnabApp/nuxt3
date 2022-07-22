@@ -144,9 +144,9 @@ const classes = computed(() =>  {
         if(props.solid){
           array.push("text-white bg-b-90 hover:bg-b-80 dark:bg-b-90 dark:hover:bg-b-30 border border-b-20 dark:border-b-40");
         }else if(props.outline){
-          array.push("text-b-90 hover:text-white bg-inherit hover:bg-b-70 dark:hover:bg-b-70 border border-b-50");
+          array.push("text-b-60 hover:text-white bg-inherit hover:bg-b-70 dark:hover:bg-b-70 border border-b-50");
         }else{
-          array.push("text-b-90 hover:text-b-60 bg-inherit dark:hover:text-b-60");
+          array.push("text-b-60 hover:text-b-80 bg-inherit dark:hover:text-b-60");
           props.activeClass ? array.push(" ") : array.push("border-none")
         }
       break;
