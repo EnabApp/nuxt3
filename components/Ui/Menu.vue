@@ -1,11 +1,11 @@
 <template>
-  <div class="relative w-56 text-right h-content">
+  <div class="relative w-56 text-right">
     <div ref="target" class="inline-block text-right">
       <UiMenuButton v-if="hasTitle" :active="state" @click="toggle()">
         {{ title }}
       </UiMenuButton>
       <Transition name="slide-fade">
-        <UiMenuItems v-if="state">
+        <UiMenuItems v-if="state" :class="{ 'top-0' : !hasTitle }">
           <slot />
         </UiMenuItems>
       </Transition>

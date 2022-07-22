@@ -2,7 +2,7 @@
 
   <div class="bg-default">
     <div h="screen" flex="~ col" class="backdrop-blur-3xl">
-      <UiHeader p="1" :tabs="tabs" />
+      <UiHeader p="t-1" :tabs="tabs" />
       <div h="full" border="rounded-lg">
         <!-- <div id="sidebar"></div> -->
   
@@ -44,6 +44,7 @@ const tabs = [
   { title: "Home", route: "/", icon: "i-line-md-moon-filled" },
   { title: "Login", route: "/auth/login", icon: "i-line-md-moon-filled" },
   { title: "register", route: "/auth/register", icon: "i-line-md-moon-filled" },
+  { title: "Business", route: "/business", icon: "i-line-md-moon-filled" },
 
 ];
 </script>
@@ -51,9 +52,9 @@ const tabs = [
 <style scoped>
 .bg-default {
   background-image: url('https://images.unsplash.com/photo-1612885594304-ca622fff47e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
-  /* filter: contrast(0.8); */
+  /* background-image: url('https://images.unsplash.com/photo-1635255224530-c8cdbad2f1e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); */
   /* background-size: 200% 200%; */
-  /* background-position: 100% 110%; */
+  background-position: 100% 180%;
 
 /* animation: lightMove 5s infinite; */
 }
