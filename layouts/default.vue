@@ -1,12 +1,14 @@
 <template>
 
-  <div h="screen" flex="~ col" class="bg-primary-400 dark:bg-animation">
-    <UiHeader p="1" :tabs="tabs" />
-    <div h="full" bg="w-10 dark:gray-900" m="2" p="1" border="rounded-lg">
-      <!-- <div id="sidebar"></div> -->
-
-      <div m="x-auto" flex="~" h="full" w="full">
-        <slot />
+  <div class="bg-default">
+    <div h="screen" flex="~ col" class="backdrop-blur-3xl">
+      <UiHeader p="1" :tabs="tabs" />
+      <div h="full" border="rounded-lg">
+        <!-- <div id="sidebar"></div> -->
+  
+        <div m="x-auto" flex="~" h="full" w="full">
+          <slot />
+        </div>
       </div>
     </div>
   </div>
@@ -47,14 +49,35 @@ const tabs = [
 </script>
 
 <style scoped>
-.dark .bg-primary-400 {
-  background-image: linear-gradient(to top, transparent, black),
-    linear-gradient(to right, rgb(22, 31, 51), black);
-  background-size: 100% 100%, 4000% 100%;
-  animation: move 5s infinite ease-in;
+.bg-default {
+  background-image: url('https://images.unsplash.com/photo-1612885594304-ca622fff47e3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+  /* filter: contrast(0.8); */
+  /* background-size: 200% 200%; */
+  /* background-position: 100% 110%; */
+
+/* animation: lightMove 5s infinite; */
+}
+/* @keyframes lightMove {
+  0% {
+    background-position: 100% 475%;
+  }
+  50% {
+    background-position: 100% 490%;
+  }
+  100% {
+    background-position: 100% 475%;
+  }
+} */
+
+.dark .bg-default {
+  background-image: url('https://images.unsplash.com/photo-1612943448707-407836d8b8f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+  /* background-image: linear-gradient(to top, transparent, black), */
+    /* linear-gradient(to right, rgb(22, 31, 51), black); */
+  /* background-size: 100% 100%, 4000% 100%; */
+  /* animation: move 5s infinite ease-in; */
 }
 
-@keyframes move {
+/* @keyframes move {
   0% {
     background-position: center center, left center;
   }
@@ -66,5 +89,5 @@ const tabs = [
   90% {
     background-position: center center, left center;
   }
-}
+} */
 </style>

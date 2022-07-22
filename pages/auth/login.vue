@@ -1,4 +1,5 @@
 <template>
+  <NuxtLayout name="global-one">
     <div flex="~ col" h="full" justify="center" items="center">
       <div
         bg="w-30 dark:s-15"
@@ -64,6 +65,7 @@
         </nuxt-link>
       </div>
     </div>
+  </NuxtLayout>
 </template>
 
 <script></script>
