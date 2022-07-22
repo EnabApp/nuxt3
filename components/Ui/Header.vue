@@ -4,7 +4,7 @@
       <!-- Right : grow -->
       <div flex="~ gap-2 grow" items="center">
         <!-- Website Logo / Name -->
-        <NuxtLink to="/" m="l-4" un-text="b-80 lg dark:w-60" no-underline="~">Enab</NuxtLink>
+        <NuxtLink to="/" m="l-4" un-text="b-80 xl dark:w-60" no-underline="~">Enab</NuxtLink>
 
         <!-- Tabs Buttons -->
         <UiButton color="dark" v-for="tab in tabs" :title="tab.title" :icon="tab.icon" :key="tab.route" :to="tab.route" activeClass="bg-s-10 hover:bg-s-15 dark:bg-s-15 border border-s-10 dark:border-w-20"/>

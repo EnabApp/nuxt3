@@ -5,7 +5,7 @@
     bg-gradient="to-rb from-w-20 to-w-10 dark:from-s-25 dark:to-s-15"
     position="absolute right-0"
     z="50"
-    w="56"
+    w="full"
     h="full"
     transform="~  origin-top-right"
     divide="y b-5 dark:s-10"

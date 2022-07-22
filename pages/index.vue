@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="global-two">
     <template #right>
-      <UiMenu h="full">
+      <UiMenu h="full" w="full">
         <UiMenuItem multiple listTitle="Option 1">
           <UiMenuItem icon="i-clarity-email-solid" title="Option 1.1" />
           <UiMenuItem icon="i-clarity-email-solid" title="Option 1.2" />
