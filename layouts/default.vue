@@ -9,7 +9,7 @@
 
     <!-- Bottom Bar -->
     <div w="full" h="14">
-      <UiDesktopBottomBar />
+      <BottomBar />
     </div>
   </div>
 </template>

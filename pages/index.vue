@@ -2,11 +2,12 @@
   <NuxtLayout name="desktop">
     <div grid="~ cols-12 rows-8 flow-col">
      
-
+    <!-- Show icons in desktop -->
     <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
 
 
     
+
     <!-- Registering Apps in the platform -->
     <ClientOnly>
       <Teleport to="#openedwindows">

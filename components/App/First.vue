@@ -1,7 +1,7 @@
 <template>
   <!-- Application -->
-  <UiDesktopWindow v-if="isRunning" :title="title" :app="getApp">
-    <!-- {{slotProps}} -->
+  <UiDesktopWindow v-if="app.running" v-show="!app.minimized" :title="title" :app="app">
+    <UiInput />
   </UiDesktopWindow>
 </template>
 
@@ -14,8 +14,7 @@ const AppsStore = useStoreApps();
 AppsStore.register(myApp);
 
 // Gathering Information
-const getApp = computed(() => AppsStore.getApp(myApp));
-const isRunning = computed( () => getApp.value.running);
+const app = computed(() => AppsStore.getApp(myApp));
 
 const title = "My App Window :)";
 </script>
