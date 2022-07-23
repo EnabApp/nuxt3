@@ -2,9 +2,7 @@
     <div flex="~ col gap-1" position="relative" bg="hover:b-20" :class="{ 'bg-b-20': state }" transition="~ .1s ease-in-out" border="rounded-lg" p="t-2 b-3 x-3" w="8" un-text="w-60" items="center" justify="center" @click="toggle()">
         <!-- <div class="text-2xl i-subway-menu"></div> -->
         <nuxt-img src="imgs/enab.svg" />
-
-        <div transition="~ .1s ease-in-out" position="absolute" bottom="1" :class="{ 'opacity-0': !state, 'opacity-100': state }" bg="w-30" h="0.75" w="40%" border="rounded-xl"></div>
-
+        <div transition="~ .1s ease-in-out" position="absolute" bottom="1" :class="{ 'opacity-0': !state, 'opacity-100': state }" bg="primary" h="0.75" w="40%" border="rounded-xl"></div>
     </div>
 
     <ClientOnly>

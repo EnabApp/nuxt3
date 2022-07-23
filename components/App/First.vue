@@ -16,7 +16,7 @@
 
 <script setup>
 import App from "~/classes/App";
-const myApp = new App("First App", "i-akar-icons-cart");
+const myApp = new App("First App", "i-bxs-cart");
 
 // Register to AppsStore
 const AppsStore = useStoreApps();
