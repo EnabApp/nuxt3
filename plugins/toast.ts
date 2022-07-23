@@ -1,8 +1,11 @@
-import Toast, { PluginOptions, useToast } from "vue-toastification";
+import Toast, { PluginOptions, useToast, POSITION } from "vue-toastification";
 import "vue-toastification/dist/index.css";
 
 const options: PluginOptions = {
-  timeout: 2500
+  timeout: 2500,
+  rtl: true,
+  position: POSITION.TOP_CENTER,
+  maxToasts: 5,
 };
 
 export default defineNuxtPlugin((nuxtApp) => {

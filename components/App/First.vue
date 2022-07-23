@@ -1,15 +1,22 @@
 <template>
   <!-- Application -->
-  <Transition name="close-transition">
-    <UiDesktopWindow v-if="app.running" v-show="!app.minimized" :title="title" :app="app">
-      <UiInput />
-    </UiDesktopWindow>
-  </Transition>
+  <ContextMenu>
+    <Transition name="close-transition">
+      <UiDesktopWindow
+        v-if="app.running"
+        v-show="!app.minimized"
+        :title="title"
+        :app="app"
+      >
+        <UiInput />
+      </UiDesktopWindow>
+    </Transition>
+  </ContextMenu>
 </template>
 
 <script setup>
-import App from "~/classes/App"
-const myApp = new App("First App", "i-akar-icons-cart")
+import App from "~/classes/App";
+const myApp = new App("First App", "i-akar-icons-cart");
 
 // Register to AppsStore
 const AppsStore = useStoreApps();
@@ -20,7 +27,6 @@ const app = computed(() => AppsStore.getApp(myApp));
 
 const title = "My App Window :)";
 </script>
-
 
 <style scoped>
 /* CLOSE TRANSITION */

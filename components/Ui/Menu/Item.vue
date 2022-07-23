@@ -1,14 +1,14 @@
 <template>
   <!-- If not Multiple -->
-  <div p="1" v-if="!multiple">
+  <div v-if="!multiple">
     <button
-      :class="{'bg-w-40 hover:bg-w-40 font-medium' : active, 'bg-transparent' : !active}"
+      :class="{'bg-w-30 hover:bg-w-30 font-medium' : active, 'bg-transparent' : !active}"
       bg="hover:w-30"
       flex="~ gap-2"
       items="center"
+      justify="center"
       w="full"
       p="2"
-      text="sm"
       border="0 rounded-md"
       class="dark:text-w-40 dark:hover:text-white text-b-60 hover:text-b-90 group"
       cursor="pointer"

@@ -13,7 +13,7 @@ export default class App {
         this.minimized = false
         this.maximized = false
         this.running = false
-        this.locked = true
+        this.locked = false
     }
 
     toggleMinimize() {
