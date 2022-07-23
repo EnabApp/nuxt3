@@ -12,7 +12,7 @@
                 <slot name="menu" />
                 
                 <UiMenuItem icon="i-akar-icons-copy" @click="copy()" title="نسخ" />
-                <UiMenuItem icon="i-akar-icons-clipboard" title="لصق" />
+                <UiMenuItem icon="i-akar-icons-clipboard" @click="paste()" title="لصق" />
             </div>
         </Transition>
     </div>
@@ -35,14 +35,24 @@ const target = ref(null);
 
 onClickOutside(target, (event) => (state.value = false));
 
-
+const { $toast } = useNuxtApp()
 
 // Functionality
 const clickedElement = ref(null);
 
-const copy = (event) => {
+const copy = () => {
     let text = clickedElement.value.target.innerText || clickedElement.value.target.value;
     console.log(text)
+};
+
+const paste = async () => {
+    let el = clickedElement.value.target;
+    let type = el.tagName.toLowerCase();
+    if (type !== "input"){
+        $toast.error("لايمكن استخدام اللصق هنا");
+    } else {
+        el.value += await navigator.clipboard.readText();
+    }
 };
 
 </script>
