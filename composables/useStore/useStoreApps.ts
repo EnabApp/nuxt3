@@ -12,6 +12,8 @@ export const useStoreApps = defineStore("apps", {
         getAll: (state) => state.all,
         getApp: (state) => (app) => state.all.find(a => a.title === app.title),
         getRunningApps: (state) => state.all.filter(a => a.running),
+        // getLockedApps: (state) => state.all.filter(a => a.locked),
+        
     },
 
     actions: {

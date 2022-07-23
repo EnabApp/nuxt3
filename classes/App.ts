@@ -3,7 +3,9 @@ export default class App {
     icon: string;
     minimized: boolean;
     maximized: boolean;
-    running: boolean
+    running: boolean;
+    locked: boolean;
+
    
     constructor(title: string, icon: string) {
         this.title = title
@@ -11,6 +13,7 @@ export default class App {
         this.minimized = false
         this.maximized = false
         this.running = false
+        this.locked = true
     }
 
     toggleMinimize() {
