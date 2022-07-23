@@ -1,17 +1,21 @@
 <template>
-  <NuxtLayout name="global-two">
-    <template #right>
-      <UiMenu h="full" w="full">
-        <UiMenuItem multiple listTitle="Option 1">
-          <UiMenuItem icon="i-clarity-email-solid" title="Option 1.1" />
-          <UiMenuItem icon="i-clarity-email-solid" title="Option 1.2" />
-        </UiMenuItem>
-        <UiMenuItem icon="i-clarity-email-solid" title="Option 2" />
-        <UiMenuItem icon="i-clarity-email-solid" title="Option 3" />
-      </UiMenu>
-    </template>
+  <NuxtLayout name="desktop">
+    <div grid="~ cols-12 rows-8 flow-col">
+     
 
-    <template #left> Left </template>
+      <UiDesktopIcon @click="toggle()" v-for="item in 20" :key="item" />
+
+
+      <!-- Application -->
+      <ClientOnly>
+        <Teleport to="#openedwindows">
+          <UiDesktopWindow v-if="state">
+            Hello Bellow
+          </UiDesktopWindow>
+        </Teleport>
+      </ClientOnly>
+      
+    </div>
   </NuxtLayout>
 </template>
 
@@ -19,4 +23,6 @@
 definePageMeta({
   title: "Home",
 });
+
+const [state, toggle] = useToggle(true);
 </script>
