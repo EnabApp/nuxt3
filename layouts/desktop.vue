@@ -1,7 +1,5 @@
 <template>
-    <div p="y-8 x-8" z="10">
-        <slot />
-    </div>
+    <slot />
 </template>
 
 <script setup>

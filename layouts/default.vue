@@ -2,14 +2,14 @@
   <div class="bg-default" position="relative" h="screen" w="screen">
     <!-- class="backdrop-blur-2xl" -->
     <div id="openedwindows"></div>
-    <div h="full" flex="~ col" justify="between">
-      <div>
+    <div h="full" flex="~ col">
+      <div flex="grow">
         <slot />
       </div>
   
       <!-- Bottom Bar -->
-      <div w="full" bg="b-60" h="48" z="200">
-        <BottomBar h="full" />
+      <div w="full" h="16" z="200">
+        <BottomBar />
       </div>
     </div>
     

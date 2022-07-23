@@ -26,6 +26,9 @@ export default defineNuxtConfig({
         // Pinia
         '@pinia/nuxt',
 
+        // Image
+        '@nuxt/image-edge',
+
     ],
 
     // experimental: {
