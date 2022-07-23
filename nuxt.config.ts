@@ -5,7 +5,9 @@ export default defineNuxtConfig({
 
     // components: {
     //     global: true,
-    //     dirs: ['~/components/Ui/Desktop']
+    //     dirs: [
+    //         '~/components',
+    //     ]
     // },
 
     modules: [

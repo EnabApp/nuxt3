@@ -1,8 +1,10 @@
 <template>
   <!-- Application -->
-  <UiDesktopWindow v-if="app.running" v-show="!app.minimized" :title="title" :app="app">
-    <UiInput />
-  </UiDesktopWindow>
+  <Transition name="close-transition">
+    <UiDesktopWindow v-if="app.running" v-show="!app.minimized" :title="title" :app="app">
+      <UiInput />
+    </UiDesktopWindow>
+  </Transition>
 </template>
 
 <script setup>
@@ -18,3 +20,26 @@ const app = computed(() => AppsStore.getApp(myApp));
 
 const title = "My App Window :)";
 </script>
+
+
+<style scoped>
+/* CLOSE TRANSITION */
+.close-transition-enter-active {
+  animation: bounce-in 0.5s;
+}
+.close-transition-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style>
