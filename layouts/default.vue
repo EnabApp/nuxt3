@@ -8,6 +8,8 @@
     </div>
 
     <!-- Bottom Bar -->
-    <div w="full" h="10" bg="gray-600">asd</div>
+    <div w="full" h="14">
+      <UiDesktopBottomBar />
+    </div>
   </div>
 </template>

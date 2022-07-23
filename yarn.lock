@@ -595,6 +595,26 @@
     lodash.template "^4.5.0"
     pathe "^0.3.0"
 
+"@nuxtjs/composition-api@^0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/composition-api/-/composition-api-0.33.0.tgz#f9274f279bc7c38c3cb88e665d77e1849eca9885"
+  integrity sha512-IHDHliPWS1o5whD6xgSB7hneJ6LVAU0xu8Thj5GmDx4VAAVA+6WRfDx+xKwh61SW36th4YHUcD28xYeqezW3+Q==
+  dependencies:
+    defu "^6.0.0"
+    estree-walker "^2.0.2"
+    fs-extra "^9.1.0"
+    magic-string "^0.26.2"
+    pathe "^0.3.2"
+    ufo "^0.8.5"
+
+"@pinia/nuxt@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.3.0.tgz#3ee83b5562efb8a726b763054fa5e6e99b15e855"
+  integrity sha512-x/T8GAfpLAF/a5I06frgl7Aj+X9Ld3fvBhQ6xtinHsXivbrUSL1UNJof8JKEAZBwKX33CoCyeGWbXfOtpyODug==
+  dependencies:
+    "@nuxt/kit" "^3.0.0-rc.4"
+    pinia ">=2.0.14"
+
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
@@ -1221,6 +1241,11 @@ async@^3.2.3:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.4.tgz#2d22e00f8cddeb5fde5dd33522b56d1cf569a81c"
   integrity sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==
+
+at-least-node@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
+  integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
 autoprefixer@^10.4.7:
   version "10.4.7"
@@ -2212,6 +2237,16 @@ fs-extra@^10.1.0:
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==
   dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
+
+fs-extra@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
+  integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
+  dependencies:
+    at-least-node "^1.0.0"
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
     universalify "^2.0.0"
@@ -3430,6 +3465,14 @@ pify@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
+
+pinia@>=2.0.14, pinia@^2.0.16:
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.16.tgz#0105db595f5f792e17c04692e36807d8ea62f5cc"
+  integrity sha512-9/LMVO+/epny1NBfC77vnps4g3JRezxhhoF1xLUk8mZkUIxVnwfEAIRiAX8mYBTD/KCwZqnDMqXc8w3eU0FQGg==
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
+    vue-demi "*"
 
 pkg-types@^0.3.2, pkg-types@^0.3.3:
   version "0.3.3"

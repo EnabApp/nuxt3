@@ -3,6 +3,11 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     isProduction: false,
 
+    // components: {
+    //     global: true,
+    //     dirs: ['~/components/Ui/Desktop']
+    // },
+
     modules: [
         // Color Mode
         "@nuxtjs/color-mode",
@@ -15,6 +20,9 @@ export default defineNuxtConfig({
 
         // UnoCSS
         '@unocss/nuxt',
+
+        // Pinia
+        '@pinia/nuxt',
 
     ],
 
