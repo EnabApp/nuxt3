@@ -19,9 +19,7 @@
                 </div>
             </TransitionGroup>
 
-            <div>
-                <Menu />
-            </div>
+            <Menu />
         </div>
 
         <!-- Left Icons / Date -->

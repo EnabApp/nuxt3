@@ -19,6 +19,8 @@ useHead({
     // class:
     // "m-0 p-0 overflow-hidden font-sans h-screen w-screen bg-gray-50 dark:bg-secondary-800",
     dir: "rtl",
+    // oncontextmenu: "return false",
+
   },
   htmlAttrs: {
     lang: "ar",

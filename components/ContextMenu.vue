@@ -8,7 +8,7 @@
             <slot />
         </div>
         <Transition>
-            <div class="backdrop-blur-lg" border="rounded-xl" ref="target" v-if="state" bg="b-60" p="4" w="48" h="content" position="fixed" :style="[`left: ${currentX}px`, `top: ${currentY}px`]" flex="~ col gap-2" z="250">
+            <div class="backdrop-blur-lg" border="rounded-xl" ref="target" v-if="state" bg="w-40" p="4" w="48" h="content" position="fixed" :style="[`left: ${currentX}px`, `top: ${currentY}px`]" flex="~ col gap-2" z="250">
                 <slot name="menu" />
                 
                 <UiMenuItem icon="i-akar-icons-copy" @click="copy()" title="نسخ" />

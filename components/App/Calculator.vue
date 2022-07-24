@@ -8,10 +8,15 @@
         :title="title"
         :app="app"
       >
-        <NuxtLayout name="global-two">
-            <template #left>
-              <UiInput />
-            </template>
+        <NuxtLayout name="global-one">
+            <div h="full" flex="~ col" p="x-8">
+                <div m="t-8">
+                    <UiInput />
+                </div>
+                <div bg="w-10" m="y-8" border="rounded-lg" p="6" h="full" flex="grow">
+                    as
+                </div>
+            </div>
         </NuxtLayout>
       </UiDesktopWindow>
     </Transition>
@@ -20,7 +25,7 @@
 
 <script setup>
 import App from "~/classes/App";
-const myApp = new App("First App", "i-bxs-cart");
+const myApp = new App("Calculator", "i-ic-baseline-calculate");
 
 // Register to AppsStore
 const AppsStore = useStoreApps();

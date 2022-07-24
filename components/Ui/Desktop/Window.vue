@@ -9,29 +9,19 @@
                         <span>{{ title }}</span>
                     </div>
 
-                    <div v-if="!app.maximized" flex="~ gap-2">
-                        <div @click="nextSize()" text="2xl w-80 hover:error-600" cursor="pointer">
-                            <div text="w-80 dark:w-40" class="i-bx-zoom-in hover:i-bxs-zoom-in"></div>
-                        </div>
-                        <div @click="prevSize()" text="2xl w-80 hover:error-600" cursor="pointer">
-                            <div text="w-80 dark:w-40" class="i-bx-zoom-out hover:i-bxs-zoom-out"></div>
-                        </div>
+                    <div v-if="!app.maximized" flex="~ gap-2" bg="b-10" p="2" border="rounded-lg" items="center">
+                        <div @click="prevSize()" cursor="pointer" text="w-80 dark:w-40" class="w-3.5 h-3.5 i-akar-icons-circle-minus-fill"></div>
+                        <div @click="nextSize()" cursor="pointer" text="w-80 dark:w-40" class="w-3.5 h-3.5 i-akar-icons-circle-plus-fill"></div>
                     </div>
 
-                    <div @click="app.toggleMinimize()" text="2xl w-80 hover:error-600" cursor="pointer">
-                        <div text="w-80 dark:w-40" class="i-mdi-window-minimize"></div>
-                    </div>
-                    <div @click="app.toggleMaximize()" text="2xl w-80 hover:error-600" cursor="pointer">
-                        <div text="w-80 dark:w-40" class="i-gg-maximize-alt"></div>
-                    </div>
 
-                    <div @click="app.running = false" text="2xl w-80 hover:error-600" cursor="pointer">
-                        <div text="w-80 dark:w-40" class="i-carbon-close hover:i-carbon-close-filled"></div>
-                    </div>
+                    <span @click="app.toggleMinimize()" cursor="pointer" class="w-3.5 h-3.5 bg-gray-500 rounded-full"></span>
+                    <span @click="app.toggleMaximize()" cursor="pointer" class="w-3.5 h-3.5 bg-warning-500 rounded-full"></span>
+                    <span @click="app.running = false" cursor="pointer" class="w-3.5 h-3.5 bg-red-500 rounded-full"></span>
                 </div>
 
                 <!-- Content -->
-                <div flex="grow" p="x-6 y-6" class="backdrop-blur-lg">
+                <div flex="~ grow" class="backdrop-blur-lg">
                     <slot />
                 </div>
 
