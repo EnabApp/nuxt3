@@ -73,4 +73,19 @@ const {
     ],
     { initialValue: props.app.size }
 );
+onKeyStroke(['-'],(e) => {
+    if(e.ctrlKey){
+        prevSize();
+
+    e.preventDefault();
+    }
+    
+});
+onKeyStroke(['+'],(e) => {
+    if(e.ctrlKey){
+        nextSize();
+
+    e.preventDefault();
+    }
+});
 </script>

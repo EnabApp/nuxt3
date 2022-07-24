@@ -87,7 +87,7 @@ const [powerState, powerToggle] = useToggle(false);
 const [state, toggle] = useToggle(false);
 const formattedDate = useDateFormat(useNow(), "YYYY-MM-DD");
 const formattedTime = useDateFormat(useNow(), "HH:mm:ss");
-onKeyStroke(['Escape'], (e) => {
+onKeyStroke(['Meta'], (e) => {
   // e.ctrlKey
   // e.shiftKey
   // e.altKey
