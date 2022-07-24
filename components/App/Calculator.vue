@@ -25,7 +25,7 @@
 
 <script setup>
 import App from "~/classes/App";
-const myApp = new App("Calculator", "i-ic-baseline-calculate");
+const myApp = new App("الحاسبة", "i-ic-baseline-calculate");
 
 // Register to AppsStore
 const AppsStore = useStoreApps();
@@ -34,7 +34,7 @@ AppsStore.register(myApp);
 // Gathering Information
 const app = computed(() => AppsStore.getApp(myApp));
 
-const title = "My App Window :)";
+const title = "الحاسبة";
 </script>
 
 <style scoped>
