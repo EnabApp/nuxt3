@@ -2,13 +2,6 @@ import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     isProduction: false,
-
-    vite: {
-        server: {
-            host: '0.0.0.0',
-            port: 5173
-        },
-    },
     
     // components: {
     //     global: true,
