@@ -5,13 +5,6 @@
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1000 1000"
   >
-    <defs>
-      <style scoped>
-        .cls-1 {
-          fill: #389bf2;
-        }
-      </style>
-    </defs>
     <title>logo Enab</title>
     <path
       class="cls-1"
@@ -59,3 +52,8 @@
     <circle class="cls-1" cx="141.99" cy="330.41" r="30.59" />
   </svg>
 </template>
+<style scoped>
+.cls-1 {
+  fill: #389bf2;
+}
+</style>
