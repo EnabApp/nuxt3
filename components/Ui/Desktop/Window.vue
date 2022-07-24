@@ -73,15 +73,15 @@ const {
     ],
     { initialValue: props.app.size }
 );
-onKeyStroke(['-'],(e) => {
-    if(e.ctrlKey){
+onKeyStroke(['ArrowUp'],(e) => {
+    if(e.ctrlKey ){
         prevSize();
 
     e.preventDefault();
     }
     
 });
-onKeyStroke(['+'],(e) => {
+onKeyStroke(['ArrowDown'],(e) => {
     if(e.ctrlKey){
         nextSize();
 
