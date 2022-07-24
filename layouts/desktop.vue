@@ -16,8 +16,20 @@
 </template>
 
 <script setup>
+import { onKeyStroke } from '@vueuse/core'
+
 const [state, toggle] = useToggle(false);
 const route = useRoute();
+
+const appsStore = useStoreApps()
+
+onKeyStroke(['Escape'], (e) => {
+  // e.ctrlKey
+  // e.shiftKey
+  // e.altKey
+  appsStore.closeWindow();
+  e.preventDefault()
+})
 
 useHead({
   meta: [

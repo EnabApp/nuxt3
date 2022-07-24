@@ -28,6 +28,7 @@ const props = defineProps({
   },
 })
 const { $toast } = useNuxtApp();
+const appsStore = useStoreApps();
 
 const open= () => {
   if(props.app.locked) {
@@ -36,7 +37,10 @@ const open= () => {
     )
   }
   else {
-        props.app.running = true
+    // Start app
+    props.app.running = true
+    // Focus app
+    appsStore.setFocus(props.app.title)
   }
 }
 

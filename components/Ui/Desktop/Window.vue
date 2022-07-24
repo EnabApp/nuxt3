@@ -1,5 +1,8 @@
 <template>
-    <div border="rounded-lg" z="20" bg="b-70" shadow="2xl b-70" :style="[app.maximized ? 'left:0px;top:0px;' : `left:${x}px;top:${y}px;`]" style="position: fixed" :class="{ 'w-full min-w-7xl h-minus-bottombar': app.maximized }">
+    <div @click="appsStore.setFocus(app.title)" border="rounded-lg" bg="b-70" shadow="2xl b-70" :style="[app.maximized ? 'left:0px;top:0px;' : `left:${x}px;top:${y}px;`]" style="position: fixed" :class="[ 
+        app.maximized && 'w-full min-w-7xl h-minus-bottombar',
+        appsStore.focused == app.title ? 'z-20' : 'z-10'
+     ]">
         <div flex="~" place="items-center" justify="center" :class="{ 'w-full min-w-7xl h-full': app.maximized }">
             <div flex="~ col" transition="all duration-300 delay-75 ease-in-out" :class="[app.maximized ? 'w-full min-w-7xl  h-minus-bottombar' : size]" h="full">
                 <!-- Header -->
@@ -46,6 +49,8 @@ const props = defineProps({
     },
 });
 
+const appsStore = useStoreApps();
+
 const el = ref(null);
 
 const { x, y, style } = useDraggable(el, {
@@ -58,16 +63,14 @@ const {
     prev: prevSize,
 } = useCycleList(
     [
-        "min-w-sm min-h-sm",
-        "min-w-lg min-h-lg",
-        "min-w-xl min-h-xl",
-        "min-w-2xl min-h-2xl",
-        "min-w-3xl min-h-3xl",
-        "min-w-4xl min-h-4xl",
-        "min-w-5xl min-h-5xl",
-        "min-w-6xl min-h-6xl",
-        "min-w-7xl min-h-7xl w-full",
+        "min-w-xl min-h-sm",
+        "min-w-2xl min-h-lg",
+        "min-w-3xl min-h-xl",
+        "min-w-4xl min-h-2xl",
+        "min-w-5xl min-h-3xl",
+        "min-w-6xl min-h-4xl",
+        "min-w-7xl min-h-5xl",
     ],
-    { initialValue: "min-w-2xl min-h-2xl" }
+    { initialValue: props.app.size }
 );
 </script>

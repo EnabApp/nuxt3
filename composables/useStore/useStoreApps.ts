@@ -5,6 +5,7 @@ export const useStoreApps = defineStore("apps", {
         all: [
 
         ],
+        focused: "",
     }),
 
     getters: {
@@ -13,13 +14,21 @@ export const useStoreApps = defineStore("apps", {
         getApp: (state) => (app) => state.all.find(a => a.title === app.title),
         getRunningApps: (state) => state.all.filter(a => a.running),
         // getLockedApps: (state) => state.all.filter(a => a.locked),
-        
+        getFocused: () => state.focused
     },
 
     actions: {
         register(appObject) {
             this.all.push(appObject);
-            console.log(this.all)
+        },
+
+        setFocus(title){
+            this.focused = title;
+        },
+
+        closeWindow(){
+            let app = this.getRunningApps.find((app) => app.title == this.focused)
+            app.running = false
         }
     },
 });

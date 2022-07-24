@@ -5,15 +5,18 @@ export default class App {
     maximized: boolean;
     running: boolean;
     locked: boolean;
+    size: string;
 
    
-    constructor(title: string, icon: string) {
+    constructor(title: string, icon: string, size: string) {
         this.title = title
         this.icon = icon
         this.minimized = false
         this.maximized = false
         this.running = false
         this.locked = false
+
+        this.size = size ?? "min-w-7xl min-h-5xl"
     }
 
     toggleMinimize() {
