@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div @click.right="
+    <div w="full" h="full">
+        <div h="full" @click.right="
             ($event) => {
                 toggle(), getPosition(), clickedElement = $event;
             }

@@ -31,10 +31,10 @@ const title = "My App Window :)";
 <style scoped>
 /* CLOSE TRANSITION */
 .close-transition-enter-active {
-  animation: bounce-in 0.5s;
+  animation: bounce-in 0.3s;
 }
 .close-transition-leave-active {
-  animation: bounce-in 0.5s reverse;
+  animation: bounce-in 0.3s reverse;
 }
 
 @keyframes bounce-in {

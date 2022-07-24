@@ -1,13 +1,8 @@
 <template>
-  <div>
-    <ContextMenu>
+  <div h="full">
+    <ContextMenu h="full">
       <slot />
     </ContextMenu>
-    <!-- <div @click.right="toggle()">
-      <div v-if="state">
-        
-      </div>
-    </div> -->
   </div>
 </template>
 

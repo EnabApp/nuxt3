@@ -1,9 +1,9 @@
 <template>
-    <div border="rounded-lg" z="20" bg="b-70" shadow="2xl b-70" :style="[app.maximized ? 'left:0px;top:0px;' : `left:${x}px;top:${y}px;`]" style="position: fixed" :class="{ 'w-full min-w-7xl min-h-6xl': app.maximized }">
-        <div flex="~" place="items-center" justify="center" :class="{ 'w-full min-w-7xl min-h-6xl': app.maximized }">
-            <div flex="~ col" transition="all duration-300 delay-75 ease-in-out" :class="[app.maximized ? 'w-full min-w-7xl min-h-6xl' : size]" h="full" max-h="xl">
+    <div border="rounded-lg" z="20" bg="b-70" shadow="2xl b-70" :style="[app.maximized ? 'left:0px;top:0px;' : `left:${x}px;top:${y}px;`]" style="position: fixed" :class="{ 'w-full min-w-7xl h-minus-bottombar': app.maximized }">
+        <div flex="~" place="items-center" justify="center" :class="{ 'w-full min-w-7xl h-full': app.maximized }">
+            <div flex="~ col" transition="all duration-300 delay-75 ease-in-out" :class="[app.maximized ? 'w-full min-w-7xl  h-minus-bottombar' : size]" h="full">
                 <!-- Header -->
-                <div border="rounded-t-lg" ref="el" bg="w-10" flex="~ gap-4" place="items-center" justify="between" p="y-2 x-4" text="lg" font="medium">
+                <div border="rounded-t-lg" class="backdrop-blur-lg" ref="el" bg="w-10" flex="~ gap-4" place="items-center" justify="between" p="y-2 x-4" text="lg" font="medium">
                     <div flex="~ grow gap-2" items="center" text="w-90 dark:w-60">
                         <div :class="app.icon"></div>
                         <span>{{ title }}</span>

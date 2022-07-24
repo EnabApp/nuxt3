@@ -1,8 +1,7 @@
 <template>
-  <div class="bg-default" position="relative" h="screen" w="screen">
-    <!-- class="backdrop-blur-2xl" -->
+  <div class="bg-default" flex="~ col" position="relative" h="screen" w="screen">
     <div id="openedwindows"></div>
-    <div h="full" flex="~ col">
+    <!-- class="backdrop-blur-2xl" -->
       <div flex="grow">
         <slot />
       </div>
@@ -11,7 +10,6 @@
       <div w="full" h="16" z="200">
         <BottomBar />
       </div>
-    </div>
     
   </div>
 </template>

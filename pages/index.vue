@@ -1,8 +1,34 @@
 <template>
   <NuxtLayout name="desktop">
-    <div grid="~ cols-12 rows-8 flow-col" ref="dropZoneRef">
-      <!-- Show icons in desktop -->
-      <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+    <div h="full">
+      <div h="full" w="75%" grid="~ cols-10 auto-rows-min gap-8" p="8" place="center" ref="dropZoneRef">
+        <!-- Show icons in desktop -->
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+      </div>
     </div>
 
 
