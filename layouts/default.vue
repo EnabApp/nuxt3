@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-default" position="relative" h="screen" w="screen">
+  <div class="bg-b-40" position="relative" h="screen" w="screen">
     <!-- class="backdrop-blur-2xl" -->
     <div id="openedwindows"></div>
     <div h="full" flex="~ col">
