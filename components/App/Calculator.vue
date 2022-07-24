@@ -25,7 +25,12 @@
 
 <script setup>
 import App from "~/classes/App";
-const myApp = new App("الحاسبة", "i-ic-baseline-calculate", "min-w-2xl min-h-3xl");
+const myApp = new App({
+  title: "الحاسبة",
+  icon: "i-ic-baseline-calculate",
+  size: "min-w-2xl min-h-3xl",
+  // zIndex: "30"
+})
 
 // Register to AppsStore
 const AppsStore = useStoreApps();

@@ -6,17 +6,19 @@ export default class App {
     running: boolean;
     locked: boolean;
     size: string;
+    zIndex: string;
 
    
-    constructor(title: string, icon: string, size: string) {
-        this.title = title
-        this.icon = icon
-        this.minimized = false
-        this.maximized = false
-        this.running = false
+    constructor(args) {
+        this.title = args?.title
+        this.icon = args?.icon
+        this.minimized = args.minimized ?? false
+        this.maximized = args.maximized ?? false
+        this.running = args.running ?? false
+        this.zIndex = args.zIndex ?? 20
         this.locked = false
 
-        this.size = size ?? "min-w-7xl min-h-5xl"
+        this.size = args.size ?? "min-w-7xl min-h-5xl"
     }
 
     toggleMinimize() {

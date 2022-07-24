@@ -20,7 +20,11 @@
 
 <script setup>
 import App from "~/classes/App";
-const myApp = new App("First App", "i-bxs-cart");
+const myApp = new App({
+  title: "سوبر ماركت",
+  icon: "i-bxs-cart",
+  maximized: true
+});
 
 // Register to AppsStore
 const AppsStore = useStoreApps();
@@ -29,7 +33,7 @@ AppsStore.register(myApp);
 // Gathering Information
 const app = computed(() => AppsStore.getApp(myApp));
 
-const title = "My App Window :)";
+const title = "سوبرماركت";
 </script>
 
 <style scoped>

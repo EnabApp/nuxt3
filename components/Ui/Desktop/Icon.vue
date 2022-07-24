@@ -39,6 +39,7 @@ const open= () => {
   else {
     // Start app
     props.app.running = true
+    props.app.minimized = false
     // Focus app
     appsStore.setFocus(props.app.title)
   }
