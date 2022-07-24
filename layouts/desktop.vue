@@ -1,8 +1,17 @@
 <template>
-  <div h="full">
-    <ContextMenu h="full">
-      <slot />
-    </ContextMenu>
+  <div h="full" flex="~ col">
+    <div id="openedwindows"></div>
+    <!-- class="backdrop-blur-2xl" -->
+    <div flex="grow">
+      <ContextMenu h="full">
+        <slot />
+      </ContextMenu>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div w="full" h="16" z="200">
+      <BottomBar />
+    </div>
   </div>
 </template>
 

@@ -1,33 +1,33 @@
 <template>
   <div flex="~ col gap-1">
     <!-- Label -->
-    <label v-if="label" class="font-medium text-gray-700 dark:text-gray-400">{{ label }}</label>
+    <label v-if="label" class="text-xl font-medium text-gray-700 dark:text-gray-400">{{ label }}</label>
 
     <!-- Main Input Components -->
     <div class="group" :class="{
       'focus-within:border-primary-500': !error,
       'focus-within:border-error-500': error,
-    }" flex="~ gap-2" font="leading-tight" justify="between" p="x-2 y-1" text="gray-600 dark:gray-200" bg="w-20 dark:w-5" border="~ 2 w-40 dark:gray-600 rounded-lg" outline="none focus-within:none">
+    }" flex="~ gap-2" font="leading-tight" justify="between" p="x-4 y-2" un-text="xl gray-600 dark:gray-200" bg="w-20 dark:w-5" border="~ 2 w-40 dark:gray-600 rounded-lg" outline="none focus-within:none">
       <div flex="~ gap-2 grow" items="center">
         <!-- Icon -->
         <div v-if="icon" :class="icon" text="gray-500 dark:gray-200"></div>
 
         <!-- Input -->
-        <input v-model="modelValue" ref="inputRef" @input="(event) => $emit('update:modelValue', event.target.value)" :placeholder="placeholder" :type="type == 'password' ? statePassword : type" class="py-2 text-gray-700 bg-transparent border-0 outline-none appearance-none dark:text-gray-400 dark:bg-transparent grow focus:outline-none" />
+        <input v-model="modelValue" ref="inputRef" @input="(event) => $emit('update:modelValue', event.target.value)" :placeholder="placeholder" :type="type == 'password' ? statePassword : type" class="py-2 text-xl text-gray-700 bg-transparent border-0 outline-none appearance-none dark:text-gray-400 dark:bg-transparent grow focus:outline-none" />
       </div>
 
       <!-- Buttons -->
       <div id="buttons" flex="~ gap-1" items="center" p="b-0.5" m="1" overflow="y-hidden">
         <!-- Type password -->
         <div class="flex gap-1" v-if="type == 'password'">
-          <button v-if="statePassword == 'password'" @click="showPassword()" text="gray-500 dark:gray-200" class="i-gridicons-not-visible"></button>
-          <button v-else @click="showPassword()" text="gray-700 dark:text-gray-50" class="i-gridicons-visible"></button>
+          <button v-if="statePassword == 'password'" @click="showPassword()" text="xl gray-500 dark:gray-200" class="i-gridicons-not-visible"></button>
+          <button v-else @click="showPassword()" text="xl gray-700 dark:text-gray-50" class="i-gridicons-visible"></button>
         </div>
 
         <!-- Incrementals -->
         <div flex="~ gap-1 col" v-if="type == 'number'">
-          <button @click="increase()" text="gray-500 dark:gray-400" cursor="pointer" class="i-ep-arrow-up-bold"></button>
-          <button @click="decrease()" text="gray-500 dark:gray-400" cursor="pointer" class="i-ep-arrow-down-bold"></button>
+          <button @click="increase()" text="xl gray-500 dark:gray-400" cursor="pointer" class="i-ep-arrow-up-bold"></button>
+          <button @click="decrease()" text="xl gray-500 dark:gray-400" cursor="pointer" class="i-ep-arrow-down-bold"></button>
         </div>
 
         <!-- Alternative Buttons -->
