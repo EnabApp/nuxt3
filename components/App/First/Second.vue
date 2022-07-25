@@ -1,6 +1,9 @@
 <template>
   <!-- Application -->
   <ContextMenu>
+    <template #menu>
+      <UiMenuItem icon="i-akar-icons-copy" @click="copy()" title="نس2خ" />
+    </template>
     <Transition name="close-transition">
       <UiDesktopWindow
         v-if="app.running"
@@ -10,7 +13,6 @@
         <NuxtLayout name="global-two">
             <template #left>
               <UiInput />
-              <UiDesktopIcon :app="childrenApps.find(app => app.title == 'برنامج ثاني')" />
             </template>
         </NuxtLayout>
       </UiDesktopWindow>
@@ -21,10 +23,12 @@
 <script setup>
 import App from "~/classes/App";
 const myApp = new App({
-  title: "سوبر ماركت",
+  title: "برنامج ثاني",
   icon: "i-bxs-cart",
-  maximized: true,
-  solid: true,
+//   maximized: true,
+//   solid: true,
+  size: "min-w-2xl min-h-3xl",
+  parentApp: "سوبر ماركت",
 });
 
 // Register to AppsStore
@@ -33,7 +37,6 @@ AppsStore.register(myApp);
 
 // Gathering Information
 const app = computed(() => AppsStore.getApp(myApp));
-const childrenApps = computed(() => AppsStore.getChildrenApps(myApp.title));
 </script>
 
 <style scoped>

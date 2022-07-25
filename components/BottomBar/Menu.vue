@@ -5,7 +5,7 @@
         <UiIconsEnab />
         <div transition="~ .1s ease-in-out" position="absolute" bottom="1" :class="{ 'opacity-0': !state, 'opacity-100': state }" bg="primary" h="0.75" w="40%" border="rounded-xl"></div>
     </div>
-
+ 
     <ClientOnly>
         <Teleport to="#openedwindows">
             <Transition>

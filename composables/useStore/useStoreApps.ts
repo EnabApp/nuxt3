@@ -10,11 +10,12 @@ export const useStoreApps = defineStore("apps", {
 
     getters: {
         // isRunning: (state) => (app) => state.all.find(a => a.title === app.title).running,
-        getAll: (state) => state.all,
+        getAll: (state) => state.all.filter(app => !app.parentApp),
         getApp: (state) => (app) => state.all.find(a => a.title === app.title),
         getRunningApps: (state) => state.all.filter(a => a.running),
         // getLockedApps: (state) => state.all.filter(a => a.locked),
-        getFocused: (state) => state.focused
+        getFocused: (state) => state.focused,
+        getChildrenApps: (state) => (title) => state.all.filter(app => app.parentApp === title),
     },
 
     actions: {
@@ -28,7 +29,15 @@ export const useStoreApps = defineStore("apps", {
 
         closeWindow(){
             let app = this.getRunningApps.find((app) => app.title == this.focused)
+            let children = this.getChildrenApps(app.title)
+            children?.forEach(child => child.running = false)
             app.running = false
+        },
+
+        openWindow(app){
+            this.focused = app.title
+            app.running = true
+            app.minimized = false
         }
     },
 });

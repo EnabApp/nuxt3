@@ -1,6 +1,6 @@
 <template>
   <!-- Main -->
-  <div  @click="open()" w="24" h="24" bg="hover:w-40 active:w-40" p="2" border="rounded-lg" flex="~ col" justify="center" items="center" un-text="gray-800" transition="~ 0.2s all" cursor="pointer" transform="~ active:scale-115" position="relative" :class="{
+  <div  @click.stop="open()" w="30" h="30" bg="hover:w-40 active:w-40" p="2" border="rounded-lg" flex="~ col" justify="center" items="center" un-text="gray-900" transition="~ 0.2s all" cursor="pointer" transform="~ active:scale-115" position="relative" :class="{
     'border-success': app.running,
     'border-error': !app.running,
   }">
@@ -38,10 +38,7 @@ const open= () => {
   }
   else {
     // Start app
-    props.app.running = true
-    props.app.minimized = false
-    // Focus app
-    appsStore.setFocus(props.app.title)
+    appsStore.openWindow(props.app);
   }
 }
 

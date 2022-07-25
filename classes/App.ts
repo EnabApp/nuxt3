@@ -11,6 +11,8 @@ export default class App {
 
     solid: boolean;
 
+    parentApp: string;
+
    
     constructor(args) {
         this.title = args?.title
@@ -23,6 +25,8 @@ export default class App {
         this.locked = args.locked ?? false
 
         this.solid = args.solid ?? false
+
+        this.parentApp = args.parentApp ?? ''
 
         this.size = args.size ?? "min-w-7xl min-h-5xl"
     }

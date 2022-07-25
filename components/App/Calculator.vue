@@ -5,7 +5,6 @@
       <UiDesktopWindow
         v-if="app.running"
         v-show="!app.minimized"
-        :title="title"
         :app="app"
       >
         <NuxtLayout name="global-one">
@@ -39,8 +38,6 @@ AppsStore.register(myApp);
 
 // Gathering Information
 const app = computed(() => AppsStore.getApp(myApp));
-
-const title = "الحاسبة";
 </script>
 
 <style scoped>

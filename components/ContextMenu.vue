@@ -1,21 +1,41 @@
 <template>
-    <div w="full" h="full">
-        <div h="full" @click.right="
-            ($event) => {
-                toggle(), getPosition(), clickedElement = $event;
-            }
-        ">
-            <slot />
-        </div>
-        <Transition>
-            <div class="backdrop-blur-lg" border="rounded-xl" ref="target" v-if="state" bg="w-40" p="4" w="48" h="content" position="fixed" :style="[`left: ${currentX}px`, `top: ${currentY}px`]" flex="~ col gap-2" z="250">
-                <slot name="menu" />
-                
-                <UiMenuItem icon="i-akar-icons-copy" @click="copy()" title="نسخ" />
-                <UiMenuItem icon="i-akar-icons-clipboard" @click="paste()" title="لصق" />
-            </div>
-        </Transition>
+  <div w="full" h="full">
+    <div
+      h="full"
+      @click.right="
+        ($event) => {
+          toggle(), getPosition(), (clickedElement = $event);
+        }
+      "
+    >
+      <slot />
     </div>
+    <Transition>
+      <div
+        class="backdrop-blur-lg"
+        border="rounded-xl"
+        ref="target"
+        v-if="state"
+        bg="w-40"
+        p="4"
+        w="48"
+        h="content"
+        position="fixed"
+        :style="[`left: ${currentX}px`, `top: ${currentY}px`]"
+        flex="~ col gap-2"
+        z="250"
+      >
+        <slot name="menu" />
+
+        <UiMenuItem icon="i-akar-icons-copy" @click="copy()" title="نسخ" />
+        <UiMenuItem
+          icon="i-akar-icons-clipboard"
+          @click="paste()"
+          title="لصق"
+        />
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <script setup>
@@ -24,9 +44,18 @@ const { x, y, sourceType } = useMouse();
 const currentX = ref(0);
 const currentY = ref(0);
 
+const { width, height } = useWindowSize()
+
 const getPosition = () => {
-    currentX.value = x.value;
-    currentY.value = y.value;
+    // console.log(width.value, height.value)
+  currentX.value = x.value;
+  currentY.value = y.value;
+  
+  if (x.value + 230 > width.value) currentX.value = x.value - 230
+  if (y.value + 110 > height.value) currentY.value = y.value - 110
+
+  
+
 };
 
 const [state, toggle] = useToggle(false);
@@ -35,26 +64,26 @@ const target = ref(null);
 
 onClickOutside(target, (event) => (state.value = false));
 
-const { $toast } = useNuxtApp()
+const { $toast } = useNuxtApp();
 
 // Functionality
 const clickedElement = ref(null);
 
 const copy = () => {
-    let text = clickedElement.value.target.innerText || clickedElement.value.target.value;
-    console.log(text)
+  let text =
+    clickedElement.value.target.innerText || clickedElement.value.target.value;
+  console.log(text);
 };
 
 const paste = async () => {
-    let el = clickedElement.value.target;
-    let type = el.tagName.toLowerCase();
-    if (type !== "input"){
-        $toast.error("لايمكن استخدام اللصق هنا");
-    } else {
-        el.value += await navigator.clipboard.readText();
-    }
+  let el = clickedElement.value.target;
+  let type = el.tagName.toLowerCase();
+  if (type !== "input") {
+    $toast.error("لايمكن استخدام اللصق هنا");
+  } else {
+    el.value += await navigator.clipboard.readText();
+  }
 };
-
 </script>
 
 <style scoped>
