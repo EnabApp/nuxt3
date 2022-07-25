@@ -29,6 +29,7 @@ const myApp = new App({
   title: "الحاسبة",
   icon: "i-ic-baseline-calculate",
   size: "min-w-2xl min-h-3xl",
+  maximizable: false,
   // zIndex: "30"
 })
 

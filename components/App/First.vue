@@ -23,7 +23,8 @@ import App from "~/classes/App";
 const myApp = new App({
   title: "سوبر ماركت",
   icon: "i-bxs-cart",
-  maximized: true
+  maximized: true,
+  solid: true,
 });
 
 // Register to AppsStore

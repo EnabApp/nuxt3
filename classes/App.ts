@@ -3,10 +3,13 @@ export default class App {
     icon: string;
     minimized: boolean;
     maximized: boolean;
+    maximizable: boolean;
     running: boolean;
     locked: boolean;
     size: string;
     zIndex: string;
+
+    solid: boolean;
 
    
     constructor(args) {
@@ -14,9 +17,12 @@ export default class App {
         this.icon = args?.icon
         this.minimized = args.minimized ?? false
         this.maximized = args.maximized ?? false
+        this.maximizable = args.maximizable ?? true
         this.running = args.running ?? false
         this.zIndex = args.zIndex ?? 20
-        this.locked = false
+        this.locked = args.locked ?? false
+
+        this.solid = args.solid ?? false
 
         this.size = args.size ?? "min-w-7xl min-h-5xl"
     }
@@ -27,7 +33,8 @@ export default class App {
 
     
     toggleMaximize() {
-        this.maximized = !this.maximized
+        if (this.maximizable)
+            this.maximized = !this.maximized
     }
   }
    
