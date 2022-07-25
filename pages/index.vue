@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="desktop">
     <div  @click="appsStore.setFocus('')" flex="~" h="full" items="center" justify="center">
-      <div w="4xl" h="3xl" bg="b-5" border="~ b-5 rounded-2xl" grid="~ cols-2 2xl:cols-6 xl:cols-6 lg:cols-4 md:cols-4 sm:cols-3  auto-rows-min" p="8" place="center" ref="dropZoneRef">
+      <div w="5xl" h="3xl" bg="b-5" border="~ b-5 rounded-2xl" grid="~ cols-2 2xl:cols-6 xl:cols-6 lg:cols-4 md:cols-4 sm:cols-3  auto-rows-min" p="8" place="center" ref="dropZoneRef">
         <!-- Show icons in desktop -->
         <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
       </div>
@@ -15,7 +15,9 @@
         <AppFirst />
         <AppFirstSecond />
 
+        <!-- Utilities -->
         <AppCalculator />
+        <AppTodo />
       </Teleport>
     </ClientOnly>
   </NuxtLayout>

@@ -25,7 +25,7 @@
                     <div @dblclick.stop="() => {}" @click.stop="togglePin()" cursor="pointer" :class="[ pinned ? 'text-primary' : 'text-w-80']" class="w-4 h-4 i-carbon-pin-filled"></div>
 
 
-                    <div @dblclick.stop="() => {}" v-if="!app.maximized" flex="~ gap-2" bg="b-10" p="2" border="rounded-lg" items="center">
+                    <div @dblclick.stop="() => {}" v-if="!app.maximized" flex="~ gap-2" bg="b-20" p="2" border="rounded-lg" items="center">
                         <div @click="prevSize()" cursor="pointer" text="w-80 dark:w-40" class="w-4 h-4 i-akar-icons-circle-minus-fill"></div>
                         <div @click="nextSize()" cursor="pointer" text="w-80 dark:w-40" class="w-4 h-4 i-akar-icons-circle-plus-fill"></div>
                     </div>

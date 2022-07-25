@@ -1,7 +1,5 @@
 <template>
-    <div flex="~ col" w="full">
-        <div w="full" h="full">
-            <slot />
-        </div>
+    <div w="full" flex="grow" h="full">
+        <slot />
     </div>
 </template>

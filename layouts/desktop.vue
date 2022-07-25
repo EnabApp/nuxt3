@@ -1,6 +1,6 @@
 <template>
   <div h="full" flex="~ col">
-    <div ref="openedWindows" id="openedwindows"></div>
+    <div id="openedwindows"></div>
     <!-- class="backdrop-blur-2xl" -->
     <div flex="grow">
       <ContextMenu h="full">
@@ -22,9 +22,6 @@ const [state, toggle] = useToggle(false);
 const route = useRoute();
 
 const appsStore = useStoreApps()
-
-const openedWindows = ref(null)
-watch( () => openedWindows.value, (x) => console.log(x))
 
 onKeyStroke(['Escape'], (e) => {
   // e.ctrlKey

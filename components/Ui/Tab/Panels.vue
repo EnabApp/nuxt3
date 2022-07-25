@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'mt-2' : !col}" w="full" h="full">
+    <div w="full" h="full">
         <slot />
     </div>
 </template>
