@@ -113,4 +113,19 @@ const {
     ],
     { initialValue: props.app.size }
 );
+onKeyStroke(['ArrowUp'],(e) => {
+    if(e.ctrlKey ){
+        prevSize();
+
+    e.preventDefault();
+    }
+    
+});
+onKeyStroke(['ArrowDown'],(e) => {
+    if(e.ctrlKey){
+        nextSize();
+
+    e.preventDefault();
+    }
+});
 </script>
