@@ -1,10 +1,7 @@
 <template>
-  <NuxtLayout name="global-two">
-    <template #left>
-      <UiInput />
-    </template>
-    <template #right>
-      <UiInput />
-    </template>
-  </NuxtLayout>
+    <div h="full">
+      <div p="2">
+        <span un-text="7xl">Home, sweet home!</span>
+      </div>
+    </div>
 </template>

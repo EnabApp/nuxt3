@@ -16,7 +16,7 @@
 
         <!-- Window Container -->
         <div flex="~" place="items-center" justify="center" :class="{ 'w-full h-minus-bottombar': app.maximized }">
-            <div flex="~ col" transition="all duration-300 delay-75 ease-in-out" :class="[
+            <div flex="~ col" transition="all .2s ease-in-out" :class="[
                 app.maximized ? 'w-full h-minus-bottombar' : size + ' border-rounded-lg',
                 app.solid ? 'bg-gray-800' : 'bg-b-70',
             ]">

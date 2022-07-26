@@ -1,5 +1,5 @@
 <template>
-    <div cursor="pointer" text="center"  font="medium" p="x-4 y-2" :class="[
+    <div cursor="pointer" text="center 2xl"  font="medium" p="x-4 y-2" :class="[
         active
         ? 'bg-s-10 hover:bg-s-15 dark:bg-s-15 border border-s-10 dark:border-w-20'
         : 'bg-transparent border border-transparent',

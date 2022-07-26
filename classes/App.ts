@@ -4,10 +4,13 @@ export default class App {
     minimized: boolean;
     maximized: boolean;
     maximizable: boolean;
+    resizeable: boolean;
     running: boolean;
     locked: boolean;
     size: string;
     zIndex: string;
+
+    utility: boolean;
 
     solid: boolean;
 
@@ -20,9 +23,12 @@ export default class App {
         this.minimized = args.minimized ?? false
         this.maximized = args.maximized ?? false
         this.maximizable = args.maximizable ?? true
+        this.resizeable = args.resizeable ?? true
         this.running = args.running ?? false
         this.zIndex = args.zIndex ?? 20
         this.locked = args.locked ?? false
+
+        this.utility = args.utility ?? false
 
         this.solid = args.solid ?? false
 

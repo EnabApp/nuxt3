@@ -7,13 +7,13 @@
         v-show="!app.minimized"
         :app="app"
       >
-            <UiTabGroup p="2" h="full" :tabs="[
-                'الصفحة الرئيسية', 'About', 'Contact']">
+            <UiTabGroup flex="~ col" p="2" h="full" :tabs="[
+                'الصفحة الرئيسية', 'التحكم', 'Contact']">
               <template #tab-1>
                 <AppSupermarketTabsHome />
               </template>
               <template #tab-2>
-                <h1>About</h1>
+                <AppSupermarketTabsControl />
               </template>
               <template #tab-3>
                 <h1>Contact</h1>

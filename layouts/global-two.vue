@@ -1,5 +1,5 @@
 <template>
-    <div flex="~ grow">
+    <div flex="~ grow" h="full" w="full">
         <!-- Right -->
         <div p="2" basis="sm:2/8 1/8" flex="~ col grow">
             <div p="x-4 y-3" bg="b-30" border="rounded-lg" flex="grow">

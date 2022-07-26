@@ -40,11 +40,13 @@
 <script setup>
 import App from "~/classes/App";
 const myApp = new App({
-  title: "المهام",
+  title: "مهامي",
   icon: "i-ri-todo-fill",
   size: "min-w-xl min-h-3xl",
   maximizable: false,
-  // zIndex: "30"
+  resizeable: false,
+  utility: true,
+
 })
 
 // Register to AppsStore

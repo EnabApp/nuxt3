@@ -29,6 +29,9 @@ const myApp = new App({
   icon: "i-ic-baseline-calculate",
   size: "min-w-2xl min-h-3xl",
   maximizable: false,
+  resizeable: false,
+  utility: true,
+
   // zIndex: "30"
 })
 

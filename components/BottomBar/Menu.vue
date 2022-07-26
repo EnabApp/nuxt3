@@ -9,7 +9,7 @@
     <ClientOnly>
         <Teleport to="#openedwindows">
             <Transition>
-                <div v-if="state" class="backdrop-blur-lg" border="rounded-lg" left="5" top="5" bg="b-60" h="92%" min-w="3xl" position="absolute">
+                <div v-if="state" z="100" class="backdrop-blur-lg" border="rounded-lg" left="5" top="5" bg="b-60" h="92%" min-w="3xl" position="absolute">
                     <div h="full" flex="~ col">
                         <!-- Header -->
                         <div flex="~ col" items="center">
@@ -18,8 +18,8 @@
                         </div>
 
                         <!-- Content -->
-                        <div flex="grow">
-                            asd
+                        <div flex="~ grow col gap-2" overflow-y="scroll" m="2" p="x-2">
+                            <nuxt-img v-for="img in 10" :key="img" border="rounded-lg" w="190" src="https://adsterra.com/blog/wp-content/uploads/2021/06/how-banners-make-you-money.png" />
                         </div>
 
                         <!-- Bottom -->
@@ -91,8 +91,9 @@ onKeyStroke(['Meta'], (e) => {
   // e.ctrlKey
   // e.shiftKey
   // e.altKey
-    state.value=!state.value;
-  e.preventDefault()
+  state.value=!state.value;
+  e.preventDefault();
+  e.stopPropagation();
 })
 </script>
 
@@ -107,7 +108,7 @@ onKeyStroke(['Meta'], (e) => {
 
 .v-enter-from,
 .v-leave-to {
-    transform: translateX(-100%);
+    transform: translateY(100px);
     opacity: 0;
 }
 </style>
