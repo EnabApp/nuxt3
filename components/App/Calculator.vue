@@ -27,7 +27,7 @@ import App from "~/classes/App";
 const myApp = new App({
   title: "الحاسبة",
   icon: "i-ic-baseline-calculate",
-  size: "min-w-2xl min-h-3xl",
+  size: "min-w-2xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
   maximizable: false,
   resizeable: false,
   utility: true,

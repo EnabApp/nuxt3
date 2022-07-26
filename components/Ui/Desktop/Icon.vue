@@ -1,6 +1,6 @@
 <template>
   <!-- Main -->
-  <div @click.stop="open()" w="30" h="30" bg="b-80 " p="4" border="4 transparent rounded-lg active:success-500" flex="~ col" justify="center" items="center" un-text="w-70 hover:white active:white" transition="~ 0.2s all" cursor="pointer" transform="~ active:scale-110" position="relative">
+  <div @click.stop="open()" w="30 xl:15 sm:15" h="30 xl:15 sm:15" bg="b-80 " p="4 xl:6 sm:8" m="3" border="4 transparent rounded-lg active:success-500" flex="~ col" justify="center" items="center" un-text="w-70 hover:white active:white" transition="~ 0.2s all" cursor="pointer" transform="~ active:scale-110" position="relative">
     <!-- Icon -->
     <div v-if="app.locked== true" >
         <div class="absolute z-10 text-2xl i-bxs:lock-alt right-14 -bottom-1 "></div>
