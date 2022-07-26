@@ -25,7 +25,7 @@
                         <!-- Bottom -->
                         <div flex="~" items="center" justify="between" p="y-2 x-20" border="rounded-b-lg" bg="w-10">
                             <div>
-                                <div v-if="getName()" @click="closeApp" cursor="pointer" class="text-2xl i-fluent:power-20-regular text-w-100"></div>
+                                <div v-if="isTauri" @click="closeApp" cursor="pointer" class="text-2xl i-fluent:power-20-regular text-w-100"></div>
                             </div>
 
                             <div>
@@ -61,8 +61,6 @@
 
 <script setup>
 import { exit } from '@tauri-apps/api/process';
-import { getName } from '@tauri-apps/api/app';
-
 import { useNow, useDateFormat } from "@vueuse/core";
 
 const appsStore = useStoreApps();
@@ -79,6 +77,7 @@ onKeyStroke(['Meta'], (e) => {
   e.stopPropagation();
 })
 
+const isTauri = useTauri();
 
 const closeApp = async () => await exit(1);
 
