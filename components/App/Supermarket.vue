@@ -7,12 +7,18 @@
         v-show="!app.minimized"
         :app="app"
       >
-        <NuxtLayout name="global-two">
-            <template #left>
-              <UiInput />
-              <UiDesktopIcon :app="childrenApps.find(app => app.title == 'برنامج ثاني')" />
-            </template>
-        </NuxtLayout>
+            <UiTabGroup p="2" h="full" :tabs="[
+                'الصفحة الرئيسية', 'About', 'Contact']">
+              <template #tab-1>
+                <AppSupermarketTabsHome />
+              </template>
+              <template #tab-2>
+                <h1>About</h1>
+              </template>
+              <template #tab-3>
+                <h1>Contact</h1>
+              </template>
+          </UiTabGroup>
       </UiDesktopWindow>
     </Transition>
   </ContextMenu>

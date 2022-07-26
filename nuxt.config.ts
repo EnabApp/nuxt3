@@ -29,6 +29,10 @@ export default defineNuxtConfig({
         // Image
         '@nuxt/image-edge',
 
+        // Motion
+        '@vueuse/motion/nuxt',
+        
+
     ],
 
     // experimental: {

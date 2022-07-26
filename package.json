@@ -21,8 +21,9 @@
     "@unocss/preset-icons": "^0.44.1",
     "@unocss/preset-typography": "^0.44.1",
     "@unocss/preset-web-fonts": "^0.44.1",
-    "@vueuse/core": "^8.9.2",
-    "@vueuse/nuxt": "^8.9.2",
+    "@vueuse/core": "^9.0.0",
+    "@vueuse/motion": "^2.0.0-beta.18",
+    "@vueuse/nuxt": "^9.0.0",
     "nuxt-lodash": "^2.2.0",
     "pinia": "^2.0.16",
     "vue-toastification": "^2.0.0-rc.5"

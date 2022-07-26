@@ -28,7 +28,7 @@ export default class App {
 
         this.parentApp = args.parentApp ?? ''
 
-        this.size = args.size ?? "min-w-7xl min-h-5xl"
+        this.size = args.size ?? "w-2xl h-xl sm:w-7xl sm:h-5xl "
     }
 
     toggleMinimize() {
