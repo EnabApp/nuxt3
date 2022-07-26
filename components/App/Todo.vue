@@ -7,31 +7,30 @@
         v-show="!app.minimized"
         :app="app"
       >
-            <div m="4" flex="~ col grow gap-4">
-              <UiInput v-model="taskTitle" placeholder="مهمة جديدة" @keypress.enter="newTask()" />
+        <div m="4" flex="~ col grow gap-4">
+          <UiInput v-model="taskTitle" placeholder="مهمة جديدة" @keypress.enter="newTask()" />
 
-              <UiTabGroup :col="false" :tabs="['جميع المهام', 'المهام المكتملة']">
-              <template #tab-1>
-                <div flex="~ col grow">
-               
-              <div max-h="2xl" m="y-8" border="rounded-lg" flex="~ col grow gap-2" p="l-2" overflow-y="scroll">
-                  <div v-for="task in tasks" :key="task.title" bg="w-10" p="4" border="rounded-lg" un-text="w-50">
-                    <div flex="~" items="center" justify="between">
-                      <span>{{ task.title }}</span>
-                      <div class="i-bi-check-circle-fill hover:text-w-70"></div>
+          <UiTabGroup :col="false" :tabs="['جميع المهام', 'المهام المكتملة']">
+            <template #tab-1>
+              <div flex="~ col grow">
+                <div max-h="2xl" m="y-8" border="rounded-lg" flex="~ col grow gap-2" p="l-2" overflow-y="scroll">
+                    <div v-for="task in tasks" :key="task.title" bg="w-10" p="4" border="rounded-lg" un-text="w-50">
+                      <div flex="~" items="center" justify="between">
+                        <span>{{ task.title }}</span>
+                        <div class="i-bi-check-circle-fill hover:text-w-70"></div>
+                      </div>
                     </div>
-                  </div>
-              </div>
                 </div>
-              </template>
-              <template #tab-2>
-                <h1>About</h1>
-              </template>
-              <template #tab-3>
-                <h1>Contact</h1>
-              </template>
-          </UiTabGroup>
               </div>
+            </template>
+            <template #tab-2>
+              <h1>About</h1>
+            </template>
+            <template #tab-3>
+              <h1>Contact</h1>
+            </template>
+          </UiTabGroup>
+        </div>
       </UiDesktopWindow>
     </Transition>
   </ContextMenu>
@@ -42,7 +41,7 @@ import App from "~/classes/App";
 const myApp = new App({
   title: "مهامي",
   icon: "i-ri-todo-fill",
-  size: "min-w-xl min-h-3xl",
+  size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
   maximizable: false,
   resizeable: false,
   utility: true,
