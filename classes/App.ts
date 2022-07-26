@@ -1,3 +1,5 @@
+import Widget from "./Widget";
+
 export default class App {
     title: string;
     icon: string;
@@ -15,6 +17,10 @@ export default class App {
     solid: boolean;
 
     parentApp: string;
+
+    widgets: Widget[];
+
+    // children: App[];
 
    
     constructor(args) {
@@ -35,6 +41,8 @@ export default class App {
         this.parentApp = args.parentApp ?? ''
 
         this.size = args.size ?? "w-2xl h-xl sm:w-7xl sm:h-5xl "
+
+        this.widgets = args.widgets ?? []
     }
 
     toggleMinimize() {
@@ -46,5 +54,20 @@ export default class App {
         if (this.maximizable)
             this.maximized = !this.maximized
     }
+
+    // registerChildren(child: App) {
+    //     this.children.push(child)
+    //     return child
+    // }
+
+    // registerWidget(widget: Widget) {
+    //     this.widgets.push(widget)
+    //     return widget
+    // }
+
+    getWidget(id: number){
+        return this.widgets.find(widget => widget.id === id)
+    }
+
   }
    
