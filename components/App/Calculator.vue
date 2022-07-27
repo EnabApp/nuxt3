@@ -16,7 +16,7 @@
                 <div @click="historyToggle()" class="i-codicon:history text-w-100 text-lg m-1" cursor="pointer" ></div>
               </div>
               <div position="relative" text="w-10" w="full">
-                <div  v-if="historyState" bg="gray-700 " z="20" border="rounded-lg" h="full" w="full" position="absolute">
+                <div  v-if="historyState" bg="b-90 " z="20" border="rounded-lg" h="full" w="full" position="absolute">
                       <div  flex="~ col" class="  content-between ">
                             <h2  v-if="screenHistory.length == 0">
                               لا توجد سجلات
