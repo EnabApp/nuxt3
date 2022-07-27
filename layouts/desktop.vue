@@ -8,11 +8,6 @@
       </ContextMenu>
     </div>
 
-    {{ top }}
-    {{ left }}
-    {{ right }}
-    {{ bottom }}
-
     <!-- Bottom Bar -->
     <div w="full" h="16" z="200">
       <BottomBar />
@@ -36,9 +31,6 @@ onKeyStroke(['Escape'], (e) => {
   appsStore.closeWindow();
   e.preventDefault()
 })
-
-const {top, right, bottom, left} = useScreenSafeArea();
-
 
 useHead({
   meta: [
