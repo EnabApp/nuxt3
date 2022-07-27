@@ -13,25 +13,33 @@
                 <AppSupermarketTabsHome />
               </template>
               <template #tab-2>
-                <AppSupermarketTabsControl />
+                <AppSupermarketTabsControl :app="app" />
               </template>
               <template #tab-3>
                 <h1>Contact</h1>
               </template>
           </UiTabGroup>
       </UiDesktopWindow>
+
     </Transition>
   </ContextMenu>
 </template>
 
 <script setup>
 import App from "~/classes/App";
+import Widget from "~/classes/Widget"
+
 const myApp = new App({
   title: "سوبر ماركت",
   icon: "i-bxs-cart",
   maximized: true,
   solid: true,
+  widgets: [
+    new Widget({ id: 1, title: "My Widget!", state: true }),
+  ]
 });
+
+
 
 // Register to AppsStore
 const AppsStore = useStoreApps();

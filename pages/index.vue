@@ -21,6 +21,18 @@
         <AppTodo />
       </Teleport>
     </ClientOnly>
+
+    <!-- Widgets -->
+    <div position="absolute" right="5" @click="appsStore.setFocus('')" flex="~" w="1/6" h="h-minus-bottombar" items="center" justify="center">
+      <div w="full" overflow-y="scroll" h="minus-bottombar">
+        <div p="y-4" flex="~ col gap-2">
+          <!-- Supermarket Widgets -->
+          <TransitionGroup>
+            <WidgetsSupermarketFirst key="first" />
+          </TransitionGroup>
+        </div>
+      </div>
+    </div>
   </NuxtLayout>
 </template>
 
@@ -39,3 +51,26 @@ function onDrop(x) {
 
 const { isOverDropZone } = useDropZone(dropZoneRef, onDrop)
 </script>
+
+
+<style scoped>
+/* CLOSE TRANSITION */
+.v-enter-active {
+  animation: bounce-in 0.3s;
+}
+.v-leave-active {
+  animation: bounce-in 0.3s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style>
