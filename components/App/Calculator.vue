@@ -13,28 +13,35 @@
                 <div :class="[
                 screen.length < 15 ? 'text-4xl'  : (screen.length<25 ? 'text-2xl' : 'text-xl')
                 ]" class="w-full py-5 px-6  text-white font-thin">{{ screen }}</div>
-                <div @click="historyToggle()" class="i-codicon:history text-w-100 text-lg m-1" cursor="pointer" ></div>
+                <div class="border-0 hover:bg-w-10 p-1 m-1 rounded-lg">
+                    <div @click="historyToggle()" class="i-codicon:history text-w-100 text-lg m-1" cursor="pointer" ></div>
+                </div>
               </div>
               <div position="relative" text="w-10" w="full">
                 <div  v-if="historyState" bg="b-90 " z="20" border="rounded-lg" h="full" w="full" position="absolute">
-                      <div  flex="~ col" class="  content-between ">
-                            <h2  v-if="screenHistory.length == 0">
-                              لا توجد سجلات
-                            </h2>
-                            <div class=" overflow-y-auto h-70 ">
-                                <div   text="w-100" m="2" flex="~ col gap-2" v-for="h in  screenHistory.reverse() " :key="h.history">
-                                  <div flex="~" class=" justify-between">
-                                  <div>
-                                    <h5 >{{ h.history }}</h5>
-                                  </div>
-                                  <div>
-                                    <h5 > {{  h.result }}</h5>
+                        <h2 class="text-center m-10" text="w-100" v-if="screenHistory.length == 0">
+                                لا توجد سجلات
+                        </h2>
+                        <div  flex="~ col" class=" justify-center">
+                              
+                              <div class=" overflow-y-auto h-70 ">
+                                  <div   text="w-100" m="2" flex="~ col gap-2" v-for="h in  screenHistory.reverse() " :key="h.history">
+                                    <div class="border-0 rounded-lg border-w-5  hover:bg-w-10">
+                                    <div m="3"  text="xl w-50">
+                                      <h5 > {{' = '}} {{ h.history }} </h5>
+                                    </div>
+                                    <div m="3" text="2xl">
+                                      <h5 > {{  h.result }}</h5>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div  class="i-ant-design:delete-outlined text-2xl text-w-100 cursor-pointer hover:border-gray-700 border-transparent border-2" v-if="screenHistory.length > 0" @click="screenHistory =[]"></div>
-                      </div>
+                        </div>
+                        <div flex="~" class=" justify-center">
+                              <div class="border-0 hover:bg-w-10 p-1 rounded-lg">
+                                    <div class="i-ant-design:delete-outlined text-2xl text-w-100 cursor-pointer hover:border-gray-700 border-transparent border-2" v-if="screenHistory.length > 0" @click="screenHistory =[]"></div>
+                              </div>
+                        </div>
                 </div>
                 <div class="grid grid-cols-4 grid-flow-row ">
                     <button @click="Backspace('-')"
