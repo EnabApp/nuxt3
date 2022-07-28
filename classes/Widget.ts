@@ -8,5 +8,4 @@ export default class Widget {
         this.title = args?.title
         this.state = args?.state ?? false
     }
-  }
-   
+}

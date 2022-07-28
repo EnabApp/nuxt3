@@ -72,7 +72,7 @@ onKeyStroke(['Meta'], (e) => {
   // e.ctrlKey
   // e.shiftKey
   // e.altKey
-  state.value=!state.value;
+  if (e.ctrlKey) state.value=!state.value;
   e.preventDefault();
   e.stopPropagation();
 })
