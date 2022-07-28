@@ -5,7 +5,7 @@
     <div v-if="app.locked== true" >
         <div class="absolute z-10 text-2xl i-bxs:lock-alt right-14 -bottom-1 "></div>
     </div>
-    
+
     <div :class="app.icon" basis="2/3" w="full" h="full"></div>
 
     <!-- Icon Name -->
@@ -15,7 +15,7 @@
     </div>
 
     <div v-if="app.running" transition="all .1s ease-in-out" position="absolute" w="25%" :class="app.minimized ? 'bg-w-30' :  'bg-success-500'" bottom="1" h="1" border="rounded-xl"></div>
-    
+
   </div>
 
 </template>

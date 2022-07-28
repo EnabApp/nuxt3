@@ -10,7 +10,7 @@
         <div m="4" flex="~ col grow gap-4" h="md">
           <!-- Search and Points -->
           <div flex="~ row" justify="between">
-            <UiInput class="basis-2/6" placeholder="البحث عن خدمة" @keypress.enter="newService()" /> 
+            <UiInput class="basis-2/6" placeholder="البحث عن خدمة" @keypress.enter="newService()" />
             <div class="place-items-left">
               <div class="i-line-md:question-circle-twotone text-warning animate-pulse" cursor="pointer"  w="5" h="5"></div>
               <nuxt-link to="/" class="no-underline">
