@@ -78,7 +78,4 @@ export default class App {
     getSubApp(id: number){
         return this.subApps.find(app => app.id === id)
     }
-
-
 }
-   

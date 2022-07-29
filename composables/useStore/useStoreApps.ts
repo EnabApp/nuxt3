@@ -38,11 +38,18 @@ export const useStoreApps = defineStore("apps", {
                 id: 2,
                 name: 'ServicesStore',
                 title: "متجر الخدمات",
-                icon: "i-fluent:store-microsoft-16-filled",
+                icon: "i-bxs-cart",
                 size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
                 maximized: true,
-                resizeable: false,
-                utility: true,
+                subApps: [
+                    new App({
+                        id: 1,
+                        name: 'ServiceInfo',
+                        title: "معلومات الخدمة",
+                        icon: "i-bxs-cart",
+                        size: "min-w-2xl min-h-3xl",
+                    })
+                ]
             }),
             new App({
                 id: 3,

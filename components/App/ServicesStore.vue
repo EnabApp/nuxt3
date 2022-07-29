@@ -6,33 +6,42 @@
       v-show="!app.minimized"
       :app="app"
     >
-      <div m="4" flex="~ col grow gap-4" h="md">
+
         <!-- Search and Points -->
-        <div flex="~ row" justify="between">
+        <!-- <div flex="~ row" justify="between">
           <UiInput class="basis-2/6" placeholder="البحث عن خدمة" @keypress.enter="newService()" /> 
           <div class="place-items-left">
+            <UiButton @click="dd()" icon="i-bxs-cart" :outline="true" color="warning" w="24" />
             <div class="i-line-md:question-circle-twotone text-warning animate-pulse" cursor="pointer"  w="5" h="5"></div>
-            <nuxt-link to="/" class="no-underline">
-              <span m="2" class="basis-1/6" flex="~" text="2xl success-500">نقاطي : 499</span>
-            </nuxt-link>
+            <span m="2" class="basis-1/6" flex="~" text="2xl success-500">نقاطي : 499</span>
           </div>
-        </div>
+        </div> -->
 
-        <UiTabGroup :col="false" :tabs="['التصنيفات','جميع الخدمات', 'خدماتي']">
+        <AppServicesStoreTabsBussiness :app="app" />
+
+        <UiTabGroup flex="~ col" p="2" h="screen"  overflow-y="scroll" :tabs="['التصنيفات','جميع الخدمات', 'خدماتي']">
           <!-- BUSSINESES -->
           <template #tab-1>
-            <AppServicesStoreTabsBussiness />
+            <AppServicesStoreTabsBussiness :app="app" />
           </template>
           <!-- All Services -->
           <template #tab-2>
-            <AppServicesStoreTabsServices />
+            <AppServicesStoreTabsAllServices :app="app" />
           </template>
           <!-- My Services -->
           <template #tab-3>
-            <AppServicesStoreTabsMyServices />
+            <AppServicesStoreTabsMyServices :app="app" />
           </template>
         </UiTabGroup>
-      </div>
+        <!-- Second Page -->
+        <Transition>
+          <div 
+          v-if="opened"
+          absolute="~" w="full" align="center" border="w-10 2" h="full" bg="w-90" class="m-3">
+            <span>Info page </span>
+            <UiButton @click="dd()" title="Info page" color="warning" w="24" :solid="true" />
+          </div>
+        </Transition>
     </UiDesktopWindow>
   </Transition>
 </template>
@@ -44,20 +53,11 @@ const props = defineProps({
     required: true
   }
 })
+const opened = ref(false)
+const dd = () => {
+  opened.value = !opened.value
+}
+const appsStore = useStoreApps();
 
 ///////////////////////////////
-const serviceTitle = ref('');
-const services = ref([]);
-
-const newService = () => {
-  services.value.push({
-    title: serviceTitle.value,
-    completed: false,
-    time: useDateFormat(useNow(), "YYYY-MM-DD"),
-  })
-  serviceTitle.value = ''
-};
-const clicked = (key) =>{
-  console.log(key)
-}
 </script>
