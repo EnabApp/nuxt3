@@ -2,35 +2,35 @@
   <NuxtLayout name="desktop">
     <div position="absolute" @click="appsStore.setFocus('')" flex="~" w="full" h="full" items="center" justify="center">
       <div w="5xl xl:3xl md:3xl sm:xl" h="3xl xl:xl md:xl sm:xl" bg="b-5" border="~ b-5 rounded-2xl" grid="~ cols-2 2xl:cols-6 xl:cols-6 lg:cols-4 md:cols-4 sm:cols-3  auto-rows-min" p="8" place="center" ref="dropZoneRef">
-        <!-- Show icons in desktop -->
-        <UiDesktopIcon v-for="app in appsStore.getAll" :key="app.title" :app="app" />
+        <ClientOnly>
+          <div v-for="component in appsStore.getApps" :key="'app-' + component.id">
+            <UiDesktopIcon :app="component" />
+
+            <Teleport to="#openedwindows">
+              <!-- Application -->
+              <component :app="component" :is="`App${component.name}`"></component>
+
+              <!-- Application Sub Applications -->
+              <component v-for="subComponent in component?.subApps" :key="component.id + '-sub-' + subComponent.id" :app="subComponent" :is="`App${component.name}Apps${subComponent.name}`"></component>
+            </Teleport>
+
+            <!-- Application Widget -->
+            <Teleport to='#widgets'>
+              <TransitionGroup>
+                <component v-for="widget in component?.widgets" :key="'widget-' + widget.id" :widget="widget" :is="`App${component.name}Widgets${widget.name}`"></component>
+              </TransitionGroup>
+            </Teleport>
+          </div>
+        </ClientOnly>
       </div>
     </div>
 
 
-    <!-- Registering Apps in the platform -->
-    <ClientOnly>
-      <Teleport to="#openedwindows">
-        <!-- First Application and sub apps -->
-        <AppSupermarket />
-        <AppSupermarketAppsSecond />
-        <AppServicesStore />
-
-        <!-- Utilities -->
-        <AppCalculator />
-        <AppTodo />
-      </Teleport>
-    </ClientOnly>
-
+    
     <!-- Widgets -->
     <div position="absolute" right="5" @click="appsStore.setFocus('')" flex="~" w="1/6" h="h-minus-bottombar" items="center" justify="center">
       <div w="full" overflow-y="scroll" h="minus-bottombar">
-        <div p="y-4" flex="~ col gap-2">
-          <!-- Supermarket Widgets -->
-          <TransitionGroup>
-            <WidgetsSupermarketFirst key="first" />
-          </TransitionGroup>
-        </div>
+        <div id="widgets" p="y-4" flex="~ col gap-2"></div>
       </div>
     </div>
   </NuxtLayout>
@@ -41,7 +41,9 @@ definePageMeta({
   title: "Home",
 });
 
+
 const appsStore = useStoreApps();
+
 
 const dropZoneRef = ref(null)
 

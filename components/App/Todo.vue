@@ -1,7 +1,6 @@
 <template>
   <!-- Application -->
-  <ContextMenu>
-    <Transition name="close-transition">
+    <Transition>
       <UiDesktopWindow
         v-if="app.running"
         v-show="!app.minimized"
@@ -33,27 +32,15 @@
         </div>
       </UiDesktopWindow>
     </Transition>
-  </ContextMenu>
 </template>
 
 <script setup>
-import App from "~/classes/App";
-const myApp = new App({
-  title: "مهامي",
-  icon: "i-ri-todo-fill",
-  size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
-  maximizable: false,
-  resizeable: false,
-  utility: true,
-
+const props = defineProps({
+  app: {
+    type: Object,
+    required: true
+  }
 })
-
-// Register to AppsStore
-const AppsStore = useStoreApps();
-AppsStore.register(myApp);
-
-// Gathering Information
-const app = computed(() => AppsStore.getApp(myApp));
 
 ///////////////////////////////
 const taskTitle = ref('');
@@ -69,25 +56,3 @@ const newTask = () => {
 };
 
 </script>
-
-<style scoped>
-/* CLOSE TRANSITION */
-.close-transition-enter-active {
-  animation: bounce-in 0.3s;
-}
-.close-transition-leave-active {
-  animation: bounce-in 0.3s reverse;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-</style>

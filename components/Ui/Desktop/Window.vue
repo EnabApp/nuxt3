@@ -1,9 +1,9 @@
 <template>
 
     <!-- Main Container -->
-    <div @click="appsStore.setFocus(app.title)" shadow="2xl b-70" :style="[
+    <div @click="appsStore.setFocus(app.id)" shadow="2xl b-70" :style="[
         app.maximized ? 'left:0px;top:0px;' : `left:${x}px;top:${y}px;`,
-        appsStore.focused == app.title
+        appsStore.focused == app.id
             ? app.maximized
                 ? `z-index: 25;`
                 : `z-index: 25; border-color: #389BF2; border-width: 4px; border-style: solid;`
@@ -31,7 +31,7 @@
                     @on-move="(pos) => { x = pos.x; y = pos.y; }"
                     @on-resize="(s) => { size = s; }"
 
-                    :key="app.title"
+                    :key="'Window-' + app.id"
                 />
 
                 <!-- Content -->

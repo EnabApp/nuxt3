@@ -18,7 +18,7 @@
         <span @dblclick.stop="() => { }" @click="app.toggleMaximize()" flex="~" items="center" justify="center" p="0.5" v-if="app.maximizable" cursor="pointer" class="w-3.5 h-3.5 rounded-full text-warning-800 bg-warning-500 group">
             <div class="invisible text-xs group-hover:visible i-fluent-arrow-maximize-24-filled"></div>
         </span>
-        <span @dblclick.stop="() => { }" @click="appsStore.closeWindow()" flex="~" items="center" justify="center" p="0.5" cursor="pointer" class="w-3.5 h-3.5 text-red-800 bg-red-500 rounded-full group">
+        <span @dblclick.stop="() => { }" @click="app.toggleRunning()" flex="~" items="center" justify="center" p="0.5" cursor="pointer" class="w-3.5 h-3.5 text-red-800 bg-red-500 rounded-full group">
             <div class="invisible font-medium group-hover:visible i-gg-close"></div>
         </span>
     </div>
@@ -56,7 +56,7 @@ const el = ref(null);
 const { x, y, style } = useDraggable(el, {
     initialValue: { x: 40, y: 40 },
     onStart: () => {
-        props.appsStore.setFocus(props.app.title);
+        props.appsStore.setFocus(props.app.id);
     },
     onMove: () => {
         props.app.maximized = false;
@@ -87,19 +87,5 @@ const {
     { initialValue: props.app.size }
 );
 watch(() => size.value, (newSize) => emit("onResize", newSize))
-
-
-onKeyStroke(["ArrowUp"], (e) => {
-    if (e.ctrlKey && props.app.title == appsStore.focused) {
-        prevSize();
-        e.preventDefault();
-    }
-});
-onKeyStroke(["ArrowDown"], (e) => {
-    if (e.ctrlKey && props.app.title == appsStore.focused) {
-        nextSize();
-        e.preventDefault();
-    }
-});
 
 </script>
