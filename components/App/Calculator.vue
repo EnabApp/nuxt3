@@ -9,83 +9,106 @@
               <UiInput />
             </div> -->
             <div m="y-2" p="4" h="full" flex="grow">
-              <div flex="~" bg="w-10" border="rounded-lg" class="w-full h-20 mb-6 flex items-end text-right">
+              <div flex="~" bg="w-10" border="rounded-lg" class="flex items-end w-full h-20 mb-6 text-right">
                 <div :class="[
-                screen.length < 15 ? 'text-4xl'  : (screen.length<25 ? 'text-2xl' : 'text-xl')
-                ]" class="w-full py-5 px-6  text-white font-thin">{{ screen }}</div>
-                <div class="border-0 hover:bg-w-10 p-1 m-1 rounded-lg">
-                    <div @click="historyToggle()" class="i-codicon:history text-w-100 text-lg m-1" cursor="pointer" ></div>
+                  screen.length < 15
+                    ? 'text-4xl'
+                    : screen.length < 25
+                      ? 'text-2xl'
+                      : 'text-2xl',
+                ]" class="w-full px-6 py-5 font-thin text-white">
+                  {{ screen }}
+                </div>
+                <div class="p-1 m-1 border-0 rounded-lg hover:bg-w-10">
+                  <div @click="historyToggle()" class="m-1 text-lg i-codicon:history text-w-100" cursor="pointer"></div>
                 </div>
               </div>
               <div position="relative" text="w-10" w="full">
-                <div  v-if="historyState" bg="b-90 " z="20" border="rounded-lg" h="full" w="full" position="absolute">
-                        <h2 class="text-center m-10" text="w-100" v-if="screenHistory.length == 0">
-                                لا توجد سجلات
-                        </h2>
-                        <div  flex="~ col" class=" justify-center">
-                              
-                              <div class=" overflow-y-auto h-70 ">
-                                  <div   text="w-100" m="2" flex="~ col gap-2" v-for="h in  screenHistory.reverse() " :key="h.history">
-                                    <div class="border-0 rounded-lg border-w-5  hover:bg-w-10">
-                                    <div m="3"  text="xl w-50">
-                                      <h5 > {{' = '}} {{ h.history }} </h5>
-                                    </div>
-                                    <div m="3" text="2xl">
-                                      <h5 > {{  h.result }}</h5>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                <div v-if="historyState" bg="b-90 " z="20" border="rounded-lg" h="full" w="full" position="absolute">
+                  <h2 class="m-10 text-center" text="w-100" v-if="screenHistory.length == 0">
+                    لا توجد سجلات
+                  </h2>
+                  <div flex="~ col" class="justify-center">
+                    <div class="overflow-y-auto h-70">
+                      <div text="w-100" m="2" flex="~ col gap-2" v-for="h in screenHistory.reverse()" :key="h.history">
+                        <div class="border-0 rounded-lg border-w-5 hover:bg-w-10">
+                          <div m="3" text="xl w-50">
+                            <h5>{{ " = " }} {{ h.history }}</h5>
+                          </div>
+                          <div m="3" text="2xl">
+                            <h5>{{ h.result }}</h5>
+                          </div>
                         </div>
-                        <div flex="~" class=" justify-center">
-                              <div class="border-0 hover:bg-w-10 p-1 rounded-lg">
-                                    <div class="i-ant-design:delete-outlined text-2xl text-w-100 cursor-pointer hover:border-gray-700 border-transparent border-2" v-if="screenHistory.length > 0" @click="screenHistory =[]"></div>
-                              </div>
-                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div flex="~" class="justify-center">
+                    <div class="p-1 border-0 rounded-lg hover:bg-w-10">
+                      <div class="text-2xl border-2 border-transparent cursor-pointer i-ant-design:delete-outlined text-w-100 hover:border-gray-700" v-if="screenHistory.length > 0" @click="screenHistory = []"></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="grid grid-cols-4 grid-flow-row ">
-                    <button @click="Backspace('-')"
-                      class="flex items-center justify-center w-full border-b-40 hover:border-0 rounded-lg  h-16  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5  text-white  text-xl  ">
-                      <div class="i-akar-icons:backspace-fill"></div>
-                    </button>
-                    <button @click="Clear('-')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white  text-xl ">C</button>
-                    <button @click="Operation('-')"
-                      class="w-full h-16 border-b-40 hover:border-0  rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white  text-xl ">+/-</button>
-                    <button @click="Operation('/')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-4xl ">÷</button>
-                    <button @click="ButtonClicked('7')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">7</button>
-                    <button @click="ButtonClicked('8')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">8</button>
-                    <button @click="ButtonClicked('9')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">9</button>
-                    <button @click="Operation('*')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">x</button>
-                    <button @click="ButtonClicked('4')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">4</button>
-                    <button @click="ButtonClicked('5')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">5</button>
-                    <button @click="ButtonClicked('6')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">6</button>
-                    <button @click="Operation('-')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none hover:bg-w-5 text-white text-4xl ">-</button>
-                    <button @click="ButtonClicked('1')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg   bg-w-20 bg-w-20 focus:outline-none hover:bg-w-5 text-white text-xl ">1</button>
-                    <button @click="ButtonClicked('2')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none bg-w-20  hover:bg-w-5 text-white text-xl ">2</button>
-                    <button @click="ButtonClicked('3')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none bg-w-20  hover:bg-w-5 text-white text-xl ">3</button>
-                    <button @click="Operation('+')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none bg-w-20  hover:bg-w-5 text-white text-2xl ">+</button>
-                    <button @click="ButtonClicked('0')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none bg-w-20  hover:bg-w-5 text-white text-xl ">0</button>
-                    <button @click="Operation('.')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none bg-w-20  hover:bg-w-5 text-white text-xl ">.</button>
-                    <button @click="Operation('=')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none  bg-w-20  hover:bg-w-5 text-white text-xl ">=</button>
-                    <button @click="Operation('%')"
-                      class="w-full h-16 border-b-40 hover:border-0 rounded-lg  outline-none cursor-pointer bg-w-20 focus:outline-none  bg-w-20  hover:bg-w-5 text-white text-xl ">%</button>
+                <div class="grid grid-flow-row grid-cols-4 gap-1">
+                  <div @click="Backspace('-')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    <div class="i-akar-icons:backspace-fill"></div>
+                  </div>
+                  <div @click="Clear('-')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    C
+                  </div>
+                  <div @click="Operation('-')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    +/-
+                  </div>
+                  <div @click="Operation('/')" class="flex items-center justify-center w-full h-16 text-4xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    ÷
+                  </div>
+                  <div @click="ButtonClicked('7')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    7
+                  </div>
+                  <div @click="ButtonClicked('8')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    8
+                  </div>
+                  <div @click="ButtonClicked('9')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    9
+                  </div>
+                  <div @click="Operation('*')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    x
+                  </div>
+                  <div @click="ButtonClicked('4')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    4
+                  </div>
+                  <div @click="ButtonClicked('5')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    5
+                  </div>
+                  <div @click="ButtonClicked('6')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    6
+                  </div>
+                  <div @click="Operation('-')" class="flex items-center justify-center w-full h-16 text-4xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    -
+                  </div>
+                  <div @click="ButtonClicked('1')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg hover:bg-w-5">
+                    1
+                  </div>
+                  <div @click="ButtonClicked('2')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    2
+                  </div>
+                  <div @click="ButtonClicked('3')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    3
+                  </div>
+                  <div @click="Operation('+')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    +
+                  </div>
+                  <div @click="Operation('=')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-primary hover:bg-primary-600 active:bg-primary-700">
+                    =
+                  </div>
+                  <div @click="ButtonClicked('0')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                    0
+                  </div>
+                  <div @click="Operation('.')" class="flex items-center justify-center w-full h-16 text-2xl text-white bg-transparent rounded-lg cursor-pointer hover:bg-w-5">
+                    .
+                  </div>
+                  <div @click="Operation('%')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                    %
+                  </div>
                 </div>
               </div>
             </div>
@@ -97,7 +120,7 @@
 </template>
 
 <script setup>
-import { onKeyStroke } from '@vueuse/core'
+import { onKeyStroke } from "@vueuse/core";
 import App from "~/classes/App";
 const myApp = new App({
   title: "الحاسبة",
@@ -108,7 +131,7 @@ const myApp = new App({
   utility: true,
 
   // zIndex: "30"
-})
+});
 
 // Register to AppsStore
 const AppsStore = useStoreApps();
@@ -119,79 +142,75 @@ const app = computed(() => AppsStore.getApp(myApp));
 
 //calculator
 
-let screen = ref(0)
-const screenHistory = ref([])
-const [historyState, historyToggle] = useToggle(false)
+let screen = ref(0);
+const screenHistory = ref([]);
+const [historyState, historyToggle] = useToggle(false);
 
 const ButtonClicked = (number) => {
-   if (screen.value.length > 28) return
+  if (screen.value.length > 28) return;
   if (screen.value === 0) {
-    screen.value = number
+    screen.value = number;
+  } else {
+    screen.value += number;
   }
-  else {
-    screen.value += number
-  }
-}
+};
 const Operation = (operation) => {
-  let lastChar = screen.value.slice(-1)
-  if (lastChar == operation) return
-  if (lastChar == '+' || lastChar == '-' || lastChar == '*' || lastChar == '/') {
-    screen.value = screen.value.slice(0, -1)
-    
+  let lastChar = screen.value.slice(-1);
+  if (lastChar == operation) return;
+  if (
+    lastChar == "+" ||
+    lastChar == "-" ||
+    lastChar == "*" ||
+    lastChar == "/"
+  ) {
+    screen.value = screen.value.slice(0, -1);
   }
-  if (operation === '=' || operation === 'Enter') {
-    let history = screen.value.toString()
-    screen.value = (eval(screen.value)).toString()
+  if (operation === "=" || operation === "Enter") {
+    let history = screen.value.toString();
+    screen.value = eval(screen.value).toString();
     screenHistory.value.push({
       history: history,
-      result: screen.value
-    })
+      result: screen.value,
+    });
+  } else if (operation === "%") {
+    screen.value = (eval(screen.value) / 100).toString();
+  } else {
+    screen.value += operation;
   }
-  
-  else if (operation === '%') {
-    screen.value = (eval(screen.value) / 100).toString()
-  }
-  else {
-    screen.value += operation
-  }
-}
+};
 const Clear = () => {
-  screen.value = 0
-}
+  screen.value = 0;
+};
 const Backspace = () => {
-  screen.value = screen.value.slice(0, -1)
-}
+  screen.value = screen.value.slice(0, -1);
+};
 
 //keyboard
-onKeyStroke(['1','2','3','4','5','6','7','8','9','0'], (e) => {
+onKeyStroke(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"], (e) => {
   // e.ctrlKey
   // e.shiftKey
   // e.altKey
-  if (screen.value.length > 20) return
+  if (screen.value.length > 20) return;
   if (screen.value === 0) {
-    screen.value = e.key
+    screen.value = e.key;
+  } else {
+    screen.value += e.key;
   }
-  else {
-    screen.value += e.key
-  }
-  e.preventDefault()
-  
-  
-})
-onKeyStroke(['+','-','*','/','.','%','Enter'], (e) => {
-  
-    Operation(e.key)
-  
-  e.preventDefault()
-})
-onKeyStroke(['Backspace'], (e) => {
-  Backspace()
-  e.preventDefault()
-})
-onKeyStroke(['Delete'], (e) => {
-  Clear()
-  e.preventDefault()
-})
+  e.preventDefault();
+});
+onKeyStroke(["+", "-", "*", "/", ".", "%", "Enter"], (e) => {
+  Operation(e.key);
+
+  e.preventDefault();
+});
+onKeyStroke(["Backspace"], (e) => {
+  Backspace();
+  e.preventDefault();
+});
+onKeyStroke(["Delete"], (e) => {
+  Clear();
+  e.preventDefault();
+});
 </script>
 
 <style scoped>
