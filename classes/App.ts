@@ -48,7 +48,7 @@ export default class App {
 
         this.parentApp = args.parentApp ?? ''
 
-        this.size = args.size ?? "w-2xl h-xl sm:w-7xl sm:h-5xl "
+        this.size = args.size ?? "w-2xl h-lg"
 
         this.widgets = args.widgets ?? []
         this.subApps = args.subApps ?? []

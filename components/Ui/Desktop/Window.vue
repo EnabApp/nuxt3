@@ -60,6 +60,7 @@ const x = ref(40);
 const y = ref(40);
 
 const size = ref(props.app.size);
+console.log(size)
 
 const appsStore = useStoreApps();
 
