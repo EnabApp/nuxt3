@@ -38,7 +38,7 @@ export const useStoreApps = defineStore("apps", {
                 id: 2,
                 name: 'ServicesStore',
                 title: "متجر الخدمات",
-                icon: "i-fluent:store-microsoft-16-filled",
+                icon: "i-fluent-store-microsoft-16-filled",
                 size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
                 maximized: true,
                 resizeable: false,
@@ -80,13 +80,6 @@ export const useStoreApps = defineStore("apps", {
     actions: {
         setFocus(title){
             this.focused = title;
-        },
-
-        closeWindow(){
-            let app = this.getApp(this.focused)
-            let children = this.getChildrenApps(app.title)
-            children?.forEach(child => child.running = false)
-            app.running = false
         },
     },
 });
