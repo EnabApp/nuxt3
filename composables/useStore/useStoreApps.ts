@@ -17,6 +17,7 @@ export const useStoreApps = defineStore("apps", {
                 icon: "i-bxs-cart",
                 maximized: true,
                 solid: true,
+                owned:true,
                 widgets: [
                     new Widget({ 
                         id: 1,
@@ -39,6 +40,7 @@ export const useStoreApps = defineStore("apps", {
                 name: 'ServicesStore',
                 title: "متجر الخدمات",
                 icon: "i-bxs-cart",
+                owned:true,
                 size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
                 maximized: true,
                 subApps: [
@@ -55,6 +57,7 @@ export const useStoreApps = defineStore("apps", {
                 id: 3,
                 name: 'Calculator',  
                 title: "الحاسبة",
+                owned:true,
                 icon: "i-ic-baseline-calculate",
                 size: "min-w-md min-h-xl",
                 maximizable: false,
@@ -65,6 +68,7 @@ export const useStoreApps = defineStore("apps", {
                 id: 4,
                 name: 'Todo',
                 title: "مهامي",
+                owned:false,
                 icon: "i-ri-todo-fill",
                 size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
                 maximizable: false,
@@ -79,6 +83,7 @@ export const useStoreApps = defineStore("apps", {
         // isRunning: (state) => (app) => state.all.find(a => a.title === app.title).running,
         getApp: state => id => state.apps.find(app => app.id === id),
         getRunningApps: (state) => state.apps.filter(app => app.running),
+        getOwned: (state) => state.apps.filter(app => app.owned),
         // getLockedApps: (state) => state.all.filter(a => a.locked),
         getFocused: (state) => state.focused,
         getChildrenApps: (state) => (title) => state.apps.filter(app => app.parentApp === title),

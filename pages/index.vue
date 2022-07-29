@@ -3,7 +3,7 @@
     <div position="absolute" @click="appsStore.setFocus('')" flex="~" w="full" h="full" items="center" justify="center">
       <div w="5xl xl:3xl md:3xl sm:xl" h="3xl xl:xl md:xl sm:xl" bg="b-5" border="~ b-5 rounded-2xl" grid="~ cols-2 2xl:cols-6 xl:cols-6 lg:cols-4 md:cols-4 sm:cols-3  auto-rows-min" p="8" place="center" ref="dropZoneRef">
         <ClientOnly>
-          <div v-for="component in appsStore.getApps" :key="'app-' + component.id">
+          <div v-for="component in appsStore.getOwned" :key="'app-' + component.id">
             <UiDesktopIcon :app="component" />
 
             <Teleport to="#openedwindows">
