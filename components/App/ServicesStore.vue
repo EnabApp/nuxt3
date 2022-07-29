@@ -1,97 +1,63 @@
 <template>
   <!-- Application -->
-  <ContextMenu>
-    <Transition name="close-transition">
-      <UiDesktopWindow
-        v-if="app.running"
-        v-show="!app.minimized"
-        :app="app"
-      >
-        <div m="2" flex="~ col grow gap-4">
-          <!-- Search and Points -->
-          <div flex="~" justify="between">
-            <UiInput class="basis-2/6" placeholder="البحث عن خدمة" @keypress.enter="newService()" /> 
-            <div>
-              <span class="basis-1/6" text="2xl success-500">نقاطي : 499</span>
-              <div @click="pageToggle()" class="i-line-md:question-circle-twotone text-warning animate-pulse" cursor="pointer"  w="5" h="5"></div>
-            </div>
+  <Transition>
+    <UiDesktopWindow
+      v-if="app.running"
+      v-show="!app.minimized"
+      :app="app"
+    >
+      <div m="4" flex="~ col grow gap-4" h="md">
+        <!-- Search and Points -->
+        <div flex="~ row" justify="between">
+          <UiInput class="basis-2/6" placeholder="البحث عن خدمة" @keypress.enter="newService()" /> 
+          <div class="place-items-left">
+            <div class="i-line-md:question-circle-twotone text-warning animate-pulse" cursor="pointer"  w="5" h="5"></div>
+            <nuxt-link to="/" class="no-underline">
+              <span m="2" class="basis-1/6" flex="~" text="2xl success-500">نقاطي : 499</span>
+            </nuxt-link>
           </div>
-
-          <UiTabGroup :col="false" :tabs="['التصنيفات','جميع الخدمات', 'خدماتي']">
-            <!-- BUSSINESES -->
-            <template #tab-1>
-              <AppServicesStoreTabsBussiness />
-            </template>
-            <!-- All Services -->
-            <template #tab-2>
-              <AppServicesStoreTabsAllServices />
-            </template>
-            <!-- My Services -->
-            <template #tab-3>
-              <AppServicesStoreTabsMyServices />
-            </template>
-          </UiTabGroup>
-
         </div>
-          <Transition name="close-transition">
-            <div v-if="isOpen" absolute="~" bg="w-90" place="items-center" p="4" border="rounded-lg 2 w-10" w="full" h="full">
-              <div flex="~ row" justify="between">
-                <span self="auto" text="2xl" m="4">Page Name</span>
-                <div @click="pageToggle()" class="i-ep:close-bold" w="15" h="15" m="3"></div>
-              </div>
-            </div>
-          </Transition>
-      </UiDesktopWindow>
-    </Transition>
-  </ContextMenu>
+
+        <UiTabGroup :col="false" :tabs="['التصنيفات','جميع الخدمات', 'خدماتي']">
+          <!-- BUSSINESES -->
+          <template #tab-1>
+            <AppServicesStoreTabsBussiness />
+          </template>
+          <!-- All Services -->
+          <template #tab-2>
+            <AppServicesStoreTabsServices />
+          </template>
+          <!-- My Services -->
+          <template #tab-3>
+            <AppServicesStoreTabsMyServices />
+          </template>
+        </UiTabGroup>
+      </div>
+    </UiDesktopWindow>
+  </Transition>
 </template>
 
 <script setup>
-import App from "~/classes/App";
-const myApp = new App({
-  title: "متجر الخدمات",
-  icon: "i-fluent:store-microsoft-16-filled",
-  size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
-  maximized: true,
-  resizeable: false,
-  utility: true,
-
+const props = defineProps({
+  app: {
+    type: Object,
+    required: true
+  }
 })
 
-// Register to AppsStore
-const AppsStore = useStoreApps();
-AppsStore.register(myApp);
-
-// Gathering Information
-const app = computed(() => AppsStore.getApp(myApp));
-
 ///////////////////////////////
-const { isOpen, open } = useServicesStore()
+const serviceTitle = ref('');
+const services = ref([]);
 
-const pageToggle = () =>{
-  console.log(isOpen)
+const newService = () => {
+  services.value.push({
+    title: serviceTitle.value,
+    completed: false,
+    time: useDateFormat(useNow(), "YYYY-MM-DD"),
+  })
+  serviceTitle.value = ''
+};
+const clicked = (key) =>{
+  console.log(key)
 }
-
 </script>
-
-<style scoped>
-/* CLOSE TRANSITION */
-.close-transition-enter-active {
-  animation: bounce-in 0.3s;
-}
-.close-transition-leave-active {
-  animation: bounce-in 0.3s reverse;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-</style>

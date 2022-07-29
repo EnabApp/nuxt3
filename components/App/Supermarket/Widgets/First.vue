@@ -15,13 +15,10 @@
 </template>
 
 <script setup>
-import Widget from "~/classes/Widget"
-const widgetId = 1;
-const appsStore = useStoreApps()
-
-const widget = ref(new Widget())
-
-watch (() => appsStore.getApp("سوبر ماركت"), (app) => widget.value = app.getWidget(widgetId) )
-
-
+const props = defineProps({
+    widget: {
+        type: Object,
+        default: false,
+    },
+})
 </script>

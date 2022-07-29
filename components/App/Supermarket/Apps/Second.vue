@@ -21,22 +21,12 @@
 </template>
 
 <script setup>
-import App from "~/classes/App";
-const myApp = new App({
-  title: "برنامج ثاني",
-  icon: "i-bxs-cart",
-//   maximized: true,
-//   solid: true,
-  size: "min-w-2xl min-h-3xl",
-  parentApp: "سوبر ماركت",
-});
-
-// Register to AppsStore
-const AppsStore = useStoreApps();
-AppsStore.register(myApp);
-
-// Gathering Information
-const app = computed(() => AppsStore.getApp(myApp));
+const props = defineProps({
+  app: {
+    type: Object,
+    required: true,
+  }
+})
 </script>
 
 <style scoped>

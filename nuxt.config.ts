@@ -3,12 +3,13 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     isProduction: false,
     ssr: false,
-    // components: {
-    //     global: true,
-    //     dirs: [
-    //         '~/components',
-    //     ]
-    // },
+
+    components: {
+        global: true,
+        dirs: [
+            '~/components'
+        ]
+    },
 
     modules: [
         // Color Mode

@@ -3,7 +3,7 @@
       <div p="2">
         <UiTabGroup :col="true" :tabs="['الفئات', 'المنتجات']">
         <template #tab-1>
-          <UiButton @click="firstWidget.state = !firstWidget.state" title="Toggle Widget" />
+          <UiButton @click="firstWidget.toggleState()" title="Toggle Widget" />
         </template>
         <template #tab-2>
           <h1>About</h1>
