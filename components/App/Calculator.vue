@@ -49,64 +49,64 @@
                   </div>
                 </div>
                 <div class="grid grid-flow-row grid-cols-4 gap-1">
-                  <div @click="Backspace('-')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Backspace('-')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     <div class="i-akar-icons:backspace-fill"></div>
                   </div>
-                  <div @click="Clear('-')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Clear('-')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     C
                   </div>
-                  <div @click="Operation('-')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Operation('-')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     +/-
                   </div>
-                  <div @click="Operation('/')" class="flex items-center justify-center w-full h-16 text-4xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Operation('/')" class="flex items-center justify-center w-full text-4xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     ÷
                   </div>
-                  <div @click="ButtonClicked('7')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('7')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     7
                   </div>
-                  <div @click="ButtonClicked('8')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('8')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     8
                   </div>
-                  <div @click="ButtonClicked('9')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('9')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     9
                   </div>
-                  <div @click="Operation('*')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Operation('*')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     x
                   </div>
-                  <div @click="ButtonClicked('4')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('4')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     4
                   </div>
-                  <div @click="ButtonClicked('5')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('5')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     5
                   </div>
-                  <div @click="ButtonClicked('6')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('6')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     6
                   </div>
-                  <div @click="Operation('-')" class="flex items-center justify-center w-full h-16 text-4xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Operation('-')" class="flex items-center justify-center w-full text-4xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     -
                   </div>
-                  <div @click="ButtonClicked('1')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg hover:bg-w-5">
+                  <div @click="ButtonClicked('1')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg h-18 hover:bg-w-5">
                     1
                   </div>
-                  <div @click="ButtonClicked('2')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('2')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     2
                   </div>
-                  <div @click="ButtonClicked('3')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('3')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     3
                   </div>
-                  <div @click="Operation('+')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Operation('+')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     +
                   </div>
-                  <div @click="Operation('=')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-primary hover:bg-primary-600 active:bg-primary-700">
+                  <div @click="Operation('=')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 bg-primary hover:bg-primary-600 active:bg-primary-700">
                     =
                   </div>
-                  <div @click="ButtonClicked('0')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="ButtonClicked('0')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     0
                   </div>
-                  <div @click="Operation('.')" class="flex items-center justify-center w-full h-16 text-2xl text-white bg-transparent rounded-lg cursor-pointer hover:bg-w-5">
+                  <div @click="Operation('.')" class="flex items-center justify-center w-full text-2xl text-white bg-transparent rounded-lg cursor-pointer h-18 hover:bg-w-5">
                     .
                   </div>
-                  <div @click="Operation('%')" class="flex items-center justify-center w-full h-16 text-2xl text-white rounded-lg cursor-pointer bg-w-10 hover:bg-w-5">
+                  <div @click="Operation('%')" class="flex items-center justify-center w-full text-2xl text-white rounded-lg cursor-pointer h-18 bg-w-10 hover:bg-w-20">
                     %
                   </div>
                 </div>
@@ -182,7 +182,7 @@ const Clear = () => {
   screen.value = 0;
 };
 const Backspace = () => {
-  screen.value = screen.value.slice(0, -1);
+  screen.value = screen.value.length <= 1 ? "0" : screen.value.slice(0, -1);
 };
 
 //keyboard
