@@ -295,6 +295,33 @@
   dependencies:
     mime "^3.0.0"
 
+"@enab/calculator@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@enab/calculator/-/calculator-1.0.3.tgz#b2d07e6b0f7815267dbe71a6b539266607b26bd9"
+  integrity sha512-K3f4FKjpjmQcFPwZsUxE+Ffx5cKNePsTK3OZTE3dmz24xyPzQBm5dSPT8YzbZJjCuXGGmM43g0TH7eH+G5mkAg==
+  dependencies:
+    "@enab/notepad" "^1.0.0"
+    "@enab/ui" latest
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
 "@enab/notepad@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@enab/notepad/-/notepad-1.0.0.tgz#24a1c6546581c474be94793104125befff6f7e8a"
@@ -347,7 +374,7 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.1.2":
+"@enab/ui@^1.1.2", "@enab/ui@latest":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.1.2.tgz#7d626377ffed8055db1db6ca33126dc8bee2b908"
   integrity sha512-g3EVbsan1rMivGl/IIgdNy4SJAvsC/OjNpgqIOLYVQkcLpunLysrrHnFih4vj9HXSIGDPAE1L/e6qUHYOTCZQA==
