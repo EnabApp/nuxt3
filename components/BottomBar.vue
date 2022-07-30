@@ -13,11 +13,11 @@
         <!-- Middle Icons -->
         <div flex="~ gap-2 grow" justify="center" items="center">
             <TransitionGroup>
-                <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.title" flex="~ col gap-1" position="relative" bg="hover:b-20" :class="[
+                <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.id" flex="~ col gap-1" position="relative" bg="hover:b-20" :class="[
                     // app.running && !app.minimized ? 'bg-b-20' : '',
                     app.minimized
                       ? 'text-w-30'
-                      : (appsStore.focused == app.title ? 'text-primary' : 'text-w-30'),
+                      : (appsStore.focused == app.id ? 'text-primary' : 'text-w-30'),
                    
                    ]" transition="~ .1s ease-in-out" border="rounded-lg" p="t-2 b-3 x-3" w="8"  items="center" justify="center" cursor="pointer">
                     <!-- Icon -->

@@ -10,96 +10,17 @@ export const useStoreApps = defineStore("apps", {
         focused: "",
 
         apps: [
-            // new App({
-            //     id: 1,
-            //     name: 'Supermarket',
-            //     title: "سوبر ماركت",
-            //     icon: "i-bxs-cart",
-            //     maximized: true,
-            //     solid: true,
-            //     owned:true,
-            //     widgets: [
-            //         new Widget({ 
-            //             id: 1,
-            //             name: 'First',
-            //             title: 'للسوبر ماركت',
-            //         })
-            //     ],
-            //     subApps: [
-            //         new App({
-            //             id: 1,
-            //             name: 'Second',
-            //             title: "برنامج ثاني",
-            //             icon: "i-bxs-cart",
-            //             size: "min-w-2xl min-h-3xl",
-            //         })
-            //     ]
-            // }),
-            // new App({
-            //     id: 2,
-            //     name: 'ServicesStore',
-            //     title: "متجر الخدمات",
-            //     icon: "i-bxs-cart",
-            //     owned:true,
-            //     size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
-            //     maximized: true,
-            //     subApps: [
-            //         new App({
-            //             id: 1,
-            //             name: 'ServiceInfo',
-            //             title: "معلومات الخدمة",
-            //             icon: "i-bxs-cart",
-            //             size: "min-w-2xl min-h-3xl",
-            //         })
-            //     ]
-            // }),
-            // new App({
-            //     id: 3,
-            //     name: 'Calculator',  
-            //     title: "الحاسبة",
-            //     owned:true,
-            //     icon: "i-ic-baseline-calculate",
-            //     size: "min-w-md min-h-xl",
-            //     maximizable: false,
-            //     resizeable: false,
-            //     utility: true,
-            // }),
-            // new App({
-            //     id: 4,
-            //     name: 'Todo',
-            //     title: "مهامي",
-            //     owned: false,
-            //     icon: "i-ri-todo-fill",
-            //     size: "min-w-xl min-h-3xl xl:min-w-xl xl:min-h-2xl md:min-w-xl md:min-h-2xl sm:min-w-xl sm:min-h-xl",
-            //     maximizable: false,
-            //     resizeable: false,
-            //     utility: true,
-            // }),
             new App({
                 id: 1,
-                name: 'Notepad',
-                title: "مفكرتي",
-                icon: "i-bxs-cart",
-                maximized: true,
-                solid: true,
-                owned: true,
-                // widgets: [
-                //   new Widget({
-                //     id: 1,
-                //     name: 'First',
-                //     title: 'للسوبر ماركت',
-                //   })
-                // ],
-                subApps: [
-                  new App({
-                    id: 1,
-                    name: 'Second',
-                    title: "برنامج ثاني",
-                    icon: "i-bxs-cart",
-                    size: "min-w-2xl min-h-3xl",
-                  })
-                ]
-              })
+                name: 'Calculator',
+                title: "الحاسبة",
+                owned:true,
+                icon: "i-ic-baseline-calculate",
+                size: "min-w-md min-h-xl",
+                maximizable: false,
+                resizeable: false,
+                utility: true,
+            })
         ],
     }),
 

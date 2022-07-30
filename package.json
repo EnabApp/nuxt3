@@ -11,6 +11,7 @@
     "nuxt": "^3.0.0-rc.5"
   },
   "dependencies": {
+    "@enab/calculator": "^1.0.2",
     "@enab/notepad": "^1.0.0",
     "@enab/ui": "^1.0.5",
     "@iconify/json": "^2.1.77",

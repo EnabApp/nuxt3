@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        '@enab/notepad',
+        '@enab/calculator',
 
         '@enab/ui',
 
