@@ -373,11 +373,12 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.0.5.tgz#59ad5139907bdfa85e7cb0e61d442ff5abe4ba0d"
-  integrity sha512-I/6j6LG/DNbLM8In4IIhusDWkQyWwTDfdz46GdE0JuLIDgpkOU+ums1e7/jI9YEchgO/ltrNRm2MjRhN36RxYQ==
+"@enab/ui@latest":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.0.6.tgz#eb983a282f2b7d17910dc97ae514b75070c23f5e"
+  integrity sha512-QmyQ994946BILGiNtfHs1mVCTLGsy7g/406xbXdSUfLCiTH95+F+i5Y+GYkYGP+So2PQshfs+88RkwAsj2lxNQ==
   dependencies:
+    "@enab/notepad" "^1.0.0"
     "@iconify/json" "^2.1.77"
     "@nuxt/kit" "^3.0.0-rc.6"
     "@nuxtjs/color-mode" "^3.1.4"
