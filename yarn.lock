@@ -347,10 +347,10 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.1.1.tgz#5b8c944703dc11314c70ce18ba5a4c376bc42c72"
-  integrity sha512-5MTAmPbs54hHi/1NjGrzaohksDLkqpuOfatmry1HR3c0B7oVkAScSURBimthdQtFVdXvu3TX0o2+WV9zqzZRkw==
+"@enab/ui@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.1.2.tgz#7d626377ffed8055db1db6ca33126dc8bee2b908"
+  integrity sha512-g3EVbsan1rMivGl/IIgdNy4SJAvsC/OjNpgqIOLYVQkcLpunLysrrHnFih4vj9HXSIGDPAE1L/e6qUHYOTCZQA==
   dependencies:
     "@enab/notepad" "^1.0.0"
     "@iconify/json" "^2.1.77"
