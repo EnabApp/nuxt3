@@ -4,10 +4,10 @@ export default defineNuxtConfig({
     isProduction: true,
     ssr: false,
 
-    autoImports: {
-        global: true,
+    // autoImports: {
+    //     global: true,
         
-    },
+    // },
 
     components: {
         global: true,
