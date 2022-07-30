@@ -1,11 +1,12 @@
 import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    isProduction: false,
-    // ssr: false,
+    isProduction: true,
+    ssr: false,
 
     autoImports: {
         global: true,
+        
     },
 
     components: {
