@@ -7,12 +7,13 @@ export default class App {
 
     title: string;
     icon: string;
-    minimized: boolean;
+    minimized: boolean; 
     maximized: boolean;
     maximizable: boolean;
     resizeable: boolean;
     running: boolean;
     locked: boolean;
+    owned: boolean;
     size: string;
     zIndex: string;
 
@@ -41,6 +42,7 @@ export default class App {
         this.running = args.running ?? false
         this.zIndex = args.zIndex ?? 20
         this.locked = args.locked ?? false
+        this.owned = args.owned ?? false
 
         this.utility = args.utility ?? false
 
