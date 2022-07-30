@@ -295,10 +295,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@enab/calculator@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@enab/calculator/-/calculator-1.0.3.tgz#b2d07e6b0f7815267dbe71a6b539266607b26bd9"
-  integrity sha512-K3f4FKjpjmQcFPwZsUxE+Ffx5cKNePsTK3OZTE3dmz24xyPzQBm5dSPT8YzbZJjCuXGGmM43g0TH7eH+G5mkAg==
+"@enab/calculator@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@enab/calculator/-/calculator-1.0.4.tgz#06540a0e220ca167dcd5a5fbe7267b79d092d078"
+  integrity sha512-o2mJx1hefNdcnJH3dZ2g3ngrhIdAGN3y6ACEPqOarXWrKow04XdNSlo1myPYHZ4q6q/jbSDD4LxgqRerPRMQNg==
   dependencies:
     "@enab/notepad" "^1.0.0"
     "@enab/ui" latest
