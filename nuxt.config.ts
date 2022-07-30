@@ -16,7 +16,9 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        // '@enab/notepad',
+        '@enab/notepad',
+
+        '@enab/ui',
 
         // Color Mode
         "@nuxtjs/color-mode",

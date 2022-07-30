@@ -8,16 +8,16 @@
 
             <Teleport to="#openedwindows">
               <!-- Application -->
-              <component :app="component" :is="`App${component.name}`"></component>
+              <component :app="component" :is="`${component.name}`"></component>
 
               <!-- Application Sub Applications -->
-              <component v-for="subComponent in component?.subApps" :key="component.id + '-sub-' + subComponent.id" :app="subComponent" :is="`App${component.name}Apps${subComponent.name}`"></component>
+              <component v-for="subComponent in component?.subApps" :key="component.id + '-sub-' + subComponent.id" :app="subComponent" :is="`${component.name}Apps${subComponent.name}`"></component>
             </Teleport>
 
             <!-- Application Widget -->
             <Teleport to='#widgets'>
               <TransitionGroup>
-                <component v-for="widget in component?.widgets" :key="'widget-' + widget.id" :widget="widget" :is="`App${component.name}Widgets${widget.name}`"></component>
+                <component v-for="widget in component?.widgets" :key="'widget-' + widget.id" :widget="widget" :is="`${component.name}Widgets${widget.name}`"></component>
               </TransitionGroup>
             </Teleport>
           </div>

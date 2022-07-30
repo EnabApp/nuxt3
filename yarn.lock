@@ -346,6 +346,31 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
+"@enab/ui@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.0.5.tgz#59ad5139907bdfa85e7cb0e61d442ff5abe4ba0d"
+  integrity sha512-I/6j6LG/DNbLM8In4IIhusDWkQyWwTDfdz46GdE0JuLIDgpkOU+ums1e7/jI9YEchgO/ltrNRm2MjRhN36RxYQ==
+  dependencies:
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
 "@iconify/json@^2.1.77":
   version "2.1.78"
   resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.1.78.tgz#6a001aff57d3f74c713e389cbc1000ecbf3897d5"
