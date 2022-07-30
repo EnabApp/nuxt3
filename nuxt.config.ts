@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        '@enab/calculator',
+        // '@enab/calculator',
 
         '@enab/ui',
 
