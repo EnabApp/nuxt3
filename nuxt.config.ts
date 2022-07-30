@@ -5,10 +5,7 @@ export default defineNuxtConfig({
     ssr: false,
 
     autoImports: {
-        global: true,
-        dirs: [
-            '~/composables'
-        ]
+        global: true
     },
     
     build: {
