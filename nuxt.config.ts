@@ -4,6 +4,10 @@ export default defineNuxtConfig({
     isProduction: false,
     ssr: false,
 
+    autoImports: {
+        global: true,
+    },
+
     components: {
         global: true,
         dirs: [
@@ -12,6 +16,8 @@ export default defineNuxtConfig({
     },
 
     modules: [
+        // '@enab/notepad',
+
         // Color Mode
         "@nuxtjs/color-mode",
 
@@ -65,7 +71,6 @@ export default defineNuxtConfig({
         },
         safelist: [
             // Sizes
-            // ..."min-w-lg min-h-xl".split(' '),
             ...(() => {
                 let sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl', '10xl']
                 return [

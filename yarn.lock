@@ -295,6 +295,57 @@
   dependencies:
     mime "^3.0.0"
 
+"@enab/notepad@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@enab/notepad/-/notepad-1.0.0.tgz#24a1c6546581c474be94793104125befff6f7e8a"
+  integrity sha512-g4FF/vsaHnLpOvtz7mV8Qg1410YW9gmZgeSB9iosXqTV+3vF1rGhg8C4UUAQ20EnfkK8r73iRWZ9qSEWOF4VvA==
+  dependencies:
+    "@enab/ui" "^1.0.2"
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
+"@enab/ui@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.0.2.tgz#5a007fc58d1da38c6896ffc19764d7426ccde51d"
+  integrity sha512-aB6iMwfB58fFeFTCkWS/Nf9dr62U2NIgNOBdN/BzGHEb6l9OP0IY7xDaiz07aPmbReK69l8e9ihHNA2cuarGMw==
+  dependencies:
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
 "@iconify/json@^2.1.77":
   version "2.1.78"
   resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.1.78.tgz#6a001aff57d3f74c713e389cbc1000ecbf3897d5"
@@ -1130,6 +1181,16 @@
     "@vueuse/shared" "9.0.0"
     vue-demi "*"
 
+"@vueuse/core@9.0.2", "@vueuse/core@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-9.0.2.tgz#e6e59c45b43c1ffe4ad5149853a1ea4e8f1e3b12"
+  integrity sha512-kOIqaQPSs7OSByWg1ulEKRUJbsq3FmbJiUr0RhEKpt3O1Uhl4DrDj85DUbQBABVYgPvSaY6AE/fP3/FOcRIOoQ==
+  dependencies:
+    "@types/web-bluetooth" "^0.0.15"
+    "@vueuse/metadata" "9.0.2"
+    "@vueuse/shared" "9.0.2"
+    vue-demi "*"
+
 "@vueuse/core@^8.1.2":
   version "8.9.4"
   resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-8.9.4.tgz#c7db40f19390b3c9f4ff9294a30461497f62ec19"
@@ -1155,6 +1216,11 @@
   resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-9.0.0.tgz#330cdd814f4b0a39ce41811ff6193f1c78d4f850"
   integrity sha512-79YVIsAP1bbWm5GdQuG7jDVF/9uuExzhkO0Sd4/TLuSfzH2uZOrHvGwy+ZNJHjbyRn3uf56rKINWLJdBuTLSqQ==
 
+"@vueuse/metadata@9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-9.0.2.tgz#373fdeb552f2a002ddc1f36c4027c936d78f8cb5"
+  integrity sha512-TRh+TNUYXiodatSAxd0xZc7sh4RfktVVgNFIN7TCQXKyancbCAcWfHvKfgdlX8LcqSBxKoHVa90n0XdUbboTkw==
+
 "@vueuse/motion@^2.0.0-beta.18":
   version "2.0.0-beta.18"
   resolved "https://registry.yarnpkg.com/@vueuse/motion/-/motion-2.0.0-beta.18.tgz#e98e9a4c34da2ca456a10639dca3b36409e97b5f"
@@ -1179,6 +1245,17 @@
     local-pkg "^0.4.2"
     vue-demi "*"
 
+"@vueuse/nuxt@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@vueuse/nuxt/-/nuxt-9.0.2.tgz#e40cebf1f7885e0addec6c489bda28e4d0d07ad3"
+  integrity sha512-1NYT3DC58fZ0YxFGaGZ4V0uAd3E4YMMnalKd1K1HBvrW3exB9zcBW52spKMspZL9dnNlxyv3TauH52b94fMxqg==
+  dependencies:
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@vueuse/core" "9.0.2"
+    "@vueuse/metadata" "9.0.2"
+    local-pkg "^0.4.2"
+    vue-demi "*"
+
 "@vueuse/shared@8.9.4", "@vueuse/shared@^8.1.2":
   version "8.9.4"
   resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-8.9.4.tgz#c9741c30ffb666b50d62f0dd80b76119fd47573e"
@@ -1190,6 +1267,13 @@
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-9.0.0.tgz#0048c0567159a82a540195339a6752497d13c6ac"
   integrity sha512-WRCyr/wIz5e/2gR/+qFucbCUcGMyJKkQZAzlECl3e71ebQQ9X/w3aBWT9FbnogJX+DNZ/t3Pj+TqPbC7TH1Yog==
+  dependencies:
+    vue-demi "*"
+
+"@vueuse/shared@9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-9.0.2.tgz#d3fb03594a9482d264702c67efe71d691ce67084"
+  integrity sha512-KwBDefK2ljLESpt0ffe2w8EGUCb3IaMfTzeytB/uHHjHOGOEIHLHHyn8W2C48uGQEvoe5iwaW4Bfp8cRUM6IFA==
   dependencies:
     vue-demi "*"
 
