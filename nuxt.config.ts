@@ -4,10 +4,16 @@ export default defineNuxtConfig({
     isProduction: true,
     ssr: false,
 
-    // autoImports: {
-    //     global: true,
-        
-    // },
+    autoImports: {
+        global: true,
+        dirs: [
+            '~/composables'
+        ]
+    },
+    
+    build: {
+        analyze: true,
+    },
 
     components: {
         global: true,
