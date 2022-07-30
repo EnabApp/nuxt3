@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     modules: [
         // '@enab/calculator',
 
-        // '@enab/ui',
+        '@enab/ui',
 
         // Color Mode
         "@nuxtjs/color-mode",
