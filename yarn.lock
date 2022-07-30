@@ -374,10 +374,10 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.1.4.tgz#ccaa09219cd18e03983c43b28a9217c094e18c60"
-  integrity sha512-3IosvUUX69jK522q1VHVTyUdHW9L0o875tD7vRscQC7ppCKyTt1hkeF3P82M+ooQS5AfvwirHIMMx7TkxbLTXQ==
+"@enab/ui@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.1.5.tgz#57aadb18ee221fd97c23a22254040e4391b6f4aa"
+  integrity sha512-i6jF6anow2RMkjmPAK3UsDL6Tz3bOon7ZcIwfdxHPtXryK8uI++FRYBDLh6FNfz2aLIX5cSIzF4ckd6Q7qalDQ==
   dependencies:
     "@enab/notepad" "^1.0.0"
     "@iconify/json" "^2.1.77"
