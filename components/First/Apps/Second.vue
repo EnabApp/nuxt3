@@ -42,7 +42,6 @@ const props = defineProps({
   }
 })
 
-console.log('sub')
 ///////////////////////////////
 const taskTitle = ref('');
 const tasks = ref([]);

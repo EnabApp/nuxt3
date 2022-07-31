@@ -1,16 +1,16 @@
 import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    isProduction: true,
+    // isProduction: true,
     ssr: false,
 
     autoImports: {
         global: true
     },
     
-    build: {
-        analyze: true,
-    },
+    // build: {
+    //     analyze: true,
+    // },
 
     components: {
         global: true,
@@ -20,6 +20,8 @@ export default defineNuxtConfig({
     },
 
     modules: [
+        '@enab/appstore',
+
         '@enab/calculator',
 
         '@enab/ui',

@@ -23,6 +23,8 @@ export default class App {
 
     parentApp: string;
 
+    points: number;
+
     widgets: Widget[];
     subApps: App[];
 
@@ -52,6 +54,8 @@ export default class App {
 
         this.size = args.size ?? "w-2xl h-lg"
 
+        this.points = args.points ?? 0
+
         this.widgets = args.widgets ?? []
         this.subApps = args.subApps ?? []
     }
@@ -63,6 +67,8 @@ export default class App {
             this.subApps.forEach(app => app.running = false)
     }
 
+
+    // Actions - Toggles
     toggleMinimize() {
         this.minimized = !this.minimized
     }
@@ -73,11 +79,18 @@ export default class App {
             this.maximized = !this.maximized
     }
 
+
+    // Getters
     getWidget(id: number){
         return this.widgets.find(widget => widget.id === id)
     }
 
     getSubApp(id: number){
         return this.subApps.find(app => app.id === id)
+    }
+
+    // Utilities
+    isSubAppsRunning(){
+        return this.subApps.some(app => app.running)
     }
 }

@@ -13,7 +13,7 @@
         <!-- Middle Icons -->
         <div flex="~ gap-2 grow" justify="center" items="center">
             <TransitionGroup>
-                <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.id" flex="~ col gap-1" position="relative" bg="hover:b-20" :class="[
+                <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.id" flex="~ col gap-1" position="relative" bg="hover:b-20" class="group" :class="[
                     // app.running && !app.minimized ? 'bg-b-20' : '',
                     app.minimized
                       ? 'text-w-30'
@@ -27,6 +27,18 @@
                         app.running ? 'opacity-100' : 'opacity-0',
                         app.minimized ? 'bg-w-30' : 'bg-primary'
                       ]" :style="[ app.minimized ? 'width:20%' : 'width:40%' ]" h="0.75" border="rounded-xl"></div>
+
+                    
+                    <div class="invisible group-hover:visible" v-if="app.isSubAppsRunning()" position="absolute" flex="~" bottom="6" m="b-5" p="3" bg="b-50" border="rounded-lg">
+                      <div @click.stop="subApp.toggleRunning()" v-for="subApp in app.subApps" :key="'bottom-bar-icon-' + app.id + '-' + subApp.id"  :class="[
+                          subApp.minimized
+                            ? 'text-w-30'
+                            : (appsStore.focused == subApp.id ? 'text-primary' : 'text-w-30'),
+                        
+                        ]">
+                        <div class="text-2xl" :class="subApp.icon"></div>
+                      </div>
+                    </div>
                 </div>
             </TransitionGroup>
             

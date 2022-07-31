@@ -8,10 +8,12 @@
 
             <Teleport to="#openedwindows">
               <!-- Application -->
-              <component :app="component" :is="`${component.name}`"></component>
+              <component :app="component" :is="component.name" :key="'app-component-' + component.id"></component>
 
               <!-- Application Sub Applications -->
-              <component v-for="subComponent in component?.subApps" :key="component.id + '-sub-' + subComponent.id" :app="subComponent" :is="`${component.name}Apps${subComponent.name}`"></component>
+              <div v-for="subComponent in component?.subApps" :key="component.id + '-sub-' + subComponent.id">
+                <component :app="subComponent" :is="`${component.name}Apps${subComponent.name}`"></component>
+              </div>
             </Teleport>
 
             <!-- Application Widget -->
