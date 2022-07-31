@@ -70,6 +70,7 @@ export const useStoreApps = defineStore("apps", {
         // getLockedApps: (state) => state.all.filter(a => a.locked),
         getFocused: (state) => state.focused,
         getChildrenApps: (state) => (title) => state.apps.filter(app => app.parentApp === title),
+        anyRunningIsMaximized: (state) => state.apps.some(app => app.maximized && app.running && !app.minimized),
     },
 
     actions: {

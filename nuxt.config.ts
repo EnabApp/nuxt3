@@ -204,7 +204,7 @@ export default defineNuxtConfig({
             height: {
                 'sidebar': 'calc(100vh - 3.75rem)',
                 'main-content': 'calc(100vh - 2.25rem)',
-                'minus-bottombar': 'calc(100vh - 64px)',
+                'minus-bottombar': 'calc(100vh)',
             },
         },
     },

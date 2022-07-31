@@ -9,20 +9,28 @@
     </div>
 
     <!-- Bottom Bar -->
-    <div w="full" h="16" z="200">
-      <BottomBar />
-    </div>
+    <Transition>
+      <div v-show="!(anyRunningIsMaximized && !positionBottom)" w="full" position="absolute" bottom="5" z="200">
+        <BottomBar />
+      </div>
+    </Transition>
   </div>
 </template>
 
 <script setup>
-import { useScreenSafeArea } from '@vueuse/core'
 import { onKeyStroke } from '@vueuse/core'
 
 const [state, toggle] = useToggle(false);
 const route = useRoute();
 
 const appsStore = useStoreApps()
+
+
+const { x, y, sourceType } = useMouse()
+const { width, height } = useWindowSize()
+
+const anyRunningIsMaximized = computed(() => appsStore.anyRunningIsMaximized)
+const positionBottom = computed(() => height.value - y.value <= 75)
 
 onKeyStroke(['Escape'], (e) => {
   // e.ctrlKey
@@ -41,3 +49,20 @@ useHead({
   ],
 });
 </script>
+
+
+<style scoped>
+.v-enter-active {
+  animation: bounce-in 0.3s;
+}
+.v-leave-active {
+  animation: bounce-in 0.3s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    bottom: -15px;
+    /* transform: translateY(100px); */
+  }
+}
+</style>

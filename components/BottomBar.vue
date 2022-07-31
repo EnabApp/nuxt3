@@ -1,55 +1,57 @@
 <template>
-    <div class="backdrop-blur-3xl" h="full" bg="b-60" border="t-4 w-10" flex="~" items="center" justify="between">
+<!-- class="backdrop-blur-3xl" -->
+    <div h="full" flex="~" items="end">
         <!-- Right -->
-        <div flex="~ gap-2" bg="b-10" p="4" border="rounded-lg" items="center" m="r-8">
           <!-- Full Screen -->
           <!-- <div @click="toggleFullScreen" cursor="pointer" flex="~" justify="center" :class="{ 'bg-b-20' : isFullscreen }" bg="hover:b-20" transition="~ .1s ease-in-out" border="rounded-lg" p="3" w="8" un-text="w-60 center">
               <div class="text-xl i-zondicons-screen-full"></div>
           </div> -->
-          
-          <span flex="~" :class="[ online ? 'bg-success' : 'bg-error ']" items="center" justify="center" class="w-3.5 h-3.5 rounded-full">
-          </span>
-
+        <div position="absolute" bottom="2.5" right="2.5">
+          <div flex="~ gap-2" border="rounded-2xl" items="center" p="r-2">
+            <span flex="~" :class="[ online ? 'bg-success' : 'bg-error ']" items="center" justify="center" p="y-2 x-4" class=" rounded-xl">
+              Online
+            </span>
+          </div>
         </div>
 
         <!-- Middle Icons -->
-        <div flex="~ gap-2 grow" justify="center" items="center">
-            <TransitionGroup>
-                <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.id" flex="~ col gap-1" position="relative" bg="hover:b-20" class="group" :class="[
-                    // app.running && !app.minimized ? 'bg-b-20' : '',
-                    app.minimized
-                      ? 'text-w-30'
-                      : (appsStore.focused == app.id ? 'text-primary' : 'text-w-30'),
-                   
-                   ]" transition="~ .1s ease-in-out" border="rounded-lg" p="t-2 b-3 x-3" w="8"  items="center" justify="center" cursor="pointer">
-                    <!-- Icon -->
-                    <div class="text-2xl" :class="app.icon"></div>
-                    <!-- Minibar -->
-                    <div transition="all .1s ease-in-out" position="absolute" bottom="1" :class="[ 
-                        app.running ? 'opacity-100' : 'opacity-0',
-                        app.minimized ? 'bg-w-30' : 'bg-primary'
-                      ]" :style="[ app.minimized ? 'width:20%' : 'width:40%' ]" h="0.75" border="rounded-xl"></div>
-
+        <div flex="~ grow" justify="center">
+          <div flex="~ gap-1" bg="b-80" p="1" border="rounded-2xl" justify="center" items="center">
+              <TransitionGroup>
+                  <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.id" flex="~ col gap-1" position="relative" m="1" bg="hover:w-10" class="group" :class="[
+                      // app.running && !app.minimized ? 'bg-b-20' : '',
+                      app.minimized
+                        ? 'text-w-30'
+                        : (appsStore.focused == app.id ? 'text-primary' : 'text-w-30'),
                     
-                    <div class="invisible group-hover:visible" v-if="app.isSubAppsRunning()" position="absolute" flex="~" bottom="6" m="b-5" p="3" bg="b-50" border="rounded-lg">
-                      <div @click.stop="subApp.toggleRunning()" v-for="subApp in app.subApps" :key="'bottom-bar-icon-' + app.id + '-' + subApp.id"  :class="[
-                          subApp.minimized
-                            ? 'text-w-30'
-                            : (appsStore.focused == subApp.id ? 'text-primary' : 'text-w-30'),
-                        
-                        ]">
-                        <div class="text-2xl" :class="subApp.icon"></div>
-                      </div>
-                    </div>
-                </div>
-            </TransitionGroup>
-            
-            <BottomBarMenu />
+                    ]" transition="~ .1s ease-in-out" border="rounded-lg" p="x-4 t-3 b-4" w="10"  items="center" justify="center" cursor="pointer">
+                      <!-- Icon -->
+                      <div class="text-4xl" :class="app.icon"></div>
+                      <!-- Minibar -->
+                      <div transition="all .1s ease-in-out" position="absolute" bottom="1" :class="[ 
+                          app.running ? 'opacity-100' : 'opacity-0',
+                          app.minimized ? 'bg-w-30' : 'bg-primary'
+                        ]" :style="[ app.minimized ? 'width:20%' : 'width:40%' ]" h="0.75" border="rounded-xl"></div>
 
+                      
+                      <div class="invisible group-hover:visible" v-if="app.isSubAppsRunning()" position="absolute" flex="~" bottom="6" m="b-5" p="3" bg="b-50" border="rounded-lg">
+                        <div @click.stop="subApp.toggleRunning()" v-for="subApp in app.subApps" :key="'bottom-bar-icon-' + app.id + '-' + subApp.id"  :class="[
+                            subApp.minimized
+                              ? 'text-w-30'
+                              : (appsStore.focused == subApp.id ? 'text-primary' : 'text-w-30'),
+                          
+                          ]">
+                          <div class="text-2xl" :class="subApp.icon"></div>
+                        </div>
+                      </div>
+                  </div>
+              </TransitionGroup>
+          <BottomBarMenu />
+          </div>
         </div>
 
         <!-- Left Icons / Date -->
-        <div un-text="w-30 xl" m="l-8">{{date}}</div>
+        <!-- <div un-text="w-30 xl" m="l-8">{{date}}</div> -->
     </div>
 </template>
 
