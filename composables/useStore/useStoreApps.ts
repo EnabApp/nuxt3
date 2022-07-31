@@ -20,6 +20,18 @@ export const useStoreApps = defineStore("apps", {
                 maximizable: false,
                 resizeable: false,
                 utility: true,
+            }),
+
+            new App({
+                id: 1,
+                name: 'TestApp',
+                title: "تجريبي",
+                owned:true,
+                icon: "i-ic-baseline-calculate",
+                size: "min-w-md min-h-xl",
+                maximizable: false,
+                resizeable: false,
+                utility: true,
             })
         ],
     }),
