@@ -18,7 +18,7 @@
         <div flex="~ grow" justify="center">
           <div flex="~ gap-1" bg="b-80" p="1" border="rounded-2xl" justify="center" items="center">
               <TransitionGroup>
-                  <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.id" flex="~ col gap-1" position="relative" m="1" bg="hover:w-10" class="group" :class="[
+                  <div @click="app.toggleMinimize()" v-for="app in appsStore.getRunningApps" :key="'Bottom-Bar-' + app.id" flex="~ col gap-1" position="relative" m="1" bg="hover:w-10" shadow="hover:b-90 hover:xl" class="group" :class="[
                       // app.running && !app.minimized ? 'bg-b-20' : '',
                       app.minimized
                         ? 'text-w-30'

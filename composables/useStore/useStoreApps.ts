@@ -51,7 +51,7 @@ export const useStoreApps = defineStore("apps", {
             new App({
                 id: 3,
                 name: 'appStore',
-                title: "متجر الخدمات",
+                title: "متجر التطبيقات",
                 icon: "i-bxs-cart",
                 owned:true,
                 points:1999,

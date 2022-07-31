@@ -1,6 +1,6 @@
 <template>
     <div ref="menuEl">
-        <div cursor="pointer" flex="~ col gap-1" position="relative" bg="hover:w-10" :class="{ 'bg-b-20': state }" transition="~ .1s ease-in-out" border="rounded-lg" p="3" w="10" m="1" un-text="w-60" items="center" justify="center" @click="toggle()">
+        <div cursor="pointer" flex="~ col gap-1" position="relative" bg="hover:w-10" :class="{ 'bg-b-20': state }" transition="~ .1s ease-in-out" border="rounded-lg" shadow="hover:b-90 hover:xl" p="3" w="10" m="1" un-text="w-60" items="center" justify="center" @click="toggle()">
         <!-- <div class="text-2xl i-subway-menu"></div> -->
         <UiIconsEnab />
         <div transition="~ .1s ease-in-out" position="absolute" bottom="1" :class="{ 'opacity-0': !state, 'opacity-100': state }" bg="primary" h="0.75" w="40%" border="rounded-xl"></div>
