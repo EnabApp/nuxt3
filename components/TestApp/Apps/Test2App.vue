@@ -23,7 +23,7 @@
               </div>
             </template>
             <template #tab-2>
-              <UiButton title="Toggle Sub App" @click="getApp.toggleRunning()" />
+              <h1>About</h1>
             </template>
             <template #tab-3>
               <h1>Contact</h1>
@@ -41,8 +41,8 @@ const props = defineProps({
     required: true
   }
 })
-const getApp = props.app.getSubApp(3);
 
+console.log('sub')
 ///////////////////////////////
 const taskTitle = ref('');
 const tasks = ref([]);
