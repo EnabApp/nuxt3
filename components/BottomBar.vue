@@ -1,12 +1,14 @@
 <template>
     <div class="backdrop-blur-3xl" h="full" bg="b-60" border="t-4 w-10" flex="~" items="center" justify="between">
         <!-- Right -->
-        <div flex="~ gap-2" m="r-8">
-
-            <!-- Full Screen -->
-            <div @click="toggleFullScreen" cursor="pointer" flex="~" justify="center" :class="{ 'bg-b-20' : isFullscreen }" bg="hover:b-20" transition="~ .1s ease-in-out" border="rounded-lg" p="3" w="8" un-text="w-60 center">
-                <div class="text-xl i-zondicons-screen-full"></div>
-            </div>
+        <div flex="~ gap-2" bg="b-10" p="4" border="rounded-lg" items="center" m="r-8">
+          <!-- Full Screen -->
+          <!-- <div @click="toggleFullScreen" cursor="pointer" flex="~" justify="center" :class="{ 'bg-b-20' : isFullscreen }" bg="hover:b-20" transition="~ .1s ease-in-out" border="rounded-lg" p="3" w="8" un-text="w-60 center">
+              <div class="text-xl i-zondicons-screen-full"></div>
+          </div> -->
+          
+          <span flex="~" :class="[ online ? 'bg-success' : 'bg-error ']" items="center" justify="center" class="w-3.5 h-3.5 rounded-full">
+          </span>
 
         </div>
 
@@ -56,6 +58,9 @@ const today = new Date();
 const date = computed(() => today.toLocaleDateString("ar-IQ"))
 
 const appsStore = useStoreApps()
+
+const online = useOnline()
+
 
 ///////////// Right
 // Full Screen

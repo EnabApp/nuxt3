@@ -59,16 +59,16 @@ export default class App {
         this.widgets = args.widgets ?? []
         this.subApps = args.subApps ?? []
     }
-
+    
+    
+    // Actions - Toggles
     toggleRunning(){
         this.running = !this.running
         this.minimized = false
         if (!this.running)
             this.subApps.forEach(app => app.running = false)
     }
-
-
-    // Actions - Toggles
+    
     toggleMinimize() {
         this.minimized = !this.minimized
     }

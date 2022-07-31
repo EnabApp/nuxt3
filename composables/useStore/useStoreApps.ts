@@ -27,7 +27,7 @@ export const useStoreApps = defineStore("apps", {
                 id: 2,
                 name: 'First',
                 title: "تجريبي",
-                owned: false,
+                owned: true,
                 points: 1999,
                 icon: "i-ic-baseline-calculate",
                 size: "min-w-md min-h-xl",
@@ -76,6 +76,7 @@ export const useStoreApps = defineStore("apps", {
         setFocus(title){
             this.focused = title;
         },
+        
     },
 });
 
