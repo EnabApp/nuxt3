@@ -1,25 +1,19 @@
 <template>
-  <div h="full" flex="~ col">
+  <div class="bg-default" position="relative" h="screen" flex="~ col" w="screen">
     <div id="openedwindows"></div>
     <!-- class="backdrop-blur-2xl" -->
     <div flex="grow">
-      <ContextMenu h="full">
-        <slot />
-      </ContextMenu>
+      <slot />
     </div>
 
     <!-- Bottom Bar -->
     <Transition>
-      <div v-show="!(anyRunningIsMaximized && !positionBottom)" w="full" position="absolute" bottom="5" z="200">
-        <BottomBar />
-      </div>
+      <BottomBar />
     </Transition>
   </div>
 </template>
 
 <script setup>
-import { onKeyStroke } from '@vueuse/core'
-
 const [state, toggle] = useToggle(false);
 const route = useRoute();
 
@@ -29,16 +23,16 @@ const appsStore = useStoreApps()
 const { x, y, sourceType } = useMouse()
 const { width, height } = useWindowSize()
 
-const anyRunningIsMaximized = computed(() => appsStore.anyRunningIsMaximized)
-const positionBottom = computed(() => height.value - y.value <= 75)
+// const anyRunningIsMaximized = computed(() => appsStore.anyRunningIsMaximized)
+// const positionBottom = computed(() => height.value - y.value <= 75)
 
-onKeyStroke(['Escape'], (e) => {
-  // e.ctrlKey
-  // e.shiftKey
-  // e.altKey
-  appsStore.closeWindow();
-  e.preventDefault()
-})
+// onKeyStroke(['Escape'], (e) => {
+//   // e.ctrlKey
+//   // e.shiftKey
+//   // e.altKey
+//   appsStore.closeWindow();
+//   e.preventDefault()
+// })
 
 useHead({
   meta: [
@@ -61,8 +55,22 @@ useHead({
 
 @keyframes bounce-in {
   0% {
-    bottom: -15px;
-    /* transform: translateY(100px); */
+    /* bottom: -15px; */
+    transform: translateY(100px);
   }
 }
+
+
+.bg-default {
+  /* background-image: url('https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80'); */
+  /* background-image: url('imgs/bg.jpg'); */
+  background-color: #333;
+  
+  /* background-size: cover; */
+  background-size: cover;
+  /* background-position: 100% 180%; */
+
+/* animation: lightMove 5s infinite; */
+}
+
 </style>
