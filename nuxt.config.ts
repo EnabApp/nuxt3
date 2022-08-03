@@ -74,7 +74,7 @@ export default defineNuxtConfig({
             provider: 'google', // default provider
             fonts: {
                 // these will extend the default theme
-                sans: ['Tajawal:200,300,400,500,700,800,900'],
+                sans: ['Almarai:300,400,700,800'],
             },
         },
         safelist: [
