@@ -72,7 +72,7 @@ const appsStore = useStoreApps()
 
 const { width, height } = useWindowSize()
 
-const [barState, barToggle] = useToggle(false)
+const [barState, barToggle] = useToggle(true)
 const floatingButton = ref(null)
 
 const { x, y, style, position } = useDraggable(floatingButton, {

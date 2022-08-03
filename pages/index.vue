@@ -1,7 +1,8 @@
 <template>
   <NuxtLayout name="desktop">
-    <div @click="appsStore.setFocus('')" flex="~" w="full" h="full" items="center" justify="center">
-      <div w="5xl xl:3xl md:3xl sm:xl" h="3xl xl:xl md:xl sm:xl" bg="b-5" border="~ b-5 rounded-2xl" grid="~ cols-2 2xl:cols-5 xl:cols-6 lg:cols-4 md:cols-4 sm:cols-3  auto-rows-min" p="8" place="center" ref="dropZoneRef">
+    <div @click="appsStore.setFocus('')" flex="~" w="full" h="full" items="start" justify="between">
+      <!-- Desktop Applications & Icons -->
+      <div min-w="1/4" grid="~ cols-4 auto-rows-min" m="70px" ref="dropZoneRef">
         <ClientOnly>
           <div v-for="component in appsStore.getOwned" :key="'app-' + component.id">
             <UiDesktopIcon :app="component" />
@@ -25,14 +26,13 @@
           </div>
         </ClientOnly>
       </div>
-    </div>
 
 
-    
-    <!-- Widgets -->
-    <div position="absolute" right="5" @click="appsStore.setFocus('')" flex="~" w="1/6" h="h-minus-bottombar" items="center" justify="center">
-      <div w="full" overflow-y="scroll" h="minus-bottombar">
-        <div id="widgets" p="y-4" flex="~ col gap-2"></div>
+      <!-- Desktop Widgets -->
+      <div min-w="1/4" @click="appsStore.setFocus('')" flex="~" h="h-minus-bottombar" items="center" justify="center">
+        <div w="full" overflow-y="scroll" h="minus-bottombar">
+          <div id="widgets" p="y-4" flex="~ col gap-2"></div>
+        </div>
       </div>
     </div>
   </NuxtLayout>
