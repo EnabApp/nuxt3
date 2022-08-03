@@ -37,7 +37,7 @@
         <!-- Divider -->
         <div h="32px" w="1px" bg="secondaryOp" m="x-16px"></div>
 
-        <div flex="~ gap-24px" items="center" bg="hover:secondaryOp" p="y-2 x-4" border="rounded-10px" cursor="pointer" un-text="white">
+        <div flex="~ gap-24px" items="center" bg="hover:secondaryOp" min-w="225px" p="y-2 x-4" border="rounded-10px" cursor="pointer" un-text="white">
             <!-- Calendar -->
             <div h="32px" w="32px" class="i-bxs-calendar"></div>
 
