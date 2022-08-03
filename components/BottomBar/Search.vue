@@ -1,9 +1,9 @@
 <template>
-    <div @click="searchPanelToggle" ref="searchEl" relative h="43px" flex="~ gap-2" p="x-13px" items="center" justify="center" bg="secondaryOp" un-text="secondary focus-within:white" border="rounded-10px">
+    <div @click="searchPanelToggle" ref="searchEl" relative h="43px" flex="~ gap-2" p="x-13px" items="center" justify="center" bg="secondary dark:secondaryOp" un-text="secondaryOp dark:secondary focus-within:primaryOp dark:focus-within:primary" border="rounded-10px">
         <div h="16px" w="16px" class="i-fa-search"></div>
-        <input placeholder="بحث..." type="search" un-text="lg secondary focus:white" class="bg-transparent border-0 outline-none focus:outline-none" />
+        <input placeholder="بحث..." type="search" un-text="lg secondaryOp dark:secondary focus:primaryOp dark:focus:primary" class="bg-transparent border-0 outline-none focus:outline-none" />
         <Transition name="search-panel">
-            <div v-if="searchPanelState" position="absolute" w="full" p="4" bottom="15" bg="secondaryOp" border="rounded-10px">
+            <div v-if="searchPanelState" position="absolute" w="full" p="4" bottom="15" bg="secondary dark:secondaryOp" border="rounded-10px">
                 <div class="i-line-md-loading-loop"></div>
             </div>
         </Transition>
