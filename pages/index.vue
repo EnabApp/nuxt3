@@ -27,7 +27,6 @@
         </ClientOnly>
       </div>
 
-
       <!-- Desktop Widgets -->
       <div min-w="1/4" @click="appsStore.setFocus('')" flex="~" h="h-minus-bottombar" items="center" justify="center">
         <div w="full" overflow-y="scroll" h="minus-bottombar">

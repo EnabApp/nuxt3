@@ -62,9 +62,9 @@ useHead({
 
 
 .bg-default {
-  /* background-image: url('https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80'); */
+  background-image: url('https://images.unsplash.com/photo-1542401886-65d6c61db217?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'); 
   /* background-image: url('imgs/bg.jpg'); */
-  background-color: #333;
+  background-color: #999;
   
   /* background-size: cover; */
   background-size: cover;

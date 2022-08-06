@@ -42,12 +42,12 @@
         <BottomBarNotifications />
 
         <!-- Divider -->
-        <div h="32px" w="1px" bg="secondary dark:secondaryOp" m="x-16px"></div>
+        <!-- <div h="32px" w="1px" bg="secondary dark:secondaryOp" m="x-16px"></div> -->
         
         <!-- Bottombar minimize -->
-        <div un-text="primaryOp dark:primary">
+        <!-- <div un-text="primaryOp dark:primary">
             <div cursor="pointer" @dblclick="barToggle()" h="32px" w="32px" class="i-bi-arrow-down-right-square-fill"></div>
-        </div>
+        </div> -->
       </div>
 
     </div>

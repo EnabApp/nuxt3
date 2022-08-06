@@ -60,6 +60,10 @@ export default class App {
         this.subApps = args.subApps ?? []
     }
     
+    open(){
+        this.running = true
+        this.minimized = false
+    }
     
     // Actions - Toggles
     toggleRunning(){
@@ -68,6 +72,8 @@ export default class App {
         if (!this.running)
             this.subApps.forEach(app => app.running = false)
     }
+
+    
     
     toggleMinimize() {
         this.minimized = !this.minimized
