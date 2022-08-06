@@ -11,12 +11,6 @@
         <!-- Divider -->
         <div h="32px" w="1px" bg="secondary dark:secondaryOp" m="x-16px"></div>
 
-        <!-- Search -->
-        <BottomBarSearch />
-
-        <!-- Divider -->
-        <div h="32px" w="1px" bg="secondary dark:secondaryOp" m="x-16px"></div>
-
         <!-- Applications -->
         <div flex="~ gap-7px grow">
           <TransitionGroup>
@@ -25,8 +19,10 @@
               app.id == appsStore.focused
               ? 'text-primaryOp dark:text-primary'
               : 'text-secondaryOp dark:text-secondary hover:text-primaryOp dark:hover:text-primary',
-            ]" cursor="pointer" p="x-15px" w="200px" h="43px" flex="~ gap-7px" items="center" justify="start" bg="secondary dark:secondaryOp" border="rounded-10px" transition="all 0.025s ease-in-out">
+            ]" cursor="pointer" p="x-15px" w="200px" h="43px" flex="~ gap-7px" items="center" justify="start" bg="secondary dark:secondaryOp" border="rounded-5px" transition="all 0.025s ease-in-out">
+              <!-- Application Icon -->
               <div h="16px" w="16px" :class="app.icon"></div>
+              <!-- Application Title -->
               <span un-text="xl">
                 {{ app.title }}
               </span>
@@ -37,13 +33,13 @@
         <!-- Divider -->
         <div h="32px" w="1px" bg="secondary dark:secondaryOp" m="x-16px"></div>
 
-        <div flex="~ gap-24px" items="center" bg="dark:hover:secondaryOp hover:secondary" p="y-2 x-4" border="rounded-10px" cursor="pointer" un-text="primaryOp dark:primary">
-            <!-- Calendar -->
-            <div h="32px" w="32px" class="i-bxs-calendar"></div>
+        <BottomBarDatetime />
 
-            <!-- Datetime -->
-            <div un-text="xl">2022 \ 8 \ 1 - 11:18</div>
-        </div>
+        <!-- Divider -->
+        <div h="32px" w="1px" bg="secondary dark:secondaryOp" m="x-16px"></div>
+
+        <!-- Notifications -->
+        <BottomBarNotifications />
 
         <!-- Divider -->
         <div h="32px" w="1px" bg="secondary dark:secondaryOp" m="x-16px"></div>

@@ -9,7 +9,7 @@
         <div m="4" flex="~ col grow gap-4">
           <UiInput v-model="taskTitle" placeholder="مهمة جديدة" @keypress.enter="newTask()" />
 
-          <UiTabGroup :col="false" :tabs="['جميع المهام', 'المهام المكتملة']">
+          <UiTabGroup :col="false" :tabs="['جميع المهام', 'المهام المكتملة', 'hello']">
             <template #tab-1>
               <div flex="~ col grow">
                 <div max-h="2xl" m="y-8" border="rounded-lg" flex="~ col grow gap-2" p="l-2" overflow-y="scroll">
@@ -26,7 +26,12 @@
               <UiButton title="Toggle Sub App" @click="getApp.toggleRunning()" />
             </template>
             <template #tab-3>
-              <h1>Contact</h1>
+              <UiSwitch v-model="switcher" :list="[
+                {id: '1', value: 'Dog', icon: 'i-clarity-email-solid'},
+                {id: '2', value: 'Cat', icon: 'i-clarity-email-solid'},
+                {id: '3', value: 'Lizard', icon: 'i-clarity-email-solid'},
+                {id: '4', value: 'Shark', icon: 'i-clarity-email-solid'},
+              ]" />
             </template>
           </UiTabGroup>
         </div>
