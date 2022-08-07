@@ -25,27 +25,15 @@ export const useStoreApps = defineStore("apps", {
 
             new App({
                 id: 2,
-                name: 'First',
-                title: "تجريبي",
+                name: 'TelegramApp',
+                title: "تلكرام",
                 owned: true,
                 points: 1999,
                 icon: "i-ic-baseline-calculate",
-                size: "min-w-md min-h-xl",
+                size: "min-w-2xl min-h-2xl",
                 maximizable: false,
                 resizeable: false,
                 utility: true,
-                subApps: [
-                    new App({
-                        id: 3,
-                        name: 'Second',
-                        title: "تجريبي",
-                        owned: true,
-                        icon: "i-ic-baseline-calculate",
-                        size: "min-w-md min-h-xl",
-                        maximizable: false,
-                        resizeable: false,
-                    }),
-                ]
             }),
 
             new App({

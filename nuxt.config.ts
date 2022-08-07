@@ -222,6 +222,7 @@ export default defineNuxtConfig({
                 'sidebar': 'calc(100vh - 3.75rem)',
                 'main-content': 'calc(100vh - 2.25rem)',
                 'minus-bottombar': 'calc(100vh - 60px)',
+                'cuts': 'calc(100vh - 60px - 154px)',
             },
         },
     },

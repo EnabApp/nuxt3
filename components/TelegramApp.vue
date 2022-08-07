@@ -6,8 +6,8 @@
         v-show="!app.minimized"
         :app="app"
       >
-        <div m="4" flex="~ col grow gap-4">
-          <UiInput v-model="taskTitle" placeholder="مهمة جديدة" @keypress.enter="newTask()" />
+        <div flex="~">
+          <!-- <iframe src="https://web.telegram.org/"></iframe> -->
         </div>
       </UiDesktopWindow>
     </Transition>
