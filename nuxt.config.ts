@@ -5,8 +5,17 @@ export default defineNuxtConfig({
     isProduction: true,
     ssr: false,
 
+    hooks:{
+        "autoImports:dirs": (dirs) => {
+            console.log(dirs)
+        }
+    },
+
     autoImports: {
         global: true,
+        dirs: [
+            'node_modules/@enab/core/dist/runtime/composables/'
+        ]
     },
     
     // build: {
