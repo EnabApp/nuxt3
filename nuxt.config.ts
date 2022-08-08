@@ -1,23 +1,24 @@
 import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+
 export default defineNuxtConfig({
-    // isProduction: true,
+    isProduction: true,
     ssr: false,
 
     autoImports: {
-        global: true
+        global: true,
     },
     
     // build: {
     //     analyze: true,
     // },
 
-    components: {
-        global: true,
-        dirs: [
-            '~/components',
-        ]
-    },
+    // components: {
+    //     global: true,
+    //     dirs: [
+    //         '~/components',
+    //     ]
+    // },
 
     modules: [
         '@enab/core',

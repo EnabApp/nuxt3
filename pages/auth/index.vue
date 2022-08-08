@@ -27,6 +27,7 @@
 </template>
 
 <script setup>
+const appManager = useAppManager()
 
 const [ registerState, registerToggle ] = useToggle(false)
 
