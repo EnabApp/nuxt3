@@ -21,10 +21,6 @@ export default defineNuxtConfig({
 
     modules: [
         '@enab/core',
-        
-        '@enab/appstore',
-
-        '@enab/calculator',
 
         '@enab/ui',
 
