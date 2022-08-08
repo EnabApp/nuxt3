@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { useAppManager } from '../../node_modules/@enab/core/dist/runtime/composables/useAppManager'
+// import { useAppManager } from '../../node_modules/@enab/core/dist/runtime/composables/useAppManager'
 
 
 const appManager = useAppManager()

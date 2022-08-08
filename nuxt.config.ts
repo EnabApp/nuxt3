@@ -6,9 +6,13 @@ export default defineNuxtConfig({
     ssr: false,
     
     autoImports: {
-        global: true
+        global: true,
+        dirs: [
+            '../../node_modules/@enab/core/dist/runtime/composables/'
+        ]
     },
     
+
     // build: {
     //     analyze: true,
     // },
