@@ -13,7 +13,8 @@
   "dependencies": {
     "@enab/appstore": "^1.0.1",
     "@enab/calculator": "^1.0.7",
-    "@enab/ui": "^1.2.0",
+    "@enab/core": "^1.0.1",
+    "@enab/ui": "^1.2.5",
     "@iconify/json": "^2.1.77",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/composition-api": "^0.33.0",
