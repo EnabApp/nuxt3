@@ -349,10 +349,10 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/core@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.0.1.tgz#67d8e1a255152185f75821fa847f8fdddf6ef8c0"
-  integrity sha512-4u6/9m6yRDG3Dg6MS/RUEoKsoLG96LlS0RTi9erWRkHlXqdvY1/ct9ZeurHIuEvA9tNHzPI1JL8Z1hU0mudi1g==
+"@enab/core@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.0.2.tgz#e2bb7296a30376d4a525a6a26341352b858ed2f9"
+  integrity sha512-Viw7It20ZXxyc84d/0ok32t9gGzCXhFfGFf3vnzyO0yZ0aR/MPSP8CPqwGnSmoSUVwTChh5dxV08fnXIGRqB9g==
   dependencies:
     "@enab/ui" "^1.2.5"
     "@iconify/json" "^2.1.77"
