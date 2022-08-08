@@ -11,8 +11,6 @@
     "nuxt": "^3.0.0-rc.5"
   },
   "dependencies": {
-    "@enab/appstore": "^1.0.1",
-    "@enab/calculator": "^1.0.7",
     "@enab/core": "^1.0.1",
     "@enab/ui": "^1.2.5",
     "@iconify/json": "^2.1.77",
