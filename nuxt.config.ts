@@ -7,6 +7,10 @@ export default defineNuxtConfig({
     
     autoImports: {
         global: true,
+        dirs: [
+            '@/node_modules/@enab/core/dist/runtime/composables/',
+            '@/node_modules/@enab/core/dist/runtime/classes/'
+        ]
     },
     
 
