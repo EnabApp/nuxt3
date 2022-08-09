@@ -361,10 +361,10 @@
     unbuild "^0.7.6"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.0.tgz#b9469d7d6dc99314a73eb3fb8632668325c6f288"
-  integrity sha512-isrKPchmTpCVbIbw21F36WVm6NxlNdqV85Wz+etX0B3t1wtwfQ7OWrXZkkEg/koz37WI0FKKttjzuTv5CTf3fA==
+"@enab/ui@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.1.tgz#a1e940d9b95a3c6f133b69555dee824da9c6789d"
+  integrity sha512-0dTq7sRzb5mwn6YXLlPY5+UAK4LuIN4KcY3Sq+6qG9aFJGUFdN54oFto1szitj6NnB6IdoP7FDkOidb23e4a/w==
   dependencies:
     "@enab/core" "^1.3.0"
     "@iconify/json" "^2.1.77"
