@@ -18,6 +18,12 @@ export default defineNuxtConfig({
     // },
 
     modules: [
+
+        /**˅˅˅˅ APPS ˅˅˅˅**/
+        // '@enab/todo',
+        '@enab/appstore',
+        /**˄˄˄˄ APPS ˄˄˄˄**/
+
         '@enab/core',
 
         '@enab/ui',

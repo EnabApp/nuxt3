@@ -295,6 +295,33 @@
   dependencies:
     mime "^3.0.0"
 
+"@enab/appstore@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@enab/appstore/-/appstore-1.0.2.tgz#77d65eb2a90831bc69000993b79de7b1c975a8bf"
+  integrity sha512-zjtQ3aEFsNvooed0MgDEs+2GsPDWZqXqzzBNwpT0vfgyipRJB670BNeAUzH0fyjcPolqneSJ1mb4MmKGU7OjYA==
+  dependencies:
+    "@enab/core" "^1.3.2"
+    "@enab/ui" "^1.4.1"
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
 "@enab/core@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.3.0.tgz#e5e51b73306e9783063f4c2e540d7d9ae87c970f"
@@ -359,6 +386,34 @@
     nuxt-lodash "^2.2.0"
     pinia "^2.0.16"
     unbuild "^0.7.6"
+    vue-toastification "^2.0.0-rc.5"
+
+"@enab/todo@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@enab/todo/-/todo-1.0.0.tgz#11c7b3d29a36c5dbf1bc567d0a9e2e9e80b8885f"
+  integrity sha512-K1Gqn37EHn6CgFg6lDMupYCkDHMKovyjnBc2BuxJoz9cxAoqbCdgYCKG8tC3YvRAlXcQX+t2IWIDNJxSUyf+Ng==
+  dependencies:
+    "@enab/core" "^1.3.2"
+    "@enab/ui" "^1.4.1"
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    moment "^2.29.4"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
 "@enab/ui@^1.4.1":
@@ -4461,6 +4516,11 @@ mlly@^0.5.2, mlly@^0.5.3, mlly@^0.5.4:
   dependencies:
     pathe "^0.3.1"
     pkg-types "^0.3.3"
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 mri@^1.2.0:
   version "1.2.0"
