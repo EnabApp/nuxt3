@@ -442,10 +442,10 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.2.tgz#6df1b2f23508d12c7913c7e891b9107c26c86457"
-  integrity sha512-S58uvk+Bfo9GYRMdqOi+pt0WWX40g1Q3//1S7qplqlK2L8pRXP4nUh3dN/5wUDwDCY9Qf+T+IiULzqxo+L0MeA==
+"@enab/ui@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.3.tgz#79a8a13276f710c2b96c7cccca7bd80d905a4679"
+  integrity sha512-qLEOnNMRnENb1wnSsl5t6aCEJvOovFw1DxyKUZ2dYXpcG5wnosfb7/Eq3U+QMu/XyUwM3kScDfje3u7l/tvwhQ==
   dependencies:
     "@enab/core" "^1.3.0"
     "@iconify/json" "^2.1.77"
