@@ -442,6 +442,32 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
+"@enab/ui@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.2.tgz#6df1b2f23508d12c7913c7e891b9107c26c86457"
+  integrity sha512-S58uvk+Bfo9GYRMdqOi+pt0WWX40g1Q3//1S7qplqlK2L8pRXP4nUh3dN/5wUDwDCY9Qf+T+IiULzqxo+L0MeA==
+  dependencies:
+    "@enab/core" "^1.3.0"
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
 "@esbuild/linux-loong64@0.14.54":
   version "0.14.54"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.14.54.tgz#de2a4be678bd4d0d1ffbb86e6de779cde5999028"
