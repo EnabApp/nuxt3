@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     modules: [
 
         /**˅˅˅˅ APPS ˅˅˅˅**/
-        // '@enab/todo',
+        '@enab/todo',
         '@enab/appstore',
         /**˄˄˄˄ APPS ˄˄˄˄**/
 
