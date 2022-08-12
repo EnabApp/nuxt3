@@ -28,6 +28,8 @@ export default defineNuxtConfig({
 
         '@enab/ui',
 
+        '@nuxtjs/supabase',
+
         // Color Mode
         "@nuxtjs/color-mode",
 
