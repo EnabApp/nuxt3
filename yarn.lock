@@ -558,10 +558,10 @@
     unbuild "^0.7.6"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/core@^1.3.8":
-  version "1.3.8"
-  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.3.8.tgz#9f6774f6d54494141b842f10c893dbb9f5852422"
-  integrity sha512-ZrgOVvE23JU9c9fIYRuEgvba5jsYDbte/+cUjgmQ7hPSkOON8rnzMSoVJIEYrdt8uJTyWwhLdtW2YzemhtNcSA==
+"@enab/core@^1.3.9":
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.3.9.tgz#47e62e92a6071266871b4a106cd9fb341ea047e5"
+  integrity sha512-Vn6/ccEj2TGh7/bWrEhENKLg16Bt2a8P9YSS1OIXw0XAUMuZ2bsHYMXhsRGvT1EN+aC25+wXkvzrxdqte46MtA==
   dependencies:
     "@enab/ui" "^1.4.4"
     "@iconify/json" "^2.1.77"
