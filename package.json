@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@enab/appstore": "^1.0.2",
-    "@enab/core": "^1.4.0",
+    "@enab/core": "^1.4.3",
     "@enab/todo": "^1.0.7",
     "@enab/ui": "^1.4.4",
     "@iconify/json": "^2.1.77",
