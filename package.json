@@ -11,7 +11,7 @@
     "nuxt": "3.0.0-rc.7"
   },
   "dependencies": {
-    "@enab/appstore": "^1.0.2",
+    "@enab/appstore": "^1.0.3",
     "@enab/core": "^1.5.3",
     "@enab/todo": "^1.0.8",
     "@enab/ui": "^1.4.5",
