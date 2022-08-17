@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "@enab/appstore": "^1.0.4",
-    "@enab/calculator": "^1.1.0",
+    "@enab/calculator": "^1.1.1",
     "@enab/core": "^1.6.0",
     "@enab/recharge": "^1.0.1",
     "@enab/todo": "^1.0.8",
-    "@enab/ui": "^1.4.5",
+    "@enab/ui": "^1.4.6",
     "@iconify/json": "^2.1.93",
     "@nuxt/kit": "^3.0.0-rc.8",
     "@nuxtjs/color-mode": "^3.1.4",
