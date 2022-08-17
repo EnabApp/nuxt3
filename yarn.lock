@@ -390,10 +390,10 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/calculator@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@enab/calculator/-/calculator-1.1.1.tgz#6348517eeffe34ecce7e68a722e3730f5c029286"
-  integrity sha512-3VgbHTSlWjlWQX8iW1JGZYF1AKPsWuhMOtX/VTrRP9Rj8MAvezYegiI8QurAk0DTJB3nAbXDVvqIMRdSZ7C5IQ==
+"@enab/calculator@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@enab/calculator/-/calculator-1.1.2.tgz#803dbb78bc2fd2d28814c725415829658f68a019"
+  integrity sha512-XMywzxmDVdZYVZ8mRO1Cw5Ji2WySVXLAOdaxECWZSrcdcXFjmgeQglEuc4GRJWfSru+zPvTrbUjfFkqJKsGxsg==
   dependencies:
     "@enab/core" "^1.5.8"
     "@enab/ui" "^1.4.5"
