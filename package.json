@@ -11,7 +11,7 @@
     "nuxt": "3.0.0-rc.8"
   },
   "dependencies": {
-    "@enab/appstore": "^1.0.4",
+    "@enab/appstore": "^1.0.5",
     "@enab/calculator": "^1.1.1",
     "@enab/core": "^1.6.1",
     "@enab/recharge": "^1.0.1",
