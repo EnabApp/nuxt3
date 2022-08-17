@@ -13,7 +13,7 @@
   "dependencies": {
     "@enab/appstore": "^1.0.4",
     "@enab/calculator": "^1.1.1",
-    "@enab/core": "^1.6.0",
+    "@enab/core": "^1.6.1",
     "@enab/recharge": "^1.0.1",
     "@enab/todo": "^1.0.8",
     "@enab/ui": "^1.4.6",
