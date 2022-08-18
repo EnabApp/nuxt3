@@ -1495,6 +1495,14 @@
     gzip-size "^6.0.0"
     sirv "^2.0.2"
 
+"@unocss/inspector@^0.45.8":
+  version "0.45.8"
+  resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.8.tgz#8fb466b43a6961acd7e93644ad90bd0387c538c1"
+  integrity sha512-dvGYyVVofH8VxMvqaRfysxIbRkaunvs5M5Z8UVaCCfjfrDX6nqAQfSOakXWODEz8Y2JEfKEDLWfSn+oQWb9ohA==
+  dependencies:
+    gzip-size "^6.0.0"
+    sirv "^2.0.2"
+
 "@unocss/nuxt@^0.44.0":
   version "0.44.7"
   resolved "https://registry.yarnpkg.com/@unocss/nuxt/-/nuxt-0.44.7.tgz#4bd8624063be1f34227041f4a807212582084dfe"
