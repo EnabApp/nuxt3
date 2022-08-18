@@ -700,7 +700,7 @@
     unimport "^0.4.5"
     untyped "^0.4.4"
 
-"@nuxt/kit@3.0.0-rc.8", "@nuxt/kit@^3.0.0-rc.1", "@nuxt/kit@^3.0.0-rc.3", "@nuxt/kit@^3.0.0-rc.4", "@nuxt/kit@^3.0.0-rc.5", "@nuxt/kit@^3.0.0-rc.6", "@nuxt/kit@^3.0.0-rc.8":
+"@nuxt/kit@3.0.0-rc.8", "@nuxt/kit@^3.0.0-rc.1", "@nuxt/kit@^3.0.0-rc.3", "@nuxt/kit@^3.0.0-rc.4", "@nuxt/kit@^3.0.0-rc.6", "@nuxt/kit@^3.0.0-rc.8":
   version "3.0.0-rc.8"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.8.tgz#e65e739e986abf5bfe99fa44a3bf44bacc66a35a"
   integrity sha512-FkbO7DPkJxuLqeiWEMUI8OWXaQ4qzmreIjslIPrc9buYdB9nbJqVVzQRicxcKzF09R7VwpJTiG6onIZq6iGuDQ==
@@ -865,16 +865,6 @@
     eslint-plugin-promise "^6.0.0"
     eslint-plugin-unicorn "^42.0.0"
     eslint-plugin-vue "^8.7.1"
-
-"@nuxtjs/supabase@0.1.19":
-  version "0.1.19"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/supabase/-/supabase-0.1.19.tgz#763e9280505565481db280681f32fa837cc79a55"
-  integrity sha512-ntAxxscRblW9NK86U9sabrDVZ2mH9WkmV0p+ej+lpywWudWL4GaSji60YWj4lxckxS8H8ihHTALsIznSjyrBoQ==
-  dependencies:
-    "@nuxt/kit" "^3.0.0-rc.5"
-    "@supabase/supabase-js" "^1.35.4"
-    defu "^6.0.0"
-    pathe "^0.3.2"
 
 "@nuxtjs/supabase@0.1.23", "@nuxtjs/supabase@^0.1.19":
   version "0.1.23"
@@ -1103,7 +1093,7 @@
   dependencies:
     cross-fetch "^3.1.0"
 
-"@supabase/supabase-js@^1.35.4", "@supabase/supabase-js@^1.35.6":
+"@supabase/supabase-js@^1.35.6":
   version "1.35.6"
   resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.35.6.tgz#df5a2c132035ab9e5462ed474587902b3e767a66"
   integrity sha512-KDRXRr+kdGwruIUizZPALbe5YccMYFVyZJf1sFWKLncaLYSFiM6iKFnqCrNeQ4JFoZZiICkiTl1FUuai62jVpg==
@@ -1491,14 +1481,6 @@
   version "0.45.7"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.7.tgz#19a2a70c0696a6bab0b31c080583f4795003a714"
   integrity sha512-4dQBzg/k+Z+8p5qlM3NrOe1pgKZ3+zG6Ji8vbpPyYlfFQI1l2uqvCqGlry+AVUXfvmnWnILHIDDYYIM8bbSuRQ==
-  dependencies:
-    gzip-size "^6.0.0"
-    sirv "^2.0.2"
-
-"@unocss/inspector@^0.45.8":
-  version "0.45.8"
-  resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.8.tgz#8fb466b43a6961acd7e93644ad90bd0387c538c1"
-  integrity sha512-dvGYyVVofH8VxMvqaRfysxIbRkaunvs5M5Z8UVaCCfjfrDX6nqAQfSOakXWODEz8Y2JEfKEDLWfSn+oQWb9ohA==
   dependencies:
     gzip-size "^6.0.0"
     sirv "^2.0.2"
