@@ -20,7 +20,7 @@
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/composition-api": "^0.33.0",
     "@nuxtjs/supabase": "^0.1.19",
-    "@pinia/nuxt": "^0.3.0",
+    "@pinia/nuxt": "^0.4.0",
     "@tauri-apps/api": "^1.0.2",
     "@unocss/inspector": "^0.44.2",
     "@unocss/nuxt": "^0.44.0",
