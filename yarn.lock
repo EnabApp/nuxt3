@@ -492,80 +492,75 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/core@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.3.0.tgz#e5e51b73306e9783063f4c2e540d7d9ae87c970f"
-  integrity sha512-A1CIAeKYgCUbfK2U71C7ACKy/5OjB/SWceFw7voeeOMALzlGN+nWqZ7GopND1jh8W1+opDXYKYNjCfHUMtsswA==
+"@enab/appstore@^1.0.4":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@enab/appstore/-/appstore-1.0.6.tgz#b5d6bdf930d120ccdace98efe7abb29e8a612723"
+  integrity sha512-mJ/S0GcZz/9ygV9yi9I8WEUE7trbgVCKoqf7gI5QIL/lO8Y7BSJEZQmoX/oJ+x5ebz+SEK0N8UDp39g8hD9FAg==
   dependencies:
-    "@iconify/json" "^2.1.77"
-    "@nuxt/image-edge" "^1.0.0-27628766.3629b9a"
-    "@nuxt/kit" "^3.0.0-rc.6"
-    "@nuxt/module-builder" "^0.1.7"
-    "@nuxt/schema" "^3.0.0-rc.6"
-    "@nuxtjs/color-mode" "^3.1.4"
-    "@nuxtjs/composition-api" "^0.33.0"
-    "@nuxtjs/eslint-config-typescript" latest
-    "@pinia/nuxt" "^0.3.0"
-    "@tauri-apps/api" "^1.0.2"
-    "@types/node" "^18.6.4"
-    "@unocss/inspector" "^0.44.2"
-    "@unocss/nuxt" "^0.44.0"
-    "@unocss/preset-attributify" "^0.44.1"
-    "@unocss/preset-icons" "^0.44.1"
-    "@unocss/preset-typography" "^0.44.1"
-    "@unocss/preset-web-fonts" "^0.44.1"
-    "@vueuse/core" "^9.0.2"
-    "@vueuse/motion" "^2.0.0-beta.18"
-    "@vueuse/nuxt" "^9.0.2"
-    eslint latest
-    mathjs "^11.0.1"
-    nuxt "^3.0.0-rc.6"
-    nuxt-lodash "^2.2.0"
-    pinia "^2.0.16"
-    unbuild "^0.7.6"
-    vue-toastification "^2.0.0-rc.5"
-
-"@enab/core@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.3.2.tgz#14f3fc5499599039888f46eee1a14316056d0cb6"
-  integrity sha512-5mVTbI9qQPDpPuz4UGPxbvZoJEmtyClgwNdimVQ6e/S1oM53/xv3XWABzpKSayVV+R/VnErXH/gmbDyU2+VQHA==
-  dependencies:
-    "@iconify/json" "^2.1.77"
-    "@nuxt/image-edge" "^1.0.0-27628766.3629b9a"
-    "@nuxt/kit" "^3.0.0-rc.6"
-    "@nuxt/module-builder" "^0.1.7"
-    "@nuxt/schema" "^3.0.0-rc.6"
-    "@nuxtjs/color-mode" "^3.1.4"
-    "@nuxtjs/composition-api" "^0.33.0"
-    "@nuxtjs/eslint-config-typescript" latest
-    "@pinia/nuxt" "^0.3.0"
-    "@tauri-apps/api" "^1.0.2"
-    "@types/node" "^18.6.4"
-    "@unocss/inspector" "^0.44.2"
-    "@unocss/nuxt" "^0.44.0"
-    "@unocss/preset-attributify" "^0.44.1"
-    "@unocss/preset-icons" "^0.44.1"
-    "@unocss/preset-typography" "^0.44.1"
-    "@unocss/preset-web-fonts" "^0.44.1"
-    "@vueuse/core" "^9.0.2"
-    "@vueuse/motion" "^2.0.0-beta.18"
-    "@vueuse/nuxt" "^9.0.2"
-    eslint latest
-    mathjs "^11.0.1"
-    nuxt "^3.0.0-rc.6"
-    nuxt-lodash "^2.2.0"
-    pinia "^2.0.16"
-    unbuild "^0.7.6"
-    vue-toastification "^2.0.0-rc.5"
-
-"@enab/core@^1.4.1", "@enab/core@^1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.4.5.tgz#d8eff47de18f746e4f4e4515c1e5205a32723352"
-  integrity sha512-YfXtPCRlvroEhUvoumXdDhWtbni4pdm7D4gYDAXLgXJcvCMoOziBW8wofmd+sDnuoCZdgbaoFRtUJ13MkwpyMg==
-  dependencies:
+    "@enab/calculator" "^1.0.7"
+    "@enab/core" "^1.6.0"
     "@enab/ui" "^1.4.4"
     "@iconify/json" "^2.1.77"
-    "@nuxt/image-edge" "^1.0.0-27628766.3629b9a"
+    "@nuxt/kit" "^3.0.0-rc.8"
+    "@nuxt/schema" "^3.0.0-rc.8"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@nuxtjs/supabase" "^0.1.19"
+    "@pinia/nuxt" "^0.3.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
+"@enab/calculator@^1.0.7":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@enab/calculator/-/calculator-1.1.2.tgz#803dbb78bc2fd2d28814c725415829658f68a019"
+  integrity sha512-XMywzxmDVdZYVZ8mRO1Cw5Ji2WySVXLAOdaxECWZSrcdcXFjmgeQglEuc4GRJWfSru+zPvTrbUjfFkqJKsGxsg==
+  dependencies:
+    "@enab/core" "^1.5.8"
+    "@enab/ui" "^1.4.5"
+    "@iconify/json" "^2.1.77"
+    "@nuxt/kit" "^3.0.0-rc.8"
+    "@nuxt/schema" "^3.0.0-rc.8"
+    "@nuxtjs/color-mode" "^3.1.4"
+    "@nuxtjs/composition-api" "^0.33.0"
+    "@nuxtjs/supabase" "^0.1.19"
+    "@pinia/nuxt" "^0.4.0"
+    "@tauri-apps/api" "^1.0.2"
+    "@unocss/inspector" "^0.44.2"
+    "@unocss/nuxt" "^0.44.0"
+    "@unocss/preset-attributify" "^0.44.1"
+    "@unocss/preset-icons" "^0.44.1"
+    "@unocss/preset-typography" "^0.44.1"
+    "@unocss/preset-web-fonts" "^0.44.1"
+    "@vueuse/core" "^9.0.2"
+    "@vueuse/motion" "^2.0.0-beta.18"
+    "@vueuse/nuxt" "^9.0.2"
+    mathjs "^11.0.1"
+    nuxt-lodash "^2.2.0"
+    pinia "^2.0.16"
+    vue-toastification "^2.0.0-rc.5"
+
+"@enab/core@^1.3.2", "@enab/core@^1.4.1", "@enab/core@^1.4.5", "@enab/core@^1.5.8", "@enab/core@^1.6.0":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.6.1.tgz#5de5feac968a80b9268bd7bf72a5f76f4dc08fdc"
+  integrity sha512-ydKL7O475I1lxNPz7KLCcun/J08F5wPnkyuMKxjnRuUMBrcAkYdiUJv8fJQc/abHwnjb2ZcLVxycS8hyfPxJLQ==
+  dependencies:
+    "@enab/appstore" "^1.0.4"
+    "@enab/todo" "^1.0.8"
+    "@enab/ui" "^1.4.5"
+    "@iconify/json" "^2.1.77"
+    "@nuxt/image-edge" "^1.0.0-27657146.da85542"
     "@nuxt/kit" "^3.0.0-rc.8"
     "@nuxt/module-builder" "^0.1.7"
     "@nuxt/schema" "^3.0.0-rc.8"
@@ -622,42 +617,18 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.1.tgz#a1e940d9b95a3c6f133b69555dee824da9c6789d"
-  integrity sha512-0dTq7sRzb5mwn6YXLlPY5+UAK4LuIN4KcY3Sq+6qG9aFJGUFdN54oFto1szitj6NnB6IdoP7FDkOidb23e4a/w==
+"@enab/ui@^1.4.1", "@enab/ui@^1.4.4", "@enab/ui@^1.4.5", "@enab/ui@^1.4.7":
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.7.tgz#04dc8268083ed1389eb2cb697bdc440b3ba19c8f"
+  integrity sha512-jlL8MZz/3A8myIRkSw3uBv/hMZSk/EuHqojKHH3dycw0eDwC3Thjxlyek1Nkc/l9OVGIpHcq+hirt8XyCrU+Ow==
   dependencies:
-    "@enab/core" "^1.3.0"
+    "@enab/core" "^1.6.0"
     "@iconify/json" "^2.1.77"
-    "@nuxt/kit" "^3.0.0-rc.6"
+    "@nuxt/kit" "^3.0.0-rc.8"
+    "@nuxt/schema" "^3.0.0-rc.8"
     "@nuxtjs/color-mode" "^3.1.4"
     "@nuxtjs/composition-api" "^0.33.0"
-    "@pinia/nuxt" "^0.3.0"
-    "@tauri-apps/api" "^1.0.2"
-    "@unocss/inspector" "^0.44.2"
-    "@unocss/nuxt" "^0.44.0"
-    "@unocss/preset-attributify" "^0.44.1"
-    "@unocss/preset-icons" "^0.44.1"
-    "@unocss/preset-typography" "^0.44.1"
-    "@unocss/preset-web-fonts" "^0.44.1"
-    "@vueuse/core" "^9.0.2"
-    "@vueuse/motion" "^2.0.0-beta.18"
-    "@vueuse/nuxt" "^9.0.2"
-    mathjs "^11.0.1"
-    nuxt-lodash "^2.2.0"
-    pinia "^2.0.16"
-    vue-toastification "^2.0.0-rc.5"
-
-"@enab/ui@^1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.4.tgz#f5d1b888b99d5be848225e817f9f21be7faef5f1"
-  integrity sha512-eCQyLKJ2ONjPDfpJUuYNbU2tZw4Oz2VgN54U+ipoAJKytrnQsK3dthi1fr2yOoFHWNZ6LLrlcmE2e54/9OfW7w==
-  dependencies:
-    "@enab/core" "^1.3.0"
-    "@iconify/json" "^2.1.77"
-    "@nuxt/kit" "^3.0.0-rc.6"
-    "@nuxtjs/color-mode" "^3.1.4"
-    "@nuxtjs/composition-api" "^0.33.0"
+    "@nuxtjs/supabase" "0.1.23"
     "@pinia/nuxt" "^0.3.0"
     "@tauri-apps/api" "^1.0.2"
     "@unocss/inspector" "^0.44.2"
@@ -866,6 +837,23 @@
   optionalDependencies:
     ipx "^0.9.10"
 
+"@nuxt/image-edge@^1.0.0-27657146.da85542":
+  version "1.0.0-27657146.da85542"
+  resolved "https://registry.yarnpkg.com/@nuxt/image-edge/-/image-edge-1.0.0-27657146.da85542.tgz#6e83fe69ddd409addd77133f8c4535da7d943556"
+  integrity sha512-iMDB1KR4D/2smyShDTJ2Jf1FMj42elYOWDpkHgFZvSIf7eZcg8TVGW45lTjlp7VbQ/TgC1I0kYZBEFdc1AGXrw==
+  dependencies:
+    "@nuxt/kit" "^3.0.0-rc.4"
+    consola "^2.15.3"
+    defu "^6.0.0"
+    h3 "^0.7.10"
+    image-meta "^0.1.1"
+    node-fetch-native "^0.1.4"
+    ohash "^0.1.0"
+    pathe "^0.3.2"
+    ufo "^0.8.5"
+  optionalDependencies:
+    ipx "^0.9.10"
+
 "@nuxt/kit@3.0.0-rc.1":
   version "3.0.0-rc.1"
   resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.0.0-rc.1.tgz"
@@ -890,7 +878,7 @@
     unimport "^0.1.6"
     untyped "^0.4.4"
 
-"@nuxt/kit@3.0.0-rc.6", "@nuxt/kit@^3.0.0-rc.6":
+"@nuxt/kit@3.0.0-rc.6":
   version "3.0.0-rc.6"
   resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.0.0-rc.6.tgz"
   integrity sha512-+lxSd6dSWlAzMXfGOPcY4856xnMF1Ck1rycFUZ+K2QYiDXphq/fiW2eMaWLVvqgPyL2Box2WzVDZJ6C5ceptcw==
@@ -914,7 +902,7 @@
     unimport "^0.4.5"
     untyped "^0.4.4"
 
-"@nuxt/kit@3.0.0-rc.7", "@nuxt/kit@^3.0.0-rc.5", "@nuxt/kit@^3.0.0-rc.7":
+"@nuxt/kit@3.0.0-rc.7":
   version "3.0.0-rc.7"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.7.tgz#76307b44072cf5d4a50e31953ac0a6101523a897"
   integrity sha512-94Yi7z28NbWDOg0SQGa55jlB3VsquzOjOW0pV2rqbGQ35kxxi/2LHbmUII0cHsopYMjKcgylVspd0isKnsGyFw==
@@ -938,31 +926,7 @@
     unimport "^0.6.7"
     untyped "^0.4.5"
 
-"@nuxt/kit@^3.0.0-rc.1", "@nuxt/kit@^3.0.0-rc.3", "@nuxt/kit@^3.0.0-rc.4":
-  version "3.0.0-rc.5"
-  resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.0.0-rc.5.tgz"
-  integrity sha512-PmRfy0AdpvYne5p1/QWXOFoJawnjC/p2TkEJeCgI7MMHP7U2ru/7MxM7x0+ScjD13fUd4KSv1bCMJRTCoaCzPQ==
-  dependencies:
-    "@nuxt/schema" "^3.0.0-rc.5"
-    c12 "^0.2.8"
-    consola "^2.15.3"
-    defu "^6.0.0"
-    globby "^13.1.2"
-    hash-sum "^2.0.0"
-    ignore "^5.2.0"
-    jiti "^1.14.0"
-    knitwork "^0.1.2"
-    lodash.template "^4.5.0"
-    mlly "^0.5.4"
-    pathe "^0.3.2"
-    pkg-types "^0.3.3"
-    scule "^0.2.1"
-    semver "^7.3.7"
-    unctx "^1.1.4"
-    unimport "^0.4.4"
-    untyped "^0.4.4"
-
-"@nuxt/kit@^3.0.0-rc.8":
+"@nuxt/kit@^3.0.0-rc.1", "@nuxt/kit@^3.0.0-rc.3", "@nuxt/kit@^3.0.0-rc.4", "@nuxt/kit@^3.0.0-rc.6", "@nuxt/kit@^3.0.0-rc.7", "@nuxt/kit@^3.0.0-rc.8":
   version "3.0.0-rc.8"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.8.tgz#e65e739e986abf5bfe99fa44a3bf44bacc66a35a"
   integrity sha512-FkbO7DPkJxuLqeiWEMUI8OWXaQ4qzmreIjslIPrc9buYdB9nbJqVVzQRicxcKzF09R7VwpJTiG6onIZq6iGuDQ==
@@ -1013,7 +977,7 @@
     ufo "^0.8.5"
     unimport "^0.6.7"
 
-"@nuxt/schema@3.0.0-rc.8", "@nuxt/schema@^3.0.0-rc.8":
+"@nuxt/schema@3.0.0-rc.8", "@nuxt/schema@^3.0.0-rc.1", "@nuxt/schema@^3.0.0-rc.6", "@nuxt/schema@^3.0.0-rc.8":
   version "3.0.0-rc.8"
   resolved "https://registry.yarnpkg.com/@nuxt/schema/-/schema-3.0.0-rc.8.tgz#d8fab177f4b58fcdb83bd530a887d3b4acea90b7"
   integrity sha512-ODl9cmjH8fupvXjzITIvYT4OzapNvLrvWq9QUUgLhgv3Uxl2iX2J03oLj2aCQgfhte4mJhgHsBrtXvDLF/1GwA==
@@ -1028,38 +992,6 @@
     std-env "^3.1.1"
     ufo "^0.8.5"
     unimport "^0.6.7"
-
-"@nuxt/schema@^3.0.0-rc.1", "@nuxt/schema@^3.0.0-rc.5":
-  version "3.0.0-rc.5"
-  resolved "https://registry.npmjs.org/@nuxt/schema/-/schema-3.0.0-rc.5.tgz"
-  integrity sha512-qfKr9/1i7buLEgJ1Vjw27LJ5Svtq9jB5TvFAbIfDI9fg80M/bgTDXgKXARJk6ofB39Ijdx8z2nNj8EXu8+tVbQ==
-  dependencies:
-    c12 "^0.2.8"
-    create-require "^1.1.1"
-    defu "^6.0.0"
-    jiti "^1.14.0"
-    pathe "^0.3.2"
-    postcss-import-resolver "^2.0.0"
-    scule "^0.2.1"
-    std-env "^3.1.1"
-    ufo "^0.8.5"
-    unimport "^0.4.4"
-
-"@nuxt/schema@^3.0.0-rc.6":
-  version "3.0.0-rc.6"
-  resolved "https://registry.npmjs.org/@nuxt/schema/-/schema-3.0.0-rc.6.tgz"
-  integrity sha512-BcD5YtWRhn+jU2DlzuI1TeITFeOt5x6qm2KeaU/d5jzJ0oZDzmZwKsAimLtRbHwyU6/kKa+zFbK6pp5obm1XLg==
-  dependencies:
-    c12 "^0.2.8"
-    create-require "^1.1.1"
-    defu "^6.0.0"
-    jiti "^1.14.0"
-    pathe "^0.3.2"
-    postcss-import-resolver "^2.0.0"
-    scule "^0.2.1"
-    std-env "^3.1.1"
-    ufo "^0.8.5"
-    unimport "^0.4.5"
 
 "@nuxt/telemetry@^2.1.3":
   version "2.1.3"
@@ -1244,15 +1176,15 @@
     eslint-plugin-unicorn "^42.0.0"
     eslint-plugin-vue "^8.7.1"
 
-"@nuxtjs/supabase@^0.1.19":
-  version "0.1.19"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/supabase/-/supabase-0.1.19.tgz#763e9280505565481db280681f32fa837cc79a55"
-  integrity sha512-ntAxxscRblW9NK86U9sabrDVZ2mH9WkmV0p+ej+lpywWudWL4GaSji60YWj4lxckxS8H8ihHTALsIznSjyrBoQ==
+"@nuxtjs/supabase@0.1.23", "@nuxtjs/supabase@^0.1.19":
+  version "0.1.23"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/supabase/-/supabase-0.1.23.tgz#f7d00c103b70e96bd55471a477ea867facd60dd2"
+  integrity sha512-gCBI7cm552RGcbbDzUAlA+NFCuLZXVcfpsvbTVLneOUzh3cvYxLK04qYRTE81x2L/FV9FFWSG0h7Mp6kacGEiw==
   dependencies:
-    "@nuxt/kit" "^3.0.0-rc.5"
-    "@supabase/supabase-js" "^1.35.4"
+    "@nuxt/kit" "^3.0.0-rc.8"
+    "@supabase/supabase-js" "^1.35.6"
     defu "^6.0.0"
-    pathe "^0.3.2"
+    pathe "^0.3.4"
 
 "@pinia/nuxt@^0.3.0":
   version "0.3.0"
@@ -1261,6 +1193,14 @@
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.4"
     pinia ">=2.0.14"
+
+"@pinia/nuxt@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.4.0.tgz#78340abbab0fc5809dc66550352f5aa2d4b9031d"
+  integrity sha512-gJ0qRJ5KhpFrYVs6qdqTWXPp9DAzbs9u74zJw5hyQO7tRiItRUYQxbWtWjGC3XUw5oO73xYrA8lYa5/GMW0uSg==
+  dependencies:
+    "@nuxt/kit" "3.0.0-rc.6"
+    pinia ">=2.0.18"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
@@ -1476,7 +1416,7 @@
   dependencies:
     cross-fetch "^3.1.0"
 
-"@supabase/supabase-js@^1.35.4":
+"@supabase/supabase-js@^1.35.6":
   version "1.35.6"
   resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-1.35.6.tgz#df5a2c132035ab9e5462ed474587902b3e767a66"
   integrity sha512-KDRXRr+kdGwruIUizZPALbe5YccMYFVyZJf1sFWKLncaLYSFiM6iKFnqCrNeQ4JFoZZiICkiTl1FUuai62jVpg==
@@ -2167,7 +2107,7 @@
     "@vue/compiler-dom" "3.2.37"
     "@vue/shared" "3.2.37"
 
-"@vue/devtools-api@^6.1.4":
+"@vue/devtools-api@^6.1.4", "@vue/devtools-api@^6.2.1":
   version "6.2.1"
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.2.1.tgz"
   integrity sha512-OEgAMeQXvCoJ+1x8WyQuVZzFo0wcyCmUR3baRVLmKBo1LmYZWMlRiXlux5jd0fqVJu6PfDbOrZItVqUEzLobeQ==
@@ -2220,17 +2160,7 @@
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.2.37.tgz"
   integrity sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==
 
-"@vueuse/core@9.0.0", "@vueuse/core@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.npmjs.org/@vueuse/core/-/core-9.0.0.tgz"
-  integrity sha512-hMMc2ajuVknkL7Z39JdP9gFFND2OgnDTSS5mmuinWGAE1Vxy1AwDvTHm3+juyk+GzJjYRAktnBIPy7Fq53iOnw==
-  dependencies:
-    "@types/web-bluetooth" "^0.0.15"
-    "@vueuse/metadata" "9.0.0"
-    "@vueuse/shared" "9.0.0"
-    vue-demi "*"
-
-"@vueuse/core@9.0.2", "@vueuse/core@^9.0.2":
+"@vueuse/core@9.0.2", "@vueuse/core@^9.0.0", "@vueuse/core@^9.0.2":
   version "9.0.2"
   resolved "https://registry.npmjs.org/@vueuse/core/-/core-9.0.2.tgz"
   integrity sha512-kOIqaQPSs7OSByWg1ulEKRUJbsq3FmbJiUr0RhEKpt3O1Uhl4DrDj85DUbQBABVYgPvSaY6AE/fP3/FOcRIOoQ==
@@ -2265,11 +2195,6 @@
   resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-8.9.4.tgz"
   integrity sha512-IwSfzH80bnJMzqhaapqJl9JRIiyQU0zsRGEgnxN6jhq7992cPUJIRfV+JHRIZXjYqbwt07E1gTEp0R0zPJ1aqw==
 
-"@vueuse/metadata@9.0.0":
-  version "9.0.0"
-  resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-9.0.0.tgz"
-  integrity sha512-79YVIsAP1bbWm5GdQuG7jDVF/9uuExzhkO0Sd4/TLuSfzH2uZOrHvGwy+ZNJHjbyRn3uf56rKINWLJdBuTLSqQ==
-
 "@vueuse/metadata@9.0.2":
   version "9.0.2"
   resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-9.0.2.tgz"
@@ -2288,18 +2213,7 @@
     style-value-types "^5.1.0"
     vue-demi "*"
 
-"@vueuse/nuxt@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.npmjs.org/@vueuse/nuxt/-/nuxt-9.0.0.tgz"
-  integrity sha512-oIJzj4Nc2/7oHuGsI3wqteqWloDXAaRjLGBwdJzsZhqVzSFqp1TxZkt3q4TIWDjPEUkchJdvyA5KMWjTBVJZTg==
-  dependencies:
-    "@nuxt/kit" "^3.0.0-rc.6"
-    "@vueuse/core" "9.0.0"
-    "@vueuse/metadata" "9.0.0"
-    local-pkg "^0.4.2"
-    vue-demi "*"
-
-"@vueuse/nuxt@^9.0.2":
+"@vueuse/nuxt@^9.0.0", "@vueuse/nuxt@^9.0.2":
   version "9.0.2"
   resolved "https://registry.npmjs.org/@vueuse/nuxt/-/nuxt-9.0.2.tgz"
   integrity sha512-1NYT3DC58fZ0YxFGaGZ4V0uAd3E4YMMnalKd1K1HBvrW3exB9zcBW52spKMspZL9dnNlxyv3TauH52b94fMxqg==
@@ -2314,13 +2228,6 @@
   version "8.9.4"
   resolved "https://registry.npmjs.org/@vueuse/shared/-/shared-8.9.4.tgz"
   integrity sha512-wt+T30c4K6dGRMVqPddexEVLa28YwxW5OFIPmzUHICjphfAuBFTTdDoyqREZNDOFJZ44ARH1WWQNCUK8koJ+Ag==
-  dependencies:
-    vue-demi "*"
-
-"@vueuse/shared@9.0.0":
-  version "9.0.0"
-  resolved "https://registry.npmjs.org/@vueuse/shared/-/shared-9.0.0.tgz"
-  integrity sha512-WRCyr/wIz5e/2gR/+qFucbCUcGMyJKkQZAzlECl3e71ebQQ9X/w3aBWT9FbnogJX+DNZ/t3Pj+TqPbC7TH1Yog==
   dependencies:
     vue-demi "*"
 
@@ -7068,12 +6975,12 @@ pify@^2.3.0:
   resolved "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz"
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
 
-pinia@>=2.0.14, pinia@^2.0.16:
-  version "2.0.16"
-  resolved "https://registry.npmjs.org/pinia/-/pinia-2.0.16.tgz"
-  integrity sha512-9/LMVO+/epny1NBfC77vnps4g3JRezxhhoF1xLUk8mZkUIxVnwfEAIRiAX8mYBTD/KCwZqnDMqXc8w3eU0FQGg==
+pinia@>=2.0.14, pinia@>=2.0.18, pinia@^2.0.16:
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.18.tgz#b29ed34bcb4c032b7da7c24c10db18b88d9254d8"
+  integrity sha512-I5MW05UVX6a5Djka136oH3VzYFiZUgeOApBwFjMx6pL91eHtGVlE3adjNUKLgtwGnrxiBRuJ8+4R3LKJKwnyZg==
   dependencies:
-    "@vue/devtools-api" "^6.1.4"
+    "@vue/devtools-api" "^6.2.1"
     vue-demi "*"
 
 pkg-dir@4.2.0:
