@@ -33,7 +33,7 @@
     "@unocss/preset-web-fonts": "^0.45.7",
     "@vueuse/core": "^9.1.0",
     "@vueuse/motion": "^2.0.0-beta.18",
-    "@vueuse/nuxt": "^9.1.0",
+    "@vueuse/nuxt": "^9.1.1",
     "mathjs": "^11.0.1",
     "moment": "^2.29.4",
     "nuxt-lodash": "^2.2.0",
