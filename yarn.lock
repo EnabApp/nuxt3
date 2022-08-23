@@ -1624,12 +1624,19 @@
   dependencies:
     "@unocss/core" "0.44.7"
 
-"@unocss/preset-typography@0.45.8", "@unocss/preset-typography@^0.45.7":
+"@unocss/preset-typography@0.45.8":
   version "0.45.8"
   resolved "https://registry.yarnpkg.com/@unocss/preset-typography/-/preset-typography-0.45.8.tgz#a98f8d002458dc1bbb58da713a4e8ebe4cb63784"
   integrity sha512-x0MyuyPLfwvQenHwVHhLRzhjtuQL9S5qkdGh04kOySprp1wIsu14L6w/zFequvVSk55Tb8s+QMd9TmTYR/MZPg==
   dependencies:
     "@unocss/core" "0.45.8"
+
+"@unocss/preset-typography@^0.45.12":
+  version "0.45.12"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-typography/-/preset-typography-0.45.12.tgz#984d5226e1a61e83770e0fb32c82d5c713e03142"
+  integrity sha512-7K7uI8fQJ7lk15roFS1Nc3OgPerfYah3qcmc+Zmny+2oVXmN1u0aABL6daELvvS4lsXqd+j+GHdTphNaGgSfNw==
+  dependencies:
+    "@unocss/core" "0.45.12"
 
 "@unocss/preset-uno@0.44.7":
   version "0.44.7"
