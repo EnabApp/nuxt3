@@ -360,7 +360,7 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/core@^1.4.1", "@enab/core@^1.6.0", "@enab/core@^1.6.1", "@enab/core@^1.6.6", "@enab/core@^1.6.7", "@enab/core@^1.6.8":
+"@enab/core@^1.4.1", "@enab/core@^1.6.0", "@enab/core@^1.6.1", "@enab/core@^1.6.6", "@enab/core@^1.6.7":
   version "1.6.8"
   resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.6.8.tgz#ce4a306439ab2b397910c8c57bd89effd0f3d994"
   integrity sha512-UIzLw1Bzbxa8R18vk3CmErTU08vWpR7uDAn36WfLyy21uGT5C/V0654IfWsvVM31rp9u1rKNnAu+JL0CnGZoWQ==
