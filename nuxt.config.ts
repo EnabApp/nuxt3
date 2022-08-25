@@ -20,10 +20,10 @@ export default defineNuxtConfig({
     modules: [
 
         /**˅˅˅˅ APPS ˅˅˅˅**/
-        '@enab/todo',
+        '@enab/utilities',
         '@enab/appstore',
         '@enab/recharge',
-        '@enab/calculator',
+        
         /**˄˄˄˄ APPS ˄˄˄˄**/
         
         '@enab/core',
