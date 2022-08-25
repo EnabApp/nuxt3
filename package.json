@@ -37,7 +37,7 @@
     "moment": "^2.29.4",
     "nuxt-lodash": "^2.2.0",
     "pinia": "^2.0.20",
-    "unlighthouse": "^0.3.29",
+    "unlighthouse": "^0.3.30",
     "vue-toastification": "^2.0.0-rc.5"
   }
 }
