@@ -16,7 +16,7 @@
     "@enab/calculator": "^1.1.5",
     "@enab/core": "^1.6.8",
     "@enab/recharge": "^1.0.1",
-    "@enab/todo": "^1.0.9",
+    "@enab/todo": "^1.1.0",
     "@enab/ui": "^1.4.8",
     "@iconify/json": "^2.1.97",
     "@nuxt/kit": "^3.0.0-rc.8",

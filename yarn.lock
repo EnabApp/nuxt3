@@ -360,7 +360,7 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/core@^1.4.1", "@enab/core@^1.6.0", "@enab/core@^1.6.1", "@enab/core@^1.6.6", "@enab/core@^1.6.7", "@enab/core@^1.6.8":
+"@enab/core@^1.4.1", "@enab/core@^1.6.0", "@enab/core@^1.6.6", "@enab/core@^1.6.7", "@enab/core@^1.6.8":
   version "1.6.8"
   resolved "https://registry.yarnpkg.com/@enab/core/-/core-1.6.8.tgz#ce4a306439ab2b397910c8c57bd89effd0f3d994"
   integrity sha512-UIzLw1Bzbxa8R18vk3CmErTU08vWpR7uDAn36WfLyy21uGT5C/V0654IfWsvVM31rp9u1rKNnAu+JL0CnGZoWQ==
@@ -427,13 +427,13 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/todo@^1.0.8", "@enab/todo@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@enab/todo/-/todo-1.0.9.tgz#3661dbf28540657ea921e3fd7f0aefb84bab3a3f"
-  integrity sha512-o4r0p0/Ms7RCaqIjbYx27W6J9ZOW+7XTeU50K9AEUmbVxHjOA1iC5EgOg6ea0tPxekZHkXefBDknTSxcJOYdng==
+"@enab/todo@^1.0.8", "@enab/todo@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@enab/todo/-/todo-1.1.0.tgz#db1498283382346ac2e5170a5c320e2b50ad0adf"
+  integrity sha512-AjHZHF3ziwYBmT3S+DOXyi+ba8HUu1hS1pGvosp9lmYQKfOi6SUQMV9iUo8O64Yzfxz7OFJh3axG5cBkbpqJCQ==
   dependencies:
-    "@enab/core" "^1.6.1"
-    "@enab/ui" "^1.4.7"
+    "@enab/core" "^1.6.7"
+    "@enab/ui" "^1.4.8"
     "@iconify/json" "^2.1.77"
     "@nuxt/kit" "^3.0.0-rc.8"
     "@nuxt/schema" "^3.0.0-rc.8"
@@ -455,9 +455,10 @@
     moment "^2.29.4"
     nuxt-lodash "^2.2.0"
     pinia "^2.0.16"
+    vue-loading-skeleton "^2.0.0-beta.1"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.4.4", "@enab/ui@^1.4.5", "@enab/ui@^1.4.7", "@enab/ui@^1.4.8":
+"@enab/ui@^1.4.4", "@enab/ui@^1.4.5", "@enab/ui@^1.4.8":
   version "1.4.8"
   resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.8.tgz#81de81234ee11999493abee289e9e085666071ec"
   integrity sha512-xcKF5KB+y32RMuH9NPNDfEc7gbYezhgGrgfz7qcfbJpEqmQfgMfIaF1Duw22SnMJCN4+iWpBE0p0q4bHNAqeCg==
@@ -1884,6 +1885,11 @@
     html-tags "^3.1.0"
     svg-tags "^1.0.0"
 
+"@vue/compat@^3.1.0":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/compat/-/compat-3.2.37.tgz#bd2062a2be88d06046311d5c058aefb17a1d438a"
+  integrity sha512-MIYkFAz3Fur1mtZBqrNMYTymlohCQ0ol6vtNb58cqExLSCt63xZaXyiZZYPvS6WaMXfbNBDPXMvU9tO922eFCA==
+
 "@vue/compiler-core@3.2.37":
   version "3.2.37"
   resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.2.37.tgz#b3c42e04c0e0f2c496ff1784e543fbefe91e215a"
@@ -2841,6 +2847,11 @@ cookie@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.2.tgz#0e41f24de5ecf317947c82fc789e06a884824432"
   integrity sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==
+
+core-js@2:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
+  integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -8094,6 +8105,15 @@ vue-eslint-parser@^8.0.1:
     lodash "^4.17.21"
     semver "^7.3.5"
 
+vue-loading-skeleton@^2.0.0-beta.1:
+  version "2.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/vue-loading-skeleton/-/vue-loading-skeleton-2.0.0-beta.1.tgz#922cb991465afbf16db5a1ef70d1cd497ae8fbb9"
+  integrity sha512-cBrc47qB20zINd4v8rGM56bSvhSkcZx6IT+gFIMR0ezoKa6RE108bewDcocJW11JmencbQ2mljjAD0U9dKCNNg==
+  dependencies:
+    "@vue/compat" "^3.1.0"
+    core-js "2"
+    vue "^3.1.0"
+
 vue-router@^4.0.15, vue-router@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.1.3.tgz#f8dc7931a2253cc5aa9b740f8b98969d08ca283c"
@@ -8106,7 +8126,7 @@ vue-toastification@^2.0.0-rc.5:
   resolved "https://registry.yarnpkg.com/vue-toastification/-/vue-toastification-2.0.0-rc.5.tgz#92798604d806ae473cfb76ed776fae294280f8f8"
   integrity sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==
 
-vue@^3.2.33, vue@^3.2.37:
+vue@^3.1.0, vue@^3.2.33, vue@^3.2.37:
   version "3.2.37"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.37.tgz#da220ccb618d78579d25b06c7c21498ca4e5452e"
   integrity sha512-bOKEZxrm8Eh+fveCqS1/NkG/n6aMidsI6hahas7pa0w/l7jkbssJVsRhVDs07IdDq7h9KHswZOgItnwJAgtVtQ==
