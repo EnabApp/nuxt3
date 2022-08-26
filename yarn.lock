@@ -1678,12 +1678,19 @@
   dependencies:
     "@unocss/core" "0.44.7"
 
-"@unocss/preset-attributify@0.45.12", "@unocss/preset-attributify@^0.45.12":
+"@unocss/preset-attributify@0.45.12":
   version "0.45.12"
   resolved "https://registry.yarnpkg.com/@unocss/preset-attributify/-/preset-attributify-0.45.12.tgz#08d7d75d34123bd7a45226d965b2b75ba9e53df1"
   integrity sha512-Ypo0Y+2upQkjuNw6KCwzWgvQKbLyrKlLiFxSLdJ9DtHyWFSMHe6Ue9mI73pyqKSYngb5UHTSmdfs0+FbWGPmlQ==
   dependencies:
     "@unocss/core" "0.45.12"
+
+"@unocss/preset-attributify@^0.45.13":
+  version "0.45.13"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-attributify/-/preset-attributify-0.45.13.tgz#c489e3bd820e4af3a8f7cbc0ca8aa323255d9bbb"
+  integrity sha512-vEclkLqTNJjpgPrLJg0FR1ItQYTsua1XNDqUaNVypNC5LHcVO5AgJxwVGnMQTQpcK5Lx+9MM2F3tmIfLJR3KgA==
+  dependencies:
+    "@unocss/core" "0.45.13"
 
 "@unocss/preset-icons@0.44.7", "@unocss/preset-icons@^0.44.1":
   version "0.44.7"
