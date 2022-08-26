@@ -559,10 +559,10 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/ui@^1.4.9":
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.9.tgz#19fc049354f9032dc469f01e9220063ca9e46e6a"
-  integrity sha512-BnFP9zTpavmCl+vmls/DHrwQdJg38DIRPpeBX/gz0ZxKoh5ExOtuLDY03BRN0/Wd54W8JJlg1kxz2DZwWlSaKQ==
+"@enab/ui@^1.4.91":
+  version "1.4.91"
+  resolved "https://registry.yarnpkg.com/@enab/ui/-/ui-1.4.91.tgz#e6a2cc3118fbc68e8ba20fafe9b712bac9e1d290"
+  integrity sha512-zSLGbYREAwFgPqGyO68CfRUBXNkRvgFjEVuv55TeBgNUQ74w/EehLNY91apBxlxHTd4fP1FfJ4vgWEahwTR/LA==
   dependencies:
     "@enab/core" "^1.6.98"
     "@iconify/json" "^2.1.77"
