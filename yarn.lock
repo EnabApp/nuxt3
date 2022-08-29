@@ -485,13 +485,13 @@
     pinia "^2.0.16"
     vue-toastification "^2.0.0-rc.5"
 
-"@enab/utilities@^1.0.12":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@enab/utilities/-/utilities-1.0.12.tgz#85cc320e1ce742a3e3df4433b00d7cebd8ba5124"
-  integrity sha512-s3anBf/m5JyuxoS5hvT+B/EOBlhHMpUVnLCnu7QjDhQLgyAZ/LkIoOpFst4n5+s9Zhi1+GnJYgbO3B4qlpujlQ==
+"@enab/utilities@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@enab/utilities/-/utilities-1.0.13.tgz#63a7cdffade1533b81086adc67fbbf3f66b52e6e"
+  integrity sha512-iU00ns8eepLLHvMi+Y2OIkDkfZCI3O9UXNR5vrDJ+ypP3xc310NBwDqWRg2FK9d2oMYelkkUrK1lSD7qeiQVug==
   dependencies:
-    "@enab/core" "^1.6.98"
-    "@enab/ui" "^1.4.8"
+    "@enab/core" "^1.7.11"
+    "@enab/ui" "^1.4.93"
     "@iconify/json" "^2.1.77"
     "@nuxt/kit" "^3.0.0-rc.8"
     "@nuxt/schema" "^3.0.0-rc.8"
