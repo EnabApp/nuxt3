@@ -29,7 +29,7 @@
     "@unocss/preset-attributify": "^0.45.13",
     "@unocss/preset-icons": "^0.45.13",
     "@unocss/preset-typography": "^0.45.13",
-    "@unocss/preset-web-fonts": "^0.45.13",
+    "@unocss/preset-web-fonts": "^0.45.14",
     "@vueuse/core": "^9.1.1",
     "@vueuse/motion": "^2.0.0-beta.18",
     "@vueuse/nuxt": "^9.1.1",
