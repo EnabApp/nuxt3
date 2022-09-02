@@ -1896,10 +1896,18 @@
     gzip-size "^6.0.0"
     sirv "^2.0.2"
 
-"@unocss/inspector@0.45.13", "@unocss/inspector@^0.45.13":
+"@unocss/inspector@0.45.13":
   version "0.45.13"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.13.tgz#103483ec80cb4eed0befc97eda5437a26231f562"
   integrity sha512-2BMfCrLwjYFyZ9BXRshFLfpNq9mqYwWTy3SNNWfC/Vx/jDL+fYvbJy5s1QTpB6spHTJt2WWgN9HGkFtDMa7Ebw==
+  dependencies:
+    gzip-size "^6.0.0"
+    sirv "^2.0.2"
+
+"@unocss/inspector@^0.45.13", "@unocss/inspector@^0.45.14":
+  version "0.45.14"
+  resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.14.tgz#228d08a13c3a83ff645940bfa51c77d38a35be69"
+  integrity sha512-29qjUjI4HP8YaCl4pwXsvQCQPQpXxf8fqbda346v+n7C9DYcGVZeivzpueq2BtIzpuyZtsiluUadtcUuTgIitA==
   dependencies:
     gzip-size "^6.0.0"
     sirv "^2.0.2"
