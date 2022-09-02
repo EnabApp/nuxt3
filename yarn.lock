@@ -900,10 +900,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@iconify/json@^2.1.101", "@iconify/json@^2.1.77":
-  version "2.1.101"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.1.101.tgz#52d881172a717c78768da4120a96c254d490e84f"
-  integrity sha512-IZ7+DDY9OdVcV0TEI/Dd6KZirX+8JlUUtty75OgqbN+Hnj9T2fkD1MiLQT6HEqCcU8PzZUq0DSvwcIKaN/H/Xw==
+"@iconify/json@^2.1.101", "@iconify/json@^2.1.102", "@iconify/json@^2.1.77":
+  version "2.1.102"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.1.102.tgz#4da9510dc55b8fdf45a34e01a51ca628132691e3"
+  integrity sha512-h1dIP2ul4VYjPATrANqsecQ5GkRKcN0K++smA3K0lJd80xuBnVUqLIf53Ii1dPSPadDcSeL6k1IkdT/TH9eCkQ==
   dependencies:
     "@iconify/types" "*"
     pathe "^0.3.0"
@@ -1888,6 +1888,11 @@
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.45.13.tgz#fb41748276f04767b34abfc43e7c511185f47025"
   integrity sha512-EesxqFM6lPA6Ot5X4cyRcjJQsgpztrNFpxpu4HBIzbZvXLcoeG97bcLTASGSHPGWeL4baq0ur/47lM42dtjiMQ==
 
+"@unocss/core@0.45.14":
+  version "0.45.14"
+  resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.45.14.tgz#3ffa307d7cd7f53426c9916b1c85d7fe98ecc951"
+  integrity sha512-8tkFg/0QRmAcVJldT3v9yQfMNGoAmpRb6rQzOSa4AZy4u3zhRmKodtq8ZR6NnrlIYdR9NT01pmteQwICvSNP4Q==
+
 "@unocss/inspector@0.44.7", "@unocss/inspector@^0.44.2":
   version "0.44.7"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.44.7.tgz#addab3db9b29354bd03519a209aa1c396eff0cb5"
@@ -1896,10 +1901,18 @@
     gzip-size "^6.0.0"
     sirv "^2.0.2"
 
-"@unocss/inspector@0.45.13", "@unocss/inspector@^0.45.13":
+"@unocss/inspector@0.45.13":
   version "0.45.13"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.13.tgz#103483ec80cb4eed0befc97eda5437a26231f562"
   integrity sha512-2BMfCrLwjYFyZ9BXRshFLfpNq9mqYwWTy3SNNWfC/Vx/jDL+fYvbJy5s1QTpB6spHTJt2WWgN9HGkFtDMa7Ebw==
+  dependencies:
+    gzip-size "^6.0.0"
+    sirv "^2.0.2"
+
+"@unocss/inspector@^0.45.13", "@unocss/inspector@^0.45.14":
+  version "0.45.14"
+  resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.14.tgz#228d08a13c3a83ff645940bfa51c77d38a35be69"
+  integrity sha512-29qjUjI4HP8YaCl4pwXsvQCQPQpXxf8fqbda346v+n7C9DYcGVZeivzpueq2BtIzpuyZtsiluUadtcUuTgIitA==
   dependencies:
     gzip-size "^6.0.0"
     sirv "^2.0.2"
@@ -1949,12 +1962,19 @@
   dependencies:
     "@unocss/core" "0.44.7"
 
-"@unocss/preset-attributify@0.45.13", "@unocss/preset-attributify@^0.45.13":
+"@unocss/preset-attributify@0.45.13":
   version "0.45.13"
   resolved "https://registry.yarnpkg.com/@unocss/preset-attributify/-/preset-attributify-0.45.13.tgz#c489e3bd820e4af3a8f7cbc0ca8aa323255d9bbb"
   integrity sha512-vEclkLqTNJjpgPrLJg0FR1ItQYTsua1XNDqUaNVypNC5LHcVO5AgJxwVGnMQTQpcK5Lx+9MM2F3tmIfLJR3KgA==
   dependencies:
     "@unocss/core" "0.45.13"
+
+"@unocss/preset-attributify@^0.45.13", "@unocss/preset-attributify@^0.45.14":
+  version "0.45.14"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-attributify/-/preset-attributify-0.45.14.tgz#16656658e37695ab62611497782980bc35bec802"
+  integrity sha512-lKLOvZcM38NzJKXqZmf0CdTpo/rqQ5E5Qd8zQr1CfvZc1fETV8QX0XmV9ihLvZrKt6PNLNa5vEGxWev8/4WBXw==
+  dependencies:
+    "@unocss/core" "0.45.14"
 
 "@unocss/preset-icons@0.44.7", "@unocss/preset-icons@^0.44.1":
   version "0.44.7"
@@ -1965,13 +1985,22 @@
     "@unocss/core" "0.44.7"
     ohmyfetch "^0.4.18"
 
-"@unocss/preset-icons@0.45.13", "@unocss/preset-icons@^0.45.13":
+"@unocss/preset-icons@0.45.13":
   version "0.45.13"
   resolved "https://registry.yarnpkg.com/@unocss/preset-icons/-/preset-icons-0.45.13.tgz#7a0184d732db59d8cec0ecd3968c187bf6f497c1"
   integrity sha512-f84rjUzbjL8j2gemygKMQ6H+8q9rSL86v9y2I6Xc8tI8D9vZeOrObsaHrfZutgFNlCmWsslPdtjB8PlHZ5gMMw==
   dependencies:
     "@iconify/utils" "^1.0.33"
     "@unocss/core" "0.45.13"
+    ohmyfetch "^0.4.18"
+
+"@unocss/preset-icons@^0.45.13", "@unocss/preset-icons@^0.45.14":
+  version "0.45.14"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-icons/-/preset-icons-0.45.14.tgz#98148eeb8a3da691bda713c1973c03245175022b"
+  integrity sha512-X3AZCWJhm5CNhTnOsS4JSnWkt4eCcffO3oCo534vvMokAaK+nIBbyzjrm0g5xCxLg3DzZJX+SLgNDbgQNFgBuQ==
+  dependencies:
+    "@iconify/utils" "^1.0.33"
+    "@unocss/core" "0.45.14"
     ohmyfetch "^0.4.18"
 
 "@unocss/preset-mini@0.44.7":
@@ -2042,12 +2071,20 @@
     "@unocss/core" "0.44.7"
     ohmyfetch "^0.4.18"
 
-"@unocss/preset-web-fonts@0.45.13", "@unocss/preset-web-fonts@^0.45.13":
+"@unocss/preset-web-fonts@0.45.13":
   version "0.45.13"
   resolved "https://registry.yarnpkg.com/@unocss/preset-web-fonts/-/preset-web-fonts-0.45.13.tgz#7bc790a5bd4d597f6a06942c5d9a6f1fef3f12e7"
   integrity sha512-tY9w5zvUU5p97wzJXa7qiN7HIl9t5Gr2TTAk6wdNpqU9BWkdO+eQEXV2/3djO50CS7tmIw/JdL7GtYrS466MbA==
   dependencies:
     "@unocss/core" "0.45.13"
+    ohmyfetch "^0.4.18"
+
+"@unocss/preset-web-fonts@^0.45.13", "@unocss/preset-web-fonts@^0.45.14":
+  version "0.45.14"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-web-fonts/-/preset-web-fonts-0.45.14.tgz#afd16df0747160decf944b4821a7b87ea10ac3ff"
+  integrity sha512-WDvoZ/mNApL7PF+Eo6eV+fwY9NEi4EN/MoH6iFmSr7CTpY293IJVDZ2tK+xsjrDqmSQfWtPMHx/9CGabeWBC8g==
+  dependencies:
+    "@unocss/core" "0.45.14"
     ohmyfetch "^0.4.18"
 
 "@unocss/preset-wind@0.44.7":
