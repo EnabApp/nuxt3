@@ -17,7 +17,7 @@
     "@enab/recharge": "^1.0.1",
     "@enab/ui": "^1.4.94-beta.5",
     "@enab/utilities": "^1.0.14-beta.0",
-    "@iconify/json": "^2.1.101",
+    "@iconify/json": "^2.1.102",
     "@nuxt/kit": "^3.0.0-rc.8",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/composition-api": "^0.33.1",
