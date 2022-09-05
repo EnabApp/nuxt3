@@ -21,7 +21,7 @@
     "@nuxt/kit": "^3.0.0-rc.8",
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/composition-api": "^0.33.1",
-    "@nuxtjs/supabase": "0.1.23",
+    "@nuxtjs/supabase": "0.1.25",
     "@pinia/nuxt": "^0.4.1",
     "@tauri-apps/api": "^1.0.2",
     "@unocss/inspector": "^0.45.14",
