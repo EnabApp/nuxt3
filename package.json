@@ -6,38 +6,23 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
-  "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27657146.da85542",
-    "dotenv": "^16.0.2",
-    "nuxt": "3.0.0-rc.8"
-  },
   "dependencies": {
-    "@enab/appstore": "^1.0.8-beta.7",
-    "@enab/core": "^1.8.21-beta.5",
-    "@enab/recharge": "^1.0.1",
-    "@enab/ui": "^1.4.94-beta.5",
-    "@enab/utilities": "^1.0.14-beta.0",
-    "@iconify/json": "^2.1.102",
-    "@nuxt/kit": "^3.0.0-rc.8",
+    "nuxt": "npm:nuxt3@latest"
+  },
+  "devDependencies": {
+    "@nuxt/image-edge": "^1.0.0-27703825.db0934c",
     "@nuxtjs/color-mode": "^3.1.4",
-    "@nuxtjs/composition-api": "^0.33.1",
-    "@nuxtjs/supabase": "0.1.23",
+    "@nuxtjs/supabase": "^0.2.0-15",
     "@pinia/nuxt": "^0.4.1",
     "@tauri-apps/api": "^1.0.2",
-    "@unocss/inspector": "^0.45.14",
-    "@unocss/nuxt": "^0.45.13",
-    "@unocss/preset-attributify": "^0.45.13",
-    "@unocss/preset-icons": "^0.45.14",
-    "@unocss/preset-typography": "^0.45.13",
-    "@unocss/preset-web-fonts": "^0.45.14",
+    "@unocss/inspector": "^0.45.15",
+    "@unocss/nuxt": "^0.45.15",
+    "@unocss/preset-attributify": "^0.45.15",
+    "@unocss/preset-typography": "^0.45.15",
+    "@unocss/preset-web-fonts": "^0.45.15",
     "@vueuse/core": "^9.1.1",
-    "@vueuse/motion": "^2.0.0-beta.18",
     "@vueuse/nuxt": "^9.1.1",
-    "mathjs": "^11.1.0",
-    "moment": "^2.29.4",
-    "nuxt-lodash": "^2.2.0",
-    "pinia": "^2.0.21",
-    "unlighthouse": "^0.3.30",
-    "vue-toastification": "^2.0.0-rc.5"
+    "bumpp": "^8.2.1",
+    "ts-node": "^10.9.1"
   }
 }

@@ -18,41 +18,12 @@ export default defineNuxtConfig({
     // },
 
     modules: [
-
-        /**˅˅˅˅ APPS ˅˅˅˅**/
-        '@enab/utilities',
-        '@enab/appstore',
-        '@enab/recharge',
-        
-        /**˄˄˄˄ APPS ˄˄˄˄**/
-        
-        '@enab/core',
-        '@enab/ui',
-        
-
         '@nuxtjs/supabase',
-
-        // Color Mode
-        "@nuxtjs/color-mode",
-
-        // Lodash
-        "nuxt-lodash",
-
-        // https://vueuse.org/guide/
-        '@vueuse/nuxt',
-
-        // UnoCSS
-        '@unocss/nuxt',
-
-        // Pinia
-        '@pinia/nuxt',
-
-        // Image
         '@nuxt/image-edge',
-
-        // Motion
-        '@vueuse/motion/nuxt',
-        
+        '@pinia/nuxt',
+        '@vueuse/nuxt',
+        '@unocss/nuxt',
+        "@nuxtjs/color-mode",
     ],
 
 })
