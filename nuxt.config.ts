@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         '~/modules/systemapps/src/module.ts',
         '~/modules/core/src/module.ts',
         '@nuxtjs/supabase',
-        '@nuxt/image-edge',
+        '@nuxt/image',
         '@pinia/nuxt',
         '@vueuse/nuxt',
         '@unocss/nuxt',
