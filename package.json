@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "build": "node --loader ts-node scripts/build.mjs",
+    "dev": "node --loader ts-node scripts/development.mjs",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },

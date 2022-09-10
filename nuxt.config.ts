@@ -5,20 +5,11 @@ export default defineNuxtConfig({
     // isProduction: true,
     ssr: false,
     
-    autoImports: {
-        global: true,
-    },
     
-    
-    // components: {
-    //     global: true,
-    //     dirs: [
-    //         '~/components',
-    //     ]
-    // },
-
     modules: [
-        '~/modules',
+        '~/modules/utilities/src/module.ts',
+        '~/modules/systemapps/src/module.ts',
+        '~/modules/core/src/module.ts',
         '@nuxtjs/supabase',
         '@nuxt/image-edge',
         '@pinia/nuxt',
