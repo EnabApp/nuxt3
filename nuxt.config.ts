@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     // },
 
     modules: [
+        '~/modules',
         '@nuxtjs/supabase',
         '@nuxt/image-edge',
         '@pinia/nuxt',
