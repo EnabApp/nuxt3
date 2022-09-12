@@ -18,7 +18,7 @@
     "@tauri-apps/api": "^1.0.2",
     "@unocss/inspector": "^0.45.15",
     "@unocss/nuxt": "^0.45.15",
-    "@unocss/preset-attributify": "^0.45.15",
+    "@unocss/preset-attributify": "^0.45.21",
     "@unocss/preset-typography": "^0.45.15",
     "@unocss/preset-web-fonts": "^0.45.15",
     "@vueuse/core": "^9.1.1",
