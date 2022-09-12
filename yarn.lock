@@ -867,10 +867,18 @@
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.45.18.tgz#9c7c66eac358763211d6cf74ce9888b43deba96e"
   integrity sha512-506GHQX8/TpKNZ96k4ujSWp5SpcsZZnwwTg9NcLf7M3y5BXEwv0dE7Jfz7eJiFm2G+RYEgrXwYk7y7dFF8evxA==
 
-"@unocss/inspector@0.45.18", "@unocss/inspector@^0.45.15":
+"@unocss/inspector@0.45.18":
   version "0.45.18"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.18.tgz#5a5e4d56db8f20f8b3fef451694aae8aa2850b70"
   integrity sha512-5J++2Y2gp1qs7TeICkZ6VSOMS84ksRlCq3efw4YF5NjFhqvx+rOuWrHidHLHLycxczeBWgkz3ROHeOtAMrVDAg==
+  dependencies:
+    gzip-size "^6.0.0"
+    sirv "^2.0.2"
+
+"@unocss/inspector@^0.45.21":
+  version "0.45.21"
+  resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.21.tgz#79929569a4072fb9543d601292e64c445d10646c"
+  integrity sha512-NgtlIt8e1Zjc9Fh19RTBbo9asgXfK00kq00khngGfvjdQu+MMGsjGPz/PYkFrAdjcXVxyV1aKr0PKXQr2e6ZOA==
   dependencies:
     gzip-size "^6.0.0"
     sirv "^2.0.2"
