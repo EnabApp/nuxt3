@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node --loader ts-node scripts/build.mjs",
+    "dev": "node --loader ts-node scripts/development.mjs",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "update": "node --loader ts-node scripts/update-enab.mjs"
+  },
+  "dependencies": {
+    "nuxt": "npm:nuxt3@latest"
+  },
+  "devDependencies": {
+    "@nuxt/image-edge": "^1.0.0-27707824.1028381",
+    "@nuxtjs/color-mode": "^3.1.4",
+    "@nuxtjs/supabase": "^0.2.0-15",
+    "@pinia/nuxt": "^0.4.1",
+    "@tauri-apps/api": "^1.0.2",
+    "@unocss/inspector": "^0.45.15",
+    "@unocss/nuxt": "^0.45.15",
+    "@unocss/preset-attributify": "^0.45.15",
+    "@unocss/preset-typography": "^0.45.15",
+    "@unocss/preset-web-fonts": "^0.45.15",
+    "@vueuse/core": "^9.1.1",
+    "@vueuse/nuxt": "^9.1.1",
+    "bumpp": "^8.2.1",
+    "moment": "^2.29.4",
+    "ts-node": "^10.9.1"
+  },
+  "packageManager": "yarn@1.22.19"
+}
