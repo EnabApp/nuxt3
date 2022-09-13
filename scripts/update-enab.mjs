@@ -9,5 +9,5 @@ const getDirectories = async source =>
 const modulesPaths = await getDirectories('./modules')
 
 modulesPaths.forEach(async modulePath => {
-  execSync(`cd ${modulePath} && git pull origin master && git add . && git commit -m "commit from core" && git push && yarn install && yarn dev:prepare`, { stdio: 'inherit' })
+  execSync(`cd ${modulePath} && git pull origin master && git add . && git commit -m "commit from core" && git push origin master && yarn install && yarn dev:prepare`, { stdio: 'inherit' })
 })
