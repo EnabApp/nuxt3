@@ -1,0 +1,9 @@
+[submodule "modules/core"]
+	path = modules/core
+	url = https://github.com/EnabApp/core.git
+[submodule "modules/systemapps"]
+	path = modules/systemapps
+	url = https://github.com/EnabApp/SystemApps.git
+[submodule "modules/utilities"]
+	path = modules/utilities
+	url = https://github.com/EnabApp/Utilities.git
