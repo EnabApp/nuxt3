@@ -9,7 +9,7 @@ const getDirectories = async source =>
 const modulesPaths = await getDirectories('./modules')
 
 modulesPaths.forEach(async modulePath => {
-  execSync(`cd ${modulePath} && git pull && yarn install && yarn dev:prepare`, { stdio: 'inherit' })
+  execSync(`cd ${modulePath} && git pull origin master && yarn install && yarn dev:prepare`, { stdio: 'inherit' })
 })
 
 execSync('yarn nuxt dev', { stdio: 'inherit' })
