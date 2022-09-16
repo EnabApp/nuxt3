@@ -15,7 +15,7 @@
     "@nuxtjs/color-mode": "^3.1.4",
     "@nuxtjs/supabase": "^0.2.0-15",
     "@pinia/nuxt": "^0.4.1",
-    "@tauri-apps/api": "^1.0.2",
+    "@tauri-apps/api": "^1.1.0",
     "@unocss/inspector": "^0.45.15",
     "@unocss/nuxt": "^0.45.15",
     "@unocss/preset-attributify": "^0.45.15",
