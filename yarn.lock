@@ -828,6 +828,11 @@
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.45.21.tgz#ae9be954459d8df9c7eac3b307918136c5f8253a"
   integrity sha512-9yvgEYHFy6NFQwiQ0fEMg3QUGvcHfXbSmZszupa8ojpbR7UM26Ng+RY/Tyx1zh9HBaS7N+73z7u6gcygc7mUJA==
 
+"@unocss/core@0.45.23":
+  version "0.45.23"
+  resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.45.23.tgz#62d5714df2306dc2a18b9131d0f1ee3cee8ac702"
+  integrity sha512-yQ8j7Dj4RQZvL5tOJ/p+s5HZ//7WgjpxXGRySYDRgj5yqqLcxYTE68UtTGGtONjCBOkv6jSHnPcUyEDoA/OJrw==
+
 "@unocss/inspector@0.45.21", "@unocss/inspector@^0.45.15":
   version "0.45.21"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.21.tgz#79929569a4072fb9543d601292e64c445d10646c"
@@ -885,12 +890,19 @@
   dependencies:
     "@unocss/core" "0.45.21"
 
-"@unocss/preset-typography@0.45.21", "@unocss/preset-typography@^0.45.15":
+"@unocss/preset-typography@0.45.21":
   version "0.45.21"
   resolved "https://registry.yarnpkg.com/@unocss/preset-typography/-/preset-typography-0.45.21.tgz#4cc7ac18b789fee10b952cbe2607a586983b0fca"
   integrity sha512-D+d1IYq50Bh9WvFD/ILNWYuOrPi1dCHEDAv84Ijx+pt+Iwd/jDIAg3cJ0ukT6SZdRW+3lFa4nDhghQg+6CIO3g==
   dependencies:
     "@unocss/core" "0.45.21"
+
+"@unocss/preset-typography@^0.45.23":
+  version "0.45.23"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-typography/-/preset-typography-0.45.23.tgz#802abf392d0061160480a0b34843096484eeb6a2"
+  integrity sha512-/eHU/XtwnZq9rvUQdpanBsQq9SequdyVDJF8pzWxz8cJ3+52gFsrxxWh3/thkk2EPbwsEevtIP8v4JSYWM93jw==
+  dependencies:
+    "@unocss/core" "0.45.23"
 
 "@unocss/preset-uno@0.45.21":
   version "0.45.21"
