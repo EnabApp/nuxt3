@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     
     
     modules: [
-        '~/modules/utilities/src/module.ts',
         '~/modules/systemapps/src/module.ts',
         '~/modules/core/src/module.ts',
         '@nuxtjs/supabase',

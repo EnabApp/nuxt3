@@ -8,7 +8,7 @@
     "update": "node --loader ts-node scripts/update-enab.mjs"
   },
   "dependencies": {
-    "nuxt": "^3.0.0-rc.10"
+    "nuxt": "^3.0.0-rc.11"
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-27707824.1028381",
