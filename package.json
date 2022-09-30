@@ -13,7 +13,7 @@
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-27707824.1028381",
     "@nuxtjs/color-mode": "^3.1.4",
-    "@nuxtjs/supabase": "^0.2.0-15",
+    "@nuxtjs/supabase": "^0.2.0-19",
     "@pinia/nuxt": "^0.4.1",
     "@tauri-apps/api": "^1.0.2",
     "@unocss/inspector": "^0.45.15",
