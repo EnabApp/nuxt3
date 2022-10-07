@@ -2,10 +2,6 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const businessSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
     name: {
         type: String,
         required: true
@@ -18,16 +14,16 @@ const businessSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    spaces: {
-        id: {
-            type: String,
-            required: true
-        },
-        name: {
-            type: String,
-            required: true
-        }
-    }
+    // spaces: {
+    //     id: {
+    //         type: String,
+    //         required: false
+    //     },
+    //     name: {
+    //         type: String,
+    //         required: false
+    //     }
+    // }
 });
 
 export const businessModel = mongoose.model('Business', businessSchema);
