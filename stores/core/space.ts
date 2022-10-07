@@ -1,9 +1,9 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
 import { useNuxtApp, useRoute } from "#imports";
-import { UnitType } from '../models/Unit'
-import { SpaceType } from '../models/Space'
-import { ResposnivesType } from '../models/Board'
 import { RespType } from "../../types/Response";
+import { SpaceType } from "~~/models/Space";
+import { UnitType } from "~~/models/Unit";
+import { ResposnivesType } from "~~/models/Board";
 
 export const useSpace = defineStore("space", {
   state: () => ({

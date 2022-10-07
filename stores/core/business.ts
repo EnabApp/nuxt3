@@ -1,9 +1,9 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
 import { useFetch } from "@vueuse/core";
-import { RespType } from "../../types/Response";
-import { BusinessType } from "../../models/Business";
-import { UnitType } from "../../models/Unit";
-import { ResposnivesType } from "../../models/Board";
+import { BusinessType } from "~~/models/Business";
+import { UnitType } from "~~/models/Unit";
+import { ResposnivesType } from "~~/models/Board";
+import { RespType } from "~~/types/Response";
 
 export const useBusiness = defineStore("businessStore", {
   state: () => ({
