@@ -1,7 +1,7 @@
 <!-- SHOW SPACES FOR A BUSINESS -->
 
 <template>
-    <SpaceContainer :space="mySpace" />
+    <SpaceContainer :space="space" />
 </template>
   
 <script setup>
@@ -10,22 +10,14 @@ const { businessId } = useRoute()?.params
 
 // Fetching spaces
 await store.fetch(businessId)
+const space = store.getSelectedSpace
 
-const mySpace = new Space({
-    name: 'مساحاتي',
-    business: {
-        name: 'اسم العمل'
-    },
-    boards: [
-        {
-            name: 'البورد الأول', 
-            units: store.getSpacesAsUnits
-        },
-        {
-            name: 'البورد الثاني', 
-            units: store.getSpacesAsUnits
-        },
-    ]
-})
+// const mySpace = new Space({
+//     name: space.name,
+//     business: {
+//         name: space.business?.name
+//     },
+//     boards: space.units
+// })
 </script>
   

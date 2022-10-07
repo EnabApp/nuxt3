@@ -3,7 +3,7 @@ export default defineEventHandler((event) => {
   return {
     data: [
       {
-        id: "1",
+        id: "enab",
         name: "عنب",
         spaces: [
           {
@@ -13,15 +13,15 @@ export default defineEventHandler((event) => {
         ]
       },
       {
-      id: "2",
-      name: "موز",
-      spaces: [
-        {
-          id: "store2",
-          name: "اسواق الموز",
-        }
-      ]
-    },
+        id: "2",
+        name: "موز",
+        spaces: [
+          {
+            id: "store2",
+            name: "اسواق الموز",
+          }
+        ]
+      },
     ]
-}
+  }
 })

@@ -14,7 +14,7 @@ await store.fetch(businessId)
 const mySpace = new Space({
     name: 'مساحاتي',
     business: {
-        name: 'اسم العمل'
+        name: store.getSpaces[0] ? store.getSpaces[0].business.name : 'اسم العمل' 
     },
     boards: [{ units: store.getSpacesAsUnits }]
 })

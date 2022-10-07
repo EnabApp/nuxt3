@@ -1,11 +1,12 @@
 
-export default defineEventHandler((event) => {
-  return {
-    data: [{
+export default defineEventHandler(async (event) => {
+  const { businessId } = await useBody(event);
+  const fakeData = [
+    {
       id: "store",
       name: "المتجر",
       business: {
-        id: "1",
+        id: "enab",
         name: "عنب"
       },
       boards: [
@@ -212,5 +213,7 @@ export default defineEventHandler((event) => {
       ]
     }
     ]
+  return {
+    data: fakeData.filter((space) => space.business.id == businessId)
   }
 })

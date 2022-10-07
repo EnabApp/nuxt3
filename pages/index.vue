@@ -10,9 +10,11 @@ const store = useBusiness()
 
 // Fetching Businesses
 await store.fetch()
-
+console.log(store.getBusinessesAsUnits)
 const mySpace = new Space({
-  name: 'أعمالي',
+  business: {
+    name: 'أعمالي'
+  },
   boards: [ { units: store.getBusinessesAsUnits } ]
 })
 </script>

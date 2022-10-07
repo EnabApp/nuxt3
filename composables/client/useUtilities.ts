@@ -1,5 +1,5 @@
-import { UnitType } from '../models/Unit'
-import { ResposnivesType } from '../models/Board'
+import { ResposnivesType } from "../../models/Board";
+import { UnitType } from "../../models/Unit";
 
 export const fillUnits = (units: ResposnivesType) => {
     const devices = ['desktop', 'tablet', 'mobile']

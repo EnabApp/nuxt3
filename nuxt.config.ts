@@ -4,13 +4,17 @@
 export default defineNuxtConfig({
     // isProduction: true,
     // ssr: false,
+    components: {
+        global: true,
+        dirs: ['~/components']
+    },
     imports: {
         dirs: [
-          'composables/**',
-          'models/**'
+            'composables/**',
+            'models/**',
         ],
     },
-    
+
     modules: [
         '@enab/components',
         '@nuxt/image-edge',

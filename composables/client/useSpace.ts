@@ -3,6 +3,7 @@ import { useNuxtApp, useRoute } from "#imports";
 import { UnitType } from '../models/Unit'
 import { SpaceType } from '../models/Space'
 import { ResposnivesType } from '../models/Board'
+import { RespType } from "../../types/Response";
 
 export const useSpace = defineStore("space", {
   state: () => ({
@@ -18,8 +19,8 @@ export const useSpace = defineStore("space", {
           id: space.id,
           colSpan: 1,
           rowSpan: 1,
-          componentName: '',
-          componentData: space,          
+          componentName: 'DefaultContainer',
+          componentData: {...space, route: `${space.business?.id}/${space.id}`},          
         })
       })
       return {
@@ -27,16 +28,19 @@ export const useSpace = defineStore("space", {
         tablet: units as UnitType[],
         mobile: units as UnitType[],
       } as ResposnivesType;
-    }
-    // Spaces
-    // getSelectedSpaceId: (state) => state.selectedSpaceId,
-    // getSelectedSpace() { return this.spaces.find((space: any) => space.id == this.getSelectedSpaceId) },
-    // getSpaceById: (state) => (id: string) => state.spaces.find((space: any) => space.id == id),
+    },
+
+    getSelectedSpace: (state) => state.spaces.find((space: SpaceType) => space.id == useRoute().params.spaceId)
   },
 
   actions: {
     async fetch(businessId: string) {
-
+        const { data, error } : RespType = await $fetch('/api/space', {
+            method: 'POST',
+            body: JSON.stringify({ businessId })
+        })
+        if (error) console.log(error)
+        this.spaces = data
     }
   }
 });

@@ -1,8 +1,9 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
-import { UnitType } from '../models/Unit'
-import { BusinessType } from '../models/Business'
-import { ResposnivesType } from '../models/Board'
 import { useFetch } from "@vueuse/core";
+import { RespType } from "../../types/Response";
+import { BusinessType } from "../../models/Business";
+import { UnitType } from "../../models/Unit";
+import { ResposnivesType } from "../../models/Board";
 
 export const useBusiness = defineStore("businessStore", {
   state: () => ({
@@ -18,8 +19,8 @@ export const useBusiness = defineStore("businessStore", {
           id: business.id,
           colSpan: 1,
           rowSpan: 1,
-          componentName: '',
-          componentData: business,          
+          componentName: 'DefaultContainer',
+          componentData: {...business, route: business.id},          
         })
       })
       return {
@@ -32,10 +33,9 @@ export const useBusiness = defineStore("businessStore", {
 
   actions: {
     async fetch(){
-      console.log(await $fetch('/api/business'))
-      return false
-      // if (error) return error
-      // else return data
+      const { data, error } : RespType = await $fetch('/api/business')
+      if (error) console.log(error)
+      this.businesses = data
     }
   }
 });

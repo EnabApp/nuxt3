@@ -13,9 +13,9 @@
                 </div>
             </div>
 
-            <IconArrowLeft v-if="hasBusiness" w="8" class="hidden lg:flex" />
             
             <!-- Space Title -->
+            <IconArrowLeft v-if="hasSpace" w="8" class="hidden lg:flex" />
             <NuxtLink v-if="hasSpace" :to="`/${$route.params.businessId}`" :class="[
                     hasBusiness && hasSpace 
                     ? 'text-tertiary dark:text-tertiaryOp hover:text-primaryOp dark:hover:text-primary cursor-pointer'
@@ -23,6 +23,7 @@
                 ]" decoration="none" class="hidden md:flex" p="2">
                 {{ space.name }}
             </NuxtLink>
+            
             <IconArrowLeft v-if="hasSpace && board?.name" text="primaryOp dark:primary" w="8" class="hidden md:flex" />
             
             <!-- Board Title -->
@@ -71,8 +72,8 @@ const props = defineProps({
 const route = useRoute()
 const space = computed(() => props.spaceData)
 const board = computed( () => space.value?.boards[props.selected] );
-const hasBusiness = computed(() => route.params.businessId)
-const hasSpace = computed(() => route.params.spaceId)
+const hasBusiness = computed(() => route.params.businessId || space.value?.business?.name)
+const hasSpace = computed(() => route.params.spaceId || space.value?.name)
 
 const homeRedirectionRoute = () => {
     // const path = route.path
@@ -85,17 +86,17 @@ const homeRedirectionRoute = () => {
 }
 
 const actions = [
-    {
-        icon: 'IconBxsCart',
-        text: 'المتجر',
-        space: 'store',
-        board: 'apps'
-    },
-    {
-        icon: 'IconNotification',
-        text: 'الإشعارات',
-        space: 'store',
-        board: 'apps'
-    },
+    // {
+    //     icon: 'IconBxsCart',
+    //     text: 'المتجر',
+    //     space: 'store',
+    //     board: 'apps'
+    // },
+    // {
+    //     icon: 'IconNotification',
+    //     text: 'الإشعارات',
+    //     space: 'store',
+    //     board: 'apps'
+    // },
 ]
 </script>
