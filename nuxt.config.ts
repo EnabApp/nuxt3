@@ -6,11 +6,11 @@ export default defineNuxtConfig({
     // ssr: false,
     imports: {
         dirs: [
-          'composables/**',
-          'models/**'
+            'composables/**',
+            'models/**'
         ],
     },
-    
+
     modules: [
         '@enab/components',
         '@nuxt/image-edge',
@@ -19,5 +19,12 @@ export default defineNuxtConfig({
         '@unocss/nuxt',
         "@nuxtjs/color-mode",
     ],
+    runtimeConfig: {
+        mongoUrl: process.env.MONGO_URL,
+    },
+
+    nitro: {
+        plugins: ["~/server/index.ts"],
+    },
 
 })

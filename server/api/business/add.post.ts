@@ -1,16 +1,12 @@
-import { businessModel } from "../../../schemas/business"
-import { conn, mongoose } from "../../../composables/server/useDB"
+import { businessModel } from "../../../schemas/business";
 
 export default defineEventHandler(async (event) => {
-
-  const { name } = await useBody(event)
-  await conn 
+  const { name } = await useBody(event);
   try {
     const business = new businessModel({
       name: name,
     });
-
-  await business.save();
+    await business.save();
     return business;
   } catch (err) {
     console.log(err);
