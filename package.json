@@ -2,18 +2,19 @@
   "private": true,
   "scripts": {
     "build": "node --loader ts-node scripts/build.mjs",
-    "dev": "node --loader ts-node scripts/development.mjs",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "update": "node --loader ts-node scripts/update-enab.mjs"
+    "preview": "nuxt preview"
   },
   "dependencies": {
-    "nuxt": "^3.0.0-rc.11"
+    "@enab/components": "^1.0.1-beta.3",
+    "nuxt": "npm:nuxt3@latest",
+    "realm-web": "^1.7.1",
+    "swipejs": "^2.3.1"
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-27707824.1028381",
     "@nuxtjs/color-mode": "^3.1.4",
-    "@nuxtjs/supabase": "^0.2.0-15",
     "@pinia/nuxt": "^0.4.1",
     "@tauri-apps/api": "^1.0.2",
     "@unocss/inspector": "^0.45.15",
@@ -24,7 +25,6 @@
     "@vueuse/core": "^9.1.1",
     "@vueuse/nuxt": "^9.1.1",
     "bumpp": "^8.2.1",
-    "moment": "^2.29.4",
     "ts-node": "^10.9.1"
   },
   "packageManager": "yarn@1.22.19"

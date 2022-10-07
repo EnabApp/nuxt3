@@ -3,13 +3,16 @@
 
 export default defineNuxtConfig({
     // isProduction: true,
-    ssr: false,
-    
+    // ssr: false,
+    imports: {
+        dirs: [
+          'composables/**',
+          'models/**'
+        ],
+    },
     
     modules: [
-        '~/modules/systemapps/src/module.ts',
-        '~/modules/core/src/module.ts',
-        '@nuxtjs/supabase',
+        '@enab/components',
         '@nuxt/image-edge',
         '@pinia/nuxt',
         '@vueuse/nuxt',
