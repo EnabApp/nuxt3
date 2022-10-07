@@ -66,7 +66,7 @@
 import { exit } from '@tauri-apps/api/process';
 
 const colorMode = useColorMode()
-const isTauri = useTauri()
+const { useTauri: isTauri } = useTauri()
 const exitApp = async () => await exit(1);
 
 const props = defineProps({
