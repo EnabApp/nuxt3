@@ -4,7 +4,7 @@ export type SpaceType = {
     id?: string,
     name?: string,
     boards?: BoardType[]
-    business?: any 
+    business?: any
 }
 
 export class Space {

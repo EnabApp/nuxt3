@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const desktopSchema = new Schema(
         {
-            id: { 
+            id: {
                 type: String,
                 required: true
             },
@@ -32,7 +32,7 @@ const desktopSchema = new Schema(
 
 const tabletSchema = new Schema(
         {
-            id: { 
+            id: {
                 type: String,
                 required: true
             },
@@ -60,7 +60,7 @@ const tabletSchema = new Schema(
 
 const mobileSchema = new Schema(
     {
-        id: { 
+        id: {
             type: String,
             required: true
         },
@@ -88,7 +88,7 @@ const mobileSchema = new Schema(
     });
 
 const unitSchema = new Schema(
-    
+
         {
             desktop:{
                 type: desktopSchema,
@@ -96,7 +96,7 @@ const unitSchema = new Schema(
             tablet:{
                 type: tabletSchema,
             },
-            mobile: 
+            mobile:
                 {
                     type: [mobileSchema],
                 }

@@ -22,7 +22,7 @@ export class Unit {
     showOnMobile?: boolean
 
 
-    
+
     // constructor
     constructor(unit: UnitType) {
         this.id = unit?.id

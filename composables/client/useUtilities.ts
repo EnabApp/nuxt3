@@ -12,6 +12,6 @@ export const fillUnits = (units: ResposnivesType) => {
 const fillRest = (units: UnitType[], device: string) => {
     return [
         ...units,
-        ...[...Array((device == 'desktop' ? 28 : device == 'tablet' ? 24 : 8) - units.length)].map((_, index) => { return { id: index, colSpan: 1, rowSpan: 1 } }) 
+        ...[...Array((device == 'desktop' ? 28 : device == 'tablet' ? 24 : 8) - units.length)].map((_, index) => { return { id: index, colSpan: 1, rowSpan: 1 } })
     ]
 }

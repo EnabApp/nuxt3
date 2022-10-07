@@ -66,7 +66,7 @@ const spaceData = computed (() => {
     return space
 })
 
-// // define head peroperties 
+// // define head peroperties
 // useHead({
 //     titleTemplate: () => {
 //         return route.meta.title ? `${route.meta.title} · Enab` : "Enab";

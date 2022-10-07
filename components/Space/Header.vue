@@ -5,8 +5,8 @@
             <div @click="$router.push('/')" flex="~ gap-4" p="y-2 x-4" items="center" rounded="xl" bg="hover:secondary dark:hover:secondaryOp" un-text="tertiary dark:tertiaryOp hover:primaryOp dark:hover:primary" cursor="pointer">
                 <!-- Icon -->
                 <IconBoards w="8" />
-                
-    
+
+
                 <!-- Business Title -->
                 <div v-if="hasBusiness" decoration="none" class="hidden lg:flex">
                     {{ space?.business?.name }}
@@ -14,17 +14,17 @@
             </div>
 
             <IconArrowLeft v-if="hasBusiness" w="8" class="hidden lg:flex" />
-            
+
             <!-- Space Title -->
             <NuxtLink v-if="hasSpace" :to="`/${$route.params.businessId}`" :class="[
-                    hasBusiness && hasSpace 
+                    hasBusiness && hasSpace
                     ? 'text-tertiary dark:text-tertiaryOp hover:text-primaryOp dark:hover:text-primary cursor-pointer'
                     : 'text-primaryOp dark:text-primary'
                 ]" decoration="none" class="hidden md:flex" p="2">
                 {{ space.name }}
             </NuxtLink>
             <IconArrowLeft v-if="hasSpace && board?.name" text="primaryOp dark:primary" w="8" class="hidden md:flex" />
-            
+
             <!-- Board Title -->
             <span p="2" text="primaryOp dark:primary">{{ board?.name }}</span>
 
@@ -49,7 +49,7 @@
             </UiToolTip>
 
             <IconUser w="10" cursor="pointer" />
-            
+
         </div>
     </div>
 </template>
