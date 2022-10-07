@@ -49,11 +49,11 @@
                 </NuxtLink>
             </UiToolTip>
             
-            <UiToolTip v-if="isTauri" position="bottom" text="اغلاق" class="hidden md:flex">
+            <!-- <UiToolTip v-if="isTauri" position="bottom" text="اغلاق" class="hidden md:flex">
                 <div @click="exitApp()" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
                     <IconClose text="primaryOp dark:primary" w="5" h="5" />
                 </div>
-            </UiToolTip>
+            </UiToolTip> -->
 
             <IconUser w="10" cursor="pointer" />
 
@@ -63,12 +63,12 @@
 </template>
 
 <script setup>
-import { exit } from '@tauri-apps/api/process';
+// import { exit } from '@tauri-apps/api/process';
 
 const colorMode = useColorMode()
-const isTauri = useTauri()
-console.log(isTauri)
-const exitApp = async () => await exit(1);
+// const isTauri = useTauri()
+// console.log(isTauri)
+// const exitApp = async () => await exit(1);
 
 const props = defineProps({
     spaceData: {
