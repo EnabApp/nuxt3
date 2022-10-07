@@ -42,8 +42,8 @@
 
 
             <UiToolTip v-for="action in actions" :key="action.icon" position="bottom" :text="action.text" class="hidden md:flex">
-                <NuxtLink :to="`/space/${action.space}/board/${action.board}`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
-                $route.path == `/space/${action.space}/board/${action.board}` ? 'bg-info dark:bg-infoOp' : 'bg-secondary dark:bg-secondaryOp'
+                <NuxtLink :to="`/${action.business}/${action.space}`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
+                $route.path == `/${action.business}/${action.space}` ? 'bg-info dark:bg-infoOp' : 'bg-secondary dark:bg-secondaryOp'
         ]">
                 <component :is="action.icon" text="primaryOp dark:primary" w="5" h="5" />
             </NuxtLink>
@@ -86,17 +86,17 @@ const homeRedirectionRoute = () => {
 }
 
 const actions = [
-    // {
-    //     icon: 'IconBxsCart',
-    //     text: 'المتجر',
-    //     space: 'store',
-    //     board: 'apps'
-    // },
+    {
+        icon: 'IconBxsCart',
+        text: 'المتجر',
+        business: 'enab',
+        space: 'store'
+    },
     // {
     //     icon: 'IconNotification',
     //     text: 'الإشعارات',
-    //     space: 'store',
-    //     board: 'apps'
+    //     business: 'enab',
+    //     space: 'store'
     // },
 ]
 </script>

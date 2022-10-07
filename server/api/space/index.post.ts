@@ -15,11 +15,8 @@ export default defineEventHandler(async (event) => {
           name: "التطبيقات",
           units: {
             mobile: [
-              { id: '1', colSpan: 2, rowSpan: 1 },
-              { id: '1', colSpan: 1, rowSpan: 2 },
-              { id: '1', colSpan: 1, rowSpan: 1 },
-              { id: '1', colSpan: 1, rowSpan: 2 },
-              { id: '1', colSpan: 1, rowSpan: 1 },
+              { id: '1', colSpan: 1, rowSpan: 2, componentName: 'TestUnitData', componentData: 'This is data' },
+              { id: '1', colSpan: 2, rowSpan: 1, componentName: 'TestUnitData', componentData: 'This is data', order: 3 },
             ],
             tablet: [
               { id: '1', colSpan: 2, rowSpan: 2 },
