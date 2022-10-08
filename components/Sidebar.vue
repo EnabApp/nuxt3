@@ -31,6 +31,11 @@ const actions = [
         route: '/'
     },
     {
+        name: 'store',
+        icon: 'IconBxsCart',
+        route: '/store'
+    },
+    {
         name: 'users',
         icon: 'IconBoards',
         route: '/users'
@@ -39,11 +44,6 @@ const actions = [
         name: 'time',
         icon: 'IconBoards',
         route: '/time'
-    },
-    {
-        name: 'store',
-        icon: 'IconBoards',
-        route: '/store'
     },
     {
         name: 'settings',

@@ -7,6 +7,7 @@
 </template>
 
 <script setup>
+
 const store = useBusiness()
 
 // Fetching Businesses
