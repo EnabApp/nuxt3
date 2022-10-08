@@ -1,9 +1,10 @@
 import { businessModel } from "../../../schemas/business";
 
 export default defineEventHandler(async (event) => {
-  const { name } = await useBody(event);
+  const {id, name } = await useBody(event);
   try {
     const business = new businessModel({
+      id: id,
       name: name,
     });
     await business.save();
