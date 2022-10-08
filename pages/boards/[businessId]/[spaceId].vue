@@ -1,9 +1,7 @@
 <!-- SHOW SPACES FOR A BUSINESS -->
 
 <template>
-    <NuxtLayout name="user">
-        <SpaceContainer :space="space" />
-    </NuxtLayout>
+    <SpaceContainer m="10"  h="[calc(100vh-5rem)]" :space="space" />
 </template>
   
 <script setup>

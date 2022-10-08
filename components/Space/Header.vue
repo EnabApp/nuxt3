@@ -53,13 +53,13 @@
             </UiToolTip>
 
 
-            <UiToolTip v-for="action in actions" :key="action.icon" position="bottom" :text="action.text" class="hidden md:flex">
-                <NuxtLink :to="`/${action.business}/${action.space}`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
-                        $route.path == `/${action.business}/${action.space}` ? 'bg-info dark:bg-infoOp' : 'bg-secondary dark:bg-secondaryOp'
-                ]">
-                    <component :is="action.icon" text="primaryOp dark:primary" w="5" h="5" />
-                </NuxtLink>
-            </UiToolTip>
+            <div v-if="$route.path !== '/'" flex="~ gap-3">
+                <UiToolTip v-for="action in actions" :key="action.icon" position="bottom" :text="action.text" class="hidden md:flex">
+                    <NuxtLink :to="action.route" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
+                        <component :is="action.icon" text="primaryOp dark:primary" w="5" h="5" />
+                    </NuxtLink>
+                </UiToolTip>
+            </div>
 
             <ClientOnly>
                 <UiToolTip v-if="isTauri" position="bottom" text="اغلاق" class="hidden md:flex">
@@ -69,11 +69,11 @@
                 </UiToolTip>
             </ClientOnly>
 
-            <!-- <NuxtLink :to="`/enab/profile`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
+            <NuxtLink v-if="$route.path !== '/'" :to="`/`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
                     $route.path == `/enab/profile` ? 'saturate-200 hue-rotate-15' : ''
             ]" filter="hover:saturate-200 hover:hue-rotate-15">
                 <IconUser w="10" cursor="pointer" />
-            </NuxtLink> -->
+            </NuxtLink>
 
 
         </div>
@@ -115,17 +115,15 @@ const homeRedirectionRoute = () => {
 }
 
 const actions = [
-    // {
-    //     icon: 'IconBxsCart',
-    //     text: 'المتجر',
-    //     business: 'enab',
-    //     space: 'store'
-    // },
-    // {
-    //     icon: 'IconNotification',
-    //     text: 'الإشعارات',
-    //     business: 'enab',
-    //     space: 'store'
-    // },
+    {
+        icon: 'IconStore',
+        text: 'المتجر',
+        route: 'store'
+    },
+    {
+        icon: 'IconNotification',
+        text: 'الإشعارات',
+        route: 'store'
+    },
 ]
 </script>

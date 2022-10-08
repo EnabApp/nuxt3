@@ -25,6 +25,8 @@
     "@vueuse/core": "^9.1.1",
     "@vueuse/nuxt": "^9.1.1",
     "bumpp": "^8.2.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
     "ts-node": "^10.9.1"
   },
   "packageManager": "yarn@1.22.19"
