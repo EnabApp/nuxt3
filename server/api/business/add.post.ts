@@ -1,4 +1,4 @@
-import { businessModel } from "../../../schemas/business";
+import { businessModel } from "../../../schemas/business/Business";
 
 export default defineEventHandler(async (event) => {
   const {id, name } = await useBody(event);
