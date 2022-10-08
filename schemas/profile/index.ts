@@ -11,6 +11,10 @@ const profileSchema = new Schema({
     type: String,
     required: false,
   },
+  avatarUrl: {
+    type: String,
+    required: false,
+  },
   created_at: {
     type: Date,
     default: Date.now,
