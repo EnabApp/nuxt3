@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const unitSchema = new Schema(
+const responsiveSchema = new Schema(
     {
         id: {
             type: String,
@@ -43,9 +43,9 @@ const boardSchema = new Schema(
         },
         units: {
             type: {
-                desktop: [unitSchema],
-                tablet: [unitSchema],
-                mobile: [unitSchema],
+                desktop: [responsiveSchema],
+                tablet: [responsiveSchema],
+                mobile: [responsiveSchema],
             },
             required: true,
         }
