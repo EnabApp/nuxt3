@@ -3,25 +3,16 @@ const { Schema } = mongoose;
 
 const spaceSchema = new Schema(
     {
-        _id: {
-            type: String,
-            required: true,
-        },
         name: {
             type: String,
             required: true,
         },
-        business: {
+        business_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Business",
             required: true,
         },
-        boards: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Board",
-            },
-        ],
+
     },
     {
         timestamps: true,
