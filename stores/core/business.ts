@@ -20,7 +20,7 @@ export const useBusiness = defineStore("businessStore", {
           colSpan: 1,
           rowSpan: 1,
           componentName: 'DefaultContainer',
-          componentData: {...business, route: business.id},          
+          componentData: {...business, route: `boards/${business.id}`},          
         })
       })
       return {

@@ -1,7 +1,7 @@
 <template>
-    <div flex="~" justify="between">
+    <div flex="~" items="center" justify="between">
         <!-- Right Titles -->
-        <div flex="~" text="2xl medium tertiary dark:tertiaryOp">
+        <div flex="~ basis-1/4" text="2xl medium tertiary dark:tertiaryOp">
             <div @click="$router.push('/')" flex="~ gap-4" p="y-2 x-4" items="center" rounded="xl" bg="hover:secondary dark:hover:secondaryOp" un-text="tertiary dark:tertiaryOp hover:primaryOp dark:hover:primary" cursor="pointer">
                 <!-- Icon -->
                 <IconBoards w="8" />
@@ -16,7 +16,7 @@
 
             <!-- Space Title -->
             <IconArrowLeft v-if="hasSpace" w="8" class="hidden lg:flex" />
-            <NuxtLink v-if="hasSpace" :to="`/${$route.params.businessId}`" :class="[
+            <NuxtLink v-if="hasSpace" :to="`/boards/${$route.params.businessId}`" :class="[
                 hasBusiness && hasSpace 
                 ? 'text-tertiary dark:text-tertiaryOp hover:text-primaryOp dark:hover:text-primary cursor-pointer'
                 : 'text-primaryOp dark:text-primary'
@@ -31,8 +31,20 @@
 
         </div>
 
+        <div :class="{ 'invisible' : spaceData?.boards.length <= 1}" flex="~ gap-2 row-reverse basis-2/4" justify="center">
+            <div v-for="(board, index) in spaceData?.boards" :key="board.id" @click="slider.slide(index, 500)" w="4" h="4" :class="[
+                index == selected
+                ? 'bg-primaryOp dark:bg-primary'
+                : 'bg-secondary dark:bg-tertiary'
+            ]" cursor="pointer" class="group" rounded="full" position="relative">
+                <span p="1" text="sm center secondaryOp dark:secondary" rounded="lg" class="invisible group-hover:visible" bg="tertiaryOp dark:tertiary" z="10" position="absolute" bottom="-10" right="-14" w="120px">
+                    {{board.name}}
+                </span>
+            </div>
+        </div>
+
         <!-- Left Actions -->
-        <div flex="~ gap-3" items="center">
+        <div flex="~ gap-3 basis-1/4" justify="end" items="center">
             <UiToolTip position="bottom" :text="$colorMode.preference == 'dark' ? 'الوضع النهاري' : 'الوضع الليلي'" class="hidden md:flex">
                 <div @click="$colorMode.preference == 'dark' ? $colorMode.preference = 'light' : $colorMode.preference = 'dark'" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
                     <IconLightMode v-if="colorMode.value == 'dark'" text="primaryOp dark:primary" w="5" h="5" />
@@ -57,11 +69,11 @@
                 </UiToolTip>
             </ClientOnly>
 
-            <NuxtLink :to="`/enab/profile`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
+            <!-- <NuxtLink :to="`/enab/profile`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
                     $route.path == `/enab/profile` ? 'saturate-200 hue-rotate-15' : ''
             ]" filter="hover:saturate-200 hover:hue-rotate-15">
                 <IconUser w="10" cursor="pointer" />
-            </NuxtLink>
+            </NuxtLink> -->
 
 
         </div>
@@ -97,18 +109,18 @@ const homeRedirectionRoute = () => {
     // if (path == '/') return ''
     // if (path == '/space/') return '/'
     // else return '/space/'
-    if (hasSpace.value) return `/${hasBusiness.value}`
+    if (hasSpace.value) return `/boards/${hasBusiness.value}`
     else if (hasBusiness.value) return '/'
     else return '/'
 }
 
 const actions = [
-    {
-        icon: 'IconBxsCart',
-        text: 'المتجر',
-        business: 'enab',
-        space: 'store'
-    },
+    // {
+    //     icon: 'IconBxsCart',
+    //     text: 'المتجر',
+    //     business: 'enab',
+    //     space: 'store'
+    // },
     // {
     //     icon: 'IconNotification',
     //     text: 'الإشعارات',

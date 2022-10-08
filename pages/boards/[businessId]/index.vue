@@ -1,7 +1,9 @@
 <!-- SHOW SPACES FOR A BUSINESS -->
 
 <template>
-    <SpaceContainer :space="mySpace" />
+    <NuxtLayout name="user">
+        <SpaceContainer :space="mySpace" />
+    </NuxtLayout>
 </template>
   
 <script setup>

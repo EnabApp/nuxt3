@@ -20,7 +20,7 @@ export const useSpace = defineStore("space", {
           colSpan: 1,
           rowSpan: 1,
           componentName: 'DefaultContainer',
-          componentData: {...space, route: `${space.business?.id}/${space.id}`},          
+          componentData: {...space, route: `boards/${space.business?.id}/${space.id}`},          
         })
       })
       return {
