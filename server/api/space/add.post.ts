@@ -1,4 +1,4 @@
-import { spaceModel } from "../../../schemas/space"
+import { spaceModel } from "../../../schemas/Space/Space";
 
 export default defineEventHandler(async (event) => {
     const { name, businessId } = await useBody(event);

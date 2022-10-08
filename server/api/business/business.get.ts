@@ -1,4 +1,4 @@
-import { businessModel } from "../../../schemas/business"
+import { businessModel } from "../../../schemas/Business"
 
 export default defineEventHandler(async (event) => {
 

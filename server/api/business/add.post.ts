@@ -1,16 +1,6 @@
-import { businessModel } from "../../../schemas/business/Business";
+// import { businessModel } from "../../../schemas/Business/Business";
 
-export default defineEventHandler(async (event) => {
-  const { name, userId } = await useBody(event);
-  
-  try {
-    const business = new businessModel({
-      name: name,
-      user: userId,
-    });
-    await business.save();
-    return business;
-  } catch (err) {
-    console.log(err.message);
-  }
-});
+// export default defineEventHandler(async (event) => {
+//     const { name, user_id } = await useBody(event);
+
+// });
