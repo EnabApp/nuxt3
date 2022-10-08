@@ -31,23 +31,18 @@ const actions = [
         route: '/'
     },
     {
-        name: 'store',
-        icon: 'IconBxsCart',
-        route: '/store'
-    },
-    {
         name: 'users',
-        icon: 'IconBoards',
+        icon: 'IconUsers',
         route: '/users'
     },
     {
-        name: 'time',
-        icon: 'IconBoards',
-        route: '/time'
+        name: 'store',
+        icon: 'IconStore',
+        route: '/store'
     },
     {
         name: 'settings',
-        icon: 'IconSettingsInput',
+        icon: 'IconSettings',
         route: '/settings'
     },
     
