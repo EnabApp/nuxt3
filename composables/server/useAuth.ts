@@ -1,15 +1,13 @@
 import { app, Realm } from "./useRealm";
 
 export default () => {
-  const register = ({ email, password , name, number }) => {
+  const register = ({ email, password, name, number }) => {
     return new Promise(async (resolve, reject) => {
       try {
         //Create a new email/password account
         await app.emailPasswordAuth.registerUser({
           email,
           password,
-          name,
-          number,
         });
 
         //Log the user in
@@ -17,10 +15,9 @@ export default () => {
           Realm.Credentials.emailPassword(email, password)
         );
 
-        resolve(true);
+        resolve(user);
       } catch (err) {
         return reject(err);
-        reject(err);
       }
     });
   };
