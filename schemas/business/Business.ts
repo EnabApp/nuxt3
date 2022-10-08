@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const businessSchema = new Schema(
     {
-        _id: {
+        id: {
             type: String,
             required: true
         },
