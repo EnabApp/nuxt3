@@ -20,14 +20,6 @@ const userSchema = new Schema({
     phone_number: {
         type: String,
     },
-    profile: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Profile',
-    },
-    businesses: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Business',
-    }],
     last_login: {
         type: Date,
     },
