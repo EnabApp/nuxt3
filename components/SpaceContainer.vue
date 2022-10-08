@@ -12,10 +12,10 @@
                         <template v-if="mobile">
                             <SpaceBoardUnit v-for="unit in b.units.mobile" :key="unit.id" :unit="unit" />
                         </template>
-                        <template v-else-if="tablet">
+                        <template v-if="tablet">
                             <SpaceBoardUnit v-for="unit in b.units.tablet" :key="unit.id" :unit="unit" />
                         </template>
-                        <template v-else>
+                        <template v-if="desktop">
                             <SpaceBoardUnit v-for="unit in b.units.desktop" :key="unit.id" :unit="unit" />
                         </template>
                     </SpaceBoard>
