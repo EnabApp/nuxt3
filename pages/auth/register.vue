@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-default" h="screen" w="screen" flex="~ col" items="center" justify="center">
+  <div bg="secondary dark:secondaryOp" h="screen" w="screen" flex="~ col" items="center" justify="center">
     <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-45px"
       items="center">
       <div>
@@ -70,26 +70,12 @@ const handelSubmit = async () => {
       name: input.name,
       number: input.number,
     });
-    email.value = "";
-    password.value = "";
-    name.value = "";
-    number.value = "";
+    input.email = "";
+    input.password = "";
+    input.name = "";
+    input.number = "";
   } catch (err) {
     authError.value = err.message;
   }
 };
 </script>
-
-<style scoped>
-.bg-default {
-  background-image: url("https://images.unsplash.com/photo-1542401886-65d6c61db217?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-  /* background-image: url('imgs/bg.jpg'); */
-  background-color: #999;
-
-  /* background-size: cover; */
-  background-size: cover;
-  /* background-position: 100% 180%; */
-
-  /* animation: lightMove 5s infinite; */
-}
-</style>
