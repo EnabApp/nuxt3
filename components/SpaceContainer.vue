@@ -1,5 +1,5 @@
 <template>
-    <div h="screen" flex="~ col">
+    <div h="screen" flex="~ col" mx="15">
         <!-- Space Header : Component -->
         <SpaceHeader pt="5" :spaceData="spaceData" :selected="selectedBoardIndex" />
 

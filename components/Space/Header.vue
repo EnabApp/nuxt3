@@ -48,7 +48,7 @@
                     <component :is="action.icon" text="primaryOp dark:primary" w="5" h="5" />
                 </NuxtLink>
             </UiToolTip>
-            
+
             <ClientOnly>
                 <UiToolTip v-if="isTauri" position="bottom" text="اغلاق" class="hidden md:flex">
                     <div @click="exitApp()" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
@@ -57,7 +57,11 @@
                 </UiToolTip>
             </ClientOnly>
 
-            <IconUser w="10" cursor="pointer" />
+            <NuxtLink :to="`/enab/profile`" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" :class="[
+                    $route.path == `/enab/profile` ? 'saturate-200 hue-rotate-15' : ''
+            ]" filter="hover:saturate-200 hover:hue-rotate-15">
+                <IconUser w="10" cursor="pointer" />
+            </NuxtLink>
 
 
         </div>
