@@ -7,8 +7,8 @@
         <NuxtLink to="/1/1">Go to space</NuxtLink>
     </div>
 </template>
-  
-  
+
+
 <script setup>
 import { useRouter, useRoute, useHead } from '#imports'
 import { ref, onMounted, reactive, watch } from 'vue'
@@ -21,13 +21,13 @@ const spaceStore = useSpace();
 const businessId = ref(route.params.businessId);
 const spaceId = ref(route.params.spaceId);
 
-/** 
+/**
  * CASES:
  * 1. [NO] PARAMS
  *    Get Business as space template.
  * 2. [BUSINESS ID] PARAM
  *    Get Spaces as space template.
- * 3. [BUSINESS ID][SPACE ID] PARAM 
+ * 3. [BUSINESS ID][SPACE ID] PARAM
  *    Get Space as original data units.
  */
 
@@ -60,7 +60,7 @@ if (businessId.value && spaceId.value) {
 
 
 </script>
-  
+
 <style>
 ::-webkit-scrollbar {
     width: 10px;
@@ -81,5 +81,3 @@ if (businessId.value && spaceId.value) {
     background: rgba(255, 255, 255, .5);
 }
 </style>
-  
-  

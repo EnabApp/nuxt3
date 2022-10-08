@@ -3,7 +3,7 @@
 <template>
     <SpaceContainer :space="mySpace" />
 </template>
-  
+
 <script setup>
 const store = useSpace()
 const { businessId } = useRoute()?.params
@@ -19,4 +19,3 @@ const mySpace = new Space({
     boards: [{ units: store.getSpacesAsUnits }]
 })
 </script>
-  

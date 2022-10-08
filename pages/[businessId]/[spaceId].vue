@@ -3,7 +3,7 @@
 <template>
     <SpaceContainer :space="mySpace" />
 </template>
-  
+
 <script setup>
 const store = useSpace()
 const { businessId } = useRoute()?.params
@@ -18,14 +18,13 @@ const mySpace = new Space({
     },
     boards: [
         {
-            name: 'البورد الأول', 
+            name: 'البورد الأول',
             units: store.getSpacesAsUnits
         },
         {
-            name: 'البورد الثاني', 
+            name: 'البورد الثاني',
             units: store.getSpacesAsUnits
         },
     ]
 })
 </script>
-  

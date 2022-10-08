@@ -19,7 +19,7 @@ export const useSpace = defineStore("space", {
           colSpan: 1,
           rowSpan: 1,
           componentName: '',
-          componentData: space,          
+          componentData: space,
         })
       })
       return {

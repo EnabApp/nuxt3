@@ -10,7 +10,7 @@ export class Business {
     id?: string
     name?: string
     spaces?: Space[]
-    
+
     // constructor
     constructor(business: BusinessType) {
         this.id = business?.id

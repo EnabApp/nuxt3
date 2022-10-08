@@ -19,7 +19,7 @@ export const useBusiness = defineStore("businessStore", {
           colSpan: 1,
           rowSpan: 1,
           componentName: '',
-          componentData: business,          
+          componentData: business,
         })
       })
       return {
