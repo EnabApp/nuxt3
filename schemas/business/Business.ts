@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 
 const businessSchema = new Schema(
     {
-        id: {
-            type: String,
+        _id: {
+            type: Number,
             required: true
         },
         name: {
