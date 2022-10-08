@@ -20,7 +20,7 @@
           </p>
 
           <!-- ?Submit -->
-          <div v-if="logIn.email" delay="50" duration="200" animate="fade-in">
+          <div v-if="logIn.email" class="delay-50 duration-200 animate-fade-in">
             <UiButton @click="handelSubmit()" rounded="10px">
               <div flex="~ gap-15px" justify="center" text="primary dark:primaryOp" items="center">
                 <span>تسجل الدخول</span>
@@ -70,7 +70,6 @@
         text="primaryOp dark:primary xs md:xs lg:sm xl:md">
         <span cursor="pointer">هل تحتاج المساعدة؟</span>
         <span cursor="pointer">نسيت كلمة المرور؟</span>
-        <div v-if="isLoggedIn" w="full" h="full" bg="red">\zdxfcgvbm,</div>
         <nuxt-link decoration="none" to="/auth/register">
           <span text="primaryOp dark:primary" cursor="pointer">لا تمتلك حساب؟</span>
         </nuxt-link>
