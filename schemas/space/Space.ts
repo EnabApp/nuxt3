@@ -7,17 +7,12 @@ const spaceSchema = new Schema(
             type: String,
             required: true,
         },
-        business: {
+        business_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Business",
             required: true,
         },
-        boards: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Board",
-            },
-        ],
+
     },
     {
         timestamps: true,

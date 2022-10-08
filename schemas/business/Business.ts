@@ -12,10 +12,7 @@ const businessSchema = new Schema(
             ref: 'User',
             required: true
         },
-        spaces: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Space',
-        }],
+
     },
     {
         timestamps: true
