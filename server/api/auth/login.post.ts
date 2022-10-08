@@ -1,10 +1,9 @@
 import { sendError } from "h3";
+import useAuth from "../../../composables/server/useAuth";
 
 export default defineEventHandler(async (event) => {
-  const body = await useBody(event);
+  const { email, password } = await useBody(event);
   const { login } = useAuth();
-
-  const { email, password } = body;
 
   if (!email || !password) {
     return sendError(
