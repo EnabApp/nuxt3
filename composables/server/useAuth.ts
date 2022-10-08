@@ -17,17 +17,17 @@ export default () => {
         );
 
         // Create a new profile
-        const userProfile = new profileModel({
-          user_id: app.currentUser.id,
-          name: name,
-          phonenumber: phonenumber,
-        });
+        // const userProfile = new profileModel({
+        //   user_id: app.currentUser.id,
+        //   name: name,
+        //   phonenumber: phonenumber,
+        // });
 
-        await userProfile.save();
+        // await userProfile.save();
 
         resolve({
           user: user,
-          profile: userProfile,
+          // profile: userProfile,
         });
       } catch (err) {
         return reject(err);
