@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const spaceSchema = new Schema(
     {
-        id: {
+        _id: {
             type: String,
             required: true,
         },

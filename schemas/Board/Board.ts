@@ -3,10 +3,6 @@ const { Schema } = mongoose;
 
 const responsiveSchema = new Schema(
     {
-        id: {
-            type: String,
-            required: true
-        },
         colSpan: {
             type: Number,
             required: true
@@ -33,10 +29,6 @@ const responsiveSchema = new Schema(
 
 const boardSchema = new Schema(
     {
-        id: {
-            type: String,
-            required: true
-        },
         name: {
             type: String,
             required: true
