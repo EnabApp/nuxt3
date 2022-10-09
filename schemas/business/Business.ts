@@ -7,12 +7,30 @@ const businessSchema = new Schema(
             type: String,
             required: true
         },
-        user_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-            required: true
+        address: {
+            type: String,
         },
-
+        users: [
+            {
+                user_id: {
+                    type: Schema.Types.ObjectId,
+                    ref: 'User'
+                },
+                Permissions: [
+                    {
+                        type: String,
+                    }
+                ]
+            }
+        ],
+        category: {
+            type: Schema.Types.ObjectId,
+            ref: 'BusinessCategory'
+        },
+        is_active: {
+            type: Boolean,
+            default: true
+        },
     },
     {
         timestamps: true
