@@ -1,11 +1,12 @@
 import { sendError } from "h3";
+import useAuth from "../../../composables/server/useAuth";
 
 export default defineEventHandler(async (event) => {
-  const body = await useBody(event);
+  const res = await useBody(event);
   const { loginWithGoogle } = useAuth();
-  const { setAuthState } = useBody();
+
   try {
-    const data = await loginWithGoogle(setAuthState);
+    const data = await loginWithGoogle(res);
     return { data };
   } catch (err) {
     return sendError(

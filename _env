@@ -1,0 +1,2 @@
+MONGO_URL=mongodb+srv://enab:dRxcmfwAs0rtmkQM@cluster0.xpylajm.mongodb.net/enab?retryWrites=true&w=majority
+MONGO_APP_ID="enab-tvihr"

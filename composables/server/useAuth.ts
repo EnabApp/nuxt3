@@ -1,7 +1,8 @@
 import { app, Realm } from "./useRealm";
+import { profileModel } from "../../schemas/user/Profile";
 
 export default () => {
-  const register = ({ email, password }) => {
+  const register = ({ email, password, name, phonenumber }) => {
     return new Promise(async (resolve, reject) => {
       try {
         //Create a new email/password account
@@ -15,10 +16,21 @@ export default () => {
           Realm.Credentials.emailPassword(email, password)
         );
 
-        resolve(true);
+        // Create a new profile
+        // const userProfile = new profileModel({
+        //   user_id: app.currentUser.id,
+        //   name: name,
+        //   phonenumber: phonenumber,
+        // });
+
+        // await userProfile.save();
+
+        resolve({
+          user: user,
+          // profile: userProfile,
+        });
       } catch (err) {
         return reject(err);
-        reject(err);
       }
     });
   };
@@ -27,7 +39,6 @@ export default () => {
     return new Promise(async (resolve, reject) => {
       try {
         //Log the user in
-
         const user = await app.logIn(
           Realm.Credentials.emailPassword(email, password)
         );
@@ -39,16 +50,20 @@ export default () => {
     });
   };
 
-  async function loginWithGoogle(setAuthState: any) {
-    const RedirectUri = "http://localhost:3000/redirect";
-    const credentials = Realm.Credentials.google(RedirectUri);
-    app.logIn(credentials).then((user) => {
-      setAuthState({
-        isLoggedIn: true,
-        currentUser: user,
+  async function loginWithGoogle(response) {
+    const credentials = Realm.Credentials.google(response.credential);
+    app
+      .logIn(credentials)
+      .then((user) => {
+        return user;
+      })
+      .catch((err) => {
+        throw err;
       });
-      console.log("signed in successfully with id:" + user.id);
-    });
+  }
+
+  async function logout() {
+    await app.currentUser.logOut();
   }
 
   //Return Function to be used
@@ -56,5 +71,6 @@ export default () => {
     register,
     login,
     loginWithGoogle,
+    logout,
   };
 };
