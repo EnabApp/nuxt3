@@ -1,6 +1,6 @@
 <template>
     <div position="relative">
-        <NuxtLink :to="`/boards/${business.id}`" decoration="none" color="inherit" flex="~ col" rounded="xl" p="6" position="relative" z="hover:10" bg="secondary dark:secondaryOp dark:hover:opacity-50">
+        <NuxtLink v-if="business" :to="`/boards/${business.id}`" decoration="none" color="inherit" flex="~ col" rounded="xl" p="6" position="relative" z="hover:10" bg="secondary dark:secondaryOp dark:hover:opacity-50">
             <!-- Header -->
             <div flex="~" items="center" justify="between">
                 <div text="2xl primaryOp dark:primary">
@@ -13,9 +13,9 @@
                     </div>
                 </UiToolTip>
             </div>
-            <!-- Location -->
+            <!-- Address -->
             <p text="lg">
-                {{ business.location ?? 'لايوجد عنوان' }}
+                {{ business.address ?? 'لايوجد عنوان' }}
             </p>
 
             <div flex="~ gap-2">
@@ -43,13 +43,20 @@
                     <UiToolTip text="مالك العمل">
                         <IconUserCircle text="tertiaryOp dark:tertiary" w="6" h="6" />
                     </UiToolTip>
-                    <UiToolTip text="مفعل">
+                    <UiToolTip v-if="!business.is_active" text="مفعل">
                         <IconVerified text="green" w="6" h="6" />
+                    </UiToolTip>
+                    <UiToolTip v-else text="غير مفعل">
+                        <IconNotVerified text="red" w="6" h="6" />
                     </UiToolTip>
                 </div>
             </div>
         </NuxtLink>
-
+        <div v-else flex="~ col" rounded="xl" p="6" animate="pulse" bg="secondary dark:secondaryOp" h="150px">
+            <div flex="~" items="center" justify="between">
+                <div h="8" w="75%" bg="tertiaryOp dark:tertiary" rounded="xl"></div>
+            </div>
+        </div>
     </div>
 
 </template>
@@ -59,7 +66,6 @@
 const props = defineProps({
     business: {
         type: Object,
-        required: true
     }
 })
 </script>
