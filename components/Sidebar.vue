@@ -16,7 +16,7 @@
                 </div>
 
                 <div flex="~ col" h="full" pb="10" justify="end" items="center" text="primary">
-                    <IconEnabSymbol cursor="pointer" @click="toggle()" w="10" h="10" text="green-500" />
+                    <IconEnabSymbol cursor="pointer" @click="toggle()" w="8" h="8" text="green-500" />
                 </div>
             </div>
         </div>
