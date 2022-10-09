@@ -6,16 +6,16 @@
       <IconEnabLight text="primary" w="128px" />
 
       <div flex="~ col gap-30px" justify="center" items="center">
-        <div flex="~ col gap-25px" relative="~">
+        <div flex="~ col gap-25px">
           <!-- ?Email -->
           <UiInput v-model="logIn.email" w="190px lg:270px" placeholder="البريد الإلكتروني" type="email"
             icon="IconEmail" />
 
           <!-- ?Password -->
-          <UiInput v-model="logIn.password" w="190px lg:270px" placeholder="كلمة المرور" type="password"
-            icon="IconLock" />
+          <UiInput v-model="logIn.password" w="190px lg:270px" placeholder="كلمة المرور" type="password" icon="IconLock"
+            relative="~" />
           <!-- ?Error Message -->
-          <p v-if="authError" text="xs red" top="60%" mr="10px" truncate="~" w="50" absolute="~">
+          <p v-if="authError" text="xs red" mr="10px" truncate="~" w="50" absolute="~">
             {{ authError }}
           </p>
 
@@ -41,7 +41,7 @@
             <!-- ?Google Login -->
             <div bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" duration="200" rounded="10px"
               w="190px lg:270px" h="50px" flex="~ gap-10px" justify="center" items="center" cursor="pointer"
-              @submit.prevent="signInWithGoogle()">
+              @click="loginWithGoogle()">
               <span text="primary dark:primaryOp" font="semibold">Google</span>
               <IconGoogle w="20px" h="20px" text="primary dark:primaryOp" />
             </div>
@@ -91,44 +91,29 @@ const logIn = reactive({
   password: "",
 });
 
-async function signInWithGoogle() {
-  try {
-    await loginWithGoogle();
-  } catch (error) {
-    console.log(error);
-  }
-}
+const loginWithGoogle = async () => {
+  await $fetch("/api/auth/loginWithGoogle", { method: "post" })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const handelSubmit = async () => {
-  // try {
-  //   await login({ email: logIn.email, password: logIn.password });
-  //   logIn.email = "";
-  //   logIn.password = "";
-  //   // router.push("/");
-  // } catch (err) {
-  //   authError.value = err.message;
-  // }
-  const { data, pending, error, refresh } = await useFetch('/api/auth/login', {
-    method: "POST",
-    onRequest({ request, options }) {
-      options.headers = { "Content-Type": "application/json" };
-      request = JSON.stringify({
-        email: logIn.email,
-        password: logIn.password,
-      });
-      logIn.email = "";
-      logIn.password = "";
-    },
-  onRequestError({ request, options, error }) {
-    // Handle the request errors
-  },
-  onResponse({ request, response, options }) {
-    // Process the response data
-    return response._data
-  },
-  onResponseError({ request, response, options }) {
-    // Handle the response errors
-  }
-})
+  if (!logIn.email || !logIn.password)
+    return (authError.value = "الرجاء ادخال البريد الالكتروني وكلمة المرور");
+
+  await $fetch("/api/auth/login", {
+    method: "post",
+    body: { email: logIn.email, password: logIn.password },
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      authError.value = err.message;
+    });
 };
 </script>

@@ -5,14 +5,15 @@
       <!-- ?Logo -->
       <IconEnabLight text="primary" w="128px" />
 
-      <div flex="~ col gap-30px" justify="center" w="100%" h="100%" items="center" relative="~">
+      <div flex="~ col gap-30px" justify="center" w="100%" h="100%" items="center" class="relative">
         <div class="flex flex-col md:flex-row gap-35px">
           <!-- ?Name -->
           <UiInput v-model="Register.name" w="190px lg:270px" placeholder="الأسم الثلاثي" type="text"
             icon="IconProfile" />
 
           <!-- ?Phone Number -->
-          <UiInput v-model="Register.phonenumber" w="190px lg:270px" placeholder="رقم الهاتف" type="text" icon="IconPhone" />
+          <UiInput v-model="Register.phonenumber" w="190px lg:270px" placeholder="رقم الهاتف" type="text"
+            icon="IconPhone" />
         </div>
 
         <div class="flex flex-col md:flex-row gap-35px">
@@ -26,10 +27,11 @@
         </div>
 
         <!-- ?Error Message -->
-        <p v-if="authError" text="xs red" mr="10px" top="100%" truncate="~" w="50" absolute="~">
-          {{ authError }}
-        </p>
-
+        <div mr="75px">
+          <p v-if="authError" text="xs red" truncate="~" w="50">
+            {{ authError }}
+          </p>
+        </div>
         <!-- ?Submit -->
         <UiButton @click="handelSubmit()">
           <div flex="~ gap-15px" justify="center" text="primary dark:primaryOp" items="center">
@@ -65,52 +67,73 @@ const authError = ref("");
 const Register = reactive({
   name: "",
   email: "",
-  phonenumber: "",
   password: "",
+  phonenumber: "",
 });
 
+// const handelSubmit = async () => {
+//   try {
+//     await register({
+//       email: Register.email,
+//       password: Register.password,
+//       name: Register.name,
+//       number: Register.number,
+//     });
+//     Register.email = "";
+//     Register.password = "";
+//     Register.name = "";
+//     Register.number = "";
+//   } catch (err) {
+//     authError.value = err.message;
+//   }
+//   const { data, pending, error, refresh } = await useFetch("/api/auth/register", {
+//     method: "POST",
+//     onRequest({ request, options }) {
+//       options.headers = { "Content-Type": "application/json" };
+//       request = JSON.stringify({
+//         email: Register.email,
+//         password: Register.password,
+//         name: Register.name,
+//         phonenumber: Register.phonenumber,
+//       });
+//     },
+//     onRequestError({ request, options, error }) {
+//       // Handle the request errors
+//       authError.value = error.message;
+//     },
+//     onResponse({ request, response, options }) {
+//       // Process the response data
+//       Register.email = "";
+//       Register.password = "";
+//       Register.name = "";
+//       Register.phonenumber = "";
+//       return response._data;
+//     },
+//     onResponseError({ request, response, options }) {
+//       // Handle the response errors
+//       authError.value = response._data.message;
+//     },
+//   });
+// };
 const handelSubmit = async () => {
-  // try {
-  //   await register({
-  //     email: Register.email,
-  //     password: Register.password,
-  //     name: Register.name,
-  //     number: Register.number,
-  //   });
-  //   Register.email = "";
-  //   Register.password = "";
-  //   Register.name = "";
-  //   Register.number = "";
-  // } catch (err) {
-  //   authError.value = err.message;
-  // }
-  const { data, pending, error, refresh } = await useFetch("/api/auth/register", {
-    method: "POST",
-    onRequest({ request, options }) {
-      options.headers = { "Content-Type": "application/json" };
-      request = JSON.stringify({
-        email: Register.email,
-        password: Register.password,
-        name: Register.name,
-        phonenumber: Register.phonenumber,
-      });
+  if (!Register.name || !Register.password || !Register.phonenumber)
+    return (authError.value = "رجاءََ أملاء جميع الحقول");
+  else if (!Register.email < 10)
+    return (authError.value = "رجاءََ أدخل بريد إلكتروني صحيح");
+  await $fetch("/api/auth/register", {
+    method: "post",
+    body: {
+      name: Register.name,
+      email: Register.email,
+      password: Register.password,
+      phonenumber: Register.phonenumber,
     },
-    onRequestError({ request, options, error }) {
-      // Handle the request errors
-      authError.value = error.message;
-    },
-    onResponse({ request, response, options }) {
-      // Process the response data
-      Register.email = "";
-      Register.password = "";
-      Register.name = "";
-      Register.phonenumber = "";
-      return response._data;
-    },
-    onResponseError({ request, response, options }) {
-      // Handle the response errors
-      authError.value = response._data.message;
-    },
-  });
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      authError.value = err.message;
+    });
 };
 </script>
