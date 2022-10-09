@@ -1,10 +1,10 @@
 <template>
     <div h="full" flex="~ col">
         <!-- Space Header : Component -->
-        <SpaceHeader :spaceData="spaceData" :selected="selectedBoardIndex" />
+        <!-- <SpaceHeader :spaceData="spaceData" :selected="selectedBoardIndex" /> -->
 
         <!-- Boards Container -->
-        <div ref="boardsContainer" h="full" w="full" justify="center" flex="~ grow" mt="5 md:10">
+        <div ref="boardsContainer" h="full" w="full" justify="center" flex="~ grow">
             <!-- Slider : Component -->
             <SpaceSlider v-if="boards.width > 0 && boards.height > 0" :width="boards.width" :height="boards.height" :spaceData="spaceData" :selected="selectedBoardIndex" @selectedIndex="selectedBoardIndex = $event" @sliderInit="sliderObject = $event">
                 <div v-for="(b, index) in spaceData?.boards" :key="'board-index-' + index" float="left" width="100%" position="relative" overflow="hidden">
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Space Footer : Component -->
-        <!-- <SpaceFooter :selected="selectedBoardIndex" :spaceData="spaceData" :slider="sliderObject" pb="5" mt="5 md:10" /> -->
+        <SpaceFooter :selected="selectedBoardIndex" :spaceData="spaceData" :slider="sliderObject" mt="1 md:2" />
     </div>
 </template>
 

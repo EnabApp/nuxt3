@@ -1,7 +1,51 @@
 <!-- SHOW SPACES FOR A BUSINESS -->
 
 <template>
-    <SpaceContainer m="10"  h="[calc(100vh-5rem)]" :space="mySpace" />
+<NuxtLayout name="user">
+    <div flex="~ col gap-8">
+      <!-- Header -->
+      <!-- <Header /> -->
+
+      <!-- Title -->
+      <h1 font="medium" text="3xl primaryOp dark:primary">{{ business?.name }}</h1>
+
+      <!-- Actions -->
+      <div flex="~ gap-8" font="medium" text="xl">
+        <!-- Grid - List : Toggle -->
+        <UiSwitch size="md" w="250px" :list="[
+          { id: '1', value: 'قائمة', icon: 'IconBoards' },
+          { id: '2', value: 'لوحة', icon: 'IconBoards' },
+        ]" />
+
+
+        <!-- Divider -->
+        <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
+
+        <!-- Filter -->
+        <UiDropdown w="40" :list="[
+          { id: 1, value: 'مساحاتي' },
+          { id: 2, value: 'مساحات غيري' },
+        ]">
+        </UiDropdown>
+
+        <!-- Divider -->
+        <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
+
+        <!-- Button -->
+        <UiButton color="secondary" size="sm" icon="IconPlus">
+          مساحة جديدة
+        </UiButton>
+
+
+      </div>
+
+      <!-- Spaces -->
+      <div grid="~ cols-1 md:cols-3 3xl:cols-4 gap-4" font="medium">
+        <!-- Space -->
+        <CardSpace v-for="space in store.getSpaces" :space="space" :key="space.id" />
+      </div>
+    </div>
+  </NuxtLayout>
 </template>
   
 <script setup>
@@ -15,12 +59,7 @@ await store.fetch(businessId)
 // Has no spaces in this business
 if (store.getSpaces?.length <= 0) router.push('/enab/store')
 
-const mySpace = new Space({
-    name: 'مساحاتي',
-    business: {
-        name: store.getSpaces[0] ? store.getSpaces[0].business.name : 'اسم العمل' 
-    },
-    boards: [{ units: store.getSpacesAsUnits }]
-})
+const business = store.getSpaces?.[0]?.business
+
 </script>
   
