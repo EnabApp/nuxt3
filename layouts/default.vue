@@ -18,7 +18,7 @@ useHead({
   charset: "utf-8",
   meta: [{ name: "description", content: "My amazing site." }],
   bodyAttrs: {
-    class: "bg-primary dark:bg-primaryOp text-tertiary dark:text-tertiaryOp mx-15",
+    class: "bg-primary dark:bg-primaryOp text-tertiary dark:text-tertiaryOp",
     dir: "rtl",
     // oncontextmenu: "return false",
 
