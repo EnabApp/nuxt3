@@ -1,9 +1,9 @@
 <template>
     <div w="125px" border="l secondary dark:secondaryOp">
         <div flex="~ col" h="full" justify="between" p="x-8">
-            <div flex="~ col gap-4" pt="8" items="center">
+            <div flex="~ col gap-1" pt="8" items="center">
                 <IconUser2 w="16" h="16" />
-                <span flex="~" w="full" justify="center" bg="green-500" text="md primaryOp dark:primary" rounded="xl" p="y-0.5" font="medium">مجاني</span>
+                <span flex="~" w="full" my="4" justify="center" bg="green-500" text="md primaryOp dark:primary" rounded="xl" p="y-0.5" font="medium">مجاني</span>
 
                 <div my="2" w="full" h="1px" bg="~ secondary dark:secondaryOp"></div>
 
