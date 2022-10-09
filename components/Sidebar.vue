@@ -1,23 +1,21 @@
 <template>
-    <div w="175px" border="l secondary dark:secondaryOp">
-        <div flex="~ col" h="full" justify="between" p="x-10">
-            <div flex="~ col gap-6" pt="10" items="center">
-                <div w="full">
-                    <IconUser2 w="full" h="full" />
-                </div>
-                <span flex="~" w="full" justify="center" bg="green-500" text="lg primaryOp dark:primary" rounded="xl" p="1" font="bold">مجاني</span>
+    <div w="125px" border="l secondary dark:secondaryOp">
+        <div flex="~ col" h="full" justify="between" p="x-8">
+            <div flex="~ col gap-4" pt="8" items="center">
+                <IconUser2 w="16" h="16" />
+                <span flex="~" w="full" justify="center" bg="green-500" text="md primaryOp dark:primary" rounded="xl" p="y-0.5" font="medium">مجاني</span>
 
-                <div my="4" w="full" border="~ secondary dark:secondaryOp"></div>
+                <div my="2" w="full" h="1px" bg="~ secondary dark:secondaryOp"></div>
 
                 <NuxtLink v-for="action in actions" :key="action.route" :to="action.route" w="full" cursor="pointer" aspect="square" rounded="lg" flex="~" items="center" justify="center" :class="[
-                    $route.path == action.route ? 'bg-secondary dark:bg-secondaryOp text-primaryOp dark:text-primary' : 'bg-primary dark:bg-primaryOp text-tertiaryOp dark:text-tertiary',
+                    $route.path == action.route ? 'text-primaryOp dark:text-primary' : 'text-tertiaryOp dark:text-tertiary hover:text-primaryOp dark:hover:text-primary',
                 ]">
-                    <component :is="action.icon" w="12" h="12" />
+                    <component :is="action.icon" w="8" h="8" />
                 </NuxtLink>
             </div>
 
             <div flex="~ col" h="full" pb="10" justify="end" items="center" text="primary">
-                <IconEnabSymbol w="12" h="12" text="green-500" />
+                <IconEnabSymbol w="10" h="10" text="green-500" />
             </div>
         </div>
     </div>
@@ -25,6 +23,8 @@
 
 <script setup>
 const actions = [
+
+
     {
         name: 'boards',
         icon: 'IconBoards',

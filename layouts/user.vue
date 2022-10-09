@@ -2,7 +2,7 @@
     <div flex="~">
         <Sidebar />
         <div flex="grow">
-            <div flex="~ col" m="10"  h="[calc(100vh-5rem)]">
+            <div flex="~ col" m="8"  h="[calc(100vh-4rem)]">
                 <slot />
             </div>
         </div>

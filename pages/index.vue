@@ -12,52 +12,35 @@
       <!-- Actions -->
       <div flex="~ gap-8" font="medium" text="xl">
         <!-- Grid - List : Toggle -->
-        <div flex="~">
-          <div @click="gridState = true" w="30" :class="[
-              gridState
-              ? 'bg-tertiary dark:bg-tertiaryOp'
-              : 'bg-secondary dark:bg-secondaryOp'
-            ]" text="tertiaryOp dark:tertiary" cursor="pointer" flex="~ gap-2" p="3" items="center" rounded="r-xl">
-            <IconNotification w="6" h="6" />
-            <span>قائمة</span>
-          </div>
-          <div @click="gridState = false" w="30" :class="[
-              !gridState
-              ? 'bg-tertiary dark:bg-tertiaryOp'
-              : 'bg-secondary dark:bg-secondaryOp'
-            ]" text="tertiaryOp dark:tertiary" cursor="pointer" flex="~ gap-2" p="3" items="center" rounded="l-xl">
-            <IconNotification w="6" h="6" />
-            <span>لوحة</span>
-          </div>
-        </div>
+        <UiSwitch size="lg" w="250px" :list="[
+          { id: '1', value: 'قائمة', icon: 'IconBoards' },
+          { id: '2', value: 'لوحة', icon: 'IconBoards' },
+        ]" />
+
 
         <!-- Divider -->
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Filter -->
-        <UiDropdown
-          w="40"
-          :list="[
-                { id: 1, value: 'أعمالي' },
-                { id: 2, value: 'أعمال غيري' },
-              ]"
-        >
+        <UiDropdown w="40" :list="[
+          { id: 1, value: 'أعمالي' },
+          { id: 2, value: 'أعمال غيري' },
+        ]">
         </UiDropdown>
 
         <!-- Divider -->
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Button -->
-        <div cursor="pointer" font="medium" text="xl tertiaryOp dark:tertiary hover:tertiary dark:hover:tertiaryOp" p="x-4" flex="~ gap-2" items="center" justify="center" bg="secondary dark:secondaryOp" rounded="xl">
-          <IconPlus w="6" h="6" />
-          <span >عمل جديد</span>
-        </div>
+        <UiButton color="secondary" size="md" icon="IconPlus">
+          عمل جديد
+        </UiButton>
 
 
       </div>
 
       <!-- Businesses -->
-      <div grid="~ cols-5">
+      <div grid="~ cols-1 md:cols-3 3xl:cols-4">
         <!-- Business -->
         <div flex="~ col" rounded="xl" p="6" bg="secondary dark:secondaryOp">
           <!-- Header -->
@@ -107,8 +90,8 @@ const mySpace = new Space({
   business: {
     name: 'أعمالي'
   },
-  boards: [ { units: store.getBusinessesAsUnits } ]
+  boards: [{ units: store.getBusinessesAsUnits }]
 })
 
-const [ gridState, gridToggle ] = useToggle(false)
+const [gridState, gridToggle] = useToggle(false)
 </script>
