@@ -2,9 +2,9 @@
   <div bg="secondary dark:secondaryOp" h="screen" w="screen" flex="~ col" items="center" justify="center">
     <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-45px"
       items="center">
-      
+
         <IconEnab text="primary" w="128px sm:64px md:96px" h="128px sm:64px md:96px" />
-      
+
       <div flex="~ col gap-30px" justify="center" items="center">
         <div flex="~ col gap-25px">
           <!-- Email -->
@@ -106,7 +106,7 @@ const handelSubmit = async () => {
     await login({ email: input.email, password: input.password });
     input.email = "";
     input.password = "";
-    
+
   } catch (err) {
     authError.value = err.message;
   }
