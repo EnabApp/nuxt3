@@ -913,7 +913,7 @@
     "@unocss/preset-mini" "0.45.29"
     "@unocss/preset-wind" "0.45.29"
 
-"@unocss/preset-web-fonts@0.45.29", "@unocss/preset-web-fonts@^0.45.15":
+"@unocss/preset-web-fonts@0.45.29", "@unocss/preset-web-fonts@^0.45.29":
   version "0.45.29"
   resolved "https://registry.yarnpkg.com/@unocss/preset-web-fonts/-/preset-web-fonts-0.45.29.tgz#e1451a15fac6613bb81bf139ade7383ab2efdeb3"
   integrity sha512-l6fOwelKM9nVGPZPuXQXCvLxMaSpU/nN2dTBcR8ksY5IfClJTNRXg8V6NmYBH3C+TuGfgFL4Yl8az7jPAf5hxA==
