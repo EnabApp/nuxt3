@@ -1,18 +1,78 @@
 <!-- SHOW BUSINESSES -->
 
 <template>
-  <SpaceContainer :space="mySpace" />
+  <NuxtLayout name="user">
+    <div flex="~ col gap-8">
+      <!-- Header -->
+      <!-- <Header /> -->
+
+      <!-- Title -->
+      <h1 font="medium" text="3xl primaryOp dark:primary">الأعمال</h1>
+
+      <!-- Actions -->
+      <div flex="~ gap-8" font="medium" text="xl">
+        <!-- Grid - List : Toggle -->
+        <UiSwitch size="md" w="250px" :list="[
+          { id: '1', value: 'قائمة', icon: 'IconBoards' },
+          { id: '2', value: 'لوحة', icon: 'IconBoards' },
+        ]" />
+
+
+        <!-- Divider -->
+        <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
+
+        <!-- Filter -->
+        <UiDropdown w="40" :list="[
+          { id: 1, value: 'أعمالي' },
+          { id: 2, value: 'أعمال غيري' },
+        ]">
+        </UiDropdown>
+
+        <!-- Divider -->
+        <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
+
+        <!-- Button -->
+        <UiButton @click="newBusinessToggle()" color="secondary" size="sm" icon="IconPlus">
+          عمل جديد
+        </UiButton>
+
+        <Teleport to="body">
+          <UiModal v-model="newBusinessState" @cancel="modalCanceled">
+            <template #title>Header</template>
+            <div>
+              body
+            </div>
+          </UiModal>
+        </Teleport>
+
+      </div>
+
+      <!-- Businesses -->
+      <div v-if="store.getBusinesses.length > 0" grid="~ cols-1 md:cols-3 3xl:cols-4 gap-4" font="medium">
+        <!-- Business -->
+        <CardBusiness v-for="business in store.getBusinesses" :business="business" :key="business.id" />
+      </div>
+      <div v-else grid="~ cols-1 md:cols-3 3xl:cols-4 gap-4" font="medium">
+        <!-- Business -->
+        <CardBusiness v-for="business in 2" :key="business" />
+      </div>
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
 const store = useBusiness()
 
-
 // Fetching Businesses
 await store.fetch()
 
-const mySpace = new Space({
-  name: 'أعمالي',
-  boards: [ { units: store.getBusinessesAsUnits } ]
-})
+const [gridState, gridToggle] = useToggle(false)
+
+
+const [newBusinessState, newBusinessToggle] = useToggle(false);
+
+const modalCanceled = () => {
+  newBusinessState.value = false;
+};
+
 </script>

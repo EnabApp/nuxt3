@@ -1,5 +1,5 @@
 import { app, Realm } from "./useRealm";
-import { profileModel } from "../../schemas/profile";
+import { profileModel } from "../../schemas/user/Profile";
 
 export default () => {
   const register = ({ email, password, name, phonenumber }) => {
