@@ -1,11 +1,11 @@
 <template>
-  <div container="none" my="10%">
-    <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-40px"
+  <div h="screen" w="screen" flex="~ col" justify="center" items="center">
+    <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px"
       items="center">
       <!-- ?Logo -->
-      <IconEnabLight text="primary" w="128px" />
+      <IconEnabLight w="128px" />
 
-      <div flex="~ col gap-30px" justify="center" w="100%" h="100%" items="center" class="relative">
+      <div flex="~ col gap-30px" justify="center" w="100%" h="100%" items="center">
         <div class="flex flex-col md:flex-row gap-35px">
           <!-- ?Name -->
           <UiInput v-model="Register.name" w="190px lg:270px" placeholder="الأسم الثلاثي" type="text"
