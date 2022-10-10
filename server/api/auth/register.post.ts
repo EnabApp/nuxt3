@@ -23,7 +23,6 @@ export default defineEventHandler(async (event) => {
     });
     return user;
   } catch (err) {
-    console.log(err);
     return sendError(
       event,
       createError({

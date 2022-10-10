@@ -1,5 +1,5 @@
 import { app, Realm } from "./useRealm";
-import { profileModel } from "../../schemas/user/Profile";
+import { userModel } from "../../schemas/user/User";
 
 export default () => {
   const register = ({ email, password, name, phonenumber }) => {
@@ -12,22 +12,22 @@ export default () => {
         });
 
         //Log the user in
-        const user = await app.logIn(
+        const data = await app.logIn(
           Realm.Credentials.emailPassword(email, password)
         );
 
-        // Create a new profile
-        // const userProfile = new profileModel({
-        //   user_id: app.currentUser.id,
-        //   name: name,
-        //   phonenumber: phonenumber,
-        // });
+        // Create a new User
+        const user = new userModel({
+          _id: app.currentUser.id,
+          email: email,
+          name: name,
+        });
 
-        // await userProfile.save();
+        await user.save();
 
         resolve({
+          data: data,
           user: user,
-          // profile: userProfile,
         });
       } catch (err) {
         return reject(err);
