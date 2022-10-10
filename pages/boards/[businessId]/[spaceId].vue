@@ -12,8 +12,8 @@ const { spaceId } = useRoute()?.params
 
 // Fetching spaces
 await store.fetchSpace(spaceId)
-const space = store.getSpace
-console.log(space)
+const space = null
+console.log(store.getSpace) 
 // const mySpace = new Space({
 //     name: space.name,
 //     business: {

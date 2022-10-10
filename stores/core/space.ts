@@ -32,8 +32,7 @@ export const useSpace = defineStore("space", {
         () => $fetch(`/api/space/${spaceId}`)
       ) as RespType
       if (error.value) { console.log(error); return false }
-      console.log(data.value?.data)
-      this.spaces = data.value?.data
+      this.space = data.value?.data[0]
     }
   }
 });
