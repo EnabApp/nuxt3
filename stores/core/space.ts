@@ -20,7 +20,7 @@ export const useSpace = defineStore("space", {
           colSpan: 1,
           rowSpan: 1,
           componentName: 'DefaultContainer',
-          componentData: {...space, route: `boards/${space.business?.id}/${space.id}`},          
+          componentData: { ...space, route: `boards/${space.business?.id}/${space.id}` },
         })
       })
       return {
@@ -35,12 +35,12 @@ export const useSpace = defineStore("space", {
 
   actions: {
     async fetch(businessId: string) {
-        const { data, error } : RespType = await $fetch('/api/space', {
-            method: 'POST',
-            body: JSON.stringify({ businessId })
-        })
-        if (error) console.log(error)
-        this.spaces = data
+      const { data, pending, error, refresh } = await useAsyncData('spaces',
+        () => $fetch('/api/space')
+      )
+      if (error.value) { console.log(error); return false}
+      console.log(data)
+      this.spaces = data
     }
   }
 });

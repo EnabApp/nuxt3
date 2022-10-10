@@ -43,7 +43,7 @@
                     <UiToolTip text="مالك العمل">
                         <IconUserCircle text="tertiaryOp dark:tertiary" w="6" h="6" />
                     </UiToolTip>
-                    <UiToolTip v-if="!business.is_active" text="مفعل">
+                    <UiToolTip v-if="business.is_active" text="مفعل">
                         <IconVerified text="green" w="6" h="6" />
                     </UiToolTip>
                     <UiToolTip v-else text="غير مفعل">

@@ -14,6 +14,13 @@
                 </UiToolTip>
             </div>
 
+            <UiToolTip position="bottom" :text="$colorMode.preference == 'dark' ? 'الوضع النهاري' : 'الوضع الليلي'" class="hidden md:flex">
+                <div @click="$colorMode.preference == 'dark' ? $colorMode.preference = 'light' : $colorMode.preference = 'dark'" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
+                    <IconLightMode v-if="colorMode.value == 'dark'" text="primaryOp dark:primary" w="5" h="5" />
+                    <IconDarkMode v-else text="primaryOp dark:primary" w="5" h="5" />
+                </div>
+            </UiToolTip>
+
             <UiToolTip position="bottom" text="الإشعارات" class="hidden md:flex">
                 <NuxtLink to="/notifications" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
                     <IconNotification text="primaryOp dark:primary" w="5" h="5" />
