@@ -1,5 +1,3 @@
-import { businessCategoryModel } from "~~/schemas/business-categories/businessCategories";
-
 export default defineEventHandler(async (event) => {
     try {
         const { name } = await useBody(event);

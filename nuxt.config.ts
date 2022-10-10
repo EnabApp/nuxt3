@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
     imports: {
         dirs: [
-            'composables/**',
+            'composables/client/**',
             'models/**',
             'stores/**'
         ],
@@ -32,10 +32,17 @@ export default defineNuxtConfig({
     ],
     runtimeConfig: {
         mongoUrl: process.env.MONGO_URL,
+        mongoAppId: process.env.MONGO_APP_ID,
     },
 
     nitro: {
         plugins: ["~/server/index.ts"],
+        imports: {
+            dirs: [
+                'composables/server/**',
+                'schemas/**',
+            ]
+        }
     },
 
 })

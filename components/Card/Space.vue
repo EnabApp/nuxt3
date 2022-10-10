@@ -13,8 +13,10 @@
             </div>
 
 
-            <br/><br/><br/>
-
+            <div my="3" overflow="hidden" line-clamp="3">
+                {{ space.description }}
+            </div>
+            
 
             <div flex="~" justify="between" items="end" mt="2">
                 <!-- Users -->

@@ -1,5 +1,3 @@
-import { spaceModel } from "~~/schemas/space/Space";
-
 export default defineEventHandler(async (event) => {
     try {
         const { name, business_id } = await useBody(event);

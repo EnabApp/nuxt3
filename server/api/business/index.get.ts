@@ -1,4 +1,3 @@
-import { businessModel } from "../../../schemas/business/Business";
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
