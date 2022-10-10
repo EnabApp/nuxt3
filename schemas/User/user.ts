@@ -4,12 +4,7 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema(
   {
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    password: {
+    name: {
       type: String,
       required: true,
     },
@@ -18,11 +13,13 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    phone_number: {
-      type: String,
-    },
+
     last_login: {
       type: Date,
+    },
+    is_active: {
+      type: Boolean,
+      default: true,
     },
   },
   {
