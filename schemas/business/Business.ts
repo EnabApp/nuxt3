@@ -27,6 +27,12 @@ const businessSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'BusinessCategory'
         },
+        spaces: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Space'
+            }
+        ],
         is_active: {
             type: Boolean,
             default: true
