@@ -33,6 +33,14 @@ const boardSchema = new Schema(
             type: String,
             required: true
         },
+        description: {
+            type: String,
+            required: false
+        },
+        is_active: {
+            type: Boolean,
+            default: true
+        },
         units: {
             type: {
                 desktop: [responsiveSchema],
