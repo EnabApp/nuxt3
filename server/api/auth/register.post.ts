@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
       password: password,
       name: name,
     });
-    return user;
+    return { user };
   } catch (err) {
     return sendError(
       event,

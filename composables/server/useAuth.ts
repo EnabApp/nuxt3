@@ -1,6 +1,7 @@
 import { app, Realm } from "./useRealm";
 
 export default () => {
+  const { userRefactor } = useRefactor();
   const register = ({ email, password, name }) => {
     return new Promise(async (resolve, reject) => {
       try {
@@ -31,10 +32,7 @@ export default () => {
 
         await profile.save();
 
-        resolve({
-          user: data,
-          profile: profile,
-        });
+        resolve(userRefactor(data));
       } catch (err) {
         return reject(err);
       }
@@ -49,7 +47,7 @@ export default () => {
           Realm.Credentials.emailPassword(email, password)
         );
 
-        resolve(user);
+        resolve(userRefactor(user));
       } catch (err) {
         reject(err);
       }

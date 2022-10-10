@@ -15,8 +15,8 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const data = await login({ email, password });
-    return { data };
+    const user = await login({ email, password });
+    return { user };
   } catch (err) {
     return sendError(
       event,
