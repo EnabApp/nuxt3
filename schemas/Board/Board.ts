@@ -47,14 +47,18 @@ const boardSchema = new Schema(
                 tablet: [responsiveSchema],
                 mobile: [responsiveSchema],
             },
-            required: true,
         },
         dataUnits:[
             {
                 type: Schema.Types.ObjectId,
                 ref: "DataUnit",
             }
-        ]
+        ],
+        space: {
+            type: Schema.Types.ObjectId,
+            ref: "Space",
+            required: true
+        }
     },
     {
         timestamps: true
