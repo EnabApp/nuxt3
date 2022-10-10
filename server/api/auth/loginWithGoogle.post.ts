@@ -1,5 +1,4 @@
 import { sendError } from "h3";
-import useAuth from "../../../composables/server/useAuth";
 
 export default defineEventHandler(async (event) => {
   const res = await useBody(event);

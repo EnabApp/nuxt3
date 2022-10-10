@@ -1,6 +1,5 @@
 // import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
-
 export default defineNuxtConfig({
     // isProduction: true,
     // ssr: false,
@@ -16,7 +15,7 @@ export default defineNuxtConfig({
     },
     imports: {
         dirs: [
-            'composables/**',
+            'composables/client/**',
             'models/**',
             'stores/**'
         ],
@@ -32,10 +31,17 @@ export default defineNuxtConfig({
     ],
     runtimeConfig: {
         mongoUrl: process.env.MONGO_URL,
+        mongoAppId: process.env.MONGO_APP_ID,
     },
 
     nitro: {
         plugins: ["~/server/index.ts"],
+        imports: {
+            dirs: [
+                'composables/server/**',
+                'schemas/**',
+            ]
+        },
     },
 
 })

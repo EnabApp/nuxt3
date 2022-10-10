@@ -7,14 +7,16 @@
                     {{ space.name }}
                 </div>
                 <div flex="~ gap-1" text="tertiaryOp dark:tertiary" items="center">
-                    <span text="xl">6</span>
+                    <span text="xl">{{ space.boardsCount ?? 0 }}</span>
                     <IconBoards w="6" h="6" />
                 </div>
             </div>
 
 
-            <br/><br/><br/>
-
+            <div my="3" overflow="hidden" line-clamp="3">
+                {{ space.description }}
+            </div>
+            
 
             <div flex="~" justify="between" items="end" mt="2">
                 <!-- Users -->

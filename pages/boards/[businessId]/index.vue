@@ -32,9 +32,18 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Button -->
-        <UiButton color="secondary" size="sm" icon="IconPlus">
+        <UiButton @click="newSpaceToggle()" color="secondary" size="sm" icon="IconPlus">
           مساحة جديدة
         </UiButton>
+
+        <Teleport to="body">
+          <UiModal v-model="newSpaceState" @cancel="modalCanceled">
+            <template #title>Header</template>
+            <div>
+              body
+            </div>
+          </UiModal>
+        </Teleport>
 
 
       </div>
@@ -61,5 +70,10 @@ if (store.getSpaces?.length <= 0) router.push('/enab/store')
 
 const business = store.getSpaces?.[0]?.business
 
+const [newSpaceState, newSpaceToggle] = useToggle(false);
+
+const modalCanceled = () => {
+  newSpaceState.value = false;
+};
 </script>
   
