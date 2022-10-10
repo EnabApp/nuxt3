@@ -8,39 +8,31 @@ import { ResposnivesType } from "~~/models/Board";
 export const useSpace = defineStore("space", {
   state: () => ({
     spaces: [],
+    space: {},
   }),
 
   getters: {
     getSpaces: (state) => state.spaces,
-    getSpacesAsUnits: (state) => {
-      const units: any = []
-      state.spaces.map((space: SpaceType) => {
-        units.push({
-          id: space.id,
-          colSpan: 1,
-          rowSpan: 1,
-          componentName: 'DefaultContainer',
-          componentData: { ...space, route: `boards/${space.business?.id}/${space.id}` },
-        })
-      })
-      return {
-        desktop: units as UnitType[],
-        tablet: units as UnitType[],
-        mobile: units as UnitType[],
-      } as ResposnivesType;
-    },
-
+    getSpace: (state) => state.space,
     getSelectedSpace: (state) => state.spaces.find((space: SpaceType) => space.id == useRoute().params.spaceId)
   },
 
   actions: {
-    async fetch(businessId: string) {
+    async fetchSpaces(businessId: string) {
       const { data, error } = await useAsyncData('spaces',
-        () => $fetch(`/api/space/${businessId}`)
+        () => $fetch(`/api/space/by-business/${businessId}`)
       ) as RespType
       if (error.value) { console.log(error); return false }
-      console.log(data.value?.data)
       this.spaces = data.value?.data
+    },
+
+    async fetchSpace(spaceId: string) {
+      this.space = {}
+      const { data, error } = await useAsyncData('spaces',
+        () => $fetch(`/api/space/${spaceId}`)
+      ) as RespType
+      if (error.value) { console.log(error); return false }
+      this.space = data.value?.data[0]
     }
   }
 });

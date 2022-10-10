@@ -7,7 +7,16 @@ const businessCategorySchema = new Schema(
             type: String,
             required: true
         },
-
+        businesses: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Business',
+            }
+        ],
+        is_active: {
+            type: Boolean,
+            default: true
+        },
     },
     {
         timestamps: true
