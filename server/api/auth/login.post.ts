@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
       event,
       createError({
         statusCode: 400,
-        statusMessage: "Ivalid params",
+        statusMessage: "Invalid params",
       })
     );
   }
