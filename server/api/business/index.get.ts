@@ -1,8 +1,9 @@
+import { businessModel } from './../../../schemas/business/Business';
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
     try {
-        const businesses = await (await businessModel.find({}).populate("category"));
+        const businesses = await (await businessModel.find({}).populate("categories"));
         const data = businesses.map((business) => {
             return {
                 id: business._id,
@@ -12,7 +13,12 @@ export default defineEventHandler(async (event) => {
                     permissions: business.users[0].Permissions,
                 },
                 address: business.address,
-                category: business.category.name,
+                categories: business.categories.map((category) => {
+                    return {
+                        id: category._id,
+                        name: category.name,
+                    }
+                }),
                 spacesCount: business.spaces.length,
                 is_active: business.is_active,
             };
