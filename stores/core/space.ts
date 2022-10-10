@@ -39,7 +39,7 @@ export const useSpace = defineStore("space", {
         () => $fetch(`/api/space/${businessId}`)
       ) as RespType
       if (error.value) { console.log(error); return false }
-      console.log(data)
+      console.log(data.value?.data)
       this.spaces = data.value?.data
     }
   }
