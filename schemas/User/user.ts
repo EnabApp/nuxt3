@@ -1,32 +1,33 @@
-import mongoose from 'mongoose';
-import bcrypt from "mongoose-bcrypt";
+import mongoose from "mongoose";
+
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     username: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     password: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     email: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     phone_number: {
-        type: String,
+      type: String,
     },
     last_login: {
-        type: Date,
+      type: Date,
     },
-},
-{
-    timestamps: true
-}
+  },
+  {
+    timestamps: true,
+  }
 );
-userSchema.plugin(bcrypt);
-export const userModel = mongoose.model('User', userSchema);
+
+export const userModel = mongoose.model("User", userSchema);

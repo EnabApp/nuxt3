@@ -1,6 +1,11 @@
+import { spaceModel } from "~~/schemas/space/Space";
+
 export default defineEventHandler(async (event) => {
     try {
-        const spaces = await spaceModel.find().populate("business");
+        const { business_id } = await useBody(event);
+        if(!business_id) return { error: "business_id is required" };
+        
+        const spaces = await spaceModel.find({ business: business_id }).populate("business");
         const data = spaces.map((space) => {
             return {
                 id: space._id,
@@ -26,4 +31,3 @@ export default defineEventHandler(async (event) => {
         );
     }
 });
-
