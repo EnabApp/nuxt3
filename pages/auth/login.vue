@@ -15,7 +15,7 @@
           <UiInput v-model="logIn.password" w="190px lg:270px" placeholder="كلمة المرور" type="password"
             icon="IconLock" />
           <!-- ?Error Message -->
-          <p v-if="authError" text="xs red" mr="10px" truncate="~" w="50">
+          <p v-if="authError" text="xs red" mr="10px" >
             {{ authError }}
           </p>
 
@@ -97,7 +97,7 @@ const loginWithGoogle = async () => {
       console.log(res);
     })
     .catch((err) => {
-      console.log(err);
+      authError.value = err.message;
     });
 };
 

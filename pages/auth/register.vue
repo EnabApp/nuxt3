@@ -28,7 +28,7 @@
 
         <!-- ?Error Message -->
         <div mr="75px">
-          <p v-if="authError" text="xs red" truncate="~" w="50">
+          <p v-if="authError" text="xs red">
             {{ authError }}
           </p>
         </div>
@@ -71,50 +71,6 @@ const Register = reactive({
   phonenumber: "",
 });
 
-// const handelSubmit = async () => {
-//   try {
-//     await register({
-//       email: Register.email,
-//       password: Register.password,
-//       name: Register.name,
-//       number: Register.number,
-//     });
-//     Register.email = "";
-//     Register.password = "";
-//     Register.name = "";
-//     Register.number = "";
-//   } catch (err) {
-//     authError.value = err.message;
-//   }
-//   const { data, pending, error, refresh } = await useFetch("/api/auth/register", {
-//     method: "POST",
-//     onRequest({ request, options }) {
-//       options.headers = { "Content-Type": "application/json" };
-//       request = JSON.stringify({
-//         email: Register.email,
-//         password: Register.password,
-//         name: Register.name,
-//         phonenumber: Register.phonenumber,
-//       });
-//     },
-//     onRequestError({ request, options, error }) {
-//       // Handle the request errors
-//       authError.value = error.message;
-//     },
-//     onResponse({ request, response, options }) {
-//       // Process the response data
-//       Register.email = "";
-//       Register.password = "";
-//       Register.name = "";
-//       Register.phonenumber = "";
-//       return response._data;
-//     },
-//     onResponseError({ request, response, options }) {
-//       // Handle the response errors
-//       authError.value = response._data.message;
-//     },
-//   });
-// };
 const handelSubmit = async () => {
   if (!Register.name || !Register.password || !Register.phonenumber)
     return (authError.value = "رجاءََ أملاء جميع الحقول");
