@@ -1,8 +1,7 @@
 import { app, Realm } from "./useRealm";
-import { userModel } from "../../schemas/user/User";
 
 export default () => {
-  const register = ({ email, password, name, phonenumber }) => {
+  const register = ({ email, password, name }) => {
     return new Promise(async (resolve, reject) => {
       try {
         //Create a new email/password account
@@ -25,9 +24,16 @@ export default () => {
 
         await user.save();
 
+        // Create a new Profile
+        const profile = new profileModel({
+          user: app.currentUser.id,
+        });
+
+        await profile.save();
+
         resolve({
-          data: data,
-          user: user,
+          user: data,
+          profile: profile,
         });
       } catch (err) {
         return reject(err);

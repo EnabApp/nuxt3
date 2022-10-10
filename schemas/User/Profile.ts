@@ -8,18 +8,25 @@ const profileSchema = new Schema(
       ref: "User",
       required: true,
     },
+
     points: {
       type: Number,
-      default: 0,
+      default: 100,
     },
     gender: {
-      type: Boolean, // False: Male, True: Female
+      type: Number, // 1: "Male", 2: "Female"
     },
     avatar_url: {
       type: String,
+      default: "https://wordsmith.org/words/images/avatar2_large.png",
+    },
+    phonenumber: {
+      type: String,
+      required: false,
     },
     website: {
       type: String,
+      required: false,
     },
   },
   {
