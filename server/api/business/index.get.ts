@@ -1,9 +1,10 @@
+import { businessCategoryModel } from './../../../schemas/business-categories/businessCategories';
 import { businessModel } from './../../../schemas/business/Business';
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
     try {
-        const businesses = await (await businessModel.find({}).populate("categories"));
+        const businesses = await businessModel.find({}).populate({path: 'categories', model: businessCategoryModel});
         const data = businesses.map((business) => {
             return {
                 id: business._id,
