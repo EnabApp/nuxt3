@@ -33,9 +33,12 @@ export const useBusiness = defineStore("businessStore", {
 
   actions: {
     async fetch(){
-      const { data, error } : RespType = await $fetch('/api/business')
-      if (error) console.log(error)
-      this.businesses = data
+      // const { data, error } : RespType = await $fetch('/api/business')
+      const { data, error } = await useAsyncData('businesses',
+        () => $fetch('/api/business')
+      ) as RespType
+      if (error.value) { console.log(error); return false}
+      this.businesses = data.value?.data
     }
   }
 });

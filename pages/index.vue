@@ -32,17 +32,29 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Button -->
-        <UiButton color="secondary" size="sm" icon="IconPlus">
+        <UiButton @click="newBusinessToggle()" color="secondary" size="sm" icon="IconPlus">
           عمل جديد
         </UiButton>
 
+        <Teleport to="body">
+          <UiModal v-model="newBusinessState" @cancel="modalCanceled">
+            <template #title>Header</template>
+            <div>
+              body
+            </div>
+          </UiModal>
+        </Teleport>
 
       </div>
 
       <!-- Businesses -->
-      <div grid="~ cols-1 md:cols-3 3xl:cols-4 gap-4" font="medium">
+      <div v-if="store.getBusinesses.length > 0" grid="~ cols-1 md:cols-3 3xl:cols-4 gap-4" font="medium">
         <!-- Business -->
         <CardBusiness v-for="business in store.getBusinesses" :business="business" :key="business.id" />
+      </div>
+      <div v-else grid="~ cols-1 md:cols-3 3xl:cols-4 gap-4" font="medium">
+        <!-- Business -->
+        <CardBusiness v-for="business in 2" :key="business" />
       </div>
     </div>
   </NuxtLayout>
@@ -55,4 +67,12 @@ const store = useBusiness()
 await store.fetch()
 
 const [gridState, gridToggle] = useToggle(false)
+
+
+const [newBusinessState, newBusinessToggle] = useToggle(false);
+
+const modalCanceled = () => {
+  newBusinessState.value = false;
+};
+
 </script>
