@@ -1,7 +1,7 @@
 <!-- SHOW BUSINESSES -->
 
 <template>
-  <NuxtLayout name="user">
+  <!-- <NuxtLayout name="user"> -->
     <div flex="~ col gap-8">
       <!-- Header -->
       <!-- <Header /> -->
@@ -57,7 +57,7 @@
         <CardBusiness v-for="business in 2" :key="business" />
       </div>
     </div>
-  </NuxtLayout>
+  <!-- </NuxtLayout> -->
 </template>
 
 <script setup>
