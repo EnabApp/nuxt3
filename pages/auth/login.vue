@@ -79,29 +79,29 @@
               rounded="10px"
               w="190px lg:270px"
               h="50px"
-              flex="~ gap-10px"
+              flex="~"
               justify="center"
               items="center"
               cursor="pointer"
               @click="loginWithGoogle()"
             >
-              <span text="primary dark:primaryOp" font="semibold">Google</span>
-              <IconGoogle w="20px" h="20px" text="primary dark:primaryOp" />
+              <span w="70%" text="center 20px primary dark:primaryOp" >Google</span>
+              <IconGoogle w="22px" text="primary dark:primaryOp" />
             </div>
 
             <!-- ?FaceBook Login -->
             <!-- <div
               bg="primaryOp dark:primary"
-              rounded="5px"
+              rounded="10px"
               w="270px"
               h="50px"
-              flex="~ gap-10px"
+              flex="~"
               justify="center"
               items="center"
               cursor="pointer"
             >
-              <span text="primaryOp" font="semibold">FaceBook</span>
-              <div w="20px" h="20px" bg="primary dark:primaryOp" />
+              <span w="70%" text="center 20px primary dark:primaryOp">FaceBook</span>
+              <div w="20px" bg="primary dark:primaryOp" />
             </div> -->
           </div>
         </div>
