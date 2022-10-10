@@ -21,6 +21,7 @@ export const useBusiness = defineStore("businessStore", {
         () => $fetch('/api/business')
       ) as RespType
       if (error.value) { console.log(error); return false}
+      console.log(data.value?.data)
       this.businesses = data.value?.data
     }
   }
