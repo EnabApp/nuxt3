@@ -867,7 +867,7 @@
     "@unocss/webpack" "0.45.29"
     unocss "0.45.29"
 
-"@unocss/preset-attributify@0.45.29", "@unocss/preset-attributify@^0.45.15":
+"@unocss/preset-attributify@0.45.29", "@unocss/preset-attributify@^0.45.29":
   version "0.45.29"
   resolved "https://registry.yarnpkg.com/@unocss/preset-attributify/-/preset-attributify-0.45.29.tgz#136a2fba121dba88905fe2380719a616feb44a34"
   integrity sha512-qRJsY7Ik/J5mSfO8fDCeIY/SlsA39j+id9duYeutiiHw2kcvDKVjapvFzgmC2KZZe/LWliPTPiYKqE+chtPxmQ==
