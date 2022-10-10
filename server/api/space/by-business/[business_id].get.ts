@@ -3,6 +3,7 @@ import { spaceModel } from "~~/schemas/space/Space";
 export default defineEventHandler(async (event) => {
     try {
         const business_id = await event.context.params.business_id;
+
         if(!business_id) return { error: "business_id is required" };
         
         const spaces = await spaceModel.find({ business: business_id }).populate("business");

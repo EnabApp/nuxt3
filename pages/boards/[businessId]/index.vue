@@ -63,7 +63,7 @@ const router = useRouter()
 const { businessId } = useRoute()?.params
 
 // Fetching spaces
-await store.fetch(businessId)
+await store.fetchSpaces(businessId)
 
 // Has no spaces in this business
 if (store.getSpaces?.length <= 0) router.push('/enab/store')

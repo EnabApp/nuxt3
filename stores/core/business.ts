@@ -16,7 +16,6 @@ export const useBusiness = defineStore("businessStore", {
 
   actions: {
     async fetch(){
-      // const { data, error } : RespType = await $fetch('/api/business')
       const { data, error } = await useAsyncData('businesses',
         () => $fetch('/api/business')
       ) as RespType

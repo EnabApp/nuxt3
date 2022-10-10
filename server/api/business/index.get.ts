@@ -4,7 +4,7 @@ import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
     try {
-        const businesses = await businessModel.find({}).populate({path: 'categories', model: businessCategoryModel});
+        const businesses = await businessModel.find({}).populate({ path: 'categories', model: businessCategoryModel });
         const data = businesses.map((business) => {
             return {
                 id: business._id,

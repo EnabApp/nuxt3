@@ -8,12 +8,12 @@
   
 <script setup>
 const store = useSpace()
-const { businessId } = useRoute()?.params
+const { spaceId } = useRoute()?.params
 
 // Fetching spaces
-await store.fetch(businessId)
-const space = store.getSelectedSpace
-console.log(space)
+await store.fetchSpace(spaceId)
+const space = null
+console.log(store.getSpace) 
 // const mySpace = new Space({
 //     name: space.name,
 //     business: {
