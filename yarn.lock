@@ -633,7 +633,7 @@
     lodash.template "^4.5.0"
     pathe "^0.3.5"
 
-"@pinia/nuxt@^0.4.1":
+"@pinia/nuxt@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pinia/nuxt/-/nuxt-0.4.3.tgz#1cb254ef87faee1524a15ad073516394f3fd6f7c"
   integrity sha512-pDyThvbOi9ztSPI9RDJG857Knb/mmUdDrDiLXbtLVQ3/l647jKncdP4TiRLnMlObENJjcFPEwHT7OVPq4VhQMw==
