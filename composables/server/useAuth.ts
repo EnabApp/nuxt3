@@ -54,18 +54,6 @@ export default () => {
     });
   };
 
-  async function loginWithGoogle(response) {
-    const credentials = Realm.Credentials.google(response.credential);
-    app
-      .logIn(credentials)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        throw err;
-      });
-  }
-
   async function logout() {
     await app.currentUser.logOut();
   }
@@ -74,7 +62,6 @@ export default () => {
   return {
     register,
     login,
-    loginWithGoogle,
     logout,
   };
 };
