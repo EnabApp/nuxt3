@@ -1,3 +1,5 @@
+import { spaceModel } from "~~/schemas/space/Space";
+
 export default defineEventHandler(async (event) => {
     try {
         const spaces = await spaceModel.find().populate("business");
