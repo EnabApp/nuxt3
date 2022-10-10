@@ -23,10 +23,12 @@ const businessSchema = new Schema(
                 ]
             }
         ],
-        category: {
-            type: Schema.Types.ObjectId,
-            ref: 'BusinessCategory'
-        },
+        categories: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'BusinessCategory',
+            }
+        ],
         spaces: [
             {
                 type: Schema.Types.ObjectId,
