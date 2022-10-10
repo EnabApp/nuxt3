@@ -1,4 +1,8 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
+import { useFetch } from "@vueuse/core";
+import { BusinessType } from "~~/models/Business";
+import { UnitType } from "~~/models/Unit";
+import { ResposnivesType } from "~~/models/Board";
 import { RespType } from "~~/types/Response";
 
 export const useBusiness = defineStore("businessStore", {
@@ -17,8 +21,7 @@ export const useBusiness = defineStore("businessStore", {
         () => $fetch('/api/business')
       ) as RespType
       if (error.value) { console.log(error); return false}
-      console.log(data)
-      console.log(error)
+      console.log(data.value?.data)
       this.businesses = data.value?.data
     }
   }

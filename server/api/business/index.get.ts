@@ -13,6 +13,7 @@ export default defineEventHandler(async (event) => {
                 },
                 address: business.address,
                 category: business.category.name,
+                spacesCount: business.spaces.length,
                 is_active: business.is_active,
             };
         });
