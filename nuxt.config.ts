@@ -1,7 +1,5 @@
 // import { defineNuxtConfig } from 'nuxt'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
-import connector from "./server/index";
-
 export default defineNuxtConfig({
     // isProduction: true,
     // ssr: false,
@@ -37,18 +35,13 @@ export default defineNuxtConfig({
     },
 
     nitro: {
-        // plugins: ["~/server/index.ts"],
+        plugins: ["~/server/index.ts"],
         imports: {
             dirs: [
                 'composables/server/**',
                 'schemas/**',
             ]
         },
-        hooks: {
-            compiled: async () => {
-                await connector()
-            }
-        }
     },
 
 })
