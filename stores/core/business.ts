@@ -12,23 +12,6 @@ export const useBusiness = defineStore("businessStore", {
 
   getters: {
     getBusinesses: (state) => state.businesses,
-    getBusinessesAsUnits: (state) => {
-      const units: any = []
-      state.businesses.map((business: BusinessType) => {
-        units.push({
-          id: business.id,
-          colSpan: 1,
-          rowSpan: 1,
-          componentName: 'DefaultContainer',
-          componentData: {...business, route: `boards/${business.id}`},          
-        })
-      })
-      return {
-        desktop: units as UnitType[],
-        tablet: units as UnitType[],
-        mobile: units as UnitType[],
-      } as ResposnivesType;
-    }
   },
 
   actions: {
