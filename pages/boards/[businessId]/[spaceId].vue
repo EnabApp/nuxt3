@@ -13,7 +13,7 @@ const { businessId } = useRoute()?.params
 // Fetching spaces
 await store.fetch(businessId)
 const space = store.getSelectedSpace
-
+console.log(space)
 // const mySpace = new Space({
 //     name: space.name,
 //     business: {
