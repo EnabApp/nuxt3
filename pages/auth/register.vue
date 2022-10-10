@@ -118,7 +118,7 @@ const Register = reactive({
 const handelSubmit = async () => {
   if (!Register.name || !Register.password || !Register.phonenumber)
     return (authError.value = "رجاءََ أملاء جميع الحقول");
-  else if (!Register.email < 10)
+  else if (Register.email < 10)
     return (authError.value = "رجاءََ أدخل بريد إلكتروني صحيح");
   await $fetch("/api/auth/register", {
     method: "post",

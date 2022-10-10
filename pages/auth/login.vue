@@ -12,10 +12,10 @@
             icon="IconEmail" />
 
           <!-- ?Password -->
-          <UiInput v-model="logIn.password" w="190px lg:270px" placeholder="كلمة المرور" type="password" icon="IconLock"
-            relative="~" />
+          <UiInput v-model="logIn.password" w="190px lg:270px" placeholder="كلمة المرور" type="password"
+            icon="IconLock" />
           <!-- ?Error Message -->
-          <p v-if="authError" text="xs red" mr="10px" truncate="~" w="50" absolute="~">
+          <p v-if="authError" text="xs red" mr="10px" truncate="~" w="50">
             {{ authError }}
           </p>
 
