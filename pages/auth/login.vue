@@ -80,30 +80,19 @@
 </template>
 
 <script setup>
-// const authStore = useAuthStore();
-const router = useRouter();
-
 definePageMeta({
   title: "Login",
-  // middleware: "guest",
+  middleware: "guest",
 });
 
+const authStore = useAuthStore();
+const router = useRouter();
 const authError = ref("");
 
 const logIn = reactive({
   email: "",
   password: "",
 });
-
-// const loginWithGoogle = async () => {
-//   await $fetch("/api/auth/loginWithGoogle", { method: "post" })
-//     .then((res) => {
-//       console.log(res);
-//     })
-//     .catch((err) => {
-//       authError.value = err.message;
-//     });
-// };
 
 function loginWithGoogle() {
   authStore

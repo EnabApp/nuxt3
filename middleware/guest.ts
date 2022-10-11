@@ -1,4 +1,7 @@
 export default defineNuxtRouteMiddleware(() => {
-//this is guest middleware
-console.log("this is guest middleware"); 
+  const authStore = useAuthStore();
+  const route = useRoute();
+  if (authStore.user || authStore.token) {
+    return navigateTo("/");
+  }
 });

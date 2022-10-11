@@ -55,14 +55,13 @@
 </template>
 
 <script setup>
-// const authStore = useAuthStore();
-const router = useRouter();
-
 definePageMeta({
   title: "Register",
   middleware: "guest",
 });
 
+const authStore = useAuthStore();
+const router = useRouter();
 const authError = ref("");
 
 // Register Form

@@ -2,15 +2,13 @@ import { acceptHMRUpdate, defineStore } from "pinia";
 
 const baseUrl = "/api/auth";
 
-export const useAuthStore = defineStore({
-  id: "auth",
+export const useAuthStore = defineStore("auth", {
   state: () => ({
     //? Initialize state from local storage to enable user to stay logged in
     user: JSON.parse(localStorage.getItem("user")),
     token: JSON.parse(localStorage.getItem("token")),
   }),
   actions: {
-
     //? Register function
     async register(Register: Object) {
       await $fetch(`${baseUrl}/register`, {
@@ -18,7 +16,7 @@ export const useAuthStore = defineStore({
         body: Register,
       })
         .then((res) => {
-          console.log("this is the Register things" ,res);
+          console.log("Successful Registration");
         })
         .catch((error) => {
           throw error;
@@ -26,12 +24,19 @@ export const useAuthStore = defineStore({
     },
 
     //? Login with Google
-    async loginWithGoogle(){
+    async loginWithGoogle() {
       await $fetch(`${baseUrl}/loginWithGoogle`, {
         method: "POST",
       })
         .then((res) => {
-          console.log("success");
+          // //? Update Pinia state
+          // this.user = res.user;
+          // this.token = res.user.accessToken;
+
+          // //? Store user in local storage to keep them logged in between page refreshes
+          // localStorage.setItem("user", JSON.stringify(this.user));
+          // localStorage.setItem("token", JSON.stringify(this.token));
+          console.log("Successful Login");
         })
         .catch((error) => {
           throw error;
@@ -52,6 +57,7 @@ export const useAuthStore = defineStore({
           //? Store user in local storage to keep them logged in between page refreshes
           localStorage.setItem("user", JSON.stringify(this.user));
           localStorage.setItem("token", JSON.stringify(this.token));
+          console.log("Successful Login");
         })
         .catch((error) => {
           throw error;
