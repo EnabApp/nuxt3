@@ -8,13 +8,8 @@ export default defineEventHandler(async (event) => {
         const space_id = await event.context.params.space_id;
         if (!space_id) return { error: "space_id is required" };
 
-        const space = await spaceModel.find({ _id: space_id }).populate({ path: 'business', model: businessModel }).populate({
-            path: 'boards',
-            populate: {
-                path: 'data_units',
-                model: 'DataUnit'
-            }
-        })
+        const space = await spaceModel.find({ _id: space_id }).populate({ path: 'business', model: businessModel })
+        .populate({ path: 'boards', model: boardModel, populate: { path: 'data_units', model: dataUnitModel } });
         const data = space.map((space) => {
             return {
                 id: space._id,

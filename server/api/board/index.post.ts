@@ -10,6 +10,14 @@ export default defineEventHandler(async (event) => {
             name,
             space: space_id,
             description: description ,
+            units: {
+                desktop: [
+                    
+
+                ],
+                tablet: [],
+                mobile: [],
+            },
         });
         await board.save();
         return board;
