@@ -26,6 +26,7 @@ export default defineEventHandler(async (event) => {
                         name: dataUnit.name,
                     }
                 }),
+                dataUnitsCount: board.dataUnits.length,
             };
         });
         return { data };

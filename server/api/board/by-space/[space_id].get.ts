@@ -17,6 +17,7 @@ export default defineEventHandler(async (event) => {
                 },
                 description: board.description,
                 is_active: board.is_active,
+                dataUnitsCount: board.dataUnits.length,
             };
         });
         return { data };
