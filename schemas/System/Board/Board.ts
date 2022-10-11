@@ -15,14 +15,18 @@ const boardSchema = new Schema(
             type: Boolean,
             default: true
         },
-        units: {
-            type: {
-                desktop: [{ type: mongoose.Schema.Types.ObjectId, ref: "Unit",}],
-                tablet: [{ type: mongoose.Schema.Types.ObjectId, ref: "Unit",}],
-                mobile: [{ type: mongoose.Schema.Types.ObjectId, ref: "Unit",}],
-            },
-            required: true,
-        },
+        desktopUnits: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Unit",
+        }],
+        tabletUnits: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Unit",
+        }],
+        mobileUnits: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Unit",
+        }],
     },
     {
         timestamps: true

@@ -17,20 +17,17 @@ const UnitSchema = new Schema(
         },
         componentName: {
             type: String,
-            required: false
         },
         componentData: {
             type: Object,
-            required: false
         },
         order: {
             type: Number,
-            required: true
         },
         board: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Board",
-            required: true,
+            // required: true,
         },
     },
     {
