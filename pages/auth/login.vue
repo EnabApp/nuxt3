@@ -1,18 +1,18 @@
 <template>
   <div h="screen" w="screen" flex="~ col" justify="center" items="center">
     <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px"
-      items="center" >
+      items="center">
       <!-- ?Logo -->
-      <IconEnabLight w="128px" />
+      <IconEnabLight w="112px md:128px" />
 
       <div flex="~ col gap-30px" justify="center" items="center">
         <div flex="~ col gap-25px">
           <!-- ?Email -->
-          <UiInput v-model="logIn.email" w="190px lg:270px" placeholder="البريد الإلكتروني" type="email"
+          <UiInput v-model="logIn.email" w="190px lg:270px 2xl:320px" placeholder="البريد الإلكتروني" type="email"
             icon="IconEmail" />
 
           <!-- ?Password -->
-          <UiInput v-model="logIn.password" w="190px lg:270px" placeholder="كلمة المرور" type="password"
+          <UiInput v-model="logIn.password" w="190px lg:270px 2xl:320px" placeholder="كلمة المرور" type="password"
             icon="IconLock" />
 
           <!-- ?Error Message -->
@@ -22,7 +22,7 @@
 
           <!-- ?Submit -->
           <div v-if="logIn.email" class="delay-50 duration-200 animate-fade-in">
-            <UiButton @click="handelSubmit()" rounded="10px">
+            <UiButton @click="login()" rounded="10px">
               <div flex="~ gap-15px" justify="center" text="primary dark:primaryOp" items="center">
                 <span>تسجل الدخول</span>
                 <IconLogin w="20px" />
@@ -80,9 +80,12 @@
 </template>
 
 <script setup>
+// const authStore = useAuthStore();
+const router = useRouter();
+
 definePageMeta({
   title: "Login",
-  // middleware: auth,
+  // middleware: "guest",
 });
 
 const authError = ref("");
@@ -92,52 +95,29 @@ const logIn = reactive({
   password: "",
 });
 
-const router = useRouter();
+// const loginWithGoogle = async () => {
+//   await $fetch("/api/auth/loginWithGoogle", { method: "post" })
+//     .then((res) => {
+//       console.log(res);
+//     })
+//     .catch((err) => {
+//       authError.value = err.message;
+//     });
+// };
 
-let user = null;
-let token = null;
+function loginWithGoogle() {
+  authStore
+    .loginWithGoogle()
+    .then((_response) => router.push("/"))
+    .catch((error) => (authError.value = error));
+}
 
-const loginWithGoogle = async () => {
-  await $fetch("/api/auth/loginWithGoogle", { method: "post" })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      authError.value = err.message;
-    });
-};
-
-const handelSubmit = async () => {
+function login() {
   if (!logIn.email || !logIn.password)
     return (authError.value = "الرجاء ادخال البريد الالكتروني وكلمة المرور");
-
-  await $fetch("/api/auth/login", {
-    method: "post",
-    body: { email: logIn.email, password: logIn.password },
-  })
-    .then((res) => {
-      console.log(res);
-
-      user = res.user;
-      token = res.user.accessToken;
-
-      localStorage.setItem("user", JSON.stringify(user));
-      localStorage.setItem("token", JSON.stringify(token));
-      router.push("/");
-      console.log("user shit", user);
-    })
-    .catch((err) => {
-      authError.value = err.message;
-    });
-};
-
-//* logOut function
-
-// const logOut = () => {
-//   user = null;
-//   token = null;
-//   localStorage.removeItem("user");
-//   localStorage.removeItem("token");
-//   router.push("/auth/login");
-// };
+  authStore
+    .login(logIn)
+    .then((_response) => router.push("/"))
+    .catch((error) => (authError.value = error));
+}
 </script>
