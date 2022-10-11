@@ -1,10 +1,11 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
 
 const baseUrl = "/api/auth";
+const router = useRouter();
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    //? Initialize state from local storage to enable user to stay logged in
+    //? Fetch state from local storage to enable user to stay logged in
     user: JSON.parse(localStorage.getItem("user")),
     token: JSON.parse(localStorage.getItem("token")),
   }),
@@ -29,11 +30,11 @@ export const useAuthStore = defineStore("auth", {
         method: "POST",
       })
         .then((res) => {
-          // //? Update Pinia state
+          //? Update Pinia state
           // this.user = res.user;
           // this.token = res.user.accessToken;
 
-          // //? Store user in local storage to keep them logged in between page refreshes
+          //? Store user in local storage
           // localStorage.setItem("user", JSON.stringify(this.user));
           // localStorage.setItem("token", JSON.stringify(this.token));
           console.log("Successful Login");
@@ -54,7 +55,7 @@ export const useAuthStore = defineStore("auth", {
           this.user = res.user;
           this.token = res.user.accessToken;
 
-          //? Store user in local storage to keep them logged in between page refreshes
+          //? Store user in local storage
           localStorage.setItem("user", JSON.stringify(this.user));
           localStorage.setItem("token", JSON.stringify(this.token));
           console.log("Successful Login");
@@ -70,6 +71,7 @@ export const useAuthStore = defineStore("auth", {
       this.token = null;
       localStorage.removeItem("user");
       localStorage.removeItem("token");
+      router.push("/auth/login");
     },
   },
 });

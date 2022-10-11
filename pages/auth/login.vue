@@ -94,19 +94,27 @@ const logIn = reactive({
   password: "",
 });
 
-function loginWithGoogle() {
-  authStore
+const loginWithGoogle = async () => {
+  await authStore
     .loginWithGoogle()
-    .then((_response) => router.push("/"))
-    .catch((error) => (authError.value = error));
-}
+    .then((_response) => {
+      router.push("/");
+    })
+    .catch((error) => {
+      authError.value = error;
+    });
+};
 
-function login() {
+const login = async () => {
   if (!logIn.email || !logIn.password)
     return (authError.value = "الرجاء ادخال البريد الالكتروني وكلمة المرور");
-  authStore
+  await authStore
     .login(logIn)
-    .then((_response) => router.push("/"))
-    .catch((error) => (authError.value = error));
-}
+    .then((_response) => {
+      router.push("/");
+    })
+    .catch((error) => {
+      authError.value = error;
+    });
+};
 </script>
