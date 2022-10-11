@@ -27,6 +27,12 @@
                 </NuxtLink>
             </UiToolTip>
 
+            <UiToolTip position="bottom" text="تسجيل الخروج" class="hidden md:flex">
+                <span to="/notifications" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
+                    <IconLogOut @click="authStore.logout()" text="primaryOp dark:primary" w="5" h="5" />
+                </span>
+            </UiToolTip>
+
             <ClientOnly>
                 <UiToolTip v-if="isTauri" position="bottom" text="اغلاق" class="hidden md:flex">
                     <div @click="exitApp()" flex="~" items="center" justify="center" w="10" h="10" rounded="full" cursor="pointer" bg="secondary dark:secondaryOp">
@@ -40,6 +46,8 @@
 
 <script setup>
 import { exit } from '@tauri-apps/api/process';
+
+const authStore = useAuthStore()
 
 const { state: sidebarState, toggle: sidebarToggle } = useCookieState('sidebar')
 
