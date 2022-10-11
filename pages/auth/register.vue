@@ -60,8 +60,6 @@ definePageMeta({
   // middleware: auth
 });
 
-const { register } = useAuth();
-
 const authError = ref("");
 
 const Register = reactive({
