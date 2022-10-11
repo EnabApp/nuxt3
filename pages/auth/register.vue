@@ -1,28 +1,28 @@
 <template>
-  <div h="screen" w="screen" flex="~ col" justify="center" items="center">
-    <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px"
-      items="center">
+  <div h="screen" w="screen" flex="~ col" justify="center" items="center" mt="100px">
+    <div w="content" h="content" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px" items="center"
+      relative="~">
       <!-- ?Logo -->
-      <IconEnabLight w="128px" />
+      <IconEnabLight w="112px md:128px" bottom="105% md:120%" absolute="~" />
 
       <div flex="~ col gap-30px" justify="center" w="100%" h="100%" items="center">
         <div class="flex flex-col md:flex-row gap-35px">
           <!-- ?Name -->
-          <UiInput v-model="Register.name" w="190px lg:270px" placeholder="الأسم الثلاثي" type="text"
+          <UiInput v-model="Register.name" w="190px lg:270px 2xl:320px" placeholder="الأسم الثلاثي" type="text"
             icon="IconProfile" />
 
           <!-- ?Phone Number -->
-          <UiInput v-model="Register.phonenumber" w="190px lg:270px" placeholder="رقم الهاتف" type="text"
+          <UiInput v-model="Register.phonenumber" w="190px lg:270px 2xl:320px" placeholder="رقم الهاتف" type="text"
             icon="IconPhone" />
         </div>
 
         <div class="flex flex-col md:flex-row gap-35px">
           <!-- ?Email -->
-          <UiInput v-model="Register.email" w="190px lg:270px" placeholder="البريد الإلكتروني" type="email"
+          <UiInput v-model="Register.email" w="190px lg:270px 2xl:320px" placeholder="البريد الإلكتروني" type="email"
             icon="IconEmail" />
 
           <!-- ?Password -->
-          <UiInput v-model="Register.password" w="190px lg:270px" placeholder="كلمة المرور" type="password"
+          <UiInput v-model="Register.password" w="190px lg:270px 2xl:320px" placeholder="كلمة المرور" type="password"
             icon="IconLock" />
         </div>
 
@@ -33,10 +33,10 @@
           </p>
         </div>
         <!-- ?Submit -->
-        <UiButton @click="handelSubmit()">
+        <UiButton @click="register()">
           <div flex="~ gap-15px" justify="center" text="primary dark:primaryOp" items="center">
             <span>انشاء الحساب</span>
-            <IconRegister w="20px" />
+            <IconRegister w="22px" />
           </div>
         </UiButton>
       </div>
@@ -57,11 +57,14 @@
 <script setup>
 definePageMeta({
   title: "Register",
-  // middleware: auth
+  middleware: "guest",
 });
 
+const authStore = useAuthStore();
+const router = useRouter();
 const authError = ref("");
 
+// Register Form
 const Register = reactive({
   name: "",
   email: "",
@@ -69,25 +72,15 @@ const Register = reactive({
   phonenumber: "",
 });
 
-const handelSubmit = async () => {
+// Register
+function register() {
   if (!Register.name || !Register.password || !Register.phonenumber)
     return (authError.value = "رجاءََ أملاء جميع الحقول");
   else if (Register.email < 10)
     return (authError.value = "رجاءََ أدخل بريد إلكتروني صحيح");
-  await $fetch("/api/auth/register", {
-    method: "post",
-    body: {
-      name: Register.name,
-      email: Register.email,
-      password: Register.password,
-      phonenumber: Register.phonenumber,
-    },
-  })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      authError.value = err.message;
-    });
-};
+  authStore
+    .login(Register)
+    .then((_response) => router.push("/"))
+    .catch((error) => (authError.value = error));
+}
 </script>
