@@ -5,9 +5,6 @@ export type UnitType = {
     componentName?: string | null,
     componentData?: any,
     order?: number,
-
-    hideOnTablet?: boolean,
-    showOnMobile?: boolean,
 }
 
 export class Unit {
@@ -17,9 +14,6 @@ export class Unit {
     componentName?: string | null
     componentData?: any
     order?: number
-
-    hideOnTablet?: boolean
-    showOnMobile?: boolean
 
 
     
@@ -31,8 +25,5 @@ export class Unit {
         this.componentName = unit?.componentName
         this.order = unit?.order
         this.componentData = unit?.componentData
-
-        this.hideOnTablet = unit?.hideOnTablet
-        this.showOnMobile = unit?.showOnMobile
     }
 }

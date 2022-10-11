@@ -1,32 +1,6 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const responsiveSchema = new Schema(
-    {
-        colSpan: {
-            type: Number,
-            required: true
-        },
-        rowSpan: {
-            type: Number,
-            required: true
-        },
-        componentName: {
-            type: String,
-            required: false
-        },
-        componentData: {
-            type: Object,
-            required: false
-        },
-        order: {
-            type: Number,
-            required: true
-        },
-
-    }
-);
-
 const boardSchema = new Schema(
     {
         name: {
@@ -43,18 +17,12 @@ const boardSchema = new Schema(
         },
         units: {
             type: {
-                desktop: [responsiveSchema],
-                tablet: [responsiveSchema],
-                mobile: [responsiveSchema],
+                desktop: [{ type: mongoose.Schema.Types.ObjectId, ref: "Unit",}],
+                tablet: [{ type: mongoose.Schema.Types.ObjectId, ref: "Unit",}],
+                mobile: [{ type: mongoose.Schema.Types.ObjectId, ref: "Unit",}],
             },
             required: true,
         },
-        data_units:[
-            {
-                type: Schema.Types.ObjectId,
-                ref: "DataUnit",
-            }
-        ]
     },
     {
         timestamps: true
