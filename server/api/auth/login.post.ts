@@ -9,14 +9,14 @@ export default defineEventHandler(async (event) => {
       event,
       createError({
         statusCode: 400,
-        statusMessage: "Ivalid params",
+        statusMessage: "Invalid params",
       })
     );
   }
 
   try {
-    const data = await login({ email, password });
-    return { data };
+    const user = await login({ email, password });
+    return { user };
   } catch (err) {
     return sendError(
       event,
