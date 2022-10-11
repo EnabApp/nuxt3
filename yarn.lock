@@ -897,7 +897,7 @@
   dependencies:
     "@unocss/core" "0.45.29"
 
-"@unocss/preset-typography@0.45.29", "@unocss/preset-typography@^0.45.15":
+"@unocss/preset-typography@0.45.29", "@unocss/preset-typography@^0.45.29":
   version "0.45.29"
   resolved "https://registry.yarnpkg.com/@unocss/preset-typography/-/preset-typography-0.45.29.tgz#b7ffbb268acc126f5a81b3881944035f6fadc54b"
   integrity sha512-YCgaZPa06K8AMnwCw1VQtpL+ZbtP2MrQ8rPwmZwRrGMtLMv3S/oPBl6YnF56pZCOPFJa+IUWAfTDz4ff92edGg==
