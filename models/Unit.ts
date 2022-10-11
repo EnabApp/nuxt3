@@ -1,7 +1,7 @@
 export type UnitType = {
     id?: string,
-    colSpan?: number,
-    rowSpan?: number,
+    colSpan?: string | number,
+    rowSpan?: string | number,
     componentName?: string | null,
     componentData?: any,
     order?: number,
@@ -9,8 +9,8 @@ export type UnitType = {
 
 export class Unit {
     id?: string
-    colSpan?: number
-    rowSpan?: number
+    colSpan?: string | number
+    rowSpan?: string | number
     componentName?: string | null
     componentData?: any
     order?: number

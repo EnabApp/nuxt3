@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtLoadingIndicator color="#3393FF" />
-      <NuxtPage />
+    <NuxtPage />
   </div>
 </template>
 
@@ -33,18 +33,31 @@ useHead({
 ::-webkit-scrollbar {
   width: 10px;
 }
-  ::-webkit-scrollbar-track {
-  background: rgba(0,0,0, 0); 
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
   border-radius: 1rem;
 
 }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255, .3); 
-    border-radius:10px;
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .3);
+  border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,255,255, .5); 
+  background: rgba(255, 255, 255, .5);
 }
 
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
 
+.page-enter-from,
+.page-leave-to {
+  opacity: 0.6;
+  /* filter: saturate(0.4) */
+  /* filter: blur(0.25rem); */
+}
 </style>

@@ -19,3 +19,12 @@ const fillRest = (units: UnitType[], device: string) => {
         ...[...Array((device == 'desktop' ? 28 : (device == 'tablet' ? 24 : 8)) - size)].map((_, index) => { return { id: index, colSpan: 1, rowSpan: 1 } }) 
     ]
 }
+
+
+export const RandomHexString = (L) => {
+    let hexstring = '';
+    for(let i=0; i<L; i++) {
+        hexstring+=(Math.floor(Math.random() * 16)).toString(16);
+    }
+    return(hexstring);
+}

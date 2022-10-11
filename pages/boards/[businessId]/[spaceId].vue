@@ -7,18 +7,26 @@
 </template>
   
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
+
 const store = useSpace()
 const { spaceId } = useRoute()?.params
 
 // Fetching spaces
 await store.fetchSpace(spaceId)
-
+console.log(store.getSpace)
 const mySpace = new Space({
     name: store.getSpace.name,
     business: {
         name: store.getSpace.business?.name
     },
     boards: store.getSpace.boards
+})
+
+onUnmounted(() => {
+    store.unSetSpace()
 })
 </script>
   

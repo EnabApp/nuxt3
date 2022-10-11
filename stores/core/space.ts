@@ -9,6 +9,7 @@ export const useSpace = defineStore("space", {
   state: () => ({
     spaces: [],
     space: {},
+    selectedBoardIndex: 0
   }),
 
   getters: {
@@ -20,7 +21,10 @@ export const useSpace = defineStore("space", {
   actions: {
     async fetchSpaces(businessId: string) {
       const { data, error } = await useAsyncData('spaces',
-        () => $fetch(`/api/space/by-business/${businessId}`)
+        () => $fetch(`/api/space/by-business/${businessId}`),
+        {
+          initialCache: false
+        }
       ) as RespType
       if (error.value) { console.log(error); return false }
       this.spaces = data.value?.data
@@ -29,11 +33,23 @@ export const useSpace = defineStore("space", {
     async fetchSpace(spaceId: string) {
       this.space = {}
       const { data, error } = await useAsyncData('spaces',
-        () => $fetch(`/api/space/${spaceId}`)
+        () => $fetch(`/api/space/${spaceId}`),
+        {
+          initialCache: false
+        }
       ) as RespType
       if (error.value) { console.log(error); return false }
       console.log(data.value?.data)
       this.space = data.value?.data
+    },
+
+    unSetSpace(){
+      this.space = {}
+      this.selectedBoardIndex = 0
+    },
+
+    setBoardIndex(index: number){
+      this.selectedBoardIndex = index
     }
   }
 });
