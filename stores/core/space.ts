@@ -9,6 +9,7 @@ export const useSpace = defineStore("space", {
   state: () => ({
     spaces: [],
     space: {},
+    selectedBoardIndex: 0
   }),
 
   getters: {
@@ -40,6 +41,15 @@ export const useSpace = defineStore("space", {
       if (error.value) { console.log(error); return false }
       console.log(data.value?.data)
       this.space = data.value?.data
+    },
+
+    unSetSpace(){
+      this.space = {}
+      this.selectedBoardIndex = 0
+    },
+
+    setBoardIndex(index: number){
+      this.selectedBoardIndex = index
     }
   }
 });

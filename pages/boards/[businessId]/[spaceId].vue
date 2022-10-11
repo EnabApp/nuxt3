@@ -24,5 +24,9 @@ const mySpace = new Space({
     },
     boards: store.getSpace.boards
 })
+
+onUnmounted(() => {
+    store.unSetSpace()
+})
 </script>
   

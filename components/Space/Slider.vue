@@ -12,6 +12,8 @@ import Swipe from 'swipejs';
 const router = useRouter()
 const route = useRoute()
 
+const spaceStore = useSpace()
+
 const props = defineProps({
     width: {
         type: Number || String,
@@ -45,16 +47,17 @@ const options = {
     ignore: ".scroller",
     callback: function (index, elem, dir) {
         emit('selectedIndex', index)
-        if (route.params.boardId) {
-            history.pushState(
-                {},
-                null,
-                route.params.boardId = props.spaceData?.boards[index]?.id
-            )
-        }
+        spaceStore.setBoardIndex(index)
+        // if (route.params.boardId) {
+        //     history.pushState(
+        //         {},
+        //         null,
+        //         route.params.boardId = props.spaceData?.boards[index]?.id
+        //     )
+        // }
     },
     transitionEnd: function (index, elem) {
-    }
+    },
 }
 
 onMounted(() => {
