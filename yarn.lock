@@ -840,7 +840,7 @@
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.45.29.tgz#3a71fff138c0ebd03d3714c67db3035be0e46be2"
   integrity sha512-ElnT15Hqb1PZY293HI1CSE73/I76Wsc4sczQCQRHlMrAb73JeB5iM3XOWJFGWqChb7Z5dP+mwDExXgNpRxCQjQ==
 
-"@unocss/inspector@0.45.29", "@unocss/inspector@^0.45.15":
+"@unocss/inspector@0.45.29", "@unocss/inspector@^0.45.29":
   version "0.45.29"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.45.29.tgz#b06d1d2a9b719dabb44dd46be745aa6407d7b6a9"
   integrity sha512-S/E/0yhGDsh1FqdKCuzXrbsALYjn9g4RQyMyGflpkvS1LJ3QDR4oLHqNSg4+9R9zOSGKYACaP4LEoQzUed7KmQ==
