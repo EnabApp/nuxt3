@@ -1,8 +1,8 @@
 import { app, Realm } from "./useRealm";
-import { profileModel } from "../../schemas/user/Profile";
 
 export default () => {
-  const register = ({ email, password, name, phonenumber }) => {
+  const { userRefactor } = useRefactor();
+  const register = ({ email, password, name }) => {
     return new Promise(async (resolve, reject) => {
       try {
         //Create a new email/password account
@@ -12,23 +12,27 @@ export default () => {
         });
 
         //Log the user in
-        const user = await app.logIn(
+        const data = await app.logIn(
           Realm.Credentials.emailPassword(email, password)
         );
 
-        // Create a new profile
-        // const userProfile = new profileModel({
-        //   user_id: app.currentUser.id,
-        //   name: name,
-        //   phonenumber: phonenumber,
-        // });
-
-        // await userProfile.save();
-
-        resolve({
-          user: user,
-          // profile: userProfile,
+        // Create a new User
+        const user = new userModel({
+          _id: app.currentUser.id,
+          email: email,
+          name: name,
         });
+
+        await user.save();
+
+        // Create a new Profile
+        const profile = new profileModel({
+          user: app.currentUser.id,
+        });
+
+        await profile.save();
+
+        resolve(userRefactor(data));
       } catch (err) {
         return reject(err);
       }
@@ -43,24 +47,12 @@ export default () => {
           Realm.Credentials.emailPassword(email, password)
         );
 
-        resolve(user);
+        resolve(userRefactor(user));
       } catch (err) {
         reject(err);
       }
     });
   };
-
-  async function loginWithGoogle(response) {
-    const credentials = Realm.Credentials.google(response.credential);
-    app
-      .logIn(credentials)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        throw err;
-      });
-  }
 
   async function logout() {
     await app.currentUser.logOut();
@@ -70,7 +62,6 @@ export default () => {
   return {
     register,
     login,
-    loginWithGoogle,
     logout,
   };
 };
