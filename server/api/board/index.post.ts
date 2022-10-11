@@ -1,4 +1,3 @@
-import { boardModel} from "~~/schemas/board/Board";
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {

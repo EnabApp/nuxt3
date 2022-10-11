@@ -1,4 +1,3 @@
-import { dataUnitModel } from "~~/schemas/dataUnit/DataUnit";
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
