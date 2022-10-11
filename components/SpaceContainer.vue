@@ -30,13 +30,25 @@
 
 <script setup>
 // Properties
-const props = defineProps(['space'])
+const props = defineProps({
+    space: {
+        type: Object,
+        required: true
+    },
+    fill: {
+        type: Boolean,
+        default: true
+    }
+})
 
 // Responsive Composable
 const { boardSize, desktop, tablet, mobile } = useResponsive();
 
 // Slider Object
 const sliderObject = ref(null)
+
+const emit = defineEmits(['sliderInitated'])
+watch(() => sliderObject.value, () => emit('sliderInitated', sliderObject.value))
 
 // Selected Board Index
 const selectedBoardIndex = ref(0)
@@ -60,9 +72,11 @@ watch(() => elementSize, (size) => {
 // Fill empty units
 const spaceData = computed (() => {
     const space = props.space
-    space?.boards?.forEach(b => {
-        b.units = fillUnits(b.units)
-    })
+    if (props.fill) {
+        space?.boards?.forEach(b => {
+            b.units = fillUnits(b.units)
+        })
+    }
     return space
 })
 </script>
