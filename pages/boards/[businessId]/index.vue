@@ -1,7 +1,7 @@
 <!-- SHOW SPACES FOR A BUSINESS -->
 
 <template>
-<NuxtLayout name="user">
+  <NuxtLayout name="user">
     <div flex="~ col gap-8">
       <!-- Header -->
       <!-- <Header /> -->
@@ -58,6 +58,9 @@
 </template>
   
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
 const store = useSpace()
 const router = useRouter()
 const { businessId } = useRoute()?.params

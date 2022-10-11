@@ -7,6 +7,10 @@
 </template>
   
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
+
 const store = useSpace()
 const { spaceId } = useRoute()?.params
 
