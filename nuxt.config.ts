@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   nitro: {
     plugins: ["~/server/index.ts"],
     imports: {
-      dirs: ["composables/server/**", "schemas/**/**"],
+      dirs: ["composables/server/**/**", "schemas/**/**"],
     },
   },
 });
