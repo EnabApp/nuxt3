@@ -1,8 +1,3 @@
-import { dataUnitModel } from '~~/schemas/dataUnit/DataUnit';
-import { boardModel } from './../../../schemas/board/Board';
-import { businessModel } from './../../../schemas/business/Business';
-import { spaceModel } from "~~/schemas/space/Space";
-
 export default defineEventHandler(async (event) => {
     try {
         const space_id = await event.context.params.space_id;
