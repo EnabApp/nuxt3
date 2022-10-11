@@ -15,6 +15,7 @@ const spaceSchema = new Schema(
             ref: "Business",
             required: true,
         },
+        // boards and data_units are populated in the server
         boards: [
             {
                 type: Schema.Types.ObjectId,

@@ -49,7 +49,7 @@ const boardSchema = new Schema(
             },
             required: true,
         },
-        dataUnit:[
+        data_units:[
             {
                 type: Schema.Types.ObjectId,
                 ref: "DataUnit",
