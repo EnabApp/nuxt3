@@ -32,7 +32,7 @@ export default () => {
           id: space?.business?._id,
           name: space?.business?.name,
         },
-        description: space.description,
+        description: space?.description,
         is_active: space.is_active,
         boardsCount: space.boards.length,
       };
@@ -93,7 +93,7 @@ export default () => {
   const getSpaceByBusinessId = (business_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-    
+
         const spaces = await spaceModel
           .find({ business: business_id })
           .populate("business");
@@ -102,12 +102,12 @@ export default () => {
             id: space?._id,
             name: space?.name,
             business: {
-              id: space?.business._id,
-              name: space?.business.name,
+              id: space?.business?._id,
+              name: space?.business?.name,
             },
             description: space?.description,
             is_active: space?.is_active,
-            boardsCount: space?.boards.length,
+            boardsCount: space?.boards?.length,
           };
         });
         resolve(data);
