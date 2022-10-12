@@ -10,7 +10,7 @@ export default () => {
   };
   const businessRefactor = (business) => {
     return {
-      id: business.id,
+      id: business._id,
       name: business.name,
       address: business.address,
       categories: business.categories.map((category) => {
