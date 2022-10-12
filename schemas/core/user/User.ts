@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const { Schema } = mongoose;
 
 const userSchema = new Schema(
@@ -13,7 +12,12 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-
+    memberships: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Membership",
+      },
+    ],
     last_login: {
       type: Date,
     },
