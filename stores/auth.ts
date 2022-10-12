@@ -1,12 +1,22 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
 
 
-export const useAuthStore = defineStore("auth", {
-  state: async () => ({
+export const useAuthStore = defineStore("auth-store", {
+  state: () => ({
     //? Fetch state from local storage to enable user to stay logged in
     user: useCookie('auth:user'),
     token: useCookie('auth:token'),
+
+    // Login With Email
+    email: '',
+    password: '',
+
+    // Error
+    error: '',
   }),
+  getters: {
+    getError: (state) => state.error,
+  },
   actions: {
     //? Register function
     async register(Register: Object) {
@@ -43,10 +53,18 @@ export const useAuthStore = defineStore("auth", {
     },
 
     //? Login function
-    async login(logIn: Object) {
+    async login() {
+      if (!this.email || !this.password){
+        this.error = "الرجاء ادخال البريد الالكتروني وكلمة المرور.";
+        return true
+      }
+
       await $fetch(`/api/auth/login`, {
         method: "POST",
-        body: logIn,
+        body: {
+          email: this.email,
+          password: this.password,
+        },
       })
         .then(async (res) => {
           //? Update Pinia state
@@ -62,6 +80,7 @@ export const useAuthStore = defineStore("auth", {
           console.log("Successful Login");
         })
         .catch((error) => {
+          this.error = "البريد الالكتروني او كلمة المرور غير صحيحة."
           throw error;
         });
     },
