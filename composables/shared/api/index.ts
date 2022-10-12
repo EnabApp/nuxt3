@@ -16,8 +16,7 @@ export const useApi = async (hook: string, data: any = {}) => {
     }
 
     const get = async (endpoint: string, data: any) => {
-        return await fetcher(endpoint, {
-            params: data,
+        return await fetcher(`${endpoint}/${data}`, {
             method: 'GET',
         })
     }

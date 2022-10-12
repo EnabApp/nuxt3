@@ -16,7 +16,7 @@ export const useBusiness = defineStore("businessStore", {
 
   actions: {
     async fetch(){
-      const data = await useApi("get:business")
+      const data = await useApi("get:space-business", "634417a8c6664cd8d17754a0");
       console.log(data)
 
       // const { data, error } = await useAsyncData('businesses',
