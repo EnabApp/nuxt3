@@ -31,15 +31,27 @@ export default () => {
     };
   };
 
+  const businessCategoryRefactor = (category) => {
+    return {
+      id: category._id,
+      name: category.name,
+      // businesses: category?.businesses,
+      is_active: category.is_active,
+      createdAt: category.createdAt,
+      updatedAt: category.updatedAt,
+    };
+  };
+
   const spaceRefactor = (space) => {
     return {
       id: space._id,
-      name: space.name,
-      business: space.business,
-      description: space.description,
-      is_active: space.is_active,
-      createdAt: space.createdAt,
-      updatedAt: space.updatedAt,
+      name: space?.name,
+      business: space?.business,
+      description: space?.description,
+      is_active: space?.is_active,
+      createdAt: space?.createdAt,
+      updatedAt: space?.updatedAt,
+      boardsCount: space?.boards?.length,
     };
   };
 
@@ -61,5 +73,6 @@ export default () => {
     businessRefactor,
     spaceRefactor,
     boardRefactor,
+    businessCategoryRefactor,
   };
 };

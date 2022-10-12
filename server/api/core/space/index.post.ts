@@ -1,3 +1,4 @@
+import { sendError } from "h3";
 export default defineEventHandler(async (event) => {
   try {
     const { name, business_id, description } = await useBody(event);
