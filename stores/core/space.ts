@@ -20,14 +20,8 @@ export const useSpace = defineStore("space", {
 
   actions: {
     async fetchSpaces(businessId: string) {
-      const { data, error } = await useAsyncData('spaces',
-        () => $fetch(`/api/space/by-business/${businessId}`),
-        {
-          initialCache: false
-        }
-      ) as RespType
-      if (error.value) { console.log(error); return false }
-      this.spaces = data.value?.data
+      const data = await useApi("get:space-business", businessId)
+      this.spaces = data
     },
 
     async fetchSpace(spaceId: string) {

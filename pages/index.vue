@@ -78,6 +78,4 @@ const modalCanceled = () => {
   newBusinessState.value = false;
 };
 
-console.log(allHooks)
-
 </script>
