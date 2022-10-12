@@ -89,10 +89,38 @@ export default () => {
       }
     });
   };
+
+  const getSpaceByBusinessId = (business_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+    
+        const spaces = await spaceModel
+          .find({ business: business_id })
+          .populate("business");
+        const data = spaces.map((space) => {
+          return {
+            id: space?._id,
+            name: space?.name,
+            business: {
+              id: space?.business._id,
+              name: space?.business.name,
+            },
+            description: space?.description,
+            is_active: space?.is_active,
+            boardsCount: space?.boards.length,
+          };
+        });
+        resolve(data);
+      }catch (err) {
+        reject(err);
+      }
+    });
+  };
       //Return Function to be used
       return {
         insertSpace,
         getSpaces,
         getSpaceById,
+        getSpaceByBusinessId,
       };
     };

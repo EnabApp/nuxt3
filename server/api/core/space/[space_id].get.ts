@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
     const { getSpaceById } = useSpace();
     const space = await getSpaceById(space_id);
-    return { space };
+    return  space ;
 
   } catch (err) {
     return sendError(
