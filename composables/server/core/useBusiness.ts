@@ -21,11 +21,9 @@ export default () => {
         reject(err);
       }
     });
-    
-    //Return Function to be used
-    return {
-      inserBusiness,
-    };
+  };
+  //Return Function to be used
+  return {
+    inserBusiness,
   };
 };
-
