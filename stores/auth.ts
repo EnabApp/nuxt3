@@ -59,6 +59,8 @@ export const useAuthStore = defineStore("auth-store", {
         return true
       }
 
+      const router = useRouter();
+
       await $fetch(`/api/auth/login`, {
         method: "POST",
         body: {
@@ -78,6 +80,7 @@ export const useAuthStore = defineStore("auth-store", {
           token.value = JSON.stringify(this.token)
 
           console.log("Successful Login");
+          router.push("/");
         })
         .catch((error) => {
           this.error = "البريد الالكتروني او كلمة المرور غير صحيحة."
