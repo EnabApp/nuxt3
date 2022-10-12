@@ -1,17 +1,17 @@
 export default () => {
   // Export Function to be used
-  const insertBorad = ({ name, space_id, description }) => {
+  const insertBoard = ({ name, space_id, description }) => {
     return new Promise(async (resolve, reject) => {
       try {
         //Do Something
-        const borad = new boradModel({
+        const board = new boardModel({
           name: name,
           space: space_id,
           description: description,
         });
 
-        await borad.save();
-        resolve(borad);
+        await board.save();
+        resolve(board);
       } catch (err) {
         reject(err);
       }
@@ -20,6 +20,6 @@ export default () => {
 
   //Return Function to be used
   return {
-    insertBorad,
+    insertBoard,
   };
 };

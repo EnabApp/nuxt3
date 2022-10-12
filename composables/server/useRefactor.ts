@@ -30,9 +30,23 @@ export default () => {
       updatedAt: business.updatedAt,
     };
   };
+
+  const spaceRefactor = (space) => {
+    return {
+      id: space.id,
+      name: space.name,
+      business: space.business,
+      description: space.description,
+      is_active: space.is_active,
+      createdAt: space.createdAt,
+      updatedAt: space.updatedAt,
+    };
+  };
+
   //Return Function to be used
   return {
     userRefactor,
     businessRefactor,
+    spaceRefactor,
   };
 };

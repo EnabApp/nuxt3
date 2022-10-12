@@ -1,7 +1,7 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-  const { insertBorad } = useBorad();
+  const { insertBoard } = useBoard();
 
   const { name, space_id, description } = await useBody(event);
   try {
@@ -14,8 +14,8 @@ export default defineEventHandler(async (event) => {
         })
       );
     }
-    const borad = await insertBorad({ name, space_id, description });
-    return { borad };
+    const board = await insertBoard({ name, space_id, description });
+    return board;
   } catch (err) {
     return sendError(
       event,
