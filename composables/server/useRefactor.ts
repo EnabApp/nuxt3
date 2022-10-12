@@ -47,9 +47,9 @@ export default () => {
     return {
       id: board._id,
       name: board.name,
-      is_active: board.is_active,
       space: board.space,
       description: board.description,
+      is_active: board.is_active,
       createdAt: board.createdAt,
       updatedAt: board.updatedAt,
     };
