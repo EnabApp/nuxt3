@@ -30,10 +30,10 @@ export default () => {
         const businesses = await businessModel
           .find({})
           .populate({ path: "categories", model: businessCategoryModel });
-        businesses.map((business) => {
+        const data = businesses.map((business) => {
           return businessRefactor(business);
         });
-        resolve(businesses);
+        resolve(data);
       } catch (err) {
         reject(err);
       }
