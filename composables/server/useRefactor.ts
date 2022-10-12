@@ -53,13 +53,13 @@ export default () => {
       createdAt: board.createdAt,
       updatedAt: board.updatedAt,
     };
-
-
+  };
 
   //Return Function to be used
   return {
     userRefactor,
     businessRefactor,
     spaceRefactor,
+    boardRefactor,
   };
 };
