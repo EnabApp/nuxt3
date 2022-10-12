@@ -12,10 +12,7 @@ export const useApi = async (hook: string, data: any = {}) => {
     const baseUrl = '/api/'
 
     const fetcher = async (endpoint: string, options: Object = {}) => {
-        return await useFetch(`${baseUrl}/${endpoint}`, {
-            ...options,
-            initialCache: false,
-        })
+        return await $fetch(`${baseUrl}${endpoint}`, options)
     }
 
     const get = async (endpoint: string, data: any) => {

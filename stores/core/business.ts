@@ -16,12 +16,19 @@ export const useBusiness = defineStore("businessStore", {
 
   actions: {
     async fetch(){
-      const { data, error } = await useAsyncData('businesses',
-        () => $fetch('/api/business')
-      ) as RespType
-      if (error.value) { console.log(error); return false}
-      console.log(data.value?.data)
-      this.businesses = data.value?.data
+      const data = await useApi("get:business")
+      console.log(data)
+
+      // const { data, error } = await useAsyncData('businesses',
+      //   () => $fetch('/api/core/business')
+      // ) as RespType
+      // console.log(data)
+      // const { data, error } = await useAsyncData('businesses',
+      //   () => $fetch('/api/business')
+      // ) as RespType
+      // if (error.value) { console.log(error); return false}
+      // console.log(data.value?.data)
+      // this.businesses = data.value?.data
     }
   }
 });
