@@ -1,5 +1,5 @@
 <template>
-  <div h="screen" w="screen" flex="~ col" justify="center" items="center" mt="100px">
+  <div h="screen" w="screen" flex="~ col" justify="center" items="center" mt="100px" >
     <div w="content" h="content" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px" items="center"
       relative="~">
       <!-- ?Logo -->
@@ -27,11 +27,9 @@
         </div>
 
         <!-- ?Error Message -->
-        <div mr="75px">
           <p v-if="authError" text="xs red">
             {{ authError }}
           </p>
-        </div>
         <!-- ?Submit -->
         <UiButton @click="register()">
           <div flex="~ gap-15px" justify="center" text="primary dark:primaryOp" items="center">
@@ -79,7 +77,7 @@ function register() {
   else if (Register.email < 10)
     return (authError.value = "رجاءََ أدخل بريد إلكتروني صحيح");
   authStore
-    .login(Register)
+    .register(Register)
     .then((_response) => router.push("/"))
     .catch((error) => (authError.value = error));
 }

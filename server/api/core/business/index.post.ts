@@ -1,22 +1,25 @@
+import { sendError } from "h3";
 export default defineEventHandler(async (event) => {
   try {
     const { name, user_id, category_id, address } = await useBody(event);
-    if (!name) return { error: "name is required" };
-    if (!user_id) return { error: "user_id is required" };
-
-    const business = new businessModel({
-      name: name,
-      users: [
-        {
-          user_id: user_id,
-          Permissions: ["admin"],
-        },
-      ],
-      categories: [category_id],
-      address: address,
+    if (!name || !user_id) {
+      return sendError(
+        event,
+        createError({
+          statusCode: 400,
+          statusMessage: "Invalid params",
+        })
+      );
+    }
+    const { inserBusiness } = useBusiness();
+    const business = await inserBusiness({
+      name,
+      user_id,
+      category_id,
+      address,
     });
-    await business.save();
-    return business;
+    return { business };
+
   } catch (err) {
     return sendError(
       event,

@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     dirs: ["~/components", "~/businesses"],
   },
   imports: {
-    dirs: ["composables/client/**", "models/**", "stores/**"],
+    dirs: ["composables/client/**", "models/**", "stores/**", "composables/shared/**"],
   },
 
   modules: [
