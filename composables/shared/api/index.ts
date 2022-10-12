@@ -8,7 +8,7 @@ import allHooks from "./allHooks"
 +------------+-----------------------------------------------------------+
 */
 
-export const useApi = async (hook: string, data: any = {}) => {
+export const useApi = async (hook: string, data: any = null) => {
     const baseUrl = '/api/'
 
     const fetcher = async (endpoint: string, options: Object = {}) => {
@@ -16,7 +16,9 @@ export const useApi = async (hook: string, data: any = {}) => {
     }
 
     const get = async (endpoint: string, data: any) => {
-        return await fetcher(`${endpoint}/${data}`, {
+        let url = endpoint 
+        if (data) url = `${endpoint}/${data}`
+        return await fetcher(url, {
             method: 'GET',
         })
     }

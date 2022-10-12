@@ -16,19 +16,9 @@ export const useBusiness = defineStore("businessStore", {
 
   actions: {
     async fetch(){
-      const data = await useApi("get:space-business", "634417a8c6664cd8d17754a0");
+      const data = await useApi("get:business");
       console.log(data)
-
-      // const { data, error } = await useAsyncData('businesses',
-      //   () => $fetch('/api/core/business')
-      // ) as RespType
-      // console.log(data)
-      // const { data, error } = await useAsyncData('businesses',
-      //   () => $fetch('/api/business')
-      // ) as RespType
-      // if (error.value) { console.log(error); return false}
-      // console.log(data.value?.data)
-      // this.businesses = data.value?.data
+      this.businesses = data
     }
   }
 });
