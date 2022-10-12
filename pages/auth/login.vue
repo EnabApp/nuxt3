@@ -21,8 +21,8 @@
           </p>
 
           <!-- ?Submit -->
-          <div v-if="logIn.email" class="delay-50 duration-200 animate-fade-in">
-            <UiButton @click="login()" rounded="10px">
+          <div v-if="logIn.email" class="delay-50 duration-200 animate-fade-in" flex="~" justify="center">
+            <UiButton @click="login()" rounded="10px" w="140px">
               <div flex="~ gap-15px" justify="center" text="primary dark:primaryOp" items="center">
                 <span>تسجل الدخول</span>
                 <IconLogin w="20px" />
@@ -32,11 +32,7 @@
         </div>
 
         <!-- ?Divider -->
-        <div flex="~" w="full" justify="center" items="center">
-          <div w="33%" rounded="full" h="0.5px" bg="secondaryOp dark:secondary" />
-          <span text="xs md:md lg:lg">او سجل مع</span>
-          <div w="33%" rounded="full" h="0.5px" bg="secondaryOp dark:secondary" />
-        </div>
+        <div w="75%" rounded="full" h="0.5px" bg="secondaryOp dark:secondary" />
         <div>
           <div flex="~ col gap-8px">
             <!-- ?Google Login -->
