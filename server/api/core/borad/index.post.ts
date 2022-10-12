@@ -2,6 +2,7 @@ import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
   const { insertBorad } = useBorad();
+
   const { name, space_id, description } = await useBody(event);
   try {
     if (!name || !space_id) {
