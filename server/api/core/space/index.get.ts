@@ -1,10 +1,10 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-  const { getSpace } = useSpace();
+  const { getSpaces } = useSpace();
   try {
-    const space = await getSpace();
-    return { space };
+    const space = await getSpaces();
+    return  space;
   }
 
   catch (err) {

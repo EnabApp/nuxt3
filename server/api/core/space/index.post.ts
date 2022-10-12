@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
     description,
   });
   
-  return { space };
+  return space ;
 
   } catch (err) {
     return sendError(
