@@ -1,13 +1,11 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-  const { getBusiness } = useBusiness();
+  const { getBusinesses } = useBusiness();
   try {
-    const business = await getBusiness();
-    return { business };
-  }
-
-  catch (err) {
+    const businesses = await getBusinesses();
+    return { businesses };
+  } catch (err) {
     return sendError(
       event,
       createError({

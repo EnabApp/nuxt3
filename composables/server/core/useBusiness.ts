@@ -2,7 +2,7 @@ import { sendError } from "h3";
 export default () => {
   const { businessRefactor } = useRefactor();
   // Export Function to be used
-  const inserBusiness = ({ name, user_id, category_id, address }) => {
+  const insertBusiness = ({ name, user_id, category_id, address }) => {
     return new Promise(async (resolve, reject) => {
       try {
         const business = new businessModel({
@@ -24,7 +24,7 @@ export default () => {
     });
   };
 
-  const getBusiness = () => {
+  const getBusinesses = () => {
     return new Promise(async (resolve, reject) => {
       try {
         const businesses = await businessModel
@@ -41,7 +41,7 @@ export default () => {
   };
   //Return Function to be used
   return {
-    inserBusiness,
-    getBusiness,
+    insertBusiness,
+    getBusinesses,
   };
 };
