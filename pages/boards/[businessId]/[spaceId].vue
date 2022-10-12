@@ -2,7 +2,7 @@
 
 <template>
     <NuxtLayout name="user">
-        <SpaceContainer :space="mySpace" />
+        <SpaceContainer v-if="store.getSpace" :space="mySpace" />
     </NuxtLayout>
 </template>
   
@@ -16,7 +16,7 @@ const { spaceId } = useRoute()?.params
 
 // Fetching spaces
 await store.fetchSpace(spaceId)
-console.log(store.getSpace)
+
 const mySpace = new Space({
     name: store.getSpace.name,
     business: {
