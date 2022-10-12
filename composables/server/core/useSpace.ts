@@ -4,7 +4,7 @@ export default () => {
   const { spaceRefactor } = useRefactor();
 
   // Export Function to be used
-  const inserSpace = ({name, business_id, description }) => {
+  const insertSpace = ({name, business_id, description }) => {
     return new Promise(async (resolve, reject) => {
       try {
         const space = new spaceModel({
@@ -20,7 +20,7 @@ export default () => {
     });
   };
   
-  const getSpace = () => {
+  const getSpaces = () => {
     return new Promise(async (resolve, reject) => {
       try {
         const spaces = await spaceModel.find().populate("business");
@@ -43,9 +43,56 @@ export default () => {
       }
     });
   };
+
+  const getSpaceById = (space_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const space = await spaceModel
+          .findOne({ _id: space_id })
+          .populate({ path: "business", model: businessModel })
+          .populate({
+            path: "boards",
+            model: boardModel,
+            populate: [
+              { path: "desktopUnits", model: UnitModel },
+              { path: "tabletUnits", model: UnitModel },
+              { path: "mobileUnits", model: UnitModel },
+            ],
+          });
+        const data = {
+          id: space?._id,
+          name: space?.name,
+          business: {
+            id: space?.business?._id,
+            name: space?.business?.name,
+          },
+          description: space?.description,
+          is_active: space?.is_active,
+          boards: space?.boards?.map((board) => {
+            return {
+              id: board?._id,
+              name: board?.name,
+              is_active: board?.is_active,
+              description: board?.description,
+              units: {
+                desktop: board?.desktopUnits,
+                tablet: board?.tabletUnits,
+                mobile: board?.mobileUnits,
+              },
+            };
+          }),
+          boardsCount: space?.boards?.length,
+        };
+        resolve(data);
+      }catch (err) {
+        reject(err);
+      }
+    });
+  };
       //Return Function to be used
       return {
-        inserSpace,
-        getSpace,
+        insertSpace,
+        getSpaces,
+        getSpaceById,
       };
     };

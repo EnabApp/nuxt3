@@ -1,7 +1,7 @@
 export default () => {
   const userRefactor = (user) => {
     return {
-      id: user.id,
+      id: user._id,
       accessToken: user.accessToken,
       refreshToken: user.refreshToken,
       email: user._profile.data.email,
@@ -33,7 +33,7 @@ export default () => {
 
   const spaceRefactor = (space) => {
     return {
-      id: space.id,
+      id: space._id,
       name: space.name,
       business: space.business,
       description: space.description,
@@ -43,10 +43,23 @@ export default () => {
     };
   };
 
+  const boardRefactor = (board) => {
+    return {
+      id: board._id,
+      name: board.name,
+      space: board.space,
+      description: board.description,
+      is_active: board.is_active,
+      createdAt: board.createdAt,
+      updatedAt: board.updatedAt,
+    };
+  };
+
   //Return Function to be used
   return {
     userRefactor,
     businessRefactor,
     spaceRefactor,
+    boardRefactor,
   };
 };

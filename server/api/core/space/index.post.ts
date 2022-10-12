@@ -11,8 +11,8 @@ export default defineEventHandler(async (event) => {
       );
     }
 
-  const { inserSpace } = useSpace();
-  const space = await inserSpace({
+  const { insertSpace } = useSpace();
+  const space = await insertSpace({
     name,
     business_id,
     description,
