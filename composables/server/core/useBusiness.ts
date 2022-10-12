@@ -1,6 +1,6 @@
 import { sendError } from "h3";
 export default () => {
-  const { businessRefactor } = useRefactor();
+  const { businessRefactor, businessCategoryRefactor } = useRefactor();
   // Export Function to be used
   const insertBusiness = ({ name, user_id, category_id, address }) => {
     return new Promise(async (resolve, reject) => {
@@ -39,9 +39,36 @@ export default () => {
       }
     });
   };
+
+  const insertBusinessCategory = ({ name }) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const data = new businessCategoryModel({
+          name: name,
+        });
+        resolve(businessCategoryRefactor(data));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+  const getBusinessCategories = () => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const data = await businessCategoryModel.find({});
+        resolve(data);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
   //Return Function to be used
   return {
     insertBusiness,
     getBusinesses,
+    insertBusinessCategory,
+    getBusinessCategories,
   };
 };

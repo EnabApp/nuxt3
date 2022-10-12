@@ -1,34 +1,26 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-    try {
-        const { name, space_id, description } = await useBody(event);
-        if(!name) return { error: "name is required" };
-        if(!space_id) return { error: "space_id is required" };
-        
-        const board = new boardModel({
-            name,
-            space: space_id,
-            description: description ,
-            units: {
-                desktop: [
-                    
+  const { name, space_id, description } = await useBody(event);
+  const { insertBoard } = useBoard();
+  try {
+    if (!name || !space_id)
+      return sendError(
+        event,
+        createError({
+          statusCode: 400,
+          statusMessage: "name and space_id are required",
+        })
+      );
 
-                ],
-                tablet: [],
-                mobile: [],
-            },
-        });
-        await board.save();
-        return board;
-    }
-    catch (err) {
-        return sendError(
-            event,
-            createError({
-                statusCode: 400,
-                statusMessage: err.message,
-            })
-        );
-    }
+    return await insertBoard({ name, space_id, description });
+  } catch (err) {
+    return sendError(
+      event,
+      createError({
+        statusCode: 400,
+        statusMessage: err.message,
+      })
+    );
+  }
 });

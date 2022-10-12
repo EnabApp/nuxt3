@@ -1,12 +1,19 @@
+import { sendError } from "h3";
+
 export default defineEventHandler(async (event) => {
+  const { name } = await useBody(event);
+  const { insertBusinessCategory } = useBusiness();
   try {
-    const { name } = await useBody(event);
-    if (!name) return { error: "name is required" };
-    const businessCategory = new businessCategoryModel({
-      name: name,
-    });
-    await businessCategory.save();
-    return businessCategory;
+    if (!name)
+      return sendError(
+        event,
+        createError({
+          statusCode: 400,
+          statusMessage: "name  required",
+        })
+      );
+
+    return await insertBusinessCategory({ name });
   } catch (err) {
     return sendError(
       event,

@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     const board = await boardModel
       .find({ _id: board_id })
       .populate({ path: "space", model: spaceModel })
-      .populate({ path: "dataUnits", model: dataUnitModel });
+      .populate({ path: "Units", model: UnitModel });
     const data = board.map((board) => {
       return {
         id: board._id,
@@ -19,13 +19,13 @@ export default defineEventHandler(async (event) => {
         },
         description: board.description,
         is_active: board.is_active,
-        dataUnits: board.dataUnits.map((dataUnit) => {
+        Units: board.Units.map((dataUnit) => {
           return {
             id: dataUnit._id,
             name: dataUnit.name,
           };
         }),
-        dataUnitsCount: board.dataUnits.length,
+        UnitsCount: board.Units.length,
       };
     });
     return { data };
