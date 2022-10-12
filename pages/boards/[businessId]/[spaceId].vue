@@ -5,7 +5,7 @@
         <SpaceContainer :space="mySpace" />
     </NuxtLayout>
 </template>
-  
+
 <script setup>
 definePageMeta({
   middleware: 'auth'
@@ -29,4 +29,3 @@ onUnmounted(() => {
     store.unSetSpace()
 })
 </script>
-  

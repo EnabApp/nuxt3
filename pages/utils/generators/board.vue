@@ -13,7 +13,7 @@
         <SpaceContainer v-else :fill="false" :space="store.getSpace" />
     </div>
 </template>
-  
+
 <script setup>
 const store = useGenerator()
 const [stateCode, toggleCode] = useToggle(false)
@@ -24,4 +24,3 @@ const { x, y, style } = useDraggable(el, {
   initialValue: { x: 16, y: 16 },
 })
 </script>
-  

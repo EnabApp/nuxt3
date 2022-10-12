@@ -9,7 +9,7 @@
           <Transition name="slide-up">
             <AuthEmailPassword key="AuthEmailPassword" v-if="emailPasswordState" />
           </Transition>
-          
+
           <p v-if="authStore.getError" w="full" text="xs red right" mr="10px">
               {{ authStore.getError }}
           </p>
@@ -24,8 +24,8 @@
         <!-- ?Divider -->
         <p v-if="emailPasswordState" @click="() => { emailPasswordToggle(), authStore.error = ''}" text="left xs hover:primaryOp dark:hover:primary" cursor="pointer" w="full">تسجيل الدخول بطريقة أخرى</p>
         <div w="100%" v-else rounded="full" h="1px" bg="tertiaryOp dark:tertiary" />
-        
-        
+
+
         <div v-if="!emailPasswordState">
           <div flex="~ col gap-8px">
             <!-- ?Google Login -->

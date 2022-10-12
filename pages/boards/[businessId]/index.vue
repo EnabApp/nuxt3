@@ -56,7 +56,7 @@
     </div>
   </NuxtLayout>
 </template>
-  
+
 <script setup>
 definePageMeta({
   middleware: 'auth'
@@ -79,4 +79,3 @@ const modalCanceled = () => {
   newSpaceState.value = false;
 };
 </script>
-  

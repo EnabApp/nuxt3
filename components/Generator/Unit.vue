@@ -16,7 +16,7 @@
         <div flex="~ col gap-1">
             <UiInput size="sm" v-model="unit.componentData.name" placeholder="Component Name" />
         </div>
-        
+
         <!-- <UiButton @click="store.moveY(unit.id, 'up')"><IconArrowLeft transform="rotate(90 0 0)" w="5" /></UiButton> -->
         <!-- <UiButton @click="store.moveY(unit.id, 'down')"><IconArrowLeft transform="rotate(180 0 0)" w="5" /></UiButton> -->
     </div>
