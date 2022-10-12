@@ -1,6 +1,5 @@
 export default () => {
   const userRefactor = (user) => {
-
     return {
       id: user.id,
       accessToken: user.accessToken,
@@ -14,8 +13,17 @@ export default () => {
       id: business.id,
       name: business.name,
       address: business.address,
-      categories: business.categories,
-      user: business.users,
+      categories: business.categories.map((category) => {
+        return {
+          id: category.id,
+          name: category.name,
+        };
+      }),
+      user: {
+        id: business.users[0].user_id,
+        permissions: business.users[0].Permissions,
+      },
+      spacesCount: business.spaces.length,
       spaces: business.spaces,
       is_active: business.is_active,
       createdAt: business.createdAt,
