@@ -29,15 +29,15 @@ export default () => {
         id: space._id,
         name: space.name,
         business: {
-          // id: space.business._id,
-          // name: space.business.name,
+          id: space?.business?._id,
+          name: space?.business?.name,
         },
         description: space.description,
         is_active: space.is_active,
         boardsCount: space.boards.length,
       };
     });
-    resolve(spaces);
+    resolve(data);
   } catch (err) {
         reject(err);
       }
