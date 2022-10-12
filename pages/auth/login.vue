@@ -13,11 +13,7 @@
           <p v-if="authStore.getError" w="full" text="xs red right" mr="10px">
               {{ authStore.getError }}
           </p>
-            <div key="LoginWithEmailButton" @click="emailPasswordState ? authStore.login() : emailPasswordToggle()" :class="[
-            emailPasswordState
-            ? 'h-40px text-16px w-140px lg:w-220px'
-            : 'h-50px text-20px w-190px lg:w-270px'
-            ]" text="center primary dark:primaryOp" position="relative" bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" duration="200" rounded="10px" flex="~" justify="center" items="center" cursor="pointer">
+            <div key="LoginWithEmailButton" @click="emailPasswordState ? authStore.login() : emailPasswordToggle()" text="center lg primary dark:primaryOp" h="50px" position="relative" bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" w="190px lg:270px" duration="200" rounded="10px" flex="~" justify="center" items="center" cursor="pointer">
               <span v-if="emailPasswordState">تسجيل الدخول</span>
               <span v-else>البريد الالكتروني</span>
               <IconLogin v-if="emailPasswordState" right="6" position="absolute" w="22px" text="primary dark:primaryOp" />
