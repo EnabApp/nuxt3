@@ -99,7 +99,7 @@ export default () => {
           .populate("business");
         const data = spaces.map((space) => {
           return {
-            id: space?._id,
+            id: space._id,
             name: space?.name,
             business: {
               id: space?.business?._id,
