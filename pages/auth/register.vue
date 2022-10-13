@@ -1,42 +1,43 @@
 <template>
-  <div h="screen" w="screen" flex="~ col" justify="center" items="center" mt="100px" >
+  <div h="screen" w="screen" flex="~ col" justify="center" items="center" mt="100px">
     <div w="content" h="content" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px" items="center"
       relative="~">
       <!-- ?Logo -->
       <IconEnabLight w="112px md:128px" bottom="105% md:120%" absolute="~" />
 
-      <div flex="~ col gap-30px" justify="center" w="100%" h="100%" items="center">
-        <div class="flex flex-col md:flex-row gap-35px">
+      <div flex="~ col gap-16px" justify="center" w="100%" h="100%" items="center">
+        <div class="flex flex-col md:flex-row gap-10px">
           <!-- ?Name -->
-          <UiInput v-model="Register.name" w="190px lg:270px 2xl:320px" placeholder="الأسم الثلاثي" type="text"
-            icon="IconProfile" />
+          <UiInput size="lg" v-model="Register.name" w="190px lg:270px 2xl:320px" placeholder="الأسم الثلاثي"
+            type="text" icon="IconProfile" />
 
           <!-- ?Phone Number -->
-          <UiInput v-model="Register.phonenumber" w="190px lg:270px 2xl:320px" placeholder="رقم الهاتف" type="text"
-            icon="IconPhone" />
+          <UiInput size="lg" v-model="Register.phonenumber" w="190px lg:270px 2xl:320px" placeholder="رقم الهاتف"
+            type="text" icon="IconPhone" />
         </div>
 
-        <div class="flex flex-col md:flex-row gap-35px">
+        <div class="flex flex-col md:flex-row gap-10px">
           <!-- ?Email -->
-          <UiInput v-model="Register.email" w="190px lg:270px 2xl:320px" placeholder="البريد الإلكتروني" type="email"
-            icon="IconEmail" />
+          <UiInput size="lg" v-model="Register.email" w="190px lg:270px 2xl:320px" placeholder="البريد الإلكتروني"
+            type="email" icon="IconEmail" />
 
           <!-- ?Password -->
-          <UiInput v-model="Register.password" w="190px lg:270px 2xl:320px" placeholder="كلمة المرور" type="password"
-            icon="IconLock" />
+          <UiInput size="lg" v-model="Register.password" w="190px lg:270px 2xl:320px" placeholder="كلمة المرور"
+            type="password" icon="IconLock" />
         </div>
 
         <!-- ?Error Message -->
-          <p v-if="authError" text="xs red">
-            {{ authError }}
-          </p>
+        <p v-if="authError" text="xs red">
+          {{ authError }}
+        </p>
+
         <!-- ?Submit -->
-        <UiButton @click="register()">
-          <div flex="~ gap-15px" justify="center" text="primary dark:primaryOp" items="center">
-            <span>انشاء الحساب</span>
-            <IconRegister w="22px" />
-          </div>
-        </UiButton>
+        <div @click="register()" text="center lg primary dark:primaryOp" h="50px" position="relative"
+          bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" w="190px lg:270px" duration="200"
+          rounded="10px" flex="~" justify="center" items="center" cursor="pointer">
+          <span>انشاء الحساب</span>
+          <IconRegister right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+        </div>
       </div>
 
       <!-- ?Feed Back -->
@@ -72,13 +73,30 @@ const Register = reactive({
 
 // Register
 function register() {
-  if (!Register.name || !Register.password || !Register.phonenumber)
+  if (
+    !Register.name ||
+    !Register.password ||
+    !Register.phonenumber ||
+    !Register.email
+  )
     return (authError.value = "رجاءََ أملاء جميع الحقول");
-  else if (Register.email < 10)
+  else if (Register.email.length < 8 || !Register.email.includes("@"))
     return (authError.value = "رجاءََ أدخل بريد إلكتروني صحيح");
+  else if (Register.password.length <= 6 || Register.password.length >= 16) {
+    if (Register.password.length <= 6)
+      return (authError.value =
+        "كلمة المرور يجب ان تكون اكبر من 6 احرف و أرقام و رموز");
+    else if (Register.password.length >= 16)
+      return (authError.value =
+        "كلمة المرور يجب ان تكون اصغر من 16 احرف و أرقام و رموز");
+  }
+
   authStore
     .register(Register)
     .then((_response) => router.push("/"))
-    .catch((error) => (authError.value = error));
+    .catch(
+      (error) =>
+        (authError.value = "حدثت مشكلة أثناء التسجيل. الرجاء المحاولة مرة أخرى")
+    );
 }
 </script>
