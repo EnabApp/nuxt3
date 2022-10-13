@@ -17,7 +17,6 @@ export const useBusiness = defineStore("businessStore", {
   actions: {
     async fetch(){
       const data = await useApi("get:business");
-      console.log(data)
       this.businesses = data
     }
   }
