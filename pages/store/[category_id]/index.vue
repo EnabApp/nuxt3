@@ -4,11 +4,11 @@
   <NuxtLayout name="store">
     <div flex="~ gap-10 grow">
       <!-- Right -->
-      <div flex="grow">
+      <div flex="basis-3/4">
         <div flex="~ col gap-4" overflow="y-auto" pl="2" min-h="full" h="0">
           <div grid="~ cols-3 gap-6" shrink="0">
             <!--  bg="secondary dark:secondaryOp  hover:opacity-70 dark:hover:opacity-70" -->
-            <div v-for="item in 12" :key="'package' + item" flex="~ col gap-2" rounded="10px" transition="~ duration-100 ease-in-out" cursor="pointer" class="group" opacity="hover:70">
+            <NuxtLink v-for="item in 12" :key="'package' + item" :to="`/store/${params.category_id}/${item}`" decoration="none" color="inherit" flex="~ col gap-2" rounded="10px" transition="~ duration-100 ease-in-out" cursor="pointer" class="group" opacity="hover:70">
               <div bg="secondary dark:secondaryOp" class="aspect-square" rounded="xl"></div>
               <div flex="~ col gap-1" mx="2">
                 <span text="xl tertiaryOp dark:tertiary group-hover:primaryOp dark:group-hover:primary" font="medium">إدارة {{category?.name}}</span>
@@ -17,7 +17,7 @@
                   <IconPoints w="16px" />
                 </div>
               </div>
-            </div>
+            </NuxtLink>
 
           </div>
 
