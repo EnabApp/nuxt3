@@ -2,9 +2,10 @@ import { acceptHMRUpdate, defineStore } from "pinia";
 
 export const useAuthStore = defineStore("auth-store", {
   state: () => ({
-    //? Fetch state from local storage to enable user to stay logged in
+    //? Fetch state from Cookie storage to enable user to stay logged in
     user: useCookie("auth:user"),
     token: useCookie("auth:token"),
+    refreshToken: useCookie("auth:refreshToken"),
 
     // Login With Email
     email: "",
@@ -70,15 +71,13 @@ export const useAuthStore = defineStore("auth-store", {
       })
         .then(async (res) => {
           //? Update Pinia state
-          this.user = res.user;
           this.token = res.user.accessToken;
 
           //? Store user in local storage
-          const user = useCookie("auth:user");
           const token = useCookie("auth:token");
-          user.value = JSON.stringify(this.user);
+          const refreshToken = JSON.stringify(res.user.refreshToken);
           token.value = JSON.stringify(this.token);
-
+          
           console.log("Successful Login");
           router.push("/");
         })
