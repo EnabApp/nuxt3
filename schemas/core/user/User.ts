@@ -18,6 +18,12 @@ const userSchema = new Schema(
         ref: "Membership",
       },
     ],
+    profile: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Profile",
+      },
+    ],
     last_login: {
       type: Date,
     },
