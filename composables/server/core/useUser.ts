@@ -6,7 +6,7 @@ export default () => {
       try {
         const data = await userModel
           .findOne({ _id: user_id })
-          .populate({ path: "profile", model: profileModel });
+          .populate("profile");
         resolve(data);
       } catch (err) {
         reject(err);
