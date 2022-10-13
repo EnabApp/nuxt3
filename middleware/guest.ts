@@ -1,10 +1,7 @@
-import { useStorage } from '#imports'
-
 export default defineNuxtRouteMiddleware(async () => {
-  const user = useCookie('auth:user')
-  const token = useCookie('auth:token')
+  const token = useCookie("auth:token");
 
-  if (user.value || token.value) {
+  if (token.value) {
     return navigateTo("/");
   }
 });

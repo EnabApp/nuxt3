@@ -1,13 +1,11 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
-import * as Realm2 from "realm-web";
-export const Realm = Realm2;
-export const app = Realm2.getApp("enab-tvihr");
 
 export const useAuthStore = defineStore("auth-store", {
   state: () => ({
-    //? Fetch state from local storage to enable user to stay logged in
+    //? Fetch state from Cookie storage to enable user to stay logged in
     user: useCookie("auth:user"),
     token: useCookie("auth:token"),
+    refreshToken: useCookie("auth:refreshToken"),
 
     // Login With Email
     email: "",
@@ -30,11 +28,12 @@ export const useAuthStore = defineStore("auth-store", {
           console.log("Successful Registration");
         })
         .catch((error) => {
+          this.error = "حدثت مشكلة أثناء التسجيل. الرجاء المحاولة مرة أخرى";
           throw error;
         });
     },
 
-    //? Login with Google
+    // Login with Google
     async loginWithGoogle() {
       const credentials = Realm.Credentials.google("http://localhost:3000");
       app
@@ -65,15 +64,13 @@ export const useAuthStore = defineStore("auth-store", {
       })
         .then(async (res) => {
           //? Update Pinia state
-          this.user = res.user;
           this.token = res.user.accessToken;
 
           //? Store user in local storage
-          const user = useCookie("auth:user");
           const token = useCookie("auth:token");
-          user.value = JSON.stringify(this.user);
+          const refreshToken = JSON.stringify(res.user.refreshToken);
           token.value = JSON.stringify(this.token);
-
+          
           console.log("Successful Login");
           router.push("/");
         })
