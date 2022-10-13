@@ -36,7 +36,8 @@
           bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" w="190px lg:270px" duration="200"
           rounded="10px" flex="~" justify="center" items="center" cursor="pointer">
           <span>انشاء الحساب</span>
-          <IconRegister right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+          <IconRegister v-if="!loading" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+          <IconLoading v-else right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
         </div>
       </div>
 
@@ -62,6 +63,7 @@ definePageMeta({
 const authStore = useAuthStore();
 const router = useRouter();
 const authError = ref("");
+const loading = ref(false);
 
 // Register Form
 const Register = reactive({
@@ -72,7 +74,8 @@ const Register = reactive({
 });
 
 // Register
-function register() {
+const register = async () => {
+  loading.value = true;
   if (
     !Register.name ||
     !Register.password ||
@@ -91,7 +94,7 @@ function register() {
         "كلمة المرور يجب ان تكون اصغر من 16 احرف و أرقام و رموز");
   }
 
-  authStore
+  await authStore
     .register(Register)
     .then((_response) => router.push("/"))
     .catch(
