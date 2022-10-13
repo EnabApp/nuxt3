@@ -23,14 +23,15 @@ export default () => {
           name: name,
         });
 
-        await user.save();
+        
 
         // Create a new Profile
         const profile = new profileModel({
           user: app.currentUser.id,
         });
-
         await profile.save();
+        user.profile = profile._id;
+        await user.save();
 
         resolve(userRefactor(data));
       } catch (err) {
