@@ -7,11 +7,14 @@
       <div flex="grow">
         <div flex="~ col gap-4" overflow="y-auto" pl="2" min-h="full" h="0">
           <div flex="~" justify="between" min-h="200px" rounded="10px" p="12" bg="secondary dark:secondaryOp">
-            <div flex="~ col">
-              <span>خرب بأنّه لو أكضّك
-حسن كاظم</span>
+            <div flex="~ col basis-1/3 gap-2">
+              <span text="2xl primaryOp dark:primary" font="medium">خرب بأنّه لو أكضّك <br />
+                حسن كاظم</span>
+              <p>
+                لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
+              </p>
+              <UiButton size="lg" color="success" w="fit" mt="4">شراء</UiButton>
             </div>
-            <div>Left</div>
           </div>
           <div grid="~ cols-2 gap-4" shrink="0">
             <div v-for="item in 8" :key="'package' + item" flex="~ col gap-4" rounded="10px" p="8" bg="secondary dark:secondaryOp  hover:opacity-70 dark:hover:opacity-70" transition="~ duration-100 ease-in-out" cursor="pointer">

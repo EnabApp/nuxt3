@@ -5,22 +5,22 @@ export const useStore = defineStore("store-store", {
     businesses: [],
 
     categories: [
-        { name: 'الصفحة الرئيسية', route: '/store'},
-        { name: 'المبيعات', route: '/store/sales'},
-        { name: 'المشتريات', route: '/store/purchases'},
-        { name: 'المخزون', route: '/store/stock'},
-        { name: 'المنتجات', route: '/store/products'},
-        { name: 'العملاء', route: '/store/customers'},
-        { name: 'الموردين', route: '/store/suppliers'},
-        { name: 'الموظفين', route: '/store/employees'},
-        { name: 'المحاسبة', route: '/store/accounting'},
-        { name: 'التقارير', route: '/store/reports'},
+        { id: '1', name: 'المبيعات' },
+        { id: '2', name: 'المشتريات' },
+        { id: '3', name: 'المخزون' },
+        { id: '4', name: 'المنتجات' },
+        { id: '5', name: 'العملاء' },
+        { id: '6', name: 'الموردين' },
+        { id: '7', name: 'الموظفين' },
+        { id: '8', name: 'المحاسبة' },
+        { id: '9', name: 'التقارير' },
     ]
   }),
 
   getters: {
     getBusinesses: (state) => state.businesses,
     getCategories: (state) => state.categories,
+    getCategory: (state) => (id: string) => state.categories.find((category) => category.id === id),
   },
 
   actions: {
