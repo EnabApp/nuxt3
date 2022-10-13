@@ -33,6 +33,10 @@ const boardSchema = new Schema(
         ref: "Unit",
       },
     ],
+    space: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Space",
+    },
   },
   {
     timestamps: true,

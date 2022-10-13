@@ -12,8 +12,8 @@ export default defineEventHandler(async (event) => {
         })
       );
     }
-
-    return await getUserById(user_id);
+    const user = await getUserById(user_id);
+    return user;
   } catch (err) {
     return sendError(
       event,
