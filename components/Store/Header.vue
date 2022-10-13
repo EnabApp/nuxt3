@@ -1,9 +1,11 @@
 <template>
     <div flex="~ gap-6">
-        <span v-for="category in categories" :key="category"
+        <NuxtLink v-for="category in store.getCategories" :key="category"
+        :to="category.route"
+        decoration="none"
         cursor="pointer"
         font="medium"
-        text="1rem"
+        un-text="1rem"
         :class="[
             category.route == $route.path
             ? 'text-green-400'
@@ -11,21 +13,10 @@
         ]"
         >
             {{ category.name }}
-        </span>
+        </NuxtLink>
     </div>
 </template>
 
 <script setup>
-const categories = [
-    { name: 'الصفحة الرئيسية', route: '/store'},
-    { name: 'المبيعات', route: '/store/sales'},
-    { name: 'المشتريات', route: '/store/purchases'},
-    { name: 'المخزون', route: '/store/stock'},
-    { name: 'المنتجات', route: '/store/products'},
-    { name: 'العملاء', route: '/store/customers'},
-    { name: 'الموردين', route: '/store/suppliers'},
-    { name: 'الموظفين', route: '/store/employees'},
-    { name: 'المحاسبة', route: '/store/accounting'},
-    { name: 'التقارير', route: '/store/reports'},
-]
+const store = useStore()
 </script>
