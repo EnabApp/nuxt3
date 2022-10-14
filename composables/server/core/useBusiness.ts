@@ -88,6 +88,22 @@ export default () => {
     });
   };
 
+  const updateBusiness = (business_id, name, address, categories ) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const business = await businessModel.findByIdAndUpdate(
+          business_id,
+          {
+            new: true
+          },
+          
+        resolve("Business Updated");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
 
 
   //Return Function to be used
@@ -98,5 +114,6 @@ export default () => {
     getBusinessCategories,
     deleteBusiness,
     deleteCategory,
+    updateBusiness,
   };
 };
