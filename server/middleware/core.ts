@@ -17,9 +17,15 @@ export default defineEventHandler(async (event) => {
 
   const token = event.req.headers["authorization"]?.split(" ")[1];
 
-  const decoded = decode(token);
+  const chackToken = () => {
+    if (Date.now() >= decode(token).exp * 1000 || !token) {
+      return null;
+    } else {
+      return true;
+    }
+  };
 
-  if (!decoded) {
+  if (!chackToken()) {
     return sendError(
       event,
       createError({
