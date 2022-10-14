@@ -20,6 +20,12 @@ export default defineEventHandler(async (event) => {
     });
     return { business };
 
+    // const  business = useBusiness();
+    
+    // const data = await business.insert({ name, user_id, category_id, address });
+
+    // return data
+
   } catch (err) {
     return sendError(
       event,
