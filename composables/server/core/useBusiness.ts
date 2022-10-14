@@ -89,6 +89,32 @@ export default () => {
     });
   };
 
+  //update business
+  const updateBusiness = ({ id, name, user_id, category_id, address }) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const data = await businessModel.findOneAndUpdate(
+          { _id: id },
+          {
+            name: name,
+            users: [
+              {
+                user_id: user_id,
+                Permissions: ["owner"],
+              },
+            ],
+            categories: [category_id],
+            address: address,
+          },
+          { new: true }
+        );
+        resolve(businessRefactor(data));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
   //Return Function to be used
   return {
     insertBusiness,
