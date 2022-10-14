@@ -1,7 +1,7 @@
 <!-- SHOW SPACES FOR A BUSINESS -->
 
 <template>
-<NuxtLayout name="user">
+  <NuxtLayout name="user">
     <div flex="~ col gap-8">
       <!-- Header -->
       <!-- <Header /> -->
@@ -38,9 +38,9 @@
 
         <Teleport to="body">
           <UiModal v-model="newSpaceState" @cancel="modalCanceled">
-            <template #title>Header</template>
+            <template #title>مساحة جديدة</template>
             <div>
-              body
+              انشاء مساحة جديدة
             </div>
           </UiModal>
         </Teleport>
@@ -58,6 +58,9 @@
 </template>
   
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
 const store = useSpace()
 const router = useRouter()
 const { businessId } = useRoute()?.params
@@ -65,8 +68,6 @@ const { businessId } = useRoute()?.params
 // Fetching spaces
 await store.fetchSpaces(businessId)
 
-// Has no spaces in this business
-if (store.getSpaces?.length <= 0) router.push('/enab/store')
 
 const business = store.getSpaces?.[0]?.business
 
@@ -75,5 +76,11 @@ const [newSpaceState, newSpaceToggle] = useToggle(false);
 const modalCanceled = () => {
   newSpaceState.value = false;
 };
+
+// Has no spaces in this business
+if (store.getSpaces?.length <= 0) newSpaceState.value = true
+watch( () => newSpaceState.value, (newVal) => {
+  if (store.getSpaces?.length <= 0) newSpaceState.value = true
+})
 </script>
   

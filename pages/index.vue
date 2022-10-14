@@ -61,6 +61,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
 const store = useBusiness()
 
 // Fetching Businesses

@@ -2,24 +2,31 @@
 
 <template>
     <NuxtLayout name="user">
-        <SpaceContainer :space="space" />
+        <SpaceContainer v-if="store.getSpace" :space="mySpace" />
     </NuxtLayout>
 </template>
   
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
+
 const store = useSpace()
 const { spaceId } = useRoute()?.params
 
 // Fetching spaces
 await store.fetchSpace(spaceId)
-const space = null
-console.log(store.getSpace) 
-// const mySpace = new Space({
-//     name: space.name,
-//     business: {
-//         name: space.business?.name
-//     },
-//     boards: space.units
-// })
+
+const mySpace = new Space({
+    name: store.getSpace.name,
+    business: {
+        name: store.getSpace.business?.name
+    },
+    boards: store.getSpace.boards
+})
+
+onUnmounted(() => {
+    store.unSetSpace()
+})
 </script>
   

@@ -1,25 +1,19 @@
 export type UnitType = {
     id?: string,
-    colSpan?: number,
-    rowSpan?: number,
+    colSpan?: string | number,
+    rowSpan?: string | number,
     componentName?: string | null,
     componentData?: any,
     order?: number,
-
-    hideOnTablet?: boolean,
-    showOnMobile?: boolean,
 }
 
 export class Unit {
     id?: string
-    colSpan?: number
-    rowSpan?: number
+    colSpan?: string | number
+    rowSpan?: string | number
     componentName?: string | null
     componentData?: any
     order?: number
-
-    hideOnTablet?: boolean
-    showOnMobile?: boolean
 
 
     
@@ -31,8 +25,5 @@ export class Unit {
         this.componentName = unit?.componentName
         this.order = unit?.order
         this.componentData = unit?.componentData
-
-        this.hideOnTablet = unit?.hideOnTablet
-        this.showOnMobile = unit?.showOnMobile
     }
 }

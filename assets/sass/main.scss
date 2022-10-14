@@ -21,3 +21,80 @@
     transform: translateX(40px);
     opacity: 0;
 }
+
+// SLIDE UP TRANSITION
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+
+
+
+
+* {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently  supported by Chrome and Opera */
+}
+
+input,
+input:before,
+input:after {
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 1rem;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(127.5, 127.5, 127.5);
+  border-radius: 10px;
+}
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: rgba(127.5, 127.5, 127.5);
+// }
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0.6;
+  /* filter: saturate(0.4) */
+  /* filter: blur(0.25rem); */
+}

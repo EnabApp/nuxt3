@@ -7,8 +7,9 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "@enab/components": "^1.0.1-beta.5",
+    "@enab/components": "^1.0.1-beta.6",
     "@nuxt/kit": "^3.0.0-rc.11",
+    "jwt-decode": "^3.1.2",
     "mongoose": "^6.6.5",
     "nuxi": "^3.0.0-rc.11",
     "nuxt": "npm:nuxt3@latest",
