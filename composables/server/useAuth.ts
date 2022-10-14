@@ -23,8 +23,6 @@ export default () => {
           name: name,
         });
 
-        
-
         // Create a new Profile
         const profile = new profileModel({
           user: app.currentUser.id,
