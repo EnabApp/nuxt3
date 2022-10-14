@@ -15,5 +15,7 @@ export default [
   { hook: "get:spaces-business", endpoint: "core/space/by-business", data: [{ name: "business_id" }] },
   { hook: "get:board", endpoint: "core/board" },
   { hook: "get:board", endpoint: "core/board", data: [{ name: "board_id" }] },
+  { hook: "post:board", endpoint: "core/board", data: [{ name: "name" }, { name: "space_id" }, { name: "description" }] },
+  { hook: "delete:board", endpoint: "core/board", data: [{ name: "board_id" }] },
 
 ];

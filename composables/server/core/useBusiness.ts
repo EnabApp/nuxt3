@@ -89,10 +89,6 @@ export default () => {
     });
   };
 
-
-
-
-
   //Return Function to be used
   return {
     insertBusiness,
@@ -101,6 +97,5 @@ export default () => {
     getBusinessCategories,
     deleteBusiness,
     deleteCategory,
-   
   };
 };
