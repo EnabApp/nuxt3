@@ -5,21 +5,20 @@
       <div flex="~ col" w="full">
         <div flex="~ col gap-4" overflow="y-auto" pl="2" min-h="full" h="0">
           <!-- BANNER -->
-          <div position="relative" flex="~" justify="between" rounded="10px" p="12" style="background-image: url('https://www.inma.org/files/images/blogs/feature_photos/print_september20_hannah_2020-in-ads-1800.jpg'); background-size: contain" min-h="300px">
+          <NuxtLink :to="'/store/package-1'" decoration="none" color="inherit" position="relative" flex="~" justify="between" rounded="10px" p="12" style="background-image: url('https://www.inma.org/files/images/blogs/feature_photos/print_september20_hannah_2020-in-ads-1800.jpg'); background-size: contain" filter="hover:brightness-110" transition="all duration-200 delay-75 ease-in-out" min-h="300px">
             <!-- Content -->
             <div flex="~ col basis-1/3 gap-2" justify="end" z="10">
               <div flex="~ col gap-4">
-                <span text="4xl primaryOp dark:primary" font="medium">خرب بأنّه لو أكضّك <br />
+                <span text="4xl primary" font="medium">خرب بأنّه لو أكضّك <br />
                   حسن كاظم</span>
                 <p text="xl">
                   لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
                 </p>
               </div>
-              <UiButton size="lg" color="success" w="fit" mt="4">شراء</UiButton>
             </div>
             <!-- Overlay -->
-            <div class="bg-gradient-to-br from-transparent to-primaryOp opacity-90" position="absolute" top="0" right="0" rounded="9px" w="full" h="full"></div>
-          </div>
+            <div class="bg-gradient-to-br from-transparent via-transparent to-primary dark:to-primaryOp opacity-90" position="absolute" top="0" right="0" rounded="9px" w="full" h="full"></div>
+          </NuxtLink>
 
 
           <!-- PACKAGES -->
