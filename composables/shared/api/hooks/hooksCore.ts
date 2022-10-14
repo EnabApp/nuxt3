@@ -11,6 +11,13 @@ export default [
   { hook: "get:space", endpoint: "core/space", data: [{ name: "space_id" }]},
   { hook: "get:spaces-business", endpoint: "core/space/by-business", data: [{ name: "business_id" }]},
   { hook: "get:board", endpoint: "core/board" },
-  { hook: "get:board", endpoint: "core/board" , data: [{ name: "board_id" }]},
+  { hook: "get:board", endpoint: "core/board" , data: [{ name: "board_id" }]}, 
+  { hook: "post:permission", endpoint: "core/permission", data: [{ name: "business_id" }, { name: "client_id" }, { name: "ref" }, { name: "type" }]},
+  { hook: "get:permission", endpoint: "core/permission" },
+  { hook: "get:permission-business", endpoint: "core/permission/by-business", data: [{ name: "business_id" }]},
+  { hook: "get:permission-client", endpoint: "core/permission/by-client", data: [{ name: "client_id" }]},
+  { hook: "put:permission", endpoint: "core/permission", data: [{ name: "id" }, { name: "business_id" }, { name: "client" }, { name: "ref" }, { name: "type" }]},
+  { hook: "delete:permission", endpoint: "core/permission", data: [{ name: "id" }]},
+
 
 ];

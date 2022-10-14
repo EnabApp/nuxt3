@@ -1,3 +1,4 @@
+import { ref } from '#imports';
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
@@ -18,7 +19,7 @@ const permissionSchema = new Schema(
             enum: ['User', 'Team']
         },
         // type_id is the id of user or team has this permission
-        type_id: {
+        client: {
             type: Schema.Types.ObjectId,
             required: true,
             refPath: 'ref'
@@ -30,15 +31,24 @@ const permissionSchema = new Schema(
     }
 );
 
-const Permission = mongoose.model("Permission", permissionSchema);
+const permissionModel = mongoose.model("Permission", permissionSchema);
 
 const permissionRefactor = (data) => {
-    return {
-        id: data._id,
-        type: data.type,
-        business_id: data.business_id,
-        type_id: data.type_id,
-    };
+    if(data.ref == 'User'){
+        return {
+            id: data._id,
+            type: data.type,
+            business_id: data.business_id,
+            user_id: data.client,
+        };
+    }else{
+        return {
+            id: data._id,
+            type: data.type,
+            business_id: data.business_id,
+            team_id: data.client,
+        };
+    }
 };
 
-export { Permission, permissionRefactor };
+export { permissionModel, permissionRefactor };
