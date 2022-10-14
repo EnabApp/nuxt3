@@ -5,7 +5,7 @@
       <!-- ?Logo -->
       <IconEnabLight w="112px md:128px" bottom="105% md:120%" absolute="~" />
 
-      <div flex="~ col gap-16px" justify="center" w="100%" h="100%" items="center">
+      <div flex="~ col gap-10px md:gap-16px" justify="center" w="100%" h="100%" items="center">
         <div class="flex flex-col md:flex-row gap-10px">
           <!-- ?Name -->
           <UiInput size="lg" v-model="Register.name" w="190px lg:270px 2xl:320px" placeholder="الأسم الثلاثي"
@@ -96,10 +96,12 @@ const register = async () => {
 
   await authStore
     .register(Register)
-    .then((_response) => router.push("/"))
-    .catch(
-      (error) =>
-        (authError.value = "حدثت مشكلة أثناء التسجيل. الرجاء المحاولة مرة أخرى")
-    );
-}
+    .then((_response) => {
+      return navigateTo("/auth/login");
+    })
+    .catch((error) => {
+      loading.value = false;
+      authError.value = "حدثت مشكلة أثناء التسجيل. الرجاء المحاولة مرة أخرى";
+    });
+};
 </script>
