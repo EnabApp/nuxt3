@@ -10,9 +10,18 @@ import allHooks from "./allHooks"
 
 export const useApi = async (hook: string, data: any = null) => {
     const baseUrl = '/api/'
+    const token = useCookie("auth:token")
 
     const fetcher = async (endpoint: string, options: Object = {}) => {
-        return await $fetch(`${baseUrl}${endpoint}`, options)
+        return await $fetch(`${baseUrl}${endpoint}`, {
+            ...options,
+            headers:  {
+                Accept: 'application/json',
+                'Authorization': `Bearer ${token.value}`,
+
+                // 'Cache-Control': 'no-cache'
+            }
+        })
     }
 
     const get = async (endpoint: string, data: any) => {
