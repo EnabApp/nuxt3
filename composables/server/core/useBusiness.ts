@@ -64,11 +64,24 @@ export default () => {
     });
   };
 
+  const deleteBusiness = (business_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const business = await businessModel.findByIdAndDelete(business_id);
+        resolve("Business Deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+
   //Return Function to be used
   return {
     insertBusiness,
     getBusinesses,
     insertBusinessCategory,
     getBusinessCategories,
+    deleteBusiness,
   };
 };
