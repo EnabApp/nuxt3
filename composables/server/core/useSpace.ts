@@ -116,11 +116,24 @@ export default () => {
       }
     });
   };
+
+  const deleteSpace = (space_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await spaceModel.findByIdAndDelete(space_id);
+        resolve("Space Deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
       //Return Function to be used
       return {
         insertSpace,
         getSpaces,
         getSpaceById,
         getSpaceByBusinessId,
+        deleteSpace,
       };
     };

@@ -83,10 +83,24 @@ export default () => {
       }
     });
   };
+
+
+
+  const deleteBoard = (board_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await boardModel.findByIdAndDelete(board_id);
+        resolve("Board deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
   //Return Function to be used
   return {
     insertBoard,
     getBoards,
     getBoardById,
+    deleteBoard,
   };
 };

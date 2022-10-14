@@ -25,7 +25,6 @@ export default () => {
   };
 
   const getBusinesses = () => {
-    console.log('fdfsd')
     return new Promise(async (resolve, reject) => {
       try {
         const businesses = await businessModel
@@ -65,11 +64,38 @@ export default () => {
     });
   };
 
+  const deleteBusiness = (business_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await businessModel.findByIdAndDelete(business_id);
+        resolve("Business Deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+  const deleteCategory = (category_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await businessCategoryModel.findByIdAndDelete(
+          category_id
+        );
+
+        resolve("Category Deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
   //Return Function to be used
   return {
     insertBusiness,
     getBusinesses,
     insertBusinessCategory,
     getBusinessCategories,
+    deleteBusiness,
+    deleteCategory,
   };
 };
