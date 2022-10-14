@@ -1,18 +1,16 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
 
-
 export const useAuthStore = defineStore("auth-store", {
   state: () => ({
-    //? Fetch state from local storage to enable user to stay logged in
-    user: useCookie('auth:user'),
-    token: useCookie('auth:token'),
+    //? Fetch state from Cookie storage to enable user to stay logged in
+    token: useCookie("auth:token"),
 
     // Login With Email
-    email: '',
-    password: '',
+    email: "",
+    password: "",
 
     // Error
-    error: '',
+    error: "",
   }),
   getters: {
     getError: (state) => state.error,
@@ -28,38 +26,32 @@ export const useAuthStore = defineStore("auth-store", {
           console.log("Successful Registration");
         })
         .catch((error) => {
+          this.error = "حدثت مشكلة أثناء التسجيل. الرجاء المحاولة مرة أخرى";
           throw error;
         });
     },
 
-    //? Login with Google
+    // Login with Google
     async loginWithGoogle() {
-      await $fetch(`/api/auth/loginWithGoogle`, {
-        method: "POST",
-      })
-        .then((res) => {
-          //? Update Pinia state
-          // this.user = res.user;
-          // this.token = res.user.accessToken;
-
-          //? Store user in local storage
-          // localStorage.setItem("user", JSON.stringify(this.user));
-          // localStorage.setItem("token", JSON.stringify(this.token));
-          console.log("Successful Login");
+      const credentials = Realm.Credentials.google("http://localhost:3000");
+      app
+        .logIn(credentials)
+        .then((user) => {
+          console.log(`Logged in with the user: ${user.id}`);
         })
-        .catch((error) => {
-          throw error;
+        .catch((err) => {
+          console.error("Failed to log in", err);
         });
     },
 
     //? Login function
     async login() {
-      if (!this.email || !this.password){
+      if (!this.email || !this.password) {
         this.error = "الرجاء ادخال البريد الالكتروني وكلمة المرور.";
-        return true
+        return true;
       }
 
-      const router = useRouter();
+      // const router = useRouter();
 
       await $fetch(`/api/auth/login`, {
         method: "POST",
@@ -70,20 +62,18 @@ export const useAuthStore = defineStore("auth-store", {
       })
         .then(async (res) => {
           //? Update Pinia state
-          this.user = res.user;
           this.token = res.user.accessToken;
 
           //? Store user in local storage
-          const user = useCookie('auth:user')
-          const token = useCookie('auth:token')
-          user.value = JSON.stringify(this.user)
-          token.value = JSON.stringify(this.token)
-
+          const token = useCookie("auth:token");
+          const refreshToken = JSON.stringify(res.user.refreshToken);
+          token.value = JSON.stringify(this.token);
+          
           console.log("Successful Login");
-          router.push("/");
+          return navigateTo("/")
         })
         .catch((error) => {
-          this.error = "البريد الالكتروني او كلمة المرور غير صحيحة."
+          this.error = "البريد الالكتروني او كلمة المرور غير صحيحة.";
           throw error;
         });
     },
@@ -92,12 +82,9 @@ export const useAuthStore = defineStore("auth-store", {
     async logout() {
       const router = useRouter();
 
-      this.user = null;
       this.token = null;
-      const user = useCookie('auth:user')
-      const token = useCookie('auth:token')
-      user.value = null
-      token.value = null
+      const token = useCookie("auth:token");
+      token.value = null;
       router.push("/auth/login");
     },
   },

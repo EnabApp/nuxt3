@@ -13,19 +13,19 @@ export const useResponsive = () => {
     })
 
     const mobile = breakpoints.smaller('tablet')
-    const tablet = breakpoints.between('tablet', 'laptop')
-    const desktop = breakpoints.greaterOrEqual('laptop')
+    const tablet = breakpoints.between('tablet', 'desktop')
+    const desktop = breakpoints.greaterOrEqual('desktop')
 
     // Generate board Size
     const boardSize = computed(() => {
         if (isPortrait.value) {
             return {
-                columns: mobile.value ? 2 : tablet.value ? 4 : 7,
+                columns: mobile.value ? 2 : tablet.value ? 4 : 8,
                 rows: mobile.value ? 4 : tablet.value ? 6 : 4,
             }
         } else {
             return {
-                columns: mobile.value ? 4 : tablet.value ? 6 : 7,
+                columns: mobile.value ? 4 : tablet.value ? 6 : 8,
                 rows: mobile.value ? 2 : tablet.value ? 4 : 4,
             }
         }

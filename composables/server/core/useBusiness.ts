@@ -25,6 +25,7 @@ export default () => {
   };
 
   const getBusinesses = () => {
+    console.log('fdfsd')
     return new Promise(async (resolve, reject) => {
       try {
         const businesses = await businessModel

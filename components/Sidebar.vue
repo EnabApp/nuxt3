@@ -9,7 +9,7 @@
                     <div my="2" w="full" h="1px" bg="~ secondary dark:secondaryOp"></div>
 
                     <NuxtLink v-for="action in actions" :key="action.route" :to="action.route" w="full" cursor="pointer" aspect="square" rounded="lg" flex="~" items="center" justify="center" :class="[
-                        $route.path == action.route ? 'text-primaryOp dark:text-primary' : 'text-tertiaryOp dark:text-tertiary hover:text-primaryOp dark:hover:text-primary',
+                        getUrlMatch(action.route) ? 'text-primaryOp dark:text-primary' : 'text-tertiaryOp dark:text-tertiary hover:text-primaryOp dark:hover:text-primary',
                     ]">
                         <component :is="action.icon" w="8" h="8" />
                     </NuxtLink>
@@ -49,5 +49,10 @@ const actions = [
 
 const { state, toggle } = useCookieState('sidebar')
 
-// watch( () => showed.value, (x) => console.log(x))
+const { path } = useRoute()
+
+const getUrlMatch = (route) => {
+    if (route == '/') return path == route || path.startsWith('/boards')
+    else return path.startsWith(route)
+}
 </script>
