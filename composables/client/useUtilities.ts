@@ -1,6 +1,8 @@
 import { ResposnivesType } from "../../models/Board";
 import { UnitType } from "../../models/Unit";
 
+const { isPortrait } = useResponsive()
+
 export const fillUnits = (units: ResposnivesType) => {
     const devices = ['desktop', 'tablet', 'mobile']
     devices.map((device => {
@@ -16,7 +18,7 @@ const fillRest = (units: UnitType[], device: string) => {
     })
     return [
         ...units,
-        ...[...Array((device == 'desktop' ? 28 : (device == 'tablet' ? 24 : 8)) - size)].map((_, index) => { return { id: index, colSpan: 1, rowSpan: 1 } }) 
+        ...[...Array((device == 'desktop' ? 32 : (device == 'tablet' ? 24 : 8)) - size)].map((_, index) => { return { id: index, colSpan: 1, rowSpan: 1 } }) 
     ]
 }
 

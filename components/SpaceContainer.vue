@@ -4,7 +4,7 @@
         <!-- <SpaceHeader :spaceData="spaceData" :selected="selectedBoardIndex" /> -->
 
         <!-- Boards Container -->
-        <div ref="boardsContainer" h="full" w="full" justify="center" flex="~ grow">
+        <div ref="boardsContainer" justify="center" flex="~ grow">
             <!-- Slider : Component -->
             <SpaceSlider v-if="boards.width > 0 && boards.height > 0" :width="boards.width" :height="boards.height" :spaceData="spaceData" :selected="selectedBoardIndex" @selectedIndex="selectedBoardIndex = $event" @sliderInit="sliderObject = $event">
                 <div v-for="(b, index) in spaceData?.boards" :key="'board-index-' + index" float="left" width="100%" position="relative" overflow="hidden">
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Space Footer : Component -->
-        <SpaceFooter :selected="selectedBoardIndex" :spaceData="spaceData" :slider="sliderObject" mt="1 md:2" />
+        <SpaceFooter :selected="selectedBoardIndex" :spaceData="spaceData" :slider="sliderObject" />
     </div>
 </template>
 
@@ -65,7 +65,7 @@ watch(() => elementSize, (size) => {
 
     // Set Boards Container Size
     boards.height = height.value
-    boards.width = (height.value / rows) * columns - 32 * 2
+    boards.width = (height.value / rows) * columns
 }, { deep: true })
 
 
