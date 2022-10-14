@@ -120,15 +120,8 @@ export default () => {
   const deleteSpace = (space_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-        const space = await spaceModel.findOne({ _id: space_id });
-        if (!space) {
-          return sendError(event, createError({
-            statusCode: 400,
-            statusMessage: "Space not found"
-          }))
-        }
-        await spaceModel.deleteOne({ _id: space_id });
-        resolve("Space deleted successfully");
+        await spaceModel.findByIdAndDelete(space_id);
+        resolve("Space Deleted");
       } catch (err) {
         reject(err);
       }

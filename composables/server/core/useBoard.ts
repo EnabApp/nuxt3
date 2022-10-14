@@ -84,18 +84,13 @@ export default () => {
     });
   };
 
+
+
   const deleteBoard = (board_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-        const board = await boardModel.findOne({ _id: board_id });
-        if (!board) {
-          return sendError(event, createError({
-            statusCode: 400,
-            statusMessage: "board not found"
-          }))
-        }
-        await boardModel.deleteOne({ _id: board_id });
-        resolve("Board deleted successfully");
+        await boardModel.findByIdAndDelete(board_id);
+        resolve("Board deleted");
       } catch (err) {
         reject(err);
       }

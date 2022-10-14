@@ -67,7 +67,7 @@ export default () => {
   const deleteBusiness = (business_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-        const business = await businessModel.findByIdAndDelete(business_id);
+        await businessModel.findByIdAndDelete(business_id);
         resolve("Business Deleted");
       } catch (err) {
         reject(err);
@@ -78,9 +78,10 @@ export default () => {
   const deleteCategory = (category_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-        const category = await businessCategoryModel.findByIdAndDelete(
+        await businessCategoryModel.findByIdAndDelete(
           category_id
         );
+
         resolve("Category Deleted");
       } catch (err) {
         reject(err);
@@ -88,21 +89,7 @@ export default () => {
     });
   };
 
-  const updateBusiness = (business_id, name, address, categories ) => {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const business = await businessModel.findByIdAndUpdate(
-          business_id,
-          {
-            new: true
-          },
-          
-        resolve("Business Updated");
-      } catch (err) {
-        reject(err);
-      }
-    });
-  };
+
 
 
 
@@ -114,6 +101,6 @@ export default () => {
     getBusinessCategories,
     deleteBusiness,
     deleteCategory,
-    updateBusiness,
+   
   };
 };
