@@ -4,6 +4,8 @@ export default [
   { hook: "get:user", endpoint: "core/user", data: [{ name: "user_id" }]},
   { hook: "get:business", endpoint: "core/business" },
   { hook: "post:business", endpoint: "core/business", data: [{ name: "name" }, { name: "user_id" }, { name: "category_id" }, { name: "description" }]},
+  { hook: "get:business-category", endpoint: "core/business-category" },
+  { hook: "post:business-category", endpoint: "core/business-category", data: [{ name: "name" }]},
   { hook: "get:spaces", endpoint: "core/space" },
   { hook: "post:space", endpoint: "core/space", data: [{ name: "name" }, { name: "business_id" }, { name: "category_id" }]},
   { hook: "get:space", endpoint: "core/space", data: [{ name: "space_id" }]},

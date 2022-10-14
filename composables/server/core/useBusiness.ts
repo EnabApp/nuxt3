@@ -64,6 +64,8 @@ export default () => {
     });
   };
 
+  
+
   //Return Function to be used
   return {
     insertBusiness,
