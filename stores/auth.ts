@@ -4,6 +4,7 @@ export const useAuthStore = defineStore("auth-store", {
   state: () => ({
     //? Fetch state from Cookie storage to enable user to stay logged in
     token: useCookie("auth:token"),
+    useUser: () => useState("user", () => null),
 
     // Login With Email
     email: "",
@@ -50,9 +51,6 @@ export const useAuthStore = defineStore("auth-store", {
         this.error = "الرجاء ادخال البريد الالكتروني وكلمة المرور.";
         return true;
       }
-
-      // const router = useRouter();
-
       await $fetch(`/api/auth/login`, {
         method: "POST",
         body: {
@@ -66,11 +64,12 @@ export const useAuthStore = defineStore("auth-store", {
 
           //? Store user in local storage
           const token = useCookie("auth:token");
+          const useUser = useState("user", () => res.user);
           const refreshToken = JSON.stringify(res.user.refreshToken);
           token.value = JSON.stringify(this.token);
-          
+
           console.log("Successful Login");
-          return navigateTo("/")
+          return navigateTo("/");
         })
         .catch((error) => {
           this.error = "البريد الالكتروني او كلمة المرور غير صحيحة.";
