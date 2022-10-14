@@ -123,5 +123,6 @@ export default () => {
     getBusinessCategories,
     deleteBusiness,
     deleteCategory,
+    updateBusiness,
   };
 };
