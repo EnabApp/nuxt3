@@ -11,8 +11,8 @@ export default defineEventHandler(async (event) => {
         })
       );
     }
-    const { inserBusiness } = useBusiness();
-    const business = await inserBusiness({
+    const { insertBusiness } = useBusiness();
+    const business = await insertBusiness({
       name,
       user_id,
       category_id,
