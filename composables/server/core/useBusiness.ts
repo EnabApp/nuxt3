@@ -75,6 +75,20 @@ export default () => {
     });
   };
 
+  const deleteCategory = (category_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const category = await businessCategoryModel.findByIdAndDelete(
+          category_id
+        );
+        resolve("Category Deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+
 
   //Return Function to be used
   return {
@@ -83,5 +97,6 @@ export default () => {
     insertBusinessCategory,
     getBusinessCategories,
     deleteBusiness,
+    deleteCategory,
   };
 };
