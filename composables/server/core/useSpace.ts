@@ -116,11 +116,31 @@ export default () => {
       }
     });
   };
+
+  const deleteSpace = (space_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const space = await spaceModel.findOne({ _id: space_id });
+        if (!space) {
+          return sendError(event, createError({
+            statusCode: 400,
+            statusMessage: "Space not found"
+          }))
+        }
+        await spaceModel.deleteOne({ _id: space_id });
+        resolve("Space deleted successfully");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
       //Return Function to be used
       return {
         insertSpace,
         getSpaces,
         getSpaceById,
         getSpaceByBusinessId,
+        deleteSpace,
       };
     };
