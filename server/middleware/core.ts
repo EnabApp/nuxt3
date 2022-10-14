@@ -18,14 +18,14 @@ export default defineEventHandler(async (event) => {
   const token = event.req.headers["authorization"]?.split(" ")[1];
 
   const chackToken = () => {
-    if (Date.now() >= decode(token).exp * 1000 || !token) {
+    if (Date.now() >= decode(token).exp * 1000) {
       return null;
     } else {
       return true;
     }
   };
 
-  if (!chackToken()) {
+  if (!chackToken || !token) {
     return sendError(
       event,
       createError({
