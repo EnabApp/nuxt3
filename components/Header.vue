@@ -68,7 +68,7 @@
 <script setup>
 import { exit } from '@tauri-apps/api/process';
 
-const authStore = useAuthStore()
+const authStore = useAuth()
 const spaceStore = useSpace()
 const space = computed(() => spaceStore.getSpace)
 
