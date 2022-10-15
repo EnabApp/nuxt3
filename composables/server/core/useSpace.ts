@@ -4,7 +4,7 @@ export default () => {
   const { spaceRefactor } = useRefactor();
 
   // Export Function to be used
-  const insertSpace = ({name, business_id, description }) => {
+  const insertSpace = ({ name, business_id, description }) => {
     return new Promise(async (resolve, reject) => {
       try {
         const space = new spaceModel({
@@ -19,26 +19,26 @@ export default () => {
       }
     });
   };
-  
+
   const getSpaces = () => {
     return new Promise(async (resolve, reject) => {
       try {
         const spaces = await spaceModel.find().populate("business");
-    const data = spaces.map((space) => {
-      return {
-        id: space._id,
-        name: space.name,
-        business: {
-          id: space?.business?._id,
-          name: space?.business?.name,
-        },
-        description: space?.description,
-        is_active: space.is_active,
-        boardsCount: space.boards.length,
-      };
-    });
-    resolve(data);
-  } catch (err) {
+        const data = spaces.map((space) => {
+          return {
+            id: space._id,
+            name: space.name,
+            business: {
+              id: space?.business?._id,
+              name: space?.business?.name,
+            },
+            description: space?.description,
+            is_active: space.is_active,
+            boardsCount: space.boards.length,
+          };
+        });
+        resolve(data);
+      } catch (err) {
         reject(err);
       }
     });
@@ -84,7 +84,7 @@ export default () => {
           boardsCount: space?.boards?.length,
         };
         resolve(data);
-      }catch (err) {
+      } catch (err) {
         reject(err);
       }
     });
@@ -111,7 +111,7 @@ export default () => {
           };
         });
         resolve(data);
-      }catch (err) {
+      } catch (err) {
         reject(err);
       }
     });
@@ -128,12 +128,33 @@ export default () => {
     });
   };
 
-      //Return Function to be used
-      return {
-        insertSpace,
-        getSpaces,
-        getSpaceById,
-        getSpaceByBusinessId,
-        deleteSpace,
-      };
-    };
+  const updateSpace = ({ id, name, business_id, description }) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const data = await spaceModel.findOneAndUpdate(
+          { _id: id },
+          {
+            name,
+            business: business_id,
+            description,
+          },
+          { new: true }
+        );
+        resolve(spaceRefactor(data));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+
+  //Return Function to be used
+  return {
+    insertSpace,
+    getSpaces,
+    getSpaceById,
+    getSpaceByBusinessId,
+    deleteSpace,
+    updateSpace,
+  };
+};
