@@ -7,7 +7,6 @@ export default defineNuxtRouteMiddleware(async () => {
     // if (process.server) {
     if (token.value) {
       const decodedToken = decode(token.value);
-      //! const decodedRefreshToken = decode(refreshToken.value);
 
       try {
         decodedToken;
