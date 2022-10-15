@@ -4,7 +4,6 @@ export const useAuthStore = defineStore("auth-store", {
   state: () => ({
     //? Fetch state from Cookie storage to enable user to stay logged in
     token: useCookie("auth:token"),
-    useUser: () => useState("user", () => null),
 
     // Login With Email
     email: "",
@@ -64,11 +63,7 @@ export const useAuthStore = defineStore("auth-store", {
 
           //? Store user in local storage
           const token = useCookie("auth:token");
-          const useUser = useState("user", () => res.user);
-          const refreshToken = JSON.stringify(res.user.refreshToken);
           token.value = JSON.stringify(this.token);
-
-          console.log("Successful Login");
           return navigateTo("/");
         })
         .catch((error) => {
