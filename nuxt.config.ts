@@ -9,7 +9,12 @@ export default defineNuxtConfig({
     dirs: ["~/components", "~/businesses"],
   },
   imports: {
-    dirs: ["composables/client/**", "models/**", "stores/**", "composables/shared/**"],
+    dirs: [
+      "composables/client/**",
+      "models/**",
+      "stores/**",
+      "composables/shared/**",
+    ],
   },
 
   modules: [
@@ -19,6 +24,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@unocss/nuxt",
     "@nuxtjs/color-mode",
+    "@nuxtjs/supabase",
   ],
   runtimeConfig: {
     mongoUrl: process.env.MONGO_URL,

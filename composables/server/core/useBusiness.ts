@@ -115,6 +115,26 @@ export default () => {
     });
   };
 
+  //update business category
+  const updateBusinessCategory = ({ id, name, description }) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const data = await businessCategoryModel.findOneAndUpdate(
+          { _id: id },
+          {
+            name: name,
+            description: description,
+          },
+          { new: true }
+        );
+        resolve(businessCategoryRefactor(data));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+
   //Return Function to be used
   return {
     insertBusiness,
@@ -124,5 +144,6 @@ export default () => {
     deleteBusiness,
     deleteCategory,
     updateBusiness,
+    updateBusinessCategory,
   };
 };
