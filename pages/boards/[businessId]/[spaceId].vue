@@ -2,7 +2,14 @@
 
 <template>
     <NuxtLayout name="user">
-        <SpaceContainer v-if="store.getSpace" :space="mySpace" />
+        <SpaceContainer v-if="store.getSpace?.boards?.length > 0" :space="mySpace" />
+        <div v-else flex="~ col gap-2 grow" items="center" justify="center">
+            <span text="4xl">لايوجد لوحات</span>
+            <p text="xl">يمكنك اضافة لوحات من خلال المتجر</p>
+            <UiButton :to="'/store'" mt="4" color="secondary" size="lg" icon="IconStore">
+                الانتقال الى المتجر  
+            </UiButton>
+        </div>
     </NuxtLayout>
 </template>
   
