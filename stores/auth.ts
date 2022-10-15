@@ -11,9 +11,13 @@ export const useAuthStore = defineStore("auth-store", {
 
     // Error
     error: "",
+    
+    // Loading
+    loading: false,
   }),
   getters: {
     getError: (state) => state.error,
+    getLoading: (state) => state.loading,
   },
   actions: {
     //? Register function
@@ -46,8 +50,10 @@ export const useAuthStore = defineStore("auth-store", {
 
     //? Login function
     async login() {
+      this.loading = true;
       if (!this.email || !this.password) {
         this.error = "الرجاء ادخال البريد الالكتروني وكلمة المرور.";
+        this.loading = false;
         return true;
       }
       await $fetch(`/api/auth/login`, {
@@ -68,6 +74,7 @@ export const useAuthStore = defineStore("auth-store", {
         })
         .catch((error) => {
           this.error = "البريد الالكتروني او كلمة المرور غير صحيحة.";
+          this.loading = false;
           throw error;
         });
     },
