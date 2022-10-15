@@ -22,8 +22,17 @@ const businessCategorySchema = new Schema(
     timestamps: true,
   }
 );
-
-export const businessCategoryModel = mongoose.model(
+const businessCategoryModel = mongoose.model(
   "BusinessCategory",
   businessCategorySchema
 );
+
+const businessCategoryRefactor = (data) => {
+  return {
+    id: data._id,
+    value: data.name,
+  };
+}
+
+export { businessCategoryModel, businessCategoryRefactor };
+

@@ -1,6 +1,6 @@
 import { sendError } from "h3";
 export default () => {
-  const { businessRefactor, businessCategoryRefactor } = useRefactor();
+  const { businessRefactor } = useRefactor();
   // Export Function to be used
   const insertBusiness = ({ name, user_id, category_id, address }) => {
     return new Promise(async (resolve, reject) => {
@@ -56,8 +56,9 @@ export default () => {
   const getBusinessCategories = () => {
     return new Promise(async (resolve, reject) => {
       try {
-        const data = await businessCategoryModel.find({});
-        resolve(data);
+        const data = await businessCategoryModel.find({is_active: true}).
+        select({ name: 1, _id: 1 });
+        resolve(data.map((item) => businessCategoryRefactor(item)));
       } catch (err) {
         reject(err);
       }
