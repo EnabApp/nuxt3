@@ -1,4 +1,5 @@
 export default () => {
+  const { boardRefactor } = useRefactor();
   // Export Function to be used
   const insertBoard = ({ name, space_id, description }) => {
     return new Promise(async (resolve, reject) => {
@@ -96,11 +97,32 @@ export default () => {
       }
     });
   };
+  //update board
+  const updateBoard = ({id, name, space_id, description }) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const data = await boardModel.findOneAndUpdate(
+          { _id: id },
+          {
+            name: name,
+            description: description,
+            space: space_id,
+          },
+          { new: true }
+        );
+        resolve(boardRefactor(data));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
   //Return Function to be used
   return {
     insertBoard,
     getBoards,
     getBoardById,
     deleteBoard,
+    updateBoard,
   };
 };
