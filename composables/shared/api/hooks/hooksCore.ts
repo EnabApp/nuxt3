@@ -9,6 +9,7 @@ export default [
   { hook: "get:business", endpoint: "core/business" },
   { hook: "post:business", endpoint: "core/business", data: [{ name: "name" }, { name: "user_id" }, { name: "category_id" }, { name: "description" }] },
   { hook: "delete:business", endpoint: "core/business", data: [{ name: "business_id" }] },
+  { hook: "put:business", endpoint: "core/business", data: [{ name: "id" }, { name: "name" }, { name: "user_id" }, { name: "category_id" }, { name: "description" }] },
 
   //Business Category//
   { hook: "get:business-category", endpoint: "core/business-category" },
@@ -37,6 +38,5 @@ export default [
   { hook: "get:permission-client", endpoint: "core/permission/by-client", data: [{ name: "client_id" }] },
   { hook: "put:permission", endpoint: "core/permission", data: [{ name: "id" }, { name: "business_id" }, { name: "client" }, { name: "ref" }, { name: "type" }] },
   { hook: "delete:permission", endpoint: "core/permission", data: [{ name: "id" }] },
-
 
 ];
