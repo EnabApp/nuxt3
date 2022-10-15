@@ -8,10 +8,10 @@ export default defineEventHandler(async (event) => {
                 event,
                 createError({
                     statusCode: 400,
-                    statusMessage: "id, name, address, users, categories, spaces, is_active required",
+                    statusMessage: "id, name, address, user_id, category_id",
                 })
             );
-        return await updateBusiness({ id, name, address, users, categories, spaces, is_active });
+        return await updateBusiness({ id, name, address, user_id, category_id });
     } catch (err) {
         return sendError(
             event,
