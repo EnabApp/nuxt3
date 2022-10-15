@@ -1,23 +1,39 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
-import { useFetch } from "@vueuse/core";
 import { BusinessType } from "~~/models/Business";
-import { UnitType } from "~~/models/Unit";
-import { ResposnivesType } from "~~/models/Board";
-import { RespType } from "~~/types/Response";
 
 export const useBusiness = defineStore("businessStore", {
   state: () => ({
     businesses: [],
+    createError: null,
+    business: { user_id: "634475cef4194633dd306c09" }
   }),
 
   getters: {
     getBusinesses: (state) => state.businesses,
+    getCreateError: (state) => state.createError,
   },
 
   actions: {
-    async fetch(){
+    async fetch() {
       const data = await useApi("get:business");
       this.businesses = data
+    },
+
+    async create() {
+      console.log(this.business)
+      if (!(this.business.name && this.business.category_id && this.business.description)) {
+        this.createError = "يرجى ملئ جميع الحقول"
+        return false
+      }
+
+      try {
+        const data = await useApi("post:business", this.business);
+        this.businesses.push(data);
+        return true
+      } catch (error) {
+        this.createError = error
+        return false
+      }
     }
   }
 });

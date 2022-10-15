@@ -64,11 +64,65 @@ export default () => {
     });
   };
 
+  const deleteBusiness = (business_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await businessModel.findByIdAndDelete(business_id);
+        resolve("Business Deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+  const deleteCategory = (category_id) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await businessCategoryModel.findByIdAndDelete(
+          category_id
+        );
+
+        resolve("Category Deleted");
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
+  //update business
+  const updateBusiness = ({ id, name, user_id, category_id, address }) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const data = await businessModel.findOneAndUpdate(
+          { _id: id },
+          {
+            name: name,
+            users: [
+              {
+                user_id: user_id,
+                Permissions: ["owner"],
+              },
+            ],
+            categories: [category_id],
+            address: address,
+          },
+          { new: true }
+        );
+        resolve(businessRefactor(data));
+      } catch (err) {
+        reject(err);
+      }
+    });
+  };
+
   //Return Function to be used
   return {
     insertBusiness,
     getBusinesses,
     insertBusinessCategory,
     getBusinessCategories,
+    deleteBusiness,
+    deleteCategory,
+    updateBusiness,
   };
 };

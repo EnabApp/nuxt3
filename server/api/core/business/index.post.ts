@@ -11,14 +11,20 @@ export default defineEventHandler(async (event) => {
         })
       );
     }
-    const { inserBusiness } = useBusiness();
-    const business = await inserBusiness({
+    const { insertBusiness } = useBusiness();
+    const business = await insertBusiness({
       name,
       user_id,
       category_id,
       address,
     });
     return { business };
+
+    // const  business = useBusiness();
+    
+    // const data = await business.insert({ name, user_id, category_id, address });
+
+    // return data
 
   } catch (err) {
     return sendError(
