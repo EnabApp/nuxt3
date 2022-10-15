@@ -44,7 +44,7 @@ const options = {
     continuous: false,
     disableScroll: false,
     stopPropagation: true,
-    ignore: ".scroller",
+    ignore: "#disable-swipe",
     callback: function (index, elem, dir) {
         emit('selectedIndex', index)
         spaceStore.setBoardIndex(index)

@@ -1,6 +1,6 @@
 <template>
     <div flex="~" justify="between">
-        <div v-if="Object.keys(space).length !== 0" flex="~ gap-2" text="xl" font="medium" items="center">
+        <div v-if="space && Object.keys(space).length !== 0" flex="~ gap-2" text="xl" font="medium" items="center">
             <IconSidebar v-if="!sidebarState" cursor="pointer" @click="sidebarToggle()" p="2" w="6" h="6" />
 
             <div flex="~ gap-4" items="center" rounded="xl" text="tertiary dark:tertiaryOp">
