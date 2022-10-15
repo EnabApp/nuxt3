@@ -36,6 +36,12 @@ const businessSchema = new Schema(
         ref: "Space",
       },
     ],
+    permissions: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Permission",
+      },
+    ],
     is_active: {
       type: Boolean,
       default: true,

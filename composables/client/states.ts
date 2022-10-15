@@ -1,6 +1,6 @@
 import { useState } from "#imports";
-export const useUser = () => useState("user", () => null);
-export const useCounter = () => useState<number>("counter", () => 0);
+// export const useUser = () => useState("user", () => null);
+// export const useCounter = () => useState<number>("counter", () => 0);
 
 export const useCookieState = (key: string) => {
   const sidebarCookie = useCookie(key, {

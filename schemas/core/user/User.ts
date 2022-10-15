@@ -23,6 +23,12 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: "Profile",
       },
+    teams: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Team",
+      },
+    ],
     last_login: {
       type: Date,
     },
