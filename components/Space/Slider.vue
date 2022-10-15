@@ -9,9 +9,6 @@
 <script setup>
 import Swipe from 'swipejs';
 
-const router = useRouter()
-const route = useRoute()
-
 const spaceStore = useSpace()
 
 const props = defineProps({

@@ -24,10 +24,7 @@ export const useBusiness = defineStore("businessStore", {
     async fetchCategories() {
       if (this.businessCategories.length > 0) return;
       const data = await useApi("get:business-category");
-      this.businessesCategories = data?.map(category => ({
-        id: category._id,
-        value: category.name,
-      }))
+      this.businessesCategories = data
     },
 
     async create() {
