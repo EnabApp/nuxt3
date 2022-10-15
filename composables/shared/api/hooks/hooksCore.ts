@@ -19,7 +19,7 @@ export default [
 
   // Space
   { hook: "get:spaces", endpoint: "core/space" },
-  { hook: "post:space", endpoint: "core/space", data: [{ name: "name" }, { name: "business_id" }, { name: "category_id" }] },
+  { hook: "post:space", endpoint: "core/space", data: [{ name: "name" }, { name: "business_id" }, { name: "description" }] },
   { hook: "delete:space", endpoint: "core/space", data: [{ name: "space_id" }] },
   { hook: "put:space", endpoint: "core/space", data: [{ name: "id" }, { name: "name" }, { name: "business_id" }, { name: "description" }] },
   { hook: "get:space", endpoint: "core/space", data: [{ name: "space_id" }] },
