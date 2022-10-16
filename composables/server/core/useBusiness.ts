@@ -46,6 +46,7 @@ export default () => {
         const data = new businessCategoryModel({
           name: name,
         });
+        await data.save();
         resolve(businessCategoryRefactor(data));
       } catch (err) {
         reject(err);
@@ -56,7 +57,7 @@ export default () => {
   const getBusinessCategories = () => {
     return new Promise(async (resolve, reject) => {
       try {
-        const data = await businessCategoryModel.find({is_active: true}).
+        const data = await businessCategoryModel.find({}).
         select({ name: 1, _id: 1 });
         resolve(data.map((item) => businessCategoryRefactor(item)));
       } catch (err) {
