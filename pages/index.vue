@@ -12,17 +12,18 @@
       <!-- Actions -->
       <div flex="~ gap-8" font="medium" text="xl">
         <!-- Grid - List : Toggle -->
-        <UiSwitch size="md" w="250px" :list="[
+        <UiSwitch v-model="switcher" size="md" w="250px" :list="[
           { id: '1', value: 'قائمة', icon: 'IconBoards' },
           { id: '2', value: 'لوحة', icon: 'IconBoards' },
         ]" />
+
 
 
         <!-- Divider -->
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Filter -->
-        <UiDropdown w="40" :list="[
+        <UiDropdown v-model="filter" z="20" w="40" :selectedId="filter" :list="[
           { id: 1, value: 'أعمالي' },
           { id: 2, value: 'أعمال غيري' },
         ]">
@@ -91,5 +92,7 @@ const create = async () => {
   let result = await store.create()
   if (result) newBusinessToggle()
 }
+
+const filter = ref("1")
 
 </script>

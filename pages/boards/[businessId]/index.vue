@@ -22,7 +22,7 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Filter -->
-        <UiDropdown w="40" :list="[
+        <UiDropdown z="20" w="40" :list="[
           { id: 1, value: 'مساحاتي' },
           { id: 2, value: 'مساحات غيري' },
         ]">
