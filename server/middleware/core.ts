@@ -3,7 +3,7 @@ import decode from "jwt-decode";
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-  const endpoints = ["/api/auth/user", "/api/core/business"];
+  const endpoints = ["/api/auth/user"];
 
   const isHandledByMiddleware = endpoints.some((endopoint) => {
     const pattern = new UrlPattern(endopoint);

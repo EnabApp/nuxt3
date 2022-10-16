@@ -25,6 +25,7 @@ export const useBusiness = defineStore("businessStore", {
       if (this.businessCategories.length > 0) return;
       const data = await useApi("get:business-category");
       this.businessesCategories = data
+      console.log(data)
     },
 
     async create() {
