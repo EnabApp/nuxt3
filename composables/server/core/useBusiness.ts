@@ -46,6 +46,7 @@ export default () => {
         const data = new businessCategoryModel({
           name: name,
         });
+        await data.save();
         resolve(businessCategoryRefactor(data));
       } catch (err) {
         reject(err);
