@@ -38,9 +38,12 @@
 
         <Teleport to="body">
           <UiModal v-model="newSpaceState" @cancel="modalCanceled">
-            <template #title>مساحة جديدة</template>
-            <div>
-              انشاء مساحة جديدة
+            <template #title>إنشاء عمل جديد</template>
+            <div flex="~ col gap-4">
+              <span text="sm error dark:error" v-if="store.getCreateError">{{ store.getCreateError }}</span>
+              <UiInput v-model="store.spaceCreation.name" @keydown="() => store.createError = null" label="الأسم" />
+                <UiInput v-model="store.spaceCreation.description" label="الوصف" />
+              <UiButton @click="create()" my="2">انشاء</UiButton>
             </div>
           </UiModal>
         </Teleport>
@@ -82,5 +85,10 @@ if (store.getSpaces?.length <= 0) newSpaceState.value = true
 watch( () => newSpaceState.value, (newVal) => {
   if (store.getSpaces?.length <= 0) newSpaceState.value = true
 })
+
+const create = async () => {
+  let result = await store.create()
+  if (result) nweSpaceToggle()
+}
 </script>
   

@@ -43,10 +43,7 @@
               <span text="sm error dark:error" v-if="store.getCreateError">{{ store.getCreateError }}</span>
               <UiInput v-model="store.business.name" @keydown="() => store.createError = null" label="الأسم" />
               <UiInput v-model="store.business.description" @keydown="() => store.createError = null" label="الوصف" />
-              <UiDropdown v-model="store.business.category_id" @keydown="() => store.createError = null" label="الفئة" :list="[
-                { id: 1, value: 'كرويته' },
-                { id: 2, value: 'محمد الك ونّه' },
-              ]" />
+              <UiDropdown v-model="store.business.category_id" @keydown="() => store.createError = null" label="الفئة" :list="store.businessesCategories" />
               <UiButton @click="create()" my="2">انشاء</UiButton>
             </div>
           </UiModal>
@@ -73,8 +70,13 @@ definePageMeta({
 })
 const store = useBusiness()
 
+
+
 // Fetching Businesses
 await store.fetch()
+
+// Fetching Categories
+store.fetchCategories()
 
 const [gridState, gridToggle] = useToggle(false)
 
