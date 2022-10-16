@@ -6,8 +6,10 @@ export const useAuth = defineStore("authStore", {
     password: null,
     phonenumber: null,
     createError: null,
+    loadingUserPassword: false,
   }),
   getters: {
+    getLoadingUserPassword: (state) => state.loadingUserPassword,
     getCreateError: (state) => state.createError,
   },
 
@@ -33,9 +35,11 @@ export const useAuth = defineStore("authStore", {
 
     //login
     async login() {
+      this.loadingUserPassword = true
       const supabase = useSupabaseClient();
       if (!this.email || !this.password) {
         this.error = "Please enter your email and password";
+        this.loadingUserPassword = false
         return this.error;
       }
       try {
@@ -45,6 +49,7 @@ export const useAuth = defineStore("authStore", {
         });
         if (data) navigateTo("/");
       } catch (error) {
+        this.loadingUserPassword = false
         this.createError = error;
       }
     },

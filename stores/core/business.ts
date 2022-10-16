@@ -5,7 +5,7 @@ export const useBusiness = defineStore("businessStore", {
   state: () => ({
     businesses: [],
     createError: null,
-    business: { user_id: "634475cef4194633dd306c09" },
+    businessCreation: { user_id: "634475cef4194633dd306c09" },
     businessCategories: []
   }),
 
@@ -29,14 +29,13 @@ export const useBusiness = defineStore("businessStore", {
     },
 
     async create() {
-      console.log(this.business)
-      if (!(this.business.name && this.business.category_id && this.business.description)) {
+      if (!(this.businessCreation.name && this.businessCreation.category_id && this.businessCreation.description)) {
         this.createError = "يرجى ملئ جميع الحقول"
         return false
       }
 
       try {
-        const data = await useApi("post:business", this.business);
+        const data = await useApi("post:business", this.businessCreation);
         // this.businesses.push(data);
         this.fetch()
         return true

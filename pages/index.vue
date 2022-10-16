@@ -12,17 +12,18 @@
       <!-- Actions -->
       <div flex="~ gap-8" font="medium" text="xl">
         <!-- Grid - List : Toggle -->
-        <UiSwitch size="md" w="250px" :list="[
+        <UiSwitch v-model="switcher" size="md" w="250px" :list="[
           { id: '1', value: 'قائمة', icon: 'IconBoards' },
           { id: '2', value: 'لوحة', icon: 'IconBoards' },
         ]" />
+
 
 
         <!-- Divider -->
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Filter -->
-        <UiDropdown w="40" :list="[
+        <UiDropdown v-model="filter" z="20" w="40" :selectedId="filter" :list="[
           { id: 1, value: 'أعمالي' },
           { id: 2, value: 'أعمال غيري' },
         ]">
@@ -41,9 +42,9 @@
             <template #title>إنشاء عمل جديد</template>
             <div flex="~ col gap-4">
               <span text="sm error dark:error" v-if="store.getCreateError">{{ store.getCreateError }}</span>
-              <UiInput v-model="store.business.name" @keydown="() => store.createError = null" label="الأسم" />
-              <UiInput v-model="store.business.description" @keydown="() => store.createError = null" label="الوصف" />
-              <UiDropdown v-model="store.business.category_id" @keydown="() => store.createError = null" label="الفئة" :list="store.businessesCategories" />
+              <UiInput v-model="store.businessCreation.name" @keydown="() => store.createError = null" label="الأسم" />
+              <UiInput v-model="store.businessCreation.description" @keydown="() => store.createError = null" label="الوصف" />
+              <UiDropdown v-model="store.businessCreation.category_id" @keydown="() => store.createError = null" label="الفئة" :list="store.businessesCategories" />
               <UiButton @click="create()" my="2">انشاء</UiButton>
             </div>
           </UiModal>
@@ -91,5 +92,7 @@ const create = async () => {
   let result = await store.create()
   if (result) newBusinessToggle()
 }
+
+const filter = ref("1")
 
 </script>
