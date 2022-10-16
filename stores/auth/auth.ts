@@ -22,6 +22,8 @@ export const useAuth = defineStore("authStore", {
         });
 
         if (user) {
+          console.log("user", user);
+          await useApi("post:user", { user: user });
           navigateTo("/auth/login");
         }
       } catch (error) {

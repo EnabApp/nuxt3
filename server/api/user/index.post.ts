@@ -12,8 +12,8 @@ export default defineEventHandler(async (event) => {
         })
       );
     }
-    const user = await insertUser(user);
-    return user;
+    const data = await insertUser(user);
+    return data;
   } catch (err) {
     return sendError(
       event,
