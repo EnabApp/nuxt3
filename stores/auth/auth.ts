@@ -5,8 +5,11 @@ export const useAuth = defineStore("authStore", {
     password: "",
 
     error: "",
+    loadingUserPassword: false,
   }),
-  getters: {},
+  getters: {
+    getLoadingUserPassword: (state) => state.loadingUserPassword,
+  },
 
   actions: {
     //Register
@@ -31,6 +34,7 @@ export const useAuth = defineStore("authStore", {
 
     //login
     async login() {
+      this.loadingUserPassword = true
       const supabase = useSupabaseClient();
       if (!this.email || !this.password) {
         this.error = "Please enter your email and password";
@@ -41,6 +45,8 @@ export const useAuth = defineStore("authStore", {
         email: this.email,
         password: this.password,
       });
+
+      this.loadingUserPassword = false
 
       if (data) navigateTo("/");
 
