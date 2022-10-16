@@ -42,9 +42,9 @@
             <template #title>إنشاء عمل جديد</template>
             <div flex="~ col gap-4">
               <span text="sm error dark:error" v-if="store.getCreateError">{{ store.getCreateError }}</span>
-              <UiInput v-model="store.business.name" @keydown="() => store.createError = null" label="الأسم" />
-              <UiInput v-model="store.business.description" @keydown="() => store.createError = null" label="الوصف" />
-              <UiDropdown v-model="store.business.category_id" @keydown="() => store.createError = null" label="الفئة" :list="store.businessesCategories" />
+              <UiInput v-model="store.businessCreation.name" @keydown="() => store.createError = null" label="الأسم" />
+              <UiInput v-model="store.businessCreation.description" @keydown="() => store.createError = null" label="الوصف" />
+              <UiDropdown v-model="store.businessCreation.category_id" @keydown="() => store.createError = null" label="الفئة" :list="store.businessesCategories" />
               <UiButton @click="create()" my="2">انشاء</UiButton>
             </div>
           </UiModal>

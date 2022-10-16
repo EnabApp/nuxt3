@@ -61,7 +61,8 @@ export const useSpace = defineStore("space", {
 
       try {
         const data = await useApi("post:space", this.spaceCreation);
-        this.fetchSpaces()
+        this.fetchSpaces(params.businessId)
+        this.spaceCreation = {}
         return true
       } catch (error) {
         this.createError = error

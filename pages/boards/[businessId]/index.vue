@@ -88,7 +88,7 @@ watch( () => newSpaceState.value, (newVal) => {
 
 const create = async () => {
   let result = await store.create()
-  if (result) nweSpaceToggle()
+  if (result) newSpaceToggle()
 }
 </script>
   
