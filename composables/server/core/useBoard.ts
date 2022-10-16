@@ -34,8 +34,8 @@ export default () => {
 
     return new Promise(async (resolve, reject) => {
       try {
-        const board = await boardModel.findOne({_id: board_id}).populate({path: "space", model: spaceModel})
-        .populate({path: "desktopUnits", model: UnitModel}).populate({path: "tabletUnits", model: UnitModel}).populate({path: "mobileUnits", model: UnitModel});
+        const board = await boardModel.findOne({ _id: board_id }).populate({ path: "space", model: spaceModel })
+          .populate({ path: "desktopUnits", model: UnitModel }).populate({ path: "tabletUnits", model: UnitModel }).populate({ path: "mobileUnits", model: UnitModel });
         const data = {
           id: board._id,
           name: board.name,
@@ -98,7 +98,7 @@ export default () => {
     });
   };
   //update board
-  const updateBoard = ({id, name, space_id, description }) => {
+  const updateBoard = ({ id, name, space_id, description }) => {
     return new Promise(async (resolve, reject) => {
       try {
         const data = await boardModel.findOneAndUpdate(

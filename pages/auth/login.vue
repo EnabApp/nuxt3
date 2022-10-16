@@ -70,7 +70,7 @@
 <script setup>
 definePageMeta({
   title: "Login",
-  middleware: "auth",
+  middleware: "guest",
 });
 
 const [emailPasswordState, emailPasswordToggle] = useToggle();

@@ -10,6 +10,7 @@ export default defineEventHandler(async (event) => {
                 createError({
                     statusCode: 400,
                     statusMessage: "params missing",
+                })
             );
 
         return await updateBoard({ id, name, space_id, description });

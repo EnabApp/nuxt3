@@ -48,7 +48,7 @@
 <script setup>
 definePageMeta({
   title: "Register",
-  middleware: "auth",
+  middleware: "guest",
 
 });
 
