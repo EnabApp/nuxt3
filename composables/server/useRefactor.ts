@@ -31,17 +31,6 @@ export default () => {
     };
   };
 
-  const businessCategoryRefactor = (category) => {
-    return {
-      id: category._id,
-      name: category.name,
-      // businesses: category?.businesses,
-      is_active: category.is_active,
-      createdAt: category.createdAt,
-      updatedAt: category.updatedAt,
-    };
-  };
-
   const spaceRefactor = (space) => {
     return {
       id: space._id,
