@@ -10,8 +10,8 @@
             <AuthEmailPassword key="AuthEmailPassword" v-if="emailPasswordState" />
           </Transition>
 
-          <p v-if="authStore.getError" w="full" text="xs red right" mr="10px">
-            {{ authStore.getError }}
+          <p v-if="authStore.getCreateError" w="full" text="xs red right" mr="10px">
+            {{ authStore.getCreateError }}
           </p>
 
           <!--? Submit -->

@@ -1,31 +1,31 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
 export const useAuth = defineStore("authStore", {
   state: () => ({
-    email: "",
-    password: "",
-
-    error: "",
+    name: null,
+    email: null,
+    password: null,
+    phonenumber: null,
+    createError: null,
   }),
-  getters: {},
+  getters: {
+    getCreateError: (state) => state.createError,
+  },
 
   actions: {
     //Register
-    async register(data) {
-      console.log("register");
-      console.log(data);
+    async register() {
       const supabase = useSupabaseClient();
       try {
         const { user, error } = await supabase.auth.signUp({
-          email: data.email,
-          password: data.password,
+          email: this.email,
+          password: this.password,
         });
 
         if (user) {
           navigateTo("/auth/login");
         }
-        if (error) throw error;
       } catch (error) {
-        console.log(error);
+        this.createError = error;
       }
     },
 
@@ -36,46 +36,55 @@ export const useAuth = defineStore("authStore", {
         this.error = "Please enter your email and password";
         return this.error;
       }
-
-      const { data, error } = await supabase.auth.signIn({
-        email: this.email,
-        password: this.password,
-      });
-
-      if (data) navigateTo("/");
-
-      if (error) {
-        this.error = "Invalid credentials";
-        return;
-      }
-
-      if (data) {
-        this.error = "";
-        return;
+      try {
+        const { data, error } = await supabase.auth.signIn({
+          email: this.email,
+          password: this.password,
+        });
+        if (data) navigateTo("/");
+      } catch (error) {
+        this.createError = error;
       }
     },
 
     //login with google
     async loginWithGoogle() {
       const supabase = useSupabaseClient();
-      const { user, error } = await supabase.auth.signIn({
-        provider: "google",
-      });
+      try {
+        const { user, error } = await supabase.auth.signIn({
+          provider: "google",
+        });
 
-      if (user) {
-        navigateTo("/");
+        if (user) {
+          navigateTo("/");
+        }
+      } catch (error) {
+        this.createError = error;
       }
-      if (error) throw error;
     },
 
     // LogOut
     async logout() {
       const supabase = useSupabaseClient();
-      const { error } = await supabase.auth.signOut();
-      if (error) {
-        this.error = "Something went wrong";
+      try {
+        const { error } = await supabase.auth.signOut();
+        navigateTo("/auth/login");
+      } catch (error) {
+        this.createError = error;
+        console.log(error);
       }
-      navigateTo("/auth/login");
+    },
+
+    //Create User For MongoDB
+
+    async createUser(data) {
+      console.log("createUser");
+      try {
+        const user = await useApi("post:user", data);
+        return true;
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 });

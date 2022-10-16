@@ -18,11 +18,10 @@ const userSchema = new Schema(
         ref: "Membership",
       },
     ],
-    profile:
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Profile",
-      },
+    profile: {
+      type: Schema.Types.ObjectId,
+      ref: "Profile",
+    },
     teams: [
       {
         type: Schema.Types.ObjectId,
@@ -31,6 +30,7 @@ const userSchema = new Schema(
     ],
     last_login: {
       type: Date,
+      default: Date.now,
     },
     is_active: {
       type: Boolean,
