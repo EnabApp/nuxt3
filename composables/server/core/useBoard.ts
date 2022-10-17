@@ -1,17 +1,22 @@
 export default () => {
-  const { boardRefactor } = useRefactor();
   // Export Function to be used
-  const insertBoard = ({ name, space_id, description }) => {
+  const insertBoard = ({ name, space_id, points, description, desktopUnits, tabletUnits, mobileUnits, category_id, packages }) => {
     return new Promise(async (resolve, reject) => {
       try {
         const board = new boardModel({
-          name: name,
-          space: space_id,
-          description: description,
+          name,
+          space_id,
+          points,
+          description,
+          desktopUnits,
+          tabletUnits,
+          mobileUnits,
+          category_id,
+          packages,
         });
 
         await board.save();
-        resolve(board);
+        resolve(boardRefactor(board));
       } catch (err) {
         reject(err);
       }
@@ -21,8 +26,8 @@ export default () => {
   const getBoards = () => {
     return new Promise(async (resolve, reject) => {
       try {
-        const boards = await boardModel.find({});
-        resolve(boards);
+        const boards = await boardModel.find({}).select("_id name space_id points description category_id");
+        resolve(boards.map((board) => boardRefactor(board)));
       } catch (err) {
         reject(err);
       }
@@ -35,50 +40,8 @@ export default () => {
     return new Promise(async (resolve, reject) => {
       try {
         const board = await boardModel.findOne({ _id: board_id }).populate({ path: "space", model: spaceModel })
-          .populate({ path: "desktopUnits", model: UnitModel }).populate({ path: "tabletUnits", model: UnitModel }).populate({ path: "mobileUnits", model: UnitModel });
-        const data = {
-          id: board._id,
-          name: board.name,
-          space: {
-            id: board.space._id,
-            name: board.space.name,
-          },
-          description: board.description,
-          desktopUnits: board.desktopUnits.map((dataUnit) => {
-            return {
-              id: dataUnit._id,
-              name: dataUnit.name,
-              colSpan: dataUnit.colSpan,
-              rowSpan: dataUnit.rowSpan,
-              componentName: dataUnit.componentName,
-              componentData: dataUnit.componentData,
-              order: dataUnit.order,
-            };
-          }),
-          tabletUnits: board.tabletUnits.map((dataUnit) => {
-            return {
-              id: dataUnit._id,
-              name: dataUnit.name,
-              colSpan: dataUnit.colSpan,
-              rowSpan: dataUnit.rowSpan,
-              componentName: dataUnit.componentName,
-              componentData: dataUnit.componentData,
-              order: dataUnit.order,
-            };
-          }),
-          mobileUnits: board.mobileUnits.map((dataUnit) => {
-            return {
-              id: dataUnit._id,
-              name: dataUnit.name,
-              colSpan: dataUnit.colSpan,
-              rowSpan: dataUnit.rowSpan,
-              componentName: dataUnit.componentName,
-              componentData: dataUnit.componentData,
-              order: dataUnit.order,
-            };
-          }),
-        };
-        resolve(data);
+          .populate({ path: "desktopUnits", model: UnitModel }).populate({ path: "tabletUnits", model: UnitModel }).populate({ path: "mobileUnits", model: UnitModel }).populate({ path: "category_id", model: boardCategoryModel }).populate({ path: "packages", model: packageModel });
+        resolve(boardRefactor(board));
       } catch (err) {
         reject(err);
       }

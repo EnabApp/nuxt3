@@ -41,3 +41,5 @@ const packageRefactor = (package) => {
         updated_at: package?.updated_at,
     };
 };
+
+export { packageModel, packageRefactor };
