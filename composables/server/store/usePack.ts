@@ -2,14 +2,13 @@ import { packModel } from "~/schemas/store/pack/pack";
 export default () => {
 
     // Export Function to be used
-    const insertPack = ({ name, points, boards, is_active }) => {
+    const insertPack = ({ name, points, boards }) => {
         return new Promise(async (resolve, reject) => {
             try {
                 const pack = new packModel({
                     name: name,
                     points: points,
                     boards: boards,
-                    is_active: is_active,
                 });
 
                 await pack.save();
