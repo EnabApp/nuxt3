@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const packageSchema = new Schema(
+const packSchema = new Schema(
     {
         name: {
             type: String,
@@ -28,16 +28,18 @@ const packageSchema = new Schema(
 
 );
 
-const packageModel = mongoose.model("Package", packageSchema);
+const packModel = mongoose.model("Pack", packSchema);
 
-const packageRefactor = (package) => {
+const packRefactor = (pack) => {
     return {
-        id: package.id,
-        name: package?.name,
-        points: package?.points,
-        boards: package?.boards,
-        is_active: package?.is_active,
-        created_at: package?.created_at,
-        updated_at: package?.updated_at,
+        id: pack.id,
+        name: pack?.name,
+        points: pack?.points,
+        boards: pack?.boards,
+        is_active: pack?.is_active,
+        created_at: pack?.created_at,
+        updated_at: pack?.updated_at,
     };
 };
+
+export { packModel, packRefactor };
