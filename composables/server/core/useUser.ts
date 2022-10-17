@@ -1,14 +1,15 @@
+import mongoose from "mongoose";
 export default () => {
   // Export Function to be used
   const { userRefactor } = useRefactor();
 
-  const insertUser = async (data) => {
+  const insertUser = async (data, name) => {
     console.log("insertUser");
+    console.log(data);
     return new Promise(async (resolve, reject) => {
       try {
         const user = new userModel({
-          _id: data.id,
-          name: data.name,
+          name: name,
           email: data.email,
         });
         await user.save();
