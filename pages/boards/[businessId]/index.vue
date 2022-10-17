@@ -22,7 +22,7 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Filter -->
-        <UiDropdown w="40" :list="[
+        <UiDropdown z="20" w="40" :list="[
           { id: 1, value: 'مساحاتي' },
           { id: 2, value: 'مساحات غيري' },
         ]">
@@ -41,9 +41,9 @@
             <template #title>إنشاء عمل جديد</template>
             <div flex="~ col gap-4">
               <span text="sm error dark:error" v-if="store.getCreateError">{{ store.getCreateError }}</span>
-              <UiInput v-model="store.spaceCreation.name" @keydown="() => store.createError = null" label="الأسم" />
-                <UiInput v-model="store.spaceCreation.description" label="الوصف" />
-              <UiButton @click="create()" my="2">انشاء</UiButton>
+              <UiInput v-model="store.spaceCreation.name" @keydown="() => store.createError = null" size="md" label="الأسم" />
+                <UiInput v-model="store.spaceCreation.description" size="md" label="الوصف" />
+              <UiButton @click="create()" size="md" my="2">انشاء</UiButton>
             </div>
           </UiModal>
         </Teleport>
@@ -88,7 +88,7 @@ watch( () => newSpaceState.value, (newVal) => {
 
 const create = async () => {
   let result = await store.create()
-  if (result) nweSpaceToggle()
+  if (result) newSpaceToggle()
 }
 </script>
   

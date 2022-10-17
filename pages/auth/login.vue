@@ -10,8 +10,8 @@
             <AuthEmailPassword key="AuthEmailPassword" v-if="emailPasswordState" />
           </Transition>
 
-          <p v-if="authStore.getError" w="full" text="xs red right" mr="10px">
-            {{ authStore.getError }}
+          <p v-if="authStore.getCreateError" w="full" text="xs red right" mr="10px">
+            {{ authStore.getCreateError }}
           </p>
 
           <!--? Submit -->
@@ -20,7 +20,8 @@
           " text="center lg primary dark:primaryOp" h="50px" position="relative" bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" w="190px lg:270px" duration="200" rounded="10px" flex="~" justify="center" items="center" cursor="pointer">
             <span v-if="emailPasswordState">تسجيل الدخول</span>
             <span v-else>البريد الالكتروني</span>
-            <IconLogin v-if="emailPasswordState" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+            <IconLoading v-if="emailPasswordState && authStore.getLoadingUserPassword" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+            <IconLogin v-else-if="emailPasswordState && !authStore.getLoadingUserPassword" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
             <IconEmail v-else right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
           </div>
         </div>
