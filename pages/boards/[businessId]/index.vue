@@ -41,9 +41,9 @@
             <template #title>إنشاء عمل جديد</template>
             <div flex="~ col gap-4">
               <span text="sm error dark:error" v-if="store.getCreateError">{{ store.getCreateError }}</span>
-              <UiInput v-model="store.spaceCreation.name" @keydown="() => store.createError = null" label="الأسم" />
-                <UiInput v-model="store.spaceCreation.description" label="الوصف" />
-              <UiButton @click="create()" my="2">انشاء</UiButton>
+              <UiInput v-model="store.spaceCreation.name" @keydown="() => store.createError = null" size="md" label="الأسم" />
+                <UiInput v-model="store.spaceCreation.description" size="md" label="الوصف" />
+              <UiButton @click="create()" size="md" my="2">انشاء</UiButton>
             </div>
           </UiModal>
         </Teleport>
