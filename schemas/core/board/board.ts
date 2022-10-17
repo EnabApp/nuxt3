@@ -7,6 +7,14 @@ const boardSchema = new Schema(
       type: String,
       required: true,
     },
+    points: {
+      type: Number,
+      required: true,
+    },
+    space: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Space",
+    },
     description: {
       type: String,
       required: false,
@@ -33,10 +41,16 @@ const boardSchema = new Schema(
         ref: "Unit",
       },
     ],
-    space: {
+    category: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Space",
+      ref: "Category",
     },
+    packages: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Package",
+      },
+    ],
   },
   {
     timestamps: true,
