@@ -20,7 +20,7 @@ useHead({
     class: "bg-primary dark:bg-primaryOp text-tertiary dark:text-tertiaryOp",
     dir: "rtl",
     // oncontextmenu: "return false",
-
+ 
   },
   htmlAttrs: {
     lang: "ar",
