@@ -41,11 +41,11 @@ const boardSchema = new Schema(
         ref: "Unit",
       },
     ],
-    category: {
+    category_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category",
     },
-    packages: [
+    packs: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Package",
@@ -101,7 +101,14 @@ const boardRefactor = (data) => {
       };
     }),
     category_id: data?.category_id,
-    packages: data?.packages,
+    //packs by packsRefactor
+    packs: data?.packs.map((pack) => {
+      return {
+        id: pack._id,
+        name: pack.name,
+        points: pack.points,
+      };
+    }),
     created_at: data?.created_at,
     updated_at: data?.updated_at,
   };

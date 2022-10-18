@@ -40,7 +40,9 @@ export default () => {
     return new Promise(async (resolve, reject) => {
       try {
         const board = await boardModel.findOne({ _id: board_id }).populate({ path: "space", model: spaceModel })
-          .populate({ path: "desktopUnits", model: UnitModel }).populate({ path: "tabletUnits", model: UnitModel }).populate({ path: "mobileUnits", model: UnitModel }).populate({ path: "category_id", model: boardCategoryModel }).populate({ path: "packages", model: packageModel });
+          .populate({ path: "desktopUnits", model: UnitModel }).populate({ path: "tabletUnits", model: UnitModel })
+          .populate({ path: "mobileUnits", model: UnitModel }).populate({ path: "category_id", model: boardCategoryModel })
+          .populate({ path: "packs", model: packModel });
         resolve(boardRefactor(board));
       } catch (err) {
         reject(err);
