@@ -3,15 +3,16 @@ const { Schema } = mongoose;
 
 const membershipSchema = new Schema(
     {
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: "User",
+        name: {
+            type: String,
             required: true,
         },
-        expirtion_date: {
-            type: Date,
-            required: true,
-        },
+        users: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "User",
+            },
+        ],
         is_active: {
             type: Boolean,
             default: true,

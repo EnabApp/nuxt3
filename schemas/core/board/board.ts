@@ -48,7 +48,7 @@ const boardSchema = new Schema(
     packs: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Package",
+        ref: "Pack",
       },
     ],
   },
