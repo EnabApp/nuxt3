@@ -35,6 +35,6 @@ export default defineNuxtConfig({
     plugins: ["~/server/index.ts"],
     imports: {
       dirs: ["composables/server/**/**", "schemas/**/**"],
-    }
+    } 
   },
 });
