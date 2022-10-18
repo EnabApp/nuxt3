@@ -1,4 +1,3 @@
-import { packModel } from "~/schemas/store/pack/pack";
 export default () => {
 
     // Export Function to be used
