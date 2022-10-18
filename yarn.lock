@@ -301,10 +301,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@enab/components@^1.0.1-beta.9":
-  version "1.0.1-beta.9"
-  resolved "https://registry.yarnpkg.com/@enab/components/-/components-1.0.1-beta.9.tgz#ad620b591b35d2dd860e22401c7d8a0f75dfb02e"
-  integrity sha512-a9Y/X7gE95EwdyLf67V9uiwmt6+Hw0DhuZVGO5tWxBUl0742KrIQpdz/u0Ry/W4kM3tMJEWTjbtdxCbgLb94Fw==
+"@enab/components@1.0.1-beta.2":
+  version "1.0.1-beta.2"
+  resolved "https://registry.yarnpkg.com/@enab/components/-/components-1.0.1-beta.2.tgz#f9997fa3869c2edc8a7caeb6aa65b9c776e4230e"
+  integrity sha512-phQYwKnffjHy2AEmChG16KKM7Bhbn+PKKWTk8w+Nyp7tstKJaKJcWQUBw9KJBwLNWqNXMOMllLgHqoviYqbJYQ==
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.10"
 
