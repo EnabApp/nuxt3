@@ -1,4 +1,5 @@
 import { sendError } from "h3";
+
 export default defineEventHandler(async (event) => {
     const { getPackById } = usePack();
     const pack_id = await event.context.params.pack_id;
