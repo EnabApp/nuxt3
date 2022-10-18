@@ -1,10 +1,10 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-    const { id, name, space_id, description } = await useBody(event);
+    const { id, name, space_id, points, description, desktopUnits, tabletUnits, mobileUnits, category_id, packages } = await useBody(event);
     const { updateBoard } = useBoard();
     try {
-        if (!name || !space_id)
+        if (!name || !space_id || !points || !category_id) {
             return sendError(
                 event,
                 createError({
@@ -12,8 +12,9 @@ export default defineEventHandler(async (event) => {
                     statusMessage: "params missing",
                 })
             );
+        };
 
-        return await updateBoard({ id, name, space_id, description });
+        return await updateBoard({ id, name, space_id, points, description, desktopUnits, tabletUnits, mobileUnits, category_id, packages });
     }
     catch (err) {
         return sendError(

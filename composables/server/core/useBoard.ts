@@ -63,15 +63,21 @@ export default () => {
     });
   };
   //update board
-  const updateBoard = ({ id, name, space_id, description }) => {
+  const updateBoard = ({ id, name, space_id, points, description, desktopUnits, tabletUnits, mobileUnits, category_id, packages }) => {
     return new Promise(async (resolve, reject) => {
       try {
         const data = await boardModel.findOneAndUpdate(
           { _id: id },
           {
-            name: name,
-            description: description,
-            space: space_id,
+            name,
+            space_id,
+            points,
+            description,
+            desktopUnits,
+            tabletUnits,
+            mobileUnits,
+            category_id,
+            packages,
           },
           { new: true }
         );
