@@ -1,9 +1,9 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-    const { name, description } = await useBody(event);
-    const { insertBoardCategory } = useBoardCategory();
     try {
+        const { name, description } = await useBody(event);
+        const { insertBoardCategory } = useBoardCategory();
         if (!name ) {
             return sendError(
                 event,
