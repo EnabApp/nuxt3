@@ -186,7 +186,7 @@ export default [
   // Pack
   {
     hook: "post:pack",
-    endpoint: "core/pack",
+    endpoint: "store/pack",
     data: [
       { name: "name" },
       { name: "points" },
@@ -195,7 +195,7 @@ export default [
   },
   {
     hook: "post:pack:pushBoards",
-    endpoint: "core/pack/pushBoards",
+    endpoint: "store/pack/pushBoards",
     data: [
       { name: "pack_id" },
       { name: "boards" }

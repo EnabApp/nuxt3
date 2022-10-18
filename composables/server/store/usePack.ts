@@ -35,9 +35,25 @@ export default () => {
             }
         });
     };
+
+    const getPackById = (pack_id) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const pack = await packModel.findById(pack_id);
+                if (!pack) {
+                    reject("Pack not found");
+                }
+                resolve(packRefactor(pack));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
+
     //Return Function to be used
     return {
         insertPack,
         pushBoards,
+        getPackById,
     };
 }
