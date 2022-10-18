@@ -190,6 +190,42 @@ export default [
     endpoint: "core/permission",
     data: [{ name: "id" }],
   },
+  // Board Category
+  {
+    hook: "post:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "name" }],
+    date: [{ name: "description" }],
+  },
+  {
+    hook: "get:board-category",
+    endpoint: "store/board-category",
+  },
+  {
+    hook: "delete:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "id" }],
+  },
+  {
+    hook: "put:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "id" }, { name: "name" }, { name: "description" }],
+  },
+  {
+    hook: "get:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "id" }],
+  },
+  {
+    hook: "get:board-category:push-board",
+    endpoint: "store/board-category/push-board",
+    data: [{ name: "board_id" }, { name: "category_id" }],
+  },
+  {
+    hook: "get:board-category:pull-board",
+    endpoint: "store/board-category/pull-board",
+    data: [{ name: "board_id" }, { name: "category_id" }],
+  },
 
   // Pack
   {
