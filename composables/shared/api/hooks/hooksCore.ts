@@ -83,7 +83,12 @@ export default [
       { name: "description" },
     ],
   },
-  { hook: "get:space", endpoint: "core/space", data: [{ name: "space_id" }] },
+  {
+    hook: "get:space",
+    endpoint: "core/space",
+    data: [{ name: "space_id" }
+    ]
+  },
   {
     hook: "get:spaces-business",
     endpoint: "core/space/by-business",
@@ -155,7 +160,10 @@ export default [
       { name: "type" },
     ],
   },
-  { hook: "get:permission", endpoint: "core/permission" },
+  {
+    hook: "get:permission",
+    endpoint: "core/permission"
+  },
   {
     hook: "get:permission-business",
     endpoint: "core/permission/by-business",
@@ -182,4 +190,29 @@ export default [
     endpoint: "core/permission",
     data: [{ name: "id" }],
   },
+
+  // Pack
+  {
+    hook: "post:pack",
+    endpoint: "store/pack",
+    data: [
+      { name: "name" },
+      { name: "points" },
+      { name: "boards" }
+    ]
+  },
+  {
+    hook: "post:pack:pushBoards",
+    endpoint: "store/pack/pushBoards",
+    data: [
+      { name: "pack_id" },
+      { name: "boards" }
+    ]
+  },
+  {
+    hook: "get:pack",
+    endpoint: "store/pack",
+    data: [{ name: "pack_id" }]
+  },
+
 ];

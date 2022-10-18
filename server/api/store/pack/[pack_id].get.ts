@@ -1,21 +1,21 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-    const { pack_id, boards } = await useBody(event);
-    const { pushBoards } = usePack();
+    const { getPackById } = usePack();
+    const pack_id = await event.context.params.pack_id;
     try {
-        if (!pack_id || !boards)
+        if (!pack_id) {
             return sendError(
                 event,
                 createError({
                     statusCode: 400,
-                    statusMessage: "pack_id and boards are required",
+                    statusMessage: "Invalid params",
                 })
             );
-
-        return await pushBoards({ pack_id, boards });
-    }
-    catch (err) {
+        }
+        const pack = await getPackById(pack_id);
+        return pack;
+    } catch (err) {
         return sendError(
             event,
             createError({
@@ -24,4 +24,5 @@ export default defineEventHandler(async (event) => {
             })
         );
     }
-});
+}
+);
