@@ -238,7 +238,7 @@ export default [
     ]
   },
   {
-    hook: "post:pack-pushBoard",
+    hook: "post:pack:push-board",
     endpoint: "store/pack/pushBoard",
     data: [
       { name: "pack_id" },
@@ -252,7 +252,7 @@ export default [
   },
 
   {
-    hook: "post:pack-pullBoardFromPack",
+    hook: "post:pack:pull-board-from-pack",
     endpoint: "store/pack/pullBoardFromPack",
     data: [
       { name: "pack_id" },
