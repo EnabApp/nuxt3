@@ -1,10 +1,10 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-    const { pack_id, boards } = await useBody(event);
-    const { pushBoards } = usePack();
+    const { pack_id, board } = await useBody(event);
+    const { pushBoard } = usePack();
     try {
-        if (!pack_id || !boards)
+        if (!pack_id || !board)
             return sendError(
                 event,
                 createError({
@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
                 })
             );
 
-        return await pushBoards({ pack_id, boards });
+        return await pushBoard({ pack_id, board });
     }
     catch (err) {
         return sendError(

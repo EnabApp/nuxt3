@@ -19,15 +19,15 @@ export default () => {
         });
     };
 
-    //push boards into pack
-    const pushBoards = ({ pack_id, boards }) => {
+    //push board into pack
+    const pushBoard = ({ pack_id, board }) => {
         return new Promise(async (resolve, reject) => {
             try {
                 const pack = await packModel.findById(pack_id);
                 if (!pack) {
                     reject("Pack not found");
                 }
-                pack.boards = [...pack.boards, ...boards];
+                pack.boards.push(board);
                 await pack.save();
                 resolve(packRefactor(pack));
             } catch (err) {
@@ -51,12 +51,28 @@ export default () => {
     };
 
 
+    //pull board from pack
+    const pullBoardFromPack = ({ pack_id, board }) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const pack = await packModel.findById(pack_id);
+                if (!pack) {
+                    reject("Pack not found");
+                }
+                pack.boards.pull(board);
+                await pack.save();
+                resolve(packRefactor(pack));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
 
     //Return Function to be used
     return {
         insertPack,
-        pushBoards,
+        pushBoard,
         getPackById,
-        pullBoard,
+        pullBoardFromPack,
     };
 }
