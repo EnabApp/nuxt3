@@ -95,6 +95,27 @@ export default () => {
         });
     };
 
+    //update pack
+    const updatePack = ({ pack_id, name, points, boards }) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const pack = await packModel.findOneAndUpdate(
+                    { _id: pack_id },
+                    {
+                        name: name,
+                        points: points,
+                        boards: boards,
+                    },
+
+                    { new: true }
+                );
+                resolve(packRefactor(pack));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
+
     //Return Function to be used
     return {
         insertPack,
@@ -103,5 +124,6 @@ export default () => {
         pullBoardFromPack,
         getAllPacks,
         deletePack,
+        updatePack,
     };
 }
