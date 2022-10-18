@@ -263,5 +263,10 @@ export default [
     hook: "get:pack",
     endpoint: "store/pack",
   },
+  {
+    hook: "delete:pack",
+    endpoint: "store/pack",
+    data: [{ name: "pack_id" }]
+  },
 
 ];
