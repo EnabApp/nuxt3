@@ -24,8 +24,7 @@ export const useAuth = defineStore("authStore", {
         });
 
         if (user) {
-          console.log("user", user);
-          await useApi("post:user", { user: user });
+          await useApi("post:user", { user: user, name: this.name });
           navigateTo("/auth/login");
         }
       } catch (error) {
@@ -35,11 +34,11 @@ export const useAuth = defineStore("authStore", {
 
     //login
     async login() {
-      this.loadingUserPassword = true
+      this.loadingUserPassword = true;
       const supabase = useSupabaseClient();
       if (!this.email || !this.password) {
         this.error = "Please enter your email and password";
-        this.loadingUserPassword = false
+        this.loadingUserPassword = false;
         return this.error;
       }
       try {
@@ -49,7 +48,7 @@ export const useAuth = defineStore("authStore", {
         });
         if (data) navigateTo("/");
       } catch (error) {
-        this.loadingUserPassword = false
+        this.loadingUserPassword = false;
         this.createError = error;
       }
     },
@@ -83,16 +82,6 @@ export const useAuth = defineStore("authStore", {
     },
 
     //Create User For MongoDB
-
-    async createUser(data) {
-      console.log("createUser");
-      try {
-        const user = await useApi("post:user", data);
-        return true;
-      } catch (e) {
-        console.log(e);
-      }
-    },
   },
 });
 

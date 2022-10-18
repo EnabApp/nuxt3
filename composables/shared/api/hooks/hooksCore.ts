@@ -13,7 +13,11 @@ export default [
 
   // User
   { hook: "get:user", endpoint: "core/user", data: [{ name: "user_id" }] },
-  { hook: "post:user", endpoint: "user", data: [{ name: "data" }] },
+  {
+    hook: "post:user",
+    endpoint: "user",
+    data: [{ name: "user" }, { name: "name" }],
+  },
 
   //Business//
   { hook: "get:business", endpoint: "core/business" },
