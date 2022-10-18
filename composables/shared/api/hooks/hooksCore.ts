@@ -268,5 +268,15 @@ export default [
     endpoint: "store/pack",
     data: [{ name: "pack_id" }]
   },
+  {
+    hook: "put:pack",
+    endpoint: "store/pack",
+    data: [
+      { name: "pack_id" },
+      { name: "name" },
+      { name: "points" },
+      { name: "boards" }
+    ]
+  },
 
 ];
