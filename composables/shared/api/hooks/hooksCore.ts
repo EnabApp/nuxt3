@@ -259,5 +259,9 @@ export default [
       { name: "board_id" }
     ]
   },
+  {
+    hook: "get:pack",
+    endpoint: "store/pack",
+  },
 
 ];
