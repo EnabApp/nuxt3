@@ -50,10 +50,13 @@ export default () => {
         });
     };
 
+
+
     //Return Function to be used
     return {
         insertPack,
         pushBoards,
         getPackById,
+        pullBoard,
     };
 }
