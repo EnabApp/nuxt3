@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "*.enab.com"
+          }
+        ],
+        "destination": "/domain/:path*"
+      }
+    ]
+  }
