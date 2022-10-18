@@ -1,19 +1,19 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-  const { name, space_id, description } = await useBody(event);
+  const { name, space_id, points, description, desktopUnits, tabletUnits, mobileUnits, category_id,  packages } = await useBody(event);
   const { insertBoard } = useBoard();
   try {
-    if (!name || !space_id)
+    if (!name || !space_id || !points || !category_id ) {
       return sendError(
         event,
         createError({
           statusCode: 400,
-          statusMessage: "name and space_id are required",
+          statusMessage: "Please provide all required fields",
         })
       );
-
-    return await insertBoard({ name, space_id, description });
+    };
+    return await insertBoard({ name, space_id, points, description, desktopUnits, tabletUnits, mobileUnits, category_id,  packages });
   } catch (err) {
     return sendError(
       event,
