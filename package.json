@@ -24,7 +24,7 @@
     "@pinia/nuxt": "^0.4.1",
     "@tauri-apps/api": "^1.1.0",
     "@unocss/inspector": "^0.45.15",
-    "@unocss/nuxt": "^0.45.15",
+    "@unocss/nuxt": "^0.45.30",
     "@unocss/preset-attributify": "^0.45.15",
     "@unocss/preset-typography": "^0.45.15",
     "@unocss/preset-web-fonts": "^0.45.15",
