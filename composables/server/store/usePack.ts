@@ -68,11 +68,28 @@ export default () => {
         });
     };
 
+    //get all packs
+    const getAllPacks = () => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const packs = await packModel.find();
+                if (!packs) {
+                    reject("Packs not found");
+                }
+                resolve(packs.map((pack) => packRefactor(pack)));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
+
+
     //Return Function to be used
     return {
         insertPack,
         pushBoard,
         getPackById,
         pullBoardFromPack,
+        getAllPacks,
     };
 }
