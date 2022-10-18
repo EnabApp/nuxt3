@@ -22,7 +22,7 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Filter -->
-        <UiDropdown z="20" w="40" :list="[
+        <UiDropdown z="20" w="40" size="md" :list="[
           { id: 1, value: 'مساحاتي' },
           { id: 2, value: 'مساحات غيري' },
         ]">
@@ -32,7 +32,7 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Button -->
-        <UiButton @click="newSpaceToggle()" color="secondary" size="sm" icon="IconPlus">
+        <UiButton @click="newSpaceToggle()" color="secondary" size="md" icon="IconPlus">
           مساحة جديدة
         </UiButton>
 

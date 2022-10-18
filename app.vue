@@ -15,7 +15,7 @@ useHead({
   },
   viewport: "width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover",
   charset: "utf-8",
-  meta: [{ name: "description", content: "My amazing site." }],
+  meta: [{ name: "description", content: "عنب لإدارة الأعمال" }],
   bodyAttrs: {
     class: "bg-primary dark:bg-primaryOp text-tertiary dark:text-tertiaryOp",
     dir: "rtl",
