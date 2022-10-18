@@ -208,7 +208,7 @@ export default [
       { name: "pack_id" },
       { name: "boards" }
     ]
-  }
+  },
   {
     hook: "get:pack",
     endpoint: "store/pack",
