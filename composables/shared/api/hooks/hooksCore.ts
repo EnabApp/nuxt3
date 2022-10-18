@@ -178,4 +178,23 @@ export default [
     endpoint: "core/permission",
     data: [{ name: "id" }],
   },
+
+  // Pack
+  {
+    hook: "post:pack",
+    endpoint: "core/pack",
+    data: [
+      { name: "name" },
+      { name: "points" },
+      { name: "boards" }
+    ]
+  },
+  {
+    hook: "post:pack:pushBoards",
+    endpoint: "core/pack/pushBoards",
+    data: [
+      { name: "pack_id" },
+      { name: "boards" }
+    ]
+  }
 ];
