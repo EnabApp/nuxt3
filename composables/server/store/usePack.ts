@@ -83,6 +83,18 @@ export default () => {
         });
     };
 
+    //delete pack
+    const deletePack = (pack_id) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                await packModel.findByIdAndDelete(pack_id);
+                resolve("Pack deleted");
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
+
 
     //Return Function to be used
     return {
@@ -91,5 +103,6 @@ export default () => {
         getPackById,
         pullBoardFromPack,
         getAllPacks,
+        deletePack,
     };
 }
