@@ -8,7 +8,7 @@
                     "value": "*.enab.app"
                 }
             ],
-            "destination": "/domain/enab"
+            "destination": "/domain/"
         },
         {
             "source": "/(.*)",
