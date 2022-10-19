@@ -190,6 +190,42 @@ export default [
     endpoint: "core/permission",
     data: [{ name: "id" }],
   },
+  // Board Category
+  {
+    hook: "post:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "name" }],
+    date: [{ name: "description" }],
+  },
+  {
+    hook: "get:board-category",
+    endpoint: "store/board-category",
+  },
+  {
+    hook: "delete:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "id" }],
+  },
+  {
+    hook: "put:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "id" }, { name: "name" }, { name: "description" }],
+  },
+  {
+    hook: "get:board-category",
+    endpoint: "store/board-category",
+    data: [{ name: "id" }],
+  },
+  {
+    hook: "get:board-category:push-board",
+    endpoint: "store/board-category/push-board",
+    data: [{ name: "board_id" }, { name: "category_id" }],
+  },
+  {
+    hook: "get:board-category:pull-board",
+    endpoint: "store/board-category/pull-board",
+    data: [{ name: "board_id" }, { name: "category_id" }],
+  },
 
   // Pack
   {
@@ -202,8 +238,8 @@ export default [
     ]
   },
   {
-    hook: "post:pack:pushBoards",
-    endpoint: "store/pack/pushBoards",
+    hook: "post:pack:push-board",
+    endpoint: "store/pack/pushBoard",
     data: [
       { name: "pack_id" },
       { name: "boards" }
@@ -213,6 +249,34 @@ export default [
     hook: "get:pack",
     endpoint: "store/pack",
     data: [{ name: "pack_id" }]
+  },
+
+  {
+    hook: "post:pack:pull-board-from-pack",
+    endpoint: "store/pack/pullBoardFromPack",
+    data: [
+      { name: "pack_id" },
+      { name: "board_id" }
+    ]
+  },
+  {
+    hook: "get:pack",
+    endpoint: "store/pack",
+  },
+  {
+    hook: "delete:pack",
+    endpoint: "store/pack",
+    data: [{ name: "pack_id" }]
+  },
+  {
+    hook: "put:pack",
+    endpoint: "store/pack",
+    data: [
+      { name: "pack_id" },
+      { name: "name" },
+      { name: "points" },
+      { name: "boards" }
+    ]
   },
 
 ];
