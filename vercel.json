@@ -5,7 +5,7 @@
             "has": [
                 {
                     "type": "host",
-                    "value": "https://(?<paramName>).enab.app"
+                    "value": "(?<paramName>.*)"
                 }
             ],
             "destination": "/domain/:paramName"
