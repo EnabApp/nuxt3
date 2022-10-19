@@ -1,16 +1,4 @@
 {
-    "rewrites": [
-        {
-            "source": "/:path*",
-            "has": [
-              {
-                "type": "host",
-                "value": "test3.enab.app"
-              }
-            ],
-            "destination": "/domain/:path*"
-        }
-    ],
     "buildCommand": "yarn build",
     "devCommand": "yarn dev",
     "installCommand": "yarn install"
