@@ -23,7 +23,7 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Filter -->
-        <UiDropdown v-model="filter" z="20" w="40" :selectedId="filter" :list="[
+        <UiDropdown v-model="filter" z="20" w="40" size="md" :selectedId="filter" :list="[
           { id: 1, value: 'أعمالي' },
           { id: 2, value: 'أعمال غيري' },
         ]">
@@ -33,7 +33,7 @@
         <div h="full" w="1px" bg="secondary dark:secondaryOp"></div>
 
         <!-- Button -->
-        <UiButton @click="newBusinessToggle()" color="secondary" size="sm" icon="IconPlus">
+        <UiButton @click="newBusinessToggle()" color="secondary" size="md" icon="IconPlus">
           عمل جديد
         </UiButton>
 

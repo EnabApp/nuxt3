@@ -42,11 +42,15 @@ export const useAuth = defineStore("authStore", {
         return this.error;
       }
       try {
+        const router = useRouter();
+
         const { data, error } = await supabase.auth.signIn({
           email: this.email,
           password: this.password,
+        }, {
+          redirectTo: "/"
         });
-        if (data) navigateTo("/");
+        if (data) router.push("/")
       } catch (error) {
         this.loadingUserPassword = false;
         this.createError = error;
