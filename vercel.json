@@ -1,14 +1,14 @@
 {
     "rewrites": [
         {
-            "source": "/(.*)",
+            "source": "/:path*",
             "has": [
-                {
-                    "type": "host",
-                    "value": "(?<paramName>.*)"
-                }
+              {
+                "type": "host",
+                "value": "test3.enab.app"
+              }
             ],
-            "destination": "/domain/:paramName"
+            "destination": "/domain/:path*"
         },
         {
             "source": "/(.*)",

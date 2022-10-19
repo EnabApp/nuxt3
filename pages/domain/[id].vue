@@ -1,7 +1,7 @@
 <template>
-    <NuxtLayout name="user">
+    <!-- <NuxtLayout name="user"> -->
         <span>Hello World! - {{ id }}</span>
-    </NuxtLayout>
+    <!-- </NuxtLayout> -->
 </template>
 
 <script setup>
