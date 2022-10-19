@@ -1,10 +1,19 @@
 export default () => {
     if (typeof window !== 'undefined'){
-        return 's'
+        const hostnameArray = window.location.hostname.split('.')
+
+        // Localhost
+        if (window.location.hostname.includes('localhost')){
+            if (hostnameArray.length <= 1) return false
+            else return hostnameArray[0]
+        }
+        
+        // Production/Development
+        if (window.location.hostname.includes('enab.app')){
+            if (hostnameArray.length <= 2) return false
+            else if (window.location.hostname.includes('development')) return false
+            else return hostnameArray[0]
+        }
     }
-    
-    // // get subdomain
-    // const hostnameArray = window.location.hostname.split('.')
-    // const numberOfSubdomains = hostnameArray.length - 2
-    // return hostnameArray.length === 2 ? window.location.hostname : hostnameArray.slice(numberOfSubdomains).join('.')
+    return false
 }
