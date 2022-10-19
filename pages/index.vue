@@ -3,6 +3,8 @@
 <template>
   <NuxtLayout name="user">
     <div flex="~ col gap-8">
+
+      {{$route}}
       <!-- Header -->
       <!-- <Header /> -->
 
