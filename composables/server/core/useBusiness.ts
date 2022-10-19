@@ -15,7 +15,18 @@ export default () => {
           categories: [category_id],
           address: address,
         });
+
         await business.save();
+
+        const user = await userModel.findByIdAndUpdate(user_id
+          , { $push: { businesses: business } }
+          , { new: true }
+        );
+
+        if (!user) {
+          reject("User not found");
+        }
+
         resolve(businessRefactor(business));
       } catch (err) {
         reject(err);

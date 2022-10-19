@@ -10,7 +10,16 @@ export default () => {
           business: business_id,
           description: description,
         });
+
         await space.save();
+
+        //push space to business
+        const business = await businessModel.findByIdAndUpdate( business_id, { $push: { spaces: space } }, { new: true } );
+
+        if (!business) {
+          reject("Business not found");
+        }
+        
         resolve(spaceRefactor(space));
       } catch (err) {
         reject(err);
