@@ -1,5 +1,26 @@
 {
-    
+    "rewrites": [
+        {
+            "source": "/auth/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "*.enab.app"
+                }
+            ],
+            "destination": "/auth/:path*"
+        },
+        {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "*.enab.app"
+                }
+            ],
+            "destination": "/domain/:path*"
+        }
+    ],
 
     "buildCommand": "yarn build",
     "devCommand": "yarn dev",
