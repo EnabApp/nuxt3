@@ -11,10 +11,8 @@
             "destination": "/domain/:path*"
         }
     ],
-    "builds": [
-        {
-            "src": "nuxt.config.js",
-            "use": "@nuxtjs/vercel-builder"
-        }
-    ]
+    "buildCommand": "yarn build",
+    "developmentCommand": "yarn dev",
+    "installCommand": "yarn install"
+
 }
