@@ -42,8 +42,16 @@ export default () => {
     // buy membership method
     const buyMembership = ({ membership_id, user_id }) => {
         return new Promise(async (resolve, reject) => {
+            try {
+                // code
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
     //Return Function to be used
     return {
+        buyPack,
         buyBoard,
     };
 }
