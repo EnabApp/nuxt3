@@ -2,7 +2,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   // isProduction: true,
-  // ssr: false,
+  ssr: false,
   css: ["@/assets/sass/main.scss"],
   components: {
     global: true,
