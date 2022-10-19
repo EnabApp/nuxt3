@@ -1,7 +1,5 @@
-import { packModel } from "~/schemas/store/pack/pack";
 export default () => {
 
-    // Export Function to be used
     const insertPack = ({ name, points, boards }) => {
         return new Promise(async (resolve, reject) => {
             try {
