@@ -51,6 +51,12 @@ const boardSchema = new Schema(
         ref: "Pack",
       },
     ],
+    users: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
   },
   {
     timestamps: true,

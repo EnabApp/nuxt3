@@ -16,6 +16,14 @@ export default () => {
         });
 
         await board.save();
+
+        //push board to space
+        const space = await spaceModel.findByIdAndUpdate( space_id, { $push: { boards: board } }, { new: true } );
+
+        if (!space) {
+          reject("Space not found");
+        }
+
         resolve(boardRefactor(board));
       } catch (err) {
         reject(err);

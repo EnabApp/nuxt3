@@ -8,6 +8,7 @@ export default () => {
                 if (!board) {
                     reject("Board not found");
                 }
+                
                 const user = await userModel.findByIdAndUpdate(user_id, {
                     $push: { boards: board_id },
                     }, { new: true });
