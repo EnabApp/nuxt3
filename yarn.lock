@@ -3688,17 +3688,10 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
-nuxi@3.0.0-rc.12:
+nuxi@3.0.0-rc.12, nuxi@^3.0.0-rc.12:
   version "3.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/nuxi/-/nuxi-3.0.0-rc.12.tgz#4c0d11f2db31b698dbc7d7943fc22d4de258b0c3"
   integrity sha512-jOnWe/Gf2/5Zj4wCFDHpmBPDDHZFMGrhqK5C+8jhG2RHNJy+YOlZETwAgoXPjmH0Hhb441UDQhZHKg5+yyKhbw==
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-nuxi@^3.0.0-rc.11:
-  version "3.0.0-rc.11"
-  resolved "https://registry.yarnpkg.com/nuxi/-/nuxi-3.0.0-rc.11.tgz#30536dbccbcc25a24ba2e2ebc07d33bbda116a6a"
-  integrity sha512-Zz3FRkLX0pmrQAgNkiartayC5DHKBxuMsPqTkaWSXD123CtFanL2mTOwfWtuO6W+qkEA9DGWNOL+fOkfScOQJQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
