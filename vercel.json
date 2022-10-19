@@ -1,5 +1,5 @@
 {
-    "rewrites": [
+    "redirects": [
         {
             "source": "/auth/:path*",
             "has": [
@@ -8,10 +8,22 @@
                     "value": "*.enab.app"
                 }
             ],
-            "destination": "/auth/:path*"
+            "destination": "https://enab.app/auth/:path*",
+            "permanent": false
         }
     ],
-
+    "rewrites": [
+        {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "*.enab.app"
+                }
+            ],
+            "destination": "/domain/:path*"
+        }
+    ],
     "buildCommand": "yarn build",
     "devCommand": "yarn dev",
     "installCommand": "yarn install"
