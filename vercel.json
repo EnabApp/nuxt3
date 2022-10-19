@@ -11,8 +11,8 @@
             "destination": "/domain/:path*"
         }
     ],
+
     "buildCommand": "yarn build",
     "developmentCommand": "yarn dev",
     "installCommand": "yarn install"
-
 }
