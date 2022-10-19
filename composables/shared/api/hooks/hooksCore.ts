@@ -259,5 +259,24 @@ export default [
       { name: "board_id" }
     ]
   },
+  {
+    hook: "get:pack",
+    endpoint: "store/pack",
+  },
+  {
+    hook: "delete:pack",
+    endpoint: "store/pack",
+    data: [{ name: "pack_id" }]
+  },
+  {
+    hook: "put:pack",
+    endpoint: "store/pack",
+    data: [
+      { name: "pack_id" },
+      { name: "name" },
+      { name: "points" },
+      { name: "boards" }
+    ]
+  },
 
 ];

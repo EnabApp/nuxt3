@@ -66,11 +66,62 @@ export default () => {
         });
     };
 
+    //get all packs
+    const getAllPacks = () => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const packs = await packModel.find();
+                if (!packs) {
+                    reject("Packs not found");
+                }
+                resolve(packs.map((pack) => packRefactor(pack)));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
+
+    //delete pack
+    const deletePack = (pack_id) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                await packModel.findByIdAndDelete(pack_id);
+                resolve("Pack deleted");
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
+
+    //update pack
+    const updatePack = ({ pack_id, name, points, boards }) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const pack = await packModel.findOneAndUpdate(
+                    { _id: pack_id },
+                    {
+                        name: name,
+                        points: points,
+                        boards: boards,
+                    },
+
+                    { new: true }
+                );
+                resolve(packRefactor(pack));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
+
     //Return Function to be used
     return {
         insertPack,
         pushBoard,
         getPackById,
         pullBoardFromPack,
+        getAllPacks,
+        deletePack,
+        updatePack,
     };
 }
