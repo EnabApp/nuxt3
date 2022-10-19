@@ -47,8 +47,6 @@ export const useAuth = defineStore("authStore", {
         const { data, error } = await supabase.auth.signIn({
           email: this.email,
           password: this.password,
-        }, {
-          redirectTo: "/"
         });
         if (data) router.push("/")
       } catch (error) {
@@ -63,6 +61,9 @@ export const useAuth = defineStore("authStore", {
       try {
         const { user, error } = await supabase.auth.signIn({
           provider: "google",
+        }, {
+          redirectTo: process?.dev ? 'http://localhost:3000' : 
+                      (process?.env?.VITE_ENV ? 'https://development.enab.app' : 'https://enab.app')
         });
 
         if (user) {
