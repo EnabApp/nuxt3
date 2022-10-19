@@ -24,12 +24,6 @@ export default () => {
           reject("Space not found");
         }
 
-        //push board to user
-        const user = await userModel.findByIdAndUpdate( user_id, { $push: { boards: board } }, { new: true } );
-        if (!user) {
-          reject("User not found");
-        }
-
         resolve(boardRefactor(board));
       } catch (err) {
         reject(err);
