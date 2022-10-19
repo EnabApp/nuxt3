@@ -1,0 +1,17 @@
+{
+    "rewrites": [
+        {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "*.enab.com"
+                }
+            ],
+            "destination": "/domain/:path*"
+        }
+    ],
+    "buildCommand": "yarn build",
+    "developmentCommand": "yarn dev",
+    "installCommand": "yarn install"
+}
