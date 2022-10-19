@@ -5,7 +5,7 @@
             "has": [
                 {
                     "type": "host",
-                    "value": "*.enab.com"
+                    "value": "*.enab.app"
                 }
             ],
             "destination": "/domain/:path*"
