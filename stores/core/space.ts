@@ -8,14 +8,18 @@ import { ResposnivesType } from "~~/models/Board";
 export const useSpace = defineStore("space", {
   state: () => ({
     spaces: [],
-    space: {},
-    selectedBoardIndex: 0
+    space: null,
+    selectedBoardIndex: 0,
+
+    spaceCreation: {},
+    createError: null,
   }),
 
   getters: {
     getSpaces: (state) => state.spaces,
     getSpace: (state) => state.space,
-    getSelectedSpace: (state) => state.spaces.find((space: SpaceType) => space.id == useRoute().params.spaceId)
+    getSelectedSpace: (state) => state.spaces.find((space: SpaceType) => space.id == useRoute().params.spaceId),
+    getCreateError: (state) => state.createError,
   },
 
   actions: {
@@ -37,6 +41,33 @@ export const useSpace = defineStore("space", {
 
     setBoardIndex(index: number){
       this.selectedBoardIndex = index
+    },
+
+    async create() {
+      if (!this.spaceCreation.name) {
+        this.createError = "يرجى ملئ جميع الحقول"
+        return false
+      }
+
+      const { params } = useRoute()
+
+      if (!params.businessId) {
+        this.createError = "يرجى تحديد العمل"
+        return false
+      }
+
+      this.spaceCreation.business_id = params.businessId
+      
+
+      try {
+        const data = await useApi("post:space", this.spaceCreation);
+        this.fetchSpaces(params.businessId)
+        this.spaceCreation = {}
+        return true
+      } catch (error) {
+        this.createError = error
+        return false
+      }
     }
   }
 });

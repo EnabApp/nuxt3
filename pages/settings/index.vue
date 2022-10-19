@@ -1,6 +1,7 @@
 <template>
     <NuxtLayout name="user">
         <span>Hello World!</span>
+        {{ user }}
     </NuxtLayout>
 </template>
 
@@ -8,4 +9,6 @@
 definePageMeta({
   middleware: 'auth'
 })
+
+const user = useSupabaseUser()
 </script>

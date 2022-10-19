@@ -1,4 +1,3 @@
-import { ref } from '#imports';
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
@@ -13,12 +12,16 @@ const permissionSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "Business",
         },
+        space: {
+            type: Schema.Types.ObjectId,
+            ref: "Space",
+        },
         ref: {
             type: String,
             required: true,
             enum: ['User', 'Team']
         },
-        // type_id is the id of user or team has this permission
+        // client is the id of user or team has this permission
         client: {
             type: Schema.Types.ObjectId,
             required: true,

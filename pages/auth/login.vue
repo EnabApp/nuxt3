@@ -1,7 +1,6 @@
 <template>
   <div h="screen" w="screen" flex="~ col" justify="center" items="center">
-    <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px"
-      items="center">
+    <div w="content" h="content" p="50px" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px" items="center">
       <!-- ?Logo -->
       <IconEnabLight w="112px md:128px" />
 
@@ -11,19 +10,18 @@
             <AuthEmailPassword key="AuthEmailPassword" v-if="emailPasswordState" />
           </Transition>
 
-          <p v-if="authStore.getError" w="full" text="xs red right" mr="10px">
-            {{ authStore.getError }}
+          <p v-if="authStore.getCreateError" w="full" text="xs red right" mr="10px">
+            {{ authStore.getCreateError }}
           </p>
 
           <!--? Submit -->
           <div key="LoginWithEmailButton" @click="
             emailPasswordState ? authStore.login() : emailPasswordToggle()
-          " text="center lg primary dark:primaryOp" h="50px" position="relative" bg="primaryOp dark:primary"
-            hover="secondaryOp dark:bg-secondary" w="190px lg:270px" duration="200" rounded="10px" flex="~"
-            justify="center" items="center" cursor="pointer">
+          " text="center lg primary dark:primaryOp" h="50px" position="relative" bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" w="190px lg:270px" duration="200" rounded="10px" flex="~" justify="center" items="center" cursor="pointer">
             <span v-if="emailPasswordState">تسجيل الدخول</span>
             <span v-else>البريد الالكتروني</span>
-            <IconLogin v-if="emailPasswordState" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+            <IconLoading v-if="emailPasswordState && authStore.getLoadingUserPassword" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+            <IconLogin v-else-if="emailPasswordState && !authStore.getLoadingUserPassword" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
             <IconEmail v-else right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
           </div>
         </div>
@@ -41,9 +39,7 @@
         <div v-if="!emailPasswordState">
           <div flex="~ col gap-8px">
             <!-- ?Google Login -->
-            <div position="relative" bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" duration="200"
-              rounded="10px" w="190px lg:270px" h="50px" flex="~" justify="center" items="center" cursor="pointer"
-              @click="loginWithGoogle()">
+            <div @click="authStore.loginWithGoogle()" position="relative" bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" duration="200" rounded="10px" w="190px lg:270px" h="50px" flex="~" justify="center" items="center" cursor="pointer">
               <span text="center 20px primary dark:primaryOp">كوكل</span>
               <IconGoogle right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
             </div>
@@ -51,7 +47,7 @@
             <!-- ?FaceBook Login -->
             <!-- <divposition="relative" bg="primaryOp dark:primary" hover="secondaryOp dark:bg-secondary" duration="200"
               rounded="10px" w="190px lg:270px" h="50px" flex="~" justify="center" items="center" cursor="pointer"
-              @click="loginWithGoogle()"
+              
             >
               <span text="center 20px primary dark:primaryOp">FaceBook</span>
               <IconFacebook right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
@@ -61,9 +57,7 @@
       </div>
 
       <!-- ?Feed Back -->
-      <div flex="~ gap-10px md:gap-50px" h="48px" w="xs md:xl lg:xl" border="rounded-10px" m="10" justify="center"
-        items="center" bg="primary dark:primaryOp opacity-50 dark:opacity-50"
-        text="primaryOp dark:primary xs md:xs lg:sm xl:md">
+      <div flex="~ gap-10px md:gap-50px" h="48px" w="xs md:xl lg:xl" border="rounded-10px" m="10" justify="center" items="center" bg="primary dark:primaryOp opacity-50 dark:opacity-50" text="primaryOp dark:primary xs md:xs lg:sm xl:md">
         <span cursor="pointer">هل تحتاج المساعدة؟</span>
         <span cursor="pointer">نسيت كلمة المرور؟</span>
         <nuxt-link decoration="none" to="/auth/register">
@@ -82,18 +76,9 @@ definePageMeta({
 
 const [emailPasswordState, emailPasswordToggle] = useToggle();
 
-const authStore = useAuthStore();
+const authStore = useAuth();
 const router = useRouter();
 const authError = ref("");
 
-const loginWithGoogle = async () => {
-  await authStore
-    .loginWithGoogle()
-    .then((_response) => {
-      router.push("/");
-    })
-    .catch((error) => {
-      authError.value = error;
-    });
-};
+
 </script>

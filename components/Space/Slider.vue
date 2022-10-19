@@ -9,9 +9,6 @@
 <script setup>
 import Swipe from 'swipejs';
 
-const router = useRouter()
-const route = useRoute()
-
 const spaceStore = useSpace()
 
 const props = defineProps({
@@ -44,7 +41,7 @@ const options = {
     continuous: false,
     disableScroll: false,
     stopPropagation: true,
-    ignore: ".scroller",
+    ignore: "#disable-swipe",
     callback: function (index, elem, dir) {
         emit('selectedIndex', index)
         spaceStore.setBoardIndex(index)

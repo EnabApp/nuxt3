@@ -1,9 +1,10 @@
 import { sendError } from "h3";
+
 export default defineEventHandler(async (event) => {
-    const { id, name, address, user_id, category_id } = await useBody(event);
-    const { updateBusiness } = useBusiness();
+    const { id, name, description } = await useBody(event);
+    const { updateBusinessCategory } = useBusiness();
     try {
-        if (!id || !name || !address || !user_id || !category_id )
+        if (!id || !name)
             return sendError(
                 event,
                 createError({
@@ -11,8 +12,9 @@ export default defineEventHandler(async (event) => {
                     statusMessage: "Invalid params",
                 })
             );
-        return await updateBusiness({ id, name, address, user_id, category_id });
-    } catch (err) {
+        return await updateBusinessCategory({ id, name, description });
+    }
+    catch (err) {
         return sendError(
             event,
             createError({

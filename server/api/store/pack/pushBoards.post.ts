@@ -1,18 +1,21 @@
 import { sendError } from "h3";
+
 export default defineEventHandler(async (event) => {
-    const { id, name, address, user_id, category_id } = await useBody(event);
-    const { updateBusiness } = useBusiness();
+    const { pack_id, boards } = await useBody(event);
+    const { pushBoards } = usePack();
     try {
-        if (!id || !name || !address || !user_id || !category_id )
+        if (!pack_id || !boards)
             return sendError(
                 event,
                 createError({
                     statusCode: 400,
-                    statusMessage: "Invalid params",
+                    statusMessage: "pack_id and boards are required",
                 })
             );
-        return await updateBusiness({ id, name, address, user_id, category_id });
-    } catch (err) {
+
+        return await pushBoards({ pack_id, boards });
+    }
+    catch (err) {
         return sendError(
             event,
             createError({
