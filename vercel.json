@@ -9,10 +9,6 @@
               }
             ],
             "destination": "/domain/:path*"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/"
         }
     ],
     "buildCommand": "yarn build",
