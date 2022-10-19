@@ -3,14 +3,19 @@ const { Schema } = mongoose;
 
 const membershipSchema = new Schema(
     {
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: "User",
+        name: {
+            type: String,
             required: true,
         },
-        expirtion_date: {
-            type: Date,
-            required: true,
+        users: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "User",
+            },
+        ],
+        points: {
+            type: Number,
+            default: 0,
         },
         is_active: {
             type: Boolean,
@@ -21,3 +26,24 @@ const membershipSchema = new Schema(
         timestamps: true,
     }
 );
+
+const Membership = mongoose.model("Membership", membershipSchema);
+
+const membershipRefactor = (data) => {
+    return {
+        id: data?._id,
+        name: data?.name,
+        users: data?.users.map((user) => {
+            return {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+            };
+        }),
+        points: data?.points,
+        is_active: data?.is_active,
+    };
+
+};
+
+export { Membership, membershipRefactor };

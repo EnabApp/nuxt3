@@ -1,6 +1,5 @@
 import { sendError } from "h3";
 export default () => {
-  const { businessRefactor } = useRefactor();
   // Export Function to be used
   const insertBusiness = ({ name, user_id, category_id, address }) => {
     return new Promise(async (resolve, reject) => {
@@ -57,8 +56,9 @@ export default () => {
   const getBusinessCategories = () => {
     return new Promise(async (resolve, reject) => {
       try {
-        const data = await businessCategoryModel.find({}).
-        select({ name: 1, _id: 1 });
+        const data = await businessCategoryModel
+          .find({})
+          .select({ name: 1, _id: 1 });
         resolve(data.map((item) => businessCategoryRefactor(item)));
       } catch (err) {
         reject(err);
@@ -80,9 +80,7 @@ export default () => {
   const deleteCategory = (category_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-        await businessCategoryModel.findByIdAndDelete(
-          category_id
-        );
+        await businessCategoryModel.findByIdAndDelete(category_id);
 
         resolve("Category Deleted");
       } catch (err) {
@@ -135,7 +133,6 @@ export default () => {
       }
     });
   };
-
 
   //Return Function to be used
   return {

@@ -1,20 +1,20 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-
-    const { pack_id, board } = await useBody(event);
-    const { pullBoardFromPack } = usePack();
+    const { pack_id, name, points, boards } = await useBody(event);
+    const { updatePack } = usePack();
     try {
-        if (!pack_id || !board)
+        if (!pack_id || !name || !points)  {
             return sendError(
                 event,
                 createError({
                     statusCode: 400,
-                    statusMessage: "pack_id and board are required",
+                    statusMessage: "params missing",
                 })
             );
+        };
 
-        return await pullBoardFromPack({ pack_id, board });
+        return await updatePack({ pack_id, name, points, boards });
     }
     catch (err) {
         return sendError(

@@ -1,8 +1,6 @@
 import { sendError } from "h3";
 
 export default () => {
-  const { spaceRefactor } = useRefactor();
-
   // Export Function to be used
   const insertSpace = ({ name, business_id, description }) => {
     return new Promise(async (resolve, reject) => {
@@ -59,31 +57,8 @@ export default () => {
               { path: "mobileUnits", model: UnitModel },
             ],
           });
-        const data = {
-          id: space?._id,
-          name: space?.name,
-          business: {
-            id: space?.business?._id,
-            name: space?.business?.name,
-          },
-          description: space?.description,
-          is_active: space?.is_active,
-          boards: space?.boards?.map((board) => {
-            return {
-              id: board?._id,
-              name: board?.name,
-              is_active: board?.is_active,
-              description: board?.description,
-              units: {
-                desktop: board?.desktopUnits,
-                tablet: board?.tabletUnits,
-                mobile: board?.mobileUnits,
-              },
-            };
-          }),
-          boardsCount: space?.boards?.length,
-        };
-        resolve(data);
+
+        resolve(spaceRefactor(space));
       } catch (err) {
         reject(err);
       }
@@ -93,7 +68,6 @@ export default () => {
   const getSpaceByBusinessId = (business_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-
         const spaces = await spaceModel
           .find({ business: business_id })
           .populate("business");
@@ -146,7 +120,6 @@ export default () => {
       }
     });
   };
-
 
   //Return Function to be used
   return {
