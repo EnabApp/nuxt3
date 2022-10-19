@@ -2,10 +2,12 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "has": {
-                "type": "host",
-                "value": "*.enab.app"
-            },
+            "has": [
+                {
+                    "type": "host",
+                    "value": "*.enab.app"
+                }
+            ],
             "destination": "/domain/enab"
         },
         {
