@@ -1,8 +1,6 @@
 import { sendError } from "h3";
 
 export default () => {
-  const { spaceRefactor } = useRefactor();
-
   // Export Function to be used
   const insertSpace = ({ name, business_id, description }) => {
     return new Promise(async (resolve, reject) => {
@@ -93,7 +91,6 @@ export default () => {
   const getSpaceByBusinessId = (business_id) => {
     return new Promise(async (resolve, reject) => {
       try {
-
         const spaces = await spaceModel
           .find({ business: business_id })
           .populate("business");
@@ -146,7 +143,6 @@ export default () => {
       }
     });
   };
-
 
   //Return Function to be used
   return {

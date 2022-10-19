@@ -3,8 +3,7 @@ import { sendError } from "h3";
 export default defineEventHandler(async (event) => {
   const { getBusinesses } = useBusiness();
   try {
-    const businesses = await getBusinesses();
-    return businesses;
+    return await getBusinesses();
   } catch (err) {
     return sendError(
       event,

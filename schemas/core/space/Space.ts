@@ -32,4 +32,19 @@ const spaceSchema = new Schema(
   }
 );
 
-export const spaceModel = mongoose.model("Space", spaceSchema);
+const spaceModel = mongoose.model("Space", spaceSchema);
+
+const spaceRefactor = (space) => {
+  return {
+    id: space._id,
+    name: space?.name,
+    business: space?.business,
+    description: space?.description,
+    is_active: space?.is_active,
+    createdAt: space?.createdAt,
+    updatedAt: space?.updatedAt,
+    boardsCount: space?.boards?.length,
+  };
+};
+
+export { spaceModel, spaceRefactor };
