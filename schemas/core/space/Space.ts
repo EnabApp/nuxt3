@@ -36,13 +36,27 @@ const spaceModel = mongoose.model("Space", spaceSchema);
 
 const spaceRefactor = (space) => {
   return {
-    id: space._id,
+    id: space?._id,
     name: space?.name,
-    business: space?.business,
+    business: {
+      id: space?.business?._id,
+      name: space?.business?.name,
+    },
     description: space?.description,
     is_active: space?.is_active,
-    createdAt: space?.createdAt,
-    updatedAt: space?.updatedAt,
+    boards: space?.boards?.map((board) => {
+      return {
+        id: board?._id,
+        name: board?.name,
+        is_active: board?.is_active,
+        description: board?.description,
+        units: {
+          desktop: board?.desktopUnits,
+          tablet: board?.tabletUnits,
+          mobile: board?.mobileUnits,
+        },
+      };
+    }),
     boardsCount: space?.boards?.length,
   };
 };
