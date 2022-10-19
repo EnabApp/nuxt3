@@ -1,17 +1,4 @@
 {
-    "redirects": [
-        {
-            "source": "/auth/:path*",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "*.enab.app"
-                }
-            ],
-            "destination": "https://enab.app/auth/:path*",
-            "permanent": false
-        }
-    ],
     "buildCommand": "yarn build",
     "devCommand": "yarn dev",
     "installCommand": "yarn install"
