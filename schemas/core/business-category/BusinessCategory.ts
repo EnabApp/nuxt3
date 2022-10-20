@@ -30,7 +30,7 @@ const businessCategoryModel = mongoose.model(
 const businessCategoryRefactor = (data) => {
   return {
     id: data._id,
-    name: data.name,
+    value: data.name,
   };
 };
 
