@@ -5,7 +5,7 @@ export const useBusiness = defineStore("businessStore", {
   state: () => ({
     businesses: [],
     createError: null,
-    businessCreation: { user_id: "634475cef4194633dd306c09" },
+    businessCreation: {},
     businessCategories: []
   }),
 
