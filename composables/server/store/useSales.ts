@@ -28,12 +28,12 @@ const buyBoard = (date) => {
     return new Promise(async (resolve, reject) => {
         try{
         
-            const board = await boardModel.findById(board_id);
+            const board = await boardModel.find({_id:board_id});
             if (!board) {
                 reject("Board not found");
             }
 
-            const user = await userModel.findById(user_id);
+            const user = await userModel.find({_id:user_id});
             if (!user) {
                 reject("User not found");
             }
@@ -77,45 +77,53 @@ const buyBoard = (date) => {
 
 
     // buy pack method
-    // const buyPack = ({ pack_id, user_id }) => {
+    const buyPack = ({ pack_id, user_id }) => {
         
-    //     return new Promise(async (resolve, reject) => {
-    //         try {
-    //             const pack = await packModel.find({_id:pack_id});
-    //             if (!pack) {
-    //                 reject("Pack not found");
-    //             }
-    //             const user = await userModel.find({_id:user_id});
-    //             if (!user) {
-    //                 reject("User not found");
-    //             }
+        return new Promise(async (resolve, reject) => {
+            try {
+                const pack = await packModel.find({_id:pack_id});
+                if (!pack) {
+                    reject("Pack not found");
+                }
+                const user = await userModel.find({_id:user_id});
+                if (!user) {
+                    reject("User not found");
+                }
+
+                //if user already have the pack
+                if(user.packs.find(({pack}) => pack == pack_id)){
+                    reject("User already have this pack");
+                }
                 
-    //             //get userPoints from profile
-    //             const profile = await profileModel.findOne({user: user_id});
-    //             const userPoints = profile.points;
+                //get userPoints from profile
+                const profile = await profileModel.findOne({user: user_id});
+                const userPoints = profile.points;
 
-    //             //get packPoints
-    //             const packPoints = pack.points;
-    //             return packPoints;
+                //get packPoints
+                const packPoints = pack.points;
 
-    //             //cut points from user if has enough points
+                //cut points from user if has enough points
+                if(userPoints >= packPoints)
+                {
+                    profile.points -= packPoints;
+                    await profile.save();
+                }
+                else {
+                    reject("User has not enough points");
+                }
 
+                //push pack to user
+                user.packs.push({
+                    pack: pack._id
+                });
 
-
-
-
-    //             //push pack to user
-    //             user.packs.push({
-    //                 pack: pack._id
-    //             });
-
-    //             await user.save();
-    //             resolve(userRefactor(user));
-    //         } catch (err) {
-    //             reject(err);
-    //         }
-    //     });
-    // };
+                await user.save();
+                resolve("Pack bought");
+            } catch (err) {
+                reject(err);
+            }
+        });
+    };
     // // buy membership method
     // const buyMembership = ({ membership_id, user_id }) => {
     //     return new Promise(async (resolve, reject) => {
