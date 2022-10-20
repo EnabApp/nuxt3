@@ -1,10 +1,10 @@
 import { sendError } from "h3";
 
 export default defineEventHandler(async (event) => {
-    const date = await useBody(event);
+    const { board_id, user_id } = await useBody(event);
     const { buyBoard } = useSales();
     try {
-        if (!date.board_id || !date.user_id)
+        if (!board_id || !user_id)
             return sendError(
                 event,
                 createError({
@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
                     statusMessage: "board_id and user_id are required",
                 })
             );
-        return await buyBoard(date);
+        return await buyBoard({ board_id, user_id });
     } 
     catch (err) {
         return sendError(
