@@ -301,10 +301,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@enab/components@^1.0.1-beta.10":
-  version "1.0.1-beta.10"
-  resolved "https://registry.yarnpkg.com/@enab/components/-/components-1.0.1-beta.10.tgz#6d843395a55cfd899a29a3ce318a351d36935a71"
-  integrity sha512-ZcTOVvb0xHtCUlG9MTzXb8KFxjoc5qxmB7sLVvWQiwZrpSK8Iw/VbHSaz8xuSP78teA11qH93kf9+wVljPpgJQ==
+"@enab/components@^1.0.1-beta.11":
+  version "1.0.1-beta.11"
+  resolved "https://registry.yarnpkg.com/@enab/components/-/components-1.0.1-beta.11.tgz#d411753b2cb88e60753c3a5f376f2e4468e2c54d"
+  integrity sha512-N44UlQyqtTMvpZS/VpPXq/7X6JDsHPaGXqs/zPvQWAZq4bk2aksTHNEjsNOfcjPLcLNwQyJH8VdEcbxtSvRtfg==
   dependencies:
     "@nuxt/kit" "3.0.0-rc.12"
 
@@ -3068,11 +3068,6 @@ jsonfile@^6.0.1:
     universalify "^2.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
-
-jwt-decode@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
-  integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
 kareem@2.4.1:
   version "2.4.1"

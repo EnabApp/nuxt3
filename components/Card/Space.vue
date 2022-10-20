@@ -1,6 +1,6 @@
 <template>
-    <div position="relative">
-        <NuxtLink :to="`/boards/${space?.business?.id}/${space?.id}`" decoration="none" color="inherit" flex="~ col" rounded="xl" p="6" position="relative" z="hover:10" bg="secondary dark:secondaryOp dark:hover:opacity-50">
+    <div position="relative" flex="~">
+        <NuxtLink w="full" :to="`/boards/${space?.business?.id}/${space?.id}`" decoration="none" color="inherit" flex="~ col" rounded="xl" p="6" position="relative" z="hover:10" bg="secondary dark:secondaryOp dark:hover:opacity-50">
             <!-- Header -->
             <div flex="~" items="center" justify="between">
                 <div text="2xl primaryOp dark:primary">
@@ -13,7 +13,7 @@
             </div>
 
 
-            <div my="3" overflow="hidden" line-clamp="3">
+            <div h="66px" my="3" overflow="hidden" line-clamp="3">
                 {{ space.description }}
             </div>
             
