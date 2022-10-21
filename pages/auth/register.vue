@@ -1,10 +1,10 @@
 <template>
-  <div h="screen" w="screen" flex="~ col" justify="center" items="center" mt="100px">
-    <div w="content" h="content" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-66px" items="center"
+  <div h="screen" w="screen" flex="~ col" justify="center" items="center" mt="75px">
+    <div w="content" h="content" border="rounded-10px" bg="primary dark:primaryOp" flex="~ col gap-10px" items="center"
       relative="~">
       <!-- ?Logo -->
       <IconEnabLight w="112px md:128px" bottom="105% md:120%" absolute="~" />
-      <div flex="~ col gap-10px md:gap-16px" justify="center" w="100%" h="100%" items="center">
+      <div flex="~ col gap-30px" justify="center" w="100%" h="100%" items="center">
         <Transition name="slide-up">
           <AuthSginUpForm v-if="registerState" />
         </Transition>
@@ -22,6 +22,38 @@
           <span v-else>انشاء حسابك</span>
           <IconRegister v-if="registerState" right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
           <IconEmailPlus v-else right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+        </div>
+
+        <!-- ? message -->
+        <p v-if="registerState" @click="
+          () => {
+            registerToggle(), (authStore.error = '');
+          }
+        " text="left xs hover:primaryOp dark:hover:primary" cursor="pointer" w="60% md:80% lg:100%">
+          انشاء حسابك بطريقة أخرى
+        </p>
+
+        <!-- ?Divider -->
+        <div w="190px lg:270px" v-else rounded="full" h="1px" bg="tertiaryOp dark:tertiary" />
+
+        <div v-if="!registerState">
+          <div flex="~ col gap-8px">
+            <!-- ?Google Register?? -->
+            <div @click="authStore.loginWithGoogle()" position="relative" bg="primaryOp dark:primary"
+              hover="secondaryOp dark:bg-secondary" duration="200" rounded="10px" w="190px lg:270px" h="50px" flex="~"
+              justify="center" items="center" cursor="pointer">
+              <span text="center 20px primary dark:primaryOp">كوكل</span>
+              <IconGoogle right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+            </div>
+
+            <!-- ?FaceBook Register -->
+            <!-- <div @click="authStore.loginWithFacebook()" position="relative" bg="primaryOp dark:primary"
+              hover="secondaryOp dark:bg-secondary" duration="200" rounded="10px" w="190px lg:270px" h="50px" flex="~"
+              justify="center" items="center" cursor="pointer">
+              <span text="center 20px primary dark:primaryOp">فيس بوك</span>
+              <IconFacebook right="4" position="absolute" w="22px" text="primary dark:primaryOp" />
+            </div> -->
+          </div>
         </div>
       </div>
 

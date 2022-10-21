@@ -37,7 +37,7 @@ export const useAuth = defineStore("authStore", {
       this.loadingUserPassword = true;
       const supabase = useSupabaseClient();
       if (!this.email || !this.password) {
-        this.error = "Please enter your email and password";
+        this.error = "رجاء ادخل البريد الالكتروني وكلمة المرور";
         this.loadingUserPassword = false;
         return this.error;
       }
