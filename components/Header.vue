@@ -26,6 +26,9 @@
             <UiInput placeholder="بحث" size="md" w="xs" icon="IconSearch" />
         </div>
 
+        <span v-if="useSubdomain()"> {{ useSubdomain() }} subdomain </span>
+        <span v-else>Main Domain</span>
+
         <div flex="~ gap-2">
             <div v-if="!sidebarState" flex="~ gap-3">
                 <UiToolTip v-for="action in actions" :key="action.icon" position="bottom" :text="action.name" class="hidden md:flex">

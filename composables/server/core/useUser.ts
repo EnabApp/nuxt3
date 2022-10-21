@@ -1,8 +1,5 @@
 import mongoose from "mongoose";
 export default () => {
-  // Export Function to be used
-  const { userRefactor } = useRefactor();
-
   const insertUser = async (data, name) => {
     console.log("insertUser");
     console.log(data);

@@ -29,7 +29,7 @@ export default () => {
     const getBoardCategoryById = (boardCategory_id) => {
         return new Promise(async (resolve, reject) => {
             try {
-                const boardCategory = await boardCategoryModel.findOne({ _id: boardCategory_id });
+                const boardCategory = await boardCategoryModel.findOne({ _id: boardCategory_id }).populate("boards", "id name").select("_id name description");
                 resolve(boardCategoryRefactor(boardCategory));
             } catch (err) {
                 reject(err);

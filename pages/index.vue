@@ -3,6 +3,7 @@
 <template>
   <NuxtLayout name="user">
     <div flex="~ col gap-8">
+
       <!-- Header -->
       <!-- <Header /> -->
 
@@ -95,4 +96,5 @@ const create = async () => {
 
 const filter = ref("1")
 
+console.log(useSubdomain())
 </script>
