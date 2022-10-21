@@ -46,7 +46,6 @@ definePageMeta({
 const [registerState, registerToggle] = useToggle();
 
 const authStore = useAuth();
-const loading = ref(false);
 // const router = useRouter();
 // const authError = ref("");
 
