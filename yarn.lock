@@ -3695,10 +3695,10 @@ nuxi@3.0.0-rc.12:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxi@^3.0.0-rc.11:
-  version "3.0.0-rc.11"
-  resolved "https://registry.yarnpkg.com/nuxi/-/nuxi-3.0.0-rc.11.tgz#30536dbccbcc25a24ba2e2ebc07d33bbda116a6a"
-  integrity sha512-Zz3FRkLX0pmrQAgNkiartayC5DHKBxuMsPqTkaWSXD123CtFanL2mTOwfWtuO6W+qkEA9DGWNOL+fOkfScOQJQ==
+nuxi@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/nuxi/-/nuxi-3.2.2.tgz#78f554bb5baad01c69b8f8d08b3a329e8b60011a"
+  integrity sha512-JqPJqwfzQCVrjkMh+9Dd3q4qu7wYbmr+39SfjC6LL1oTNLFUjvjHG42tFJBDVHO+GImAo/kNjWGp2N/Jwo8/ag==
   optionalDependencies:
     fsevents "~2.3.2"
 
