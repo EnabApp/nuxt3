@@ -19,7 +19,7 @@
     "url-pattern": "^1.0.3"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27707824.1028381",
+    "@nuxt/image-edge": "^1.0.0-27954023.4cee565",
     "@nuxtjs/color-mode": "^3.1.4",
     "@pinia/nuxt": "^0.4.1",
     "@tauri-apps/api": "^1.1.0",
